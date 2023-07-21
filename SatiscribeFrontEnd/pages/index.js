@@ -14,16 +14,16 @@ export default function index() {
 
             <p>This uses the flexrow found in Flexible.module.css, the gap can be controlled from global.css</p>
             <div className={flexi.flexrow}>
-                <div className={logos.small} style={{ backgroundImage=`url()` }}></div>
-                <div className={logos.smallCancel}></div>
-                <div className={logos.bigCancel}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
             </div>
 
             <p>This uses the flexcolumn found in Flexible.module.css, the gap can be controlled from global.css</p>
             <div className={flexi.flexcolumn}>
-                <div className={logos.smallCancel}></div>
-                <div className={logos.smallCancel}></div>
-                <div className={logos.bigCancel}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
             </div>
 
             <h2>Icons</h2>
