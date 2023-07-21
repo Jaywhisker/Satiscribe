@@ -1,115 +1,85 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import React from 'react'
+import styles from '../styles/Logos.module.css'
+import flexi from '../styles/Flexible.module.css'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+export default function index() {
+    return (
+        <div>
+            <div>
+                <h1>Haro this is the display of the stylesheet</h1>
+            </div>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+            <h2>Flexible module css: display layouts</h2>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <p>This uses the flexrow found in Flexible.module.css, the gap can be controlled from global.css</p>
+            <div className={flexi.flexrow}>
+                <div className={styles.smallCancel}></div>
+                <div className={styles.smallCancel}></div>
+                <div className={styles.bigCancel}></div>
+            </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <p>This uses the flexcolumn found in Flexible.module.css, the gap can be controlled from global.css</p>
+            <div className={flexi.flexcolumn}>
+                <div className={styles.smallCancel}></div>
+                <div className={styles.smallCancel}></div>
+                <div className={styles.bigCancel}></div>
+            </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <h2>Icons</h2>
+            <p>Lmao they are so pixalated</p>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <div className={flexi.flexrow}>
+                <div className={styles.smallCancel}></div>
+                <div className={styles.smallBack}></div>
+                <div className={styles.smallAlignleft}></div>
+                <div className={styles.smallCaution}></div>
+                <div className={styles.smallCheck}></div>
+                <div className={styles.smallDropdown}></div>
+                <div className={styles.smallEdit}></div>
+                <div className={styles.smallFile}></div>
+                <div className={styles.smallFilter}></div>
+                <div className={styles.smallHamburger}></div>
+                <div className={styles.smallHome}></div>
+                <div className={styles.smallInfo}></div>
+                <div className={styles.smallLink}></div>
+                <div className={styles.smallLogout}></div>
+                <div className={styles.smallMaps}></div>
+                <div className={styles.smallPlus}></div>
+                <div className={styles.smallProfile}></div>
+                <div className={styles.smallSave}></div>
+                <div className={styles.smallSearch}></div>
+                <div className={styles.smallSettings}></div>
+                <div className={styles.smallSort}></div>
+                <div className={styles.smallStart}></div>
+                <div className={styles.smallTrash}></div>
+            </div>
+            <div className={flexi.flexrow}>
+                <div className={styles.bigCancel}></div>
+                <div className={styles.bigBack}></div>
+                <div className={styles.bigAlignleft}></div>
+                <div className={styles.bigCaution}></div>
+                <div className={styles.bigCheck}></div>
+                <div className={styles.bigDropdown}></div>
+                <div className={styles.bigEdit}></div>
+                <div className={styles.bigFile}></div>
+                <div className={styles.bigFilter}></div>
+                <div className={styles.bigHamburger}></div>
+                <div className={styles.bigHome}></div>
+                <div className={styles.bigInfo}></div>
+                <div className={styles.bigLink}></div>
+                <div className={styles.bigLogout}></div>
+                <div className={styles.bigMaps}></div>
+                <div className={styles.bigPlus}></div>
+                <div className={styles.bigProfile}></div>
+                <div className={styles.bigSave}></div>
+                <div className={styles.bigSearch}></div>
+                <div className={styles.bigSettings}></div>
+                <div className={styles.bigSort}></div>
+                <div className={styles.bigStart}></div>
+                <div className={styles.bigTrash}></div>
+            </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+    )
 }
+
