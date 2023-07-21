@@ -49,10 +49,12 @@ export default function index() {
                 <div className={styles.smallProfile}></div>
                 <div className={styles.smallSave}></div>
                 <div className={styles.smallSearch}></div>
-                <div className={styles.smallSettings}></div>
                 <div className={styles.smallSort}></div>
                 <div className={styles.smallStart}></div>
                 <div className={styles.smallTrash}></div>
+                <div className={styles.smallComment}></div>
+                <div className={styles.smallEditpage}></div>
+                <div className={styles.smallReplace}></div>
             </div>
             <div className={flexi.flexrow}>
                 <div className={styles.bigCancel}></div>
@@ -68,16 +70,20 @@ export default function index() {
                 <div className={styles.bigHome}></div>
                 <div className={styles.bigInfo}></div>
                 <div className={styles.bigLink}></div>
+            </div>
+            <div className={flexi.flexrow}>
                 <div className={styles.bigLogout}></div>
                 <div className={styles.bigMaps}></div>
                 <div className={styles.bigPlus}></div>
                 <div className={styles.bigProfile}></div>
                 <div className={styles.bigSave}></div>
                 <div className={styles.bigSearch}></div>
-                <div className={styles.bigSettings}></div>
                 <div className={styles.bigSort}></div>
                 <div className={styles.bigStart}></div>
                 <div className={styles.bigTrash}></div>
+                <div className={styles.bigComment}></div>
+                <div className={styles.bigEditpage}></div>
+                <div className={styles.bigReplace}></div>
             </div>
         </div>
     )
