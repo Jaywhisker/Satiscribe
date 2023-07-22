@@ -1,115 +1,91 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import React from 'react'
+import logos from '../styles/Logos.module.css'
+import flexi from '../styles/Flexible.module.css'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+export default function index() {
+    return (
+        <div>
+            <div>
+                <h1>Haro this is the display of the logosheet</h1>
+            </div>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+            <h2>Flexible module css: display layouts</h2>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <p>This uses the flexrow found in Flexible.module.css, the gap can be controlled from global.css</p>
+            <div className={flexi.flexrow}>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+            </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <p>This uses the flexcolumn found in Flexible.module.css, the gap can be controlled from global.css</p>
+            <div className={flexi.flexcolumn}>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+            </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <h2>Icons</h2>
+            <p>Lmao they are so pixalated</p>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <div className={flexi.flexrow}>
+                <div className={logos.smallCancel}></div>
+                <div className={logos.smallBack}></div>
+                <div className={logos.smallAlignleft}></div>
+                <div className={logos.smallCaution}></div>
+                <div className={logos.smallCheck}></div>
+                <div className={logos.smallDropdown}></div>
+                <div className={logos.smallEdit}></div>
+                <div className={logos.smallFile}></div>
+                <div className={logos.smallFilter}></div>
+                <div className={logos.smallHamburger}></div>
+                <div className={logos.smallHome}></div>
+                <div className={logos.smallInfo}></div>
+                <div className={logos.smallLink}></div>
+                <div className={logos.smallLogout}></div>
+                <div className={logos.smallMaps}></div>
+                <div className={logos.smallPlus}></div>
+                <div className={logos.smallProfile}></div>
+                <div className={logos.smallSave}></div>
+                <div className={logos.smallSearch}></div>
+                <div className={logos.smallSort}></div>
+                <div className={logos.smallStart}></div>
+                <div className={logos.smallTrash}></div>
+                <div className={logos.smallComment}></div>
+                <div className={logos.smallEditpage}></div>
+                <div className={logos.smallReplace}></div>
+            </div>
+            <div className={flexi.flexrow}>
+                <div className={logos.bigCancel}></div>
+                <div className={logos.bigBack}></div>
+                <div className={logos.bigAlignleft}></div>
+                <div className={logos.bigCaution}></div>
+                <div className={logos.bigCheck}></div>
+                <div className={logos.bigDropdown}></div>
+                <div className={logos.bigEdit}></div>
+                <div className={logos.bigFile}></div>
+                <div className={logos.bigFilter}></div>
+                <div className={logos.bigHamburger}></div>
+                <div className={logos.bigHome}></div>
+                <div className={logos.bigInfo}></div>
+                <div className={logos.bigLink}></div>
+            </div>
+            <div className={flexi.flexrow}>
+                <div className={logos.bigLogout}></div>
+                <div className={logos.bigMaps}></div>
+                <div className={logos.bigPlus}></div>
+                <div className={logos.bigProfile}></div>
+                <div className={logos.bigSave}></div>
+                <div className={logos.bigSearch}></div>
+                <div className={logos.bigSort}></div>
+                <div className={logos.bigStart}></div>
+                <div className={logos.bigTrash}></div>
+                <div className={logos.bigComment}></div>
+                <div className={logos.bigEditpage}></div>
+                <div className={logos.bigReplace}></div>
+            </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+    )
 }
+

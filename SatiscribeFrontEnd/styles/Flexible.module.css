@@ -1,0 +1,15 @@
+.inline {
+    display: inline-block;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smolgap);
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    gap: var(--smolgap);
+}
