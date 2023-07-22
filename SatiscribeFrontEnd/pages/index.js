@@ -30,60 +30,62 @@ export default function index() {
             <p>Lmao they are so pixalated</p>
 
             <div className={flexi.flexrow}>
-                <div className={logos.smallCancel}></div>
-                <div className={logos.smallBack}></div>
-                <div className={logos.smallAlignleft}></div>
-                <div className={logos.smallCaution}></div>
-                <div className={logos.smallCheck}></div>
-                <div className={logos.smallDropdown}></div>
-                <div className={logos.smallEdit}></div>
-                <div className={logos.smallFile}></div>
-                <div className={logos.smallFilter}></div>
-                <div className={logos.smallHamburger}></div>
-                <div className={logos.smallHome}></div>
-                <div className={logos.smallInfo}></div>
-                <div className={logos.smallLink}></div>
-                <div className={logos.smallLogout}></div>
-                <div className={logos.smallMaps}></div>
-                <div className={logos.smallPlus}></div>
-                <div className={logos.smallProfile}></div>
-                <div className={logos.smallSave}></div>
-                <div className={logos.smallSearch}></div>
-                <div className={logos.smallSort}></div>
-                <div className={logos.smallStart}></div>
-                <div className={logos.smallTrash}></div>
-                <div className={logos.smallComment}></div>
-                <div className={logos.smallEditpage}></div>
-                <div className={logos.smallReplace}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Filter.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Hamburger.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Profile.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Search.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Sort.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Start.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Stop.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
             </div>
             <div className={flexi.flexrow}>
-                <div className={logos.bigCancel}></div>
-                <div className={logos.bigBack}></div>
-                <div className={logos.bigAlignleft}></div>
-                <div className={logos.bigCaution}></div>
-                <div className={logos.bigCheck}></div>
-                <div className={logos.bigDropdown}></div>
-                <div className={logos.bigEdit}></div>
-                <div className={logos.bigFile}></div>
-                <div className={logos.bigFilter}></div>
-                <div className={logos.bigHamburger}></div>
-                <div className={logos.bigHome}></div>
-                <div className={logos.bigInfo}></div>
-                <div className={logos.bigLink}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Filter.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Hamburger.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
             </div>
             <div className={flexi.flexrow}>
-                <div className={logos.bigLogout}></div>
-                <div className={logos.bigMaps}></div>
-                <div className={logos.bigPlus}></div>
-                <div className={logos.bigProfile}></div>
-                <div className={logos.bigSave}></div>
-                <div className={logos.bigSearch}></div>
-                <div className={logos.bigSort}></div>
-                <div className={logos.bigStart}></div>
-                <div className={logos.bigTrash}></div>
-                <div className={logos.bigComment}></div>
-                <div className={logos.bigEditpage}></div>
-                <div className={logos.bigReplace}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Profile.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Search.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Sort.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Start.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Stop.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
+                <div className={logos.big} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
             </div>
         </div>
     )
