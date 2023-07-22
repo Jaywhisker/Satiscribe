@@ -4,6 +4,14 @@ import style from '../../styles/Colourtest.module.css'
 function colourtest() {
     return (
         <div className={style.container}>
+            <h1>Display Huge</h1>
+            <h2>Display Large</h2>
+            <h3>Heading</h3>
+            <h4>Subheading</h4>
+            <h5>Section Heading</h5>
+            <h6>Caption</h6>
+            <p>Normal Paragraph</p>
+            <br></br>
             <p className={style.text1}>Final_Light_Purple</p>
             <p className={style.text2}>Final_Light_Purple_75</p>
             <p className={style.text3}>Final_Light_Purple_50</p>
@@ -31,8 +39,6 @@ function colourtest() {
             <p className={style.text25}>Final_Calendar_Purple</p>
             <p className={style.text26}>Final_Calendar_Skin</p>
             <p className={style.text27}>Final_Calendar_Pink</p>
-
-
         </div>
     )
 }
