@@ -1,0 +1,49 @@
+.largeBlockContainer {
+    background-color: var(--Final_Component_Lighter_Grey);
+    border: 5px solid var(--Final_Component_Dark_Grey);
+    border-radius: 15px;
+    width: 80vw;
+    height: 45vh;
+    margin: 8vh auto;
+}
+
+.largeBlockContainernohover {
+    background-color: var(--Final_Component_Lighter_Grey);
+    border: 5px solid var(--Final_Component_Dark_Grey);
+    border-radius: 15px;
+    width: 80vw;
+    height: 45vh;
+    margin: 8vh auto;
+    position: relative;
+}
+
+
+.largeBlockContainer:hover{
+    background-color: var(--Final_Component_Dark_Grey);
+}
+
+.topContainer {
+    margin: 0 50px;
+}
+
+.bottomContainer{
+    margin: 0 50px
+}
+
+.line{
+    border-bottom: 3px solid var(--Final_White);
+    border-radius: 5px;
+    margin-bottom: 5vh;
+}
+
+.buttonplacement{
+    background-color: transparent;
+    border: 1px solid var(--Final_White);
+    width:275px;
+    height:12vh;
+    margin-left: 175px;
+}
+
+.buttonplacement:hover{
+    background-color: var(--Final_Grey_80);
+}
