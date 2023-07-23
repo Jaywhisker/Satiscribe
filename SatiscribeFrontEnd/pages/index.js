@@ -43,6 +43,11 @@ export default function index() {
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
+
+            </div>
+
+            <div className={flexi.flexrow}>
+                <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
