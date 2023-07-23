@@ -1,5 +1,6 @@
 import React from 'react'
 import style from '../../styles/Colourtest.module.css'
+import flexi from '../../styles/Flexible.module.css'
 
 function colourtest() {
     return (
@@ -11,6 +12,7 @@ function colourtest() {
             <h5>H5 Section Heading</h5>
             <h6>H6 Caption</h6>
             <p>p Normal Paragraph</p>
+
             <br></br>
             <p className={style.text1}>Final_Light_Purple</p>
             <p className={style.text2}>Final_Light_Purple_75</p>
