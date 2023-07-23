@@ -12,9 +12,9 @@ body {
 
 h1 {
   font-family: 'Lato', sans-serif;
-  font-size: 48px;
+  font-size: 68px;
   font-weight: 700;
-  line-height:56px;
+  line-height:76px;
   letter-spacing:-1px;
   margin: 0;
   padding: 0;
@@ -24,9 +24,9 @@ h1 {
 
 h2 {
   font-family: 'Lato', sans-serif;
-  font-size: 36px;
+  font-size: 56px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 68px;
   letter-spacing:-0.5px;
   margin: 0;
   padding: 0;
@@ -36,9 +36,9 @@ h2 {
 
 h3 {
   font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 900;
-  line-height: 32px;
+  line-height: 52px;
   margin: 0;
   padding: 0;
   color: var(--Final_Light_Purple);
@@ -46,9 +46,9 @@ h3 {
 
 h4 {
   font-family: 'Lato', sans-serif;
-  font-size: 16px;
+  font-size: 36px;
   font-weight: 900;
-  line-height: 24px;
+  line-height: 48px;
   letter-spacing:-0.2px;
   margin: 0;
   padding: 0;
@@ -57,10 +57,10 @@ h4 {
 
 h5 {
   font-family: 'Lato', sans-serif;
-  font-size: 12px;
+  font-size: 28px;
   font-weight: 900;
-  line-height: 18px;
-  letter-spacing: 1.6px;
+  line-height: 48px;
+  letter-spacing: 6px;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
@@ -69,9 +69,9 @@ h5 {
 
 h6 {
   font-family: 'Lato', sans-serif;
-  font-size: 12px;
+  font-size: 24px;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 36px;
   letter-spacing: -0.1px;
   margin: 0;
   padding: 0;
@@ -80,9 +80,9 @@ h6 {
 
 p {
   font-family: 'Lato', sans-serif;
-  font-size: 14px;
+  font-size: 34px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 40px;
   letter-spacing: -0.15px;
   margin: 0;
   padding: 0;
