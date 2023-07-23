@@ -13,3 +13,29 @@
     flex-direction: row;
     gap: var(--smolgap);
 }
+
+.aligncenter{
+    justify-content: center;
+    align-items: center;
+}
+
+.alignleft{
+    justify-content: left;
+    align-items: left;
+}
+
+.alignright{
+    justify-content: right;
+    align-items: right;
+}
+
+.alignSpacebetween{
+    justify-content: space-between;
+}
+
+.alignSpacearound{
+    justify-content: space-around;
+}
+.alignSpaceevenly{
+    justify-content: space-evenly;
+}
