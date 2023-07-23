@@ -8,6 +8,8 @@
 
 body {
   background-color: var(--Final_Black);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
