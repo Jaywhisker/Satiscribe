@@ -29,7 +29,10 @@ function CreateNewBlock() {
             </div>
 
             <div className={largeblockStyles.largeBlockContainernohover} style={{backgroundImage:`url(/components/thetrueoptions.png)`, backgroundSize:'cover', backgroundPosition:'center'}}>
-                <div className={largeblockStyles.buttonplacement}></div>
+                <div className={largeblockStyles.buttonplacement} style={{right: `calc(50% + 16.5vh)`, bottom: `calc(50% + 5.5vh)`}}></div>
+                <div className={largeblockStyles.buttonplacement} style={{left: `calc(50% + 16vh)`, bottom: `calc(50% + 5.5vh)`}}></div>
+                <div className={largeblockStyles.buttonplacement} style={{right: `calc(50% + 16.5vh)`, top: `calc(50% + 6vh)`}}></div>
+                <div className={largeblockStyles.buttonplacement} style={{left: `calc(50% + 16vh)`, top: `calc(50% + 6vh)`}}></div>
             </div>
         </>
     )

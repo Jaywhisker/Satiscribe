@@ -20,6 +20,7 @@
 
 .largeBlockContainer:hover{
     background-color: var(--Final_Component_Dark_Grey);
+    cursor: pointer;
 }
 
 .topContainer {
@@ -38,12 +39,15 @@
 
 .buttonplacement{
     background-color: transparent;
-    border: 1px solid var(--Final_White);
-    width:275px;
-    height:12vh;
-    margin-left: 175px;
+    /* min-width:282px;
+    min-height:92px; */
+    width: 37vh;
+    height:12.3vh;
+    position:absolute
+
 }
 
 .buttonplacement:hover{
-    background-color: var(--Final_Grey_80);
+    background-color: var(--Final_White_5);
+    cursor: pointer;
 }
