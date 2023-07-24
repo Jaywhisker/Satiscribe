@@ -5,37 +5,37 @@
 .flexColumnSmolGap {
     display: flex;
     flex-direction: column;
-    gap: var(--smolgap);
+    gap: var(--smolGap);
 }
 
 .flexRowSmolGap {
     display: flex;
     flex-direction: row;
-    gap: var(--smolgap);
+    gap: var(--smolGap);
 }
 
 .flexColumnMediumGap {
     display: flex;
     flex-direction: column;
-    gap: var(--mediumgap);
+    gap: var(--mediumGap);
 }
 
 .flexRowMediumGap {
     display: flex;
     flex-direction: row;
-    gap: var(--mediumgap);
+    gap: var(--mediumGap);
 }
 
 .flexColumnBigGap {
     display: flex;
     flex-direction: column;
-    gap: var(--biggap);
+    gap: var(--bigGap);
 }
 
 .flexRowBigGap {
     display: flex;
     flex-direction: row;
-    gap: var(--biggap);
+    gap: var(--bigGap);
 }
 
 .alignCenter {
@@ -74,6 +74,6 @@
     justify-content: start;
 }
 
-.padding50Vert {
-    padding: 50px 0px;
+.innerMargin {
+    margin: var(--contentMarginVert) var(--contentMarginHor);
 }
