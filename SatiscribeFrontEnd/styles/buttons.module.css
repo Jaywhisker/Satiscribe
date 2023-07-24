@@ -13,6 +13,7 @@
     border: 2px solid var(--Final_Light_Purple, #bb86fc);
 }
 
+
 /* Size Variants */
 .smallButton {
     width: 30vw;
@@ -33,34 +34,12 @@
 }
 
 /* Buttons with Logos */
-/* Size Variants */
-.smalllogoButton {
-    width: 34vw;
-    height: 13vh;
-    padding: 2vw 2vh;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-}
-
-.mediumlogoButton {
-    width: 44vw;
-    height: 13vh;
-    padding: 1vw 1vh;
-}
-
-.largelogoButton {
-    padding: 1vw 1vh;
-    width: 94vw;
-    height: 13vh;
-}
 
 /* Logo Variants */
 .leftLogo {
     display: flex;
     align-items: center;
 }
-
 
 .rightLogo {
     display: flex;
@@ -69,14 +48,9 @@
 
 .logoContainer {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    padding: 2vh 2vw;
 }
 
-
-.logoText {
-    align-items: center;
-}
 
 /* Fill and Border Variants */
 .fillButton {
@@ -84,12 +58,28 @@
     background: var(--Final_Light_Purple, #BB86FC);
 }
 
+.fillLogoText {
+    color: var(--Final_Gray, #323135);
+}
+
 /* Hover Effects */
-.sharedButton:hover {
+.sharedButton:not(.disabledButton):hover {
     background: var(--Final_Light_Purple_25, rgba(187, 134, 252, 0.25));
 }
 
-.fillButton:hover {
+.fillButton:not(.disabledButton):hover {
     background: var(--Final_Light_Purple_75, rgba(187, 134, 252, 0.75));
 
+}
+
+/* Disable Effects */
+.disabledText {
+    color: var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50)); 
+}
+
+
+.sharedButton.disabledButton {
+    background: transparent;
+    border: 1px solid var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50));
+    cursor: not-allowed;
 }

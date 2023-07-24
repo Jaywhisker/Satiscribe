@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonWithLogo } from '../components';
+import { Button } from '../components';
 
 const ButtonPreview = () => {
   return (
@@ -33,32 +33,190 @@ const ButtonPreview = () => {
       </Button>
 
       <h2>Border Buttons with Logos:</h2>
-      <ButtonWithLogo
+      <Button
+        size="small"
+        logo="right"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}
+        onClick={() => alert('Border Button (Smol) with right logo clicked!')}
+      >
+        Small Right
+      </Button>
+
+      <Button
         size="small"
         logo="left"
         logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}
-        onClick={() => alert('Button with left logo clicked!')}
+        onClick={() => alert('Border Button (Smol) with left logo clicked!')}
       >
         Small Left
-      </ButtonWithLogo>
+      </Button>
 
-      <ButtonWithLogo
+      <Button
         size="medium"
         logo="right"
         logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-        onClick={() => alert('Button with right logo clicked!')}
+        onClick={() => alert('Border Button (Med) with right logo clicked!')}
       >
-        Right Logo Button
-      </ButtonWithLogo>
+        Medium Right
+      </Button>
 
-      <ButtonWithLogo
+      <Button
+        size="medium"
+        logo="left"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Border Button (Med) with left logo clicked!')}
+      >
+        Medium Left
+      </Button>
+
+      <Button
+        size="large"
+        logo="right"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Border Button (Med) with left logo clicked!')}
+      >
+        Large Right
+      </Button>
+
+
+      <Button
+        size="large"
+        logo="left"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Border Button (Med) with left logo clicked!')}
+      >
+        Large Left
+      </Button>
+
+      <Button
+        size="large"
+        logo="None"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Border Button (Med) with No logo clicked!')}
+      >
+        No Logo Border
+      </Button>
+
+      <h2>Filled Buttons with Logos:</h2>
+      <Button
+        size="small"
+        logo="right"
+        fill={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (small) with Right logo clicked!')}
+      >
+        Small Fill Right
+      </Button>
+
+      <Button
+        size="small"
+        logo="left"
+        fill={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (small) with Right logo clicked!')}
+      >
+        Small Fill Left
+      </Button>
+
+      <Button
+        size="medium"
+        logo="right"
+        fill={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Med Fill Right
+      </Button>
+
+      <Button
+        size="medium"
+        logo="left"
+        fill={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Med Fill Left
+      </Button>
+
+      <Button
+        size="large"
+        logo="right"
+        fill={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Large Fill Right
+      </Button>
+
+      <Button
+        size="large"
+        logo="left"
+        fill={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Large Fill Left
+      </Button>
+
+      <h2>Disabled:</h2>
+      <Button
+        size="large"
+        logo="right"
+        disabled={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Disabled Border Right
+      </Button>
+
+      <Button
+        size="large"
+        logo="left"
+        disabled={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Disabled Border Left
+      </Button>
+
+      <Button
+        size="large"
+        logo="left"
+        fill = {true}
+        disabled={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Disabled Filled Left
+      </Button>
+
+      <Button
+        size="large"
+        logo="right"
+        fill = {true}
+        disabled={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+      >
+        Disabled Filled Right
+      </Button>
+
+      <Button
         size="large"
         logo="none"
-        onClick={() => alert('Button with no logo clicked!')}
+        fill = {true}
+        disabled={true}
+        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
       >
-        No Logo Button
-      </ButtonWithLogo>
+        Disabled Filled No Logo
+      </Button>
     </div>
+    
   );
 };
 

@@ -1,33 +1,8 @@
 .inLine {
-.inLine {
     display: inline-block;
 }
 
-.flexColumnSmolGap {
-    display: flex;
-    flex-direction: column;
-    gap: var(--smolGap);
-}
 
-.flexRowSmolGap {
-    display: flex;
-    flex-direction: row;
-    gap: var(--smolGap);
-}
-
-.flexColumnMediumGap {
-    display: flex;
-    flex-direction: column;
-    gap: var(--mediumGap);
-}
-
-.flexRowMediumGap {
-    display: flex;
-    flex-direction: row;
-    gap: var(--mediumGap);
-}
-
-.flexColumnBigGap {
 .flexColumnNoGap {
     display: flex;
     flex-direction: column;
