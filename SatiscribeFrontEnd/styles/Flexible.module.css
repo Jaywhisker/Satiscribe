@@ -45,12 +45,12 @@
 
 .alignLeft {
     justify-content: left;
-    align-items: left;
+    align-items: center;
 }
 
 .alignRight {
     justify-content: right;
-    align-items: right;
+    align-items: center;
 }
 
 .alignSpaceBetween {

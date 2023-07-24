@@ -13,7 +13,11 @@ function AgendaBlock() {
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <h5>Agenda</h5>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignLeft}`}>
+                        <h5>Agenda</h5>
+                        <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
+                        <h5>Task Summariser & Assigner</h5>
+                    </div>
 
                     <ul>
                         <li> <p style={{ color: `var(--Final_White)` }}>Sentence 1</p></li>
