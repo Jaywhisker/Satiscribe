@@ -1,49 +1,18 @@
-.largeBlockContainer {
-    background-color: var(--Final_Component_Lighter_Grey);
-    border: 5px solid var(--Final_Component_Dark_Grey);
-    border-radius: 15px;
-    width: 80vw;
-    height: 45vh;
-    margin: 8vh auto;
-}
-
-.largeBlockContainernohover {
-    background-color: var(--Final_Component_Lighter_Grey);
-    border: 5px solid var(--Final_Component_Dark_Grey);
-    border-radius: 15px;
-    width: 80vw;
-    height: 45vh;
-    margin: 8vh auto;
-    position: relative;
-}
-
-
-.largeBlockContainer:hover{
-    background-color: var(--Final_Component_Dark_Grey);
-}
-
-.topContainer {
-    margin: 0 50px;
-}
-
-.bottomContainer{
-    margin: 0 50px
-}
-
-.line{
+.line {
     border-bottom: 3px solid var(--Final_White);
     border-radius: 5px;
-    margin-bottom: 5vh;
 }
 
-.buttonplacement{
+.buttonPlacement {
     background-color: transparent;
-    border: 1px solid var(--Final_White);
-    width:275px;
-    height:12vh;
-    margin-left: 175px;
+    /* min-width:282px;
+    min-height:92px; */
+    width: 37vh;
+    height: 12.3vh;
+    position: absolute
 }
 
-.buttonplacement:hover{
-    background-color: var(--Final_Grey_80);
+.buttonPlacement:hover {
+    background-color: var(--Final_White_5);
+    cursor: pointer;
 }
