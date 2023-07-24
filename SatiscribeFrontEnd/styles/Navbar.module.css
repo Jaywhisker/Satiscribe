@@ -1,0 +1,94 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: var(--Final_Black);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav h4 {
+    float: left;
+    color: var(--Final_Light_Purple);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav p:hover {
+    background-color: var(--Final_Dark_Purple);
+    color: var(--Final_Light_Purple);
+    text-decoration: underline;
+    font-weight: 700;
+    /*  padding: 8px 12px; Adjust the padding as needed for the desired size */
+     /* border-radius: 8px; Adjust the border-radius for rounded corners */
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav p.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .logo{
+    margin-left: 5%;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .logo_header{
+    display: flex;
+    margin-left: 2%;
+  }
+  
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #000000;
+    font-size: 20px;
+  }
+  
+  
+  .right_nav{
+    display: flex;
+    width: 15%;
+    float: right;
+    margin-right: 2%;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  .left_nav{
+    display: flex;
+    width: 15%;
+    float: left;
+    margin-left: 0%;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  .main_nav li:hover{
+    background-color: gray
+  }
+  
+  .main_nav li{
+    display: inline;
+    color: #ffffff;
+  }
+  .main_nav li a{
+    color: #ffffff;
+  }
+
+  .centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Additional styles as per your requirement */
+}
