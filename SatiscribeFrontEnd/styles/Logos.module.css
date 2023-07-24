@@ -4,6 +4,12 @@
     background-size: cover;
 }
 
+.medium {
+    width: 6vh;
+    height: 6vh;
+    background-size: cover;
+}
+
 .big {
     width: 8vh;
     height: 8vh;

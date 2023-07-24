@@ -8,7 +8,6 @@ import largeblockStyles from '@/styles/components/large blocks/createNewBlockSty
 
 
 function InputFieldEditable({Text, onChange, onDelete}) {
-    
 
     return (
         <>
@@ -18,7 +17,7 @@ function InputFieldEditable({Text, onChange, onDelete}) {
                         <input type='text' 
                                 placeholder='New Agenda' 
                                 value={Text}
-                                onChange = {onChange}
+                                onChange={onChange}
                                 />
                         <div className={contentblock.line} style={{borderBottomColor: Text.length <=0 ? `var(--Final_White_50)` : `var(--Final_White)`}}></div>
                     </div>
