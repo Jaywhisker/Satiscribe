@@ -13,14 +13,14 @@ export default function index() {
             <h2>Flexible module css: display layouts</h2>
 
             <p>This uses the flexrow found in Flexible.module.css, the gap can be controlled from global.css</p>
-            <div className={flexi.flexrow}>
+            <div className={flexi.flexRowSmolGap}>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
             </div>
 
             <p>This uses the flexcolumn found in Flexible.module.css, the gap can be controlled from global.css</p>
-            <div className={flexi.flexcolumn}>
+            <div className={flexi.flexColumnSmolGap}>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
@@ -29,7 +29,7 @@ export default function index() {
             <h2>Icons</h2>
             <p>Lmao they are so pixalated</p>
 
-            <div className={flexi.flexrow}>
+            <div className={flexi.flexRowSmolGap}>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
@@ -46,7 +46,7 @@ export default function index() {
 
             </div>
 
-            <div className={flexi.flexrow}>
+            <div className={flexi.flexRowSmolGap}>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
@@ -62,7 +62,7 @@ export default function index() {
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
             </div>
-            <div className={flexi.flexrow}>
+            <div className={flexi.flexRowSmolGap}>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
@@ -77,7 +77,7 @@ export default function index() {
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
             </div>
-            <div className={flexi.flexrow}>
+            <div className={flexi.flexRowSmolGap}>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>

@@ -7,12 +7,12 @@
     margin: 8vh auto;
 }
 
-.largeBlockContainer:hover{
+.largeBlockContainer:hover {
     background-color: var(--Final_Component_Dark_Grey);
     cursor: pointer;
 }
 
-.largeBlockContainernohover {
+.largeBlockContainerNoHover {
     background-color: var(--Final_Component_Lighter_Grey);
     border: 5px solid var(--Final_Component_Dark_Grey);
     border-radius: 15px;
@@ -22,10 +22,20 @@
     position: relative;
 }
 
-.topContainer {
+
+/* Compresses padding50vert, topContainer (but using padding instead), alginStart and flew row small column*/
+.contentBlockAlignment {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smolgap);
+    justify-content: start;
+    padding: 50px 50px;
+}
+
+/* .topContainer {
     margin: 0 50px;
 }
 
-.bottomContainer{
+.bottomContainer {
     margin: 0 50px
-}
+} */
