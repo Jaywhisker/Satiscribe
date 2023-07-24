@@ -9,6 +9,8 @@
   --smallWidth: 10vw;
   --contentMarginHor: 4vw;
   --contentMarginVert: 6vh;
+  --contentPaddingVert: 3vh;
+
 }
 
 body {
