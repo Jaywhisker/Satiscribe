@@ -63,17 +63,22 @@ function AgendaBlock() {
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
                     <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
-                        <h5>Full Transcript</h5>
+                        <h5>Agenda</h5>
                         <div className={`${flexi.flexRowSmolGap}`}>
                             <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
                             <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                         </div>
                     </div>
 
-                    <ul>
+                    <ul className={`${list.mediumgap}`}>
                         <li>
-                            <input type='text' placeholder='Sentence 1'></input>
-                            <div className={contentblock.line}></div>
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.alignStart}`}>
+                                <div className={`${flexi.flexColumnNoGap}y`}>
+                                    <input type='text' placeholder='Sentence 1'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <div className={logos.small} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
+                            </div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 2'></input>
