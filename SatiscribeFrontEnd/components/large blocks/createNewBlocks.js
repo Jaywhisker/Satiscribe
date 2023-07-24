@@ -24,7 +24,7 @@ function CreateNewBlock() {
                         <h5>Please Choose A Content Block</h5>
 
                         <div>
-                            <ul className={`${list.mediumgapnobullet}`}>
+                            <ul className={`${list.mediumGapnobullet}`}>
                                 <li>
                                     <p style={{ color: `var(--Final_White)` }}>Task Summariser and Assigner Block</p>
                                     <div className={contentblock.line}></div>

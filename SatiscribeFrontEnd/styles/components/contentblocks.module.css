@@ -41,6 +41,12 @@
     border: 3px solid var(--Final_Light_Purple);
     padding: var(--smolGap);
     margin-top: var(--bigGap);
+    background-color: transparent;
+}
+
+.largeBlockButton:hover {
+    background-color: var(--Final_Light_Purple_10);
+    cursor: pointer;
 }
 
 
