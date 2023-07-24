@@ -35,11 +35,11 @@ function FullTranscript() {
                         <ul>
                             <li>
                                 <p style={{ color: `var(--Final_White)` }}>Sentence 1</p>
-                                <div className={largeblockStyles.line}></div>
+                                <div className={contentblock.line}></div>
                             </li>
                             <li>
                                 <p style={{ color: `var(--Final_White)` }}>Sentence 2</p>
-                                <div className={largeblockStyles.line}></div>
+                                <div className={contentblock.line}></div>
                             </li>
 
                         </ul>
@@ -51,7 +51,6 @@ function FullTranscript() {
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-
                     <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
                         <h5>Full Transcript</h5>
                         <div className={`${flexi.flexRowSmolGap}`}>
@@ -63,19 +62,19 @@ function FullTranscript() {
                     <ul>
                         <li>
                             <input type='text' placeholder='Sentence 1'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 2'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 3'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 4'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
 
                     </ul>

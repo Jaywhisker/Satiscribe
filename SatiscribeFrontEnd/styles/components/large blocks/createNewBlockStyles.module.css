@@ -1,14 +1,9 @@
-.line {
-    border-bottom: 3px solid var(--Final_White);
-    border-radius: 5px;
-}
-
 .buttonPlacement {
     background-color: transparent;
     /* min-width:282px;
     min-height:92px; */
-    width: 37vh;
-    height: 12.3vh;
+    width: 35.5vh;
+    height: 12vh;
     position: absolute
 }
 

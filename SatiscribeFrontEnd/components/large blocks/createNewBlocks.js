@@ -25,12 +25,12 @@ function CreateNewBlock() {
 
                         <div>
                             <p style={{ color: `var(--Final_White)` }}>Task Summariser and Assigner Block</p>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </div>
 
                         <div>
                             <p style={{ color: `var(--Final_White)` }}>Full Transcript Block</p>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </div>
 
                     </div>
@@ -38,9 +38,9 @@ function CreateNewBlock() {
             </div>
 
             <div className={`${contentblock.largeBlockContainerNoHover}`} style={{ backgroundImage: `url(/components/thetrueoptions.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div className={largeblockStyles.buttonPlacement} style={{ right: `calc(50% + 16.5vh)`, bottom: `calc(50% + 5.5vh)` }}></div>
-                <div className={largeblockStyles.buttonPlacement} style={{ left: `calc(50% + 16vh)`, bottom: `calc(50% + 5.5vh)` }}></div>
-                <div className={largeblockStyles.buttonPlacement} style={{ right: `calc(50% + 16.5vh)`, top: `calc(50% + 6vh)` }}></div>
+                <div className={largeblockStyles.buttonPlacement} style={{ right: `calc(50% + 16vh)`, bottom: `calc(50% + 5vh)` }}></div>
+                <div className={largeblockStyles.buttonPlacement} style={{ left: `calc(50% + 16vh)`, bottom: `calc(50% + 5vh)` }}></div>
+                <div className={largeblockStyles.buttonPlacement} style={{ right: `calc(50% + 16vh)`, top: `calc(50% + 6vh)` }}></div>
                 <div className={largeblockStyles.buttonPlacement} style={{ left: `calc(50% + 16vh)`, top: `calc(50% + 6vh)` }}></div>
             </div>
         </>
