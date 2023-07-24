@@ -1,9 +1,9 @@
 import React from 'react'
-import style from '../../styles/Colourtest.module.css'
-import flexi from '../../styles/Flexible.module.css'
-import logos from '../../styles/Logos.module.css'
-import largeblockStyles from '../../styles/components/large blocks/createNewBlockStyles.module.css'
-import contentblock from '../../styles/components/contentblocks.module.css'
+import style from '@/styles/Colourtest.module.css'
+import flexi from '@/styles/Flexible.module.css'
+import logos from '@/styles/Logos.module.css'
+import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
+import contentblock from '@/styles/components/contentblocks.module.css'
 
 function CreateNewBlock() {
     return (
