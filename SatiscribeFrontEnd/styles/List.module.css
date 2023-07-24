@@ -1,0 +1,41 @@
+ul.smolgap li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--smolGap);
+}
+
+ul.mediumgap li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--mediumGap);
+}
+
+ul.biggap li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--bigGap);
+}
+
+ul.smolgapnobullet li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--smolGap);
+    list-style:none;
+    margin-left: -2.8vw;
+}
+
+ul.mediumgapnobullet li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--mediumGap);
+    list-style:none;
+    margin-left: -2.8vw;
+}
+
+ul.biggapnobullet li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--bigGap);
+    list-style:none;
+    margin-left: -2.8vw;
+}
