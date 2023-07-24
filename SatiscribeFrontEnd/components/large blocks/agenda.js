@@ -20,19 +20,20 @@ function AgendaBlock() {
       const [editedAgendas, setEditedAgendas] = useState(initialAgendas);
       const [warning, setWarning] = useState(false)
 
+    function onKeyPress(){
+        setWarning(editedAgendas.some(agenda => agenda.text.length === 0));
+    }
+
     function handleInputChange(event, id) {
         const newText = event.target.value;
-        setEditedAgendas(prevAgendas => prevAgendas.map(agenda => agenda.id === id ? { ...agenda, text: newText } : agenda)
-        );
+        setEditedAgendas(prevAgendas => prevAgendas.map(agenda => agenda.id === id ? { ...agenda, text: newText } : agenda));
     }
 
     function saveEdits() {
-        const hasEmptyText = editedAgendas.some(agenda => agenda.text.trim() === '');
-        if (hasEmptyText) {
-          setWarning(true);
+        if (warning) {
+          null;
         } else {
           setAgendas(editedAgendas); 
-          setWarning(false);
           setEditingState(false); 
         }
     }
@@ -114,6 +115,13 @@ function AgendaBlock() {
                             </div>
                         </div>
 
+                        {warning && (
+                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
+                                <div className={logos.medium} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }} onClick={startEditing}></div>
+                                <h6 style={{color:`var(--Final_Red)`}}>Input Fields Cannot Be Left Blank</h6>
+                            </div>
+                        )}
+
                         <ul className={`${list.mediumGap}`}>
                             {editedAgendas.map(agenda => (
                                 <InputFieldEditable
@@ -121,6 +129,7 @@ function AgendaBlock() {
                                     Text={agenda.text}
                                     onChange={event => handleInputChange(event, agenda.id)}
                                     onDelete={() => deleteData(agenda.id)}
+                                    onKeyPress={event  => onKeyPress(event, agenda.id)}
                                 />
                             ))}
                         </ul>
