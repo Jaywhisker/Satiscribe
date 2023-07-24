@@ -2,6 +2,7 @@ import React from 'react'
 import style from '@/styles/Colourtest.module.css'
 import flexi from '@/styles/Flexible.module.css'
 import logos from '@/styles/Logos.module.css'
+import list from '@/styles/List.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 
@@ -11,7 +12,7 @@ function CreateNewBlock() {
             <div className={`${contentblock.largeBlockContainer} ${flexi.flexColumnSmolGap} ${flexi.alignCenter}`}>
                 <div className={`${flexi.innerMargin}`}>
                     <div className={`${flexi.flexRowSmolGap} ${flexi.alignCenter}`}>
-                        <div className={logos.big} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1, }}></div>
+                        <div className={logos.big} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1, }}></div>
                         <h2 style={{ color: `var(--Final_Light_Purple)` }}> New Component</h2>
                     </div>
                 </div>
@@ -20,20 +21,21 @@ function CreateNewBlock() {
             <div className={`${contentblock.largeBlockContainerNoHover}`}>
                 <div className={`${flexi.innerMargin}`}>
 
-                    <div className={`${flexi.flexColumnMediumGap}`}>
                         <h5>Please Choose A Content Block</h5>
 
                         <div>
-                            <p style={{ color: `var(--Final_White)` }}>Task Summariser and Assigner Block</p>
-                            <div className={contentblock.line}></div>
-                        </div>
+                            <ul className={`${list.mediumgapnobullet}`}>
+                                <li>
+                                    <p style={{ color: `var(--Final_White)` }}>Task Summariser and Assigner Block</p>
+                                    <div className={contentblock.line}></div>
+                                </li>
 
-                        <div>
-                            <p style={{ color: `var(--Final_White)` }}>Full Transcript Block</p>
-                            <div className={contentblock.line}></div>
+                                <li>
+                                    <p style={{ color: `var(--Final_White)` }}>Full Transcript Block</p>
+                                    <div className={contentblock.line}></div>
+                                </li>
+                            </ul>
                         </div>
-
-                    </div>
                 </div>
             </div>
 

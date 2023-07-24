@@ -73,7 +73,6 @@ h5 {
   font-weight: 900;
   line-height: 5vh;
   letter-spacing: 1vh;
-  word-spacing: -1vh;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
@@ -101,12 +100,6 @@ p {
   margin: 0;
   padding: 0;
   color: var(--Final_Light_Purple)
-}
-
-li {
-  font-size: 4.5vh;
-  color: var(--Final_White);
-  margin-bottom: var(--smolGap);
 }
 
 input {
