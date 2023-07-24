@@ -1,13 +1,12 @@
 import React from 'react'
-import style from '../../styles/Colourtest.module.css'
-import flexi from '../../styles/Flexible.module.css'
-import logos from '../../styles/Logos.module.css'
-import transcriptstyles from '../../styles/components/large blocks/fullTranscriptStyles.module.css'
-import contentblock from '../../styles/components/contentblocks.module.css'
-import largeblockStyles from '../../styles/components/large blocks/createNewBlockStyles.module.css'
+import style from '@/styles/Colourtest.module.css'
+import flexi from '@/styles/Flexible.module.css'
+import list from '@/styles/List.module.css'
+import logos from '@/styles/Logos.module.css'
+import contentblock from '@/styles/components/contentblocks.module.css'
 
 
-function FullTranscript() {
+function FullTranscriptBlock() {
     return (
         <>
 
@@ -15,7 +14,7 @@ function FullTranscript() {
                 <div className={`${flexi.innerMargin}`}>
                     <h5>Full Transcript</h5>
 
-                    <ul>
+                    <ul className={`${list.smolGap}`}>
                         <li> <p style={{ color: `var(--Final_White)` }}>Sentence 1</p></li>
                         <li> <p style={{ color: `var(--Final_White)` }}>Sentence 2</p></li>
 
@@ -26,20 +25,20 @@ function FullTranscript() {
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
 
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                         <h5>Full Transcript</h5>
-                        <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
+                        <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
                     </div>
 
                     <div>
-                        <ul>
+                        <ul className={`${list.smolGap}`}>
                             <li>
                                 <p style={{ color: `var(--Final_White)` }}>Sentence 1</p>
-                                <div className={largeblockStyles.line}></div>
+                                <div className={contentblock.line}></div>
                             </li>
                             <li>
                                 <p style={{ color: `var(--Final_White)` }}>Sentence 2</p>
-                                <div className={largeblockStyles.line}></div>
+                                <div className={contentblock.line}></div>
                             </li>
 
                         </ul>
@@ -51,31 +50,30 @@ function FullTranscript() {
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                         <h5>Full Transcript</h5>
                         <div className={`${flexi.flexRowSmolGap}`}>
-                            <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                            <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                         </div>
                     </div>
 
-                    <ul>
+                    <ul className={`${list.smolGap}`}>
                         <li>
                             <input type='text' placeholder='Sentence 1'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 2'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 3'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
                         <li>
                             <input type='text' placeholder='Sentence 4'></input>
-                            <div className={largeblockStyles.line}></div>
+                            <div className={contentblock.line}></div>
                         </li>
 
                     </ul>
@@ -85,4 +83,4 @@ function FullTranscript() {
     )
 }
 
-export default FullTranscript
+export default FullTranscriptBlock
