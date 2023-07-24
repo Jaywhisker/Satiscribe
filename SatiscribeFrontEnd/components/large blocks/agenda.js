@@ -7,13 +7,13 @@ import contentblock from '../../styles/components/contentblocks.module.css'
 import largeblockStyles from '../../styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function FullTranscriptBlock() {
+function AgendaBlock() {
     return (
         <>
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <h5>Full Transcript</h5>
+                    <h5>Agenda</h5>
 
                     <ul>
                         <li> <p style={{ color: `var(--Final_White)` }}>Sentence 1</p></li>
@@ -84,4 +84,4 @@ function FullTranscriptBlock() {
     )
 }
 
-export default FullTranscriptBlock
+export default AgendaBlock
