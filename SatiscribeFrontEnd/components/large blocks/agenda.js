@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
 import style from '@/styles/Colourtest.module.css'
 import flexi from '@/styles/Flexible.module.css'
 import logos from '@/styles/Logos.module.css'
@@ -15,26 +15,35 @@ function AgendaBlock() {
         { id: 3, text: 'Agenda 3'},
       ];
     
-      const [agendas, setAgendas] = useState(initialAgendas);
-      const [editingState, setEditingState] = useState(false);
-      const [editedAgendas, setEditedAgendas] = useState(initialAgendas);
-      const [warning, setWarning] = useState(false)
+    const [agendas, setAgendas] = useState(initialAgendas);
+    const [editingState, setEditingState] = useState(false);
+    const [editedAgendas, setEditedAgendas] = useState(initialAgendas);
+    const [warning, setWarning] = useState(false)
+    const [warningMessage, setWarningMessage] = useState('')
 
-    function onKeyPress(){
+
+    useEffect(() => {
         setWarning(editedAgendas.some(agenda => agenda.text.length === 0));
-    }
+        console.log(editedAgendas)
+        if (editedAgendas.some(agenda => agenda.text.length === 0)) {
+            setWarningMessage("Input Fields Cannot Be Left Blank")
+        };
+        
+    }, [editedAgendas])
 
+    
     function handleInputChange(event, id) {
         const newText = event.target.value;
         setEditedAgendas(prevAgendas => prevAgendas.map(agenda => agenda.id === id ? { ...agenda, text: newText } : agenda));
     }
 
     function saveEdits() {
-        if (warning) {
+        if (warning && warningMessage === "Input Fields Cannot Be Left Blank" ) {
           null;
         } else {
           setAgendas(editedAgendas); 
           setEditingState(false); 
+          setWarning(false)
         }
     }
 
@@ -49,14 +58,19 @@ function AgendaBlock() {
     }
 
     function deleteData(id){
-        setEditedAgendas(prevEditedAgendas =>prevEditedAgendas.filter(agenda => agenda.id !== id));
+        const nonEmptyyAgendas = editedAgendas.filter(agenda => agenda.text.trim() !== '')
+        if (nonEmptyyAgendas.length > 1) {
+            setEditedAgendas(prevEditedAgendas =>prevEditedAgendas.filter(agenda => agenda.id !== id));
+        } else {
+            setWarning(true)
+            setWarningMessage('You Can"t Have A Meeting With No Purpose!')
+        }
     }
     
     function addTask() {
-        const newId = agendas.length > 0 ? Math.max(...agendas.map(item => item.id)) + 1 : 1;
+        const newId = editedAgendas.length > 0 ? Math.max(...editedAgendas.map(item => item.id)) + 1 : 1;
         const newAgenda = { id: newId, text: '' };
         setEditedAgendas(prevEditedAgendas => [...prevEditedAgendas, newAgenda]);
-        console.log(editedAgendas)
     }
 
 
@@ -94,7 +108,7 @@ function AgendaBlock() {
                             <ul className={`${list.mediumGap}`}>
 
                             {agendas.map(agenda => (
-                                <li>
+                                <li key={agenda.id}>
                                     <p style={{ color: `var(--Final_White)` }}>{agenda.text}</p>
                                     <div className={contentblock.line}></div>
                                 </li>
@@ -116,9 +130,9 @@ function AgendaBlock() {
                         </div>
 
                         {warning && (
-                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
+                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{marginBottom: -30}}>
                                 <div className={logos.medium} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }} onClick={startEditing}></div>
-                                <h6 style={{color:`var(--Final_Red)`}}>Input Fields Cannot Be Left Blank</h6>
+                                <h6 style={{color:`var(--Final_Red)`}}>{warningMessage}</h6>
                             </div>
                         )}
 
@@ -129,7 +143,6 @@ function AgendaBlock() {
                                     Text={agenda.text}
                                     onChange={event => handleInputChange(event, agenda.id)}
                                     onDelete={() => deleteData(agenda.id)}
-                                    onKeyPress={event  => onKeyPress(event, agenda.id)}
                                 />
                             ))}
                         </ul>

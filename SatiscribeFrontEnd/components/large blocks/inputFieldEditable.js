@@ -7,7 +7,7 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function InputFieldEditable({Text, onChange, onDelete, onKeyPress}) {
+function InputFieldEditable({Text, onChange, onDelete}) {
 
     return (
         <>
@@ -18,7 +18,6 @@ function InputFieldEditable({Text, onChange, onDelete, onKeyPress}) {
                                 placeholder='New Agenda' 
                                 value={Text}
                                 onChange={onChange}
-                                onKeyDown={onKeyPress}
                                 />
                         <div className={contentblock.line} style={{borderBottomColor: Text.length <=0 ? `var(--Final_White_50)` : `var(--Final_White)`}}></div>
                     </div>
