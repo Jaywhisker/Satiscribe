@@ -2,10 +2,12 @@ import React from 'react'
 import style from '../../styles/Colourtest.module.css'
 import flexi from '../../styles/Flexible.module.css'
 import CreateNewBlock from '../../components/large blocks/createNewBlocks'
+import FullTranscript from '../../components/large blocks/fullTranscript'
 
 function largetesting() {
     return (
         <div>
+            <FullTranscript/>
             <CreateNewBlock/>
         </div>
     )

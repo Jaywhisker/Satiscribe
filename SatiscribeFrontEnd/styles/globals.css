@@ -2,8 +2,8 @@
 
 :root {
   --smolgap: 15px;
-  --mediumpgap: 55px;
-  --biggap: 100px;
+  --mediumgap: 30px;
+  --biggap: 50px;
 }
 
 body {
@@ -96,4 +96,24 @@ p {
   margin: 0;
   padding: 0;
   color: var(--Final_Light_Purple)
+}
+
+li{
+  font-size: 4.5vh;
+  color: var(--Final_White);
+  margin-bottom: var(--smolgap);
+}
+
+input{
+  background-color: transparent;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 3.5vh;
+  font-weight: 400;
+  line-height: 4.5vh;
+  margin: 0;
+  padding: 0;
+  color: var(--Final_White);
+  border: none;
+  outline: none;
 }
