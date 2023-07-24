@@ -9,9 +9,9 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 function CreateNewBlock() {
     return (
         <>
-            <div className={`${contentblock.largeBlockContainer} ${flexi.flexColumnSmolGap} ${flexi.alignCenter}`}>
+            <div className={`${contentblock.largeBlockContainer} ${flexi.flexColumnSmolGap} ${flexi.justifyCenter}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignCenter}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifyCenter}`}>
                         <div className={logos.big} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1, }}></div>
                         <h2 style={{ color: `var(--Final_Light_Purple)` }}> New Component</h2>
                     </div>

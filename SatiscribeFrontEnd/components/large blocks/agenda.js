@@ -13,7 +13,7 @@ function AgendaBlock() {
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignLeft}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifyLeft}`}>
                         <h5>Agenda</h5>
                         <div className={logos.small} style={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}></div>
                         <h5  style={{ color: `var(--Final_Light_Purple_50)` }}>Task Summariser & Assigner</h5>
@@ -31,9 +31,9 @@ function AgendaBlock() {
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
 
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                         <h5>Agenda</h5>
-                        <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
+                        <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
                     </div>
 
                     <div>
@@ -62,38 +62,50 @@ function AgendaBlock() {
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                         <h5>Agenda</h5>
                         <div className={`${flexi.flexRowSmolGap}`}>
-                            <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                            <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                         </div>
                     </div>
 
                     <ul className={`${list.mediumgap}`}>
                         <li>
-                            <div className={`${flexi.flexRowSmolGap} ${flexi.alignStart}`}>
-                                <div className={`${flexi.flexColumnNoGap}y`}>
-                                    <input type='text' placeholder='Sentence 1'></input>
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'100%'}} >
+                                    <input type='text' placeholder='Agenda 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <div className={logos.small} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
+                                <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
                             </div>
                         </li>
+
                         <li>
-                            <input type='text' placeholder='Sentence 2'></input>
-                            <div className={contentblock.line}></div>
-                        </li>
-                        <li>
-                            <input type='text' placeholder='Sentence 3'></input>
-                            <div className={contentblock.line}></div>
-                        </li>
-                        <li>
-                            <input type='text' placeholder='Sentence 4'></input>
-                            <div className={contentblock.line}></div>
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'100%'}} >
+                                    <input type='text' placeholder='Agenda 2'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
+                            </div>
                         </li>
 
+                        <li>
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'100%'}} >
+                                    <input type='text' placeholder='Agenda 3'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
+                            </div>
+                        </li>
                     </ul>
+                    
+                    <div className={`${contentblock.largeBlockButton} ${flexi.justifyCenter} ${flexi.flexRowSmolGap}`}>
+                        <div className={logos.small} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1, }}></div>
+                        <p>Add Agenda</p>
+                    </div>
                 </div>
             </div>
         </>
