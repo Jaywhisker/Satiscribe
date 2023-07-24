@@ -2,6 +2,7 @@
     display: inline-block;
 }
 
+
 .flexColumnNoGap {
     display: flex;
     flex-direction: column;
