@@ -1,48 +1,82 @@
 /* Shared Button Styles */
 .sharedButton {
     cursor: pointer;
-    border-radius: 0.3125rem;
+    border-radius: 8px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* text stuff */
-    color: var(--final-light-purple, #BB86FC);
+    color: var(--Final_Light_Purple, #BB86FC);
     text-align: center;
-
-    /* Section Heading */
-    font-family: Lato;
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 0.9375rem;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid var(--Final_Light_Purple, #bb86fc);
 }
 
 /* Size Variants */
 .smallButton {
-    width: 15vw;
-    height: 7vh;
-    padding: 1vw 1vh;
+    width: 30vw;
+    height: 13vh;
+    padding: 2vw 2vh;
 }
 
 .mediumButton {
-    width: 17.125rem;
-    height: 2.75rem;
-    padding: 2vh 2vw;
+    width: 40vw;
+    height: 13vh;
+    padding: 1vw 1vh;
 }
 
-
 .largeButton {
-    padding: 0.625rem 1.25rem;
-    width: 41.25rem;
-    height: 2.75rem;
+    padding: 1vw 1vh;
+    width: 90vw;
+    height: 13vh;
 }
 
 /* Buttons with Logos */
+/* Size Variants */
+.smalllogoButton {
+    width: 34vw;
+    height: 13vh;
+    padding: 2vw 2vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
 
+.mediumlogoButton {
+    width: 44vw;
+    height: 13vh;
+    padding: 1vw 1vh;
+}
+
+.largelogoButton {
+    padding: 1vw 1vh;
+    width: 94vw;
+    height: 13vh;
+}
+
+/* Logo Variants */
+.leftLogo {
+    display: flex;
+    align-items: center;
+}
+
+
+.rightLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.logoText {
+    align-items: center;
+}
 
 /* Fill and Border Variants */
 .fillButton {
@@ -50,16 +84,12 @@
     background: var(--Final_Light_Purple, #BB86FC);
 }
 
-.borderButton {
-    background-color: transparent;
-    border: 1px solid var(--Final_Light_Purple, #bb86fc);
-}
-
 /* Hover Effects */
 .sharedButton:hover {
-    background: var(--final-light-purple-25, rgba(187, 134, 252, 0.25));
+    background: var(--Final_Light_Purple_25, rgba(187, 134, 252, 0.25));
 }
 
 .fillButton:hover {
-    background: var(--Final_Light_Purple, rgba(187, 134, 252, 0.75));
+    background: var(--Final_Light_Purple_75, rgba(187, 134, 252, 0.75));
+
 }

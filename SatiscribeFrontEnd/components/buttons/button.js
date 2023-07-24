@@ -18,11 +18,11 @@ const Button = ({ size, fill, onClick, children }) => {
     return (
       <button
         className={`${styles.sharedButton} ${getButtonSizeClass()} ${
-          fill ? styles.fillButton : styles.borderButton
+          fill ? `${styles.fillButton} ${styles.fillButtonText}` : styles.borderButton
         }`}
         onClick={onClick}
       >
-        {children}
+         <h5 style={fill ? { color: 'var(--Final_Gray, #323135)' } : {}}>{children}</h5>
       </button>
     );
   };

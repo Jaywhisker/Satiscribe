@@ -1,41 +1,79 @@
-.inline {
+.inLine {
     display: inline-block;
 }
 
-.flexcolumn {
+.flexColumnSmolGap {
     display: flex;
     flex-direction: column;
-    gap: var(--smolgap);
+    gap: var(--smolGap);
 }
 
-.flexrow {
+.flexRowSmolGap {
     display: flex;
     flex-direction: row;
-    gap: var(--smolgap);
+    gap: var(--smolGap);
 }
 
-.aligncenter{
+.flexColumnMediumGap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mediumGap);
+}
+
+.flexRowMediumGap {
+    display: flex;
+    flex-direction: row;
+    gap: var(--mediumGap);
+}
+
+.flexColumnBigGap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--bigGap);
+}
+
+.flexRowBigGap {
+    display: flex;
+    flex-direction: row;
+    gap: var(--bigGap);
+}
+
+.alignCenter {
     justify-content: center;
     align-items: center;
 }
 
-.alignleft{
+.alignLeft {
     justify-content: left;
     align-items: left;
 }
 
-.alignright{
+.alignRight {
     justify-content: right;
     align-items: right;
 }
 
-.alignSpacebetween{
+.alignSpaceBetween {
     justify-content: space-between;
+    align-items: center;
 }
 
-.alignSpacearound{
+.alignSpaceAround {
     justify-content: space-around;
+    align-items: center;
+
 }
-.alignSpaceevenly{
+
+.alignSpaceEvenly {
     justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.alignStart {
+    justify-content: start;
+}
+
+.innerMargin {
+    margin: var(--contentMarginVert) var(--contentMarginHor);
 }

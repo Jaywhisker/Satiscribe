@@ -6,7 +6,7 @@ const ButtonPreview = () => {
     <div>
       <h1>Button Preview</h1>
 
-      <h2>Simple Buttons:</h2>
+      <h2>Border Buttons:</h2>
       <Button size="small" onClick={() => alert('Small button clicked!')}>
         Small Button
       </Button>
@@ -19,25 +19,40 @@ const ButtonPreview = () => {
         Large Button
       </Button>
 
-      <h2>Buttons with Logos:</h2>
+      <h2>Filled Buttons:</h2>
+      <Button size="small" fill onClick={() => alert('Small button clicked!')}>
+        Small Fill
+      </Button>
+
+      <Button size="medium" fill onClick={() => alert('Medium button clicked!')}>
+        Medium Fill
+      </Button>
+
+      <Button size="large" fill onClick={() => alert('Large button clicked!')}>
+        Large Fill
+      </Button>
+
+      <h2>Border Buttons with Logos:</h2>
       <ButtonWithLogo
-        size="medium"
+        size="small"
         logo="left"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}
         onClick={() => alert('Button with left logo clicked!')}
       >
-        Left Logo Button
+        Small Left
       </ButtonWithLogo>
 
       <ButtonWithLogo
         size="medium"
         logo="right"
+        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }} // Change this to the URL of your right logo
         onClick={() => alert('Button with right logo clicked!')}
       >
         Right Logo Button
       </ButtonWithLogo>
 
       <ButtonWithLogo
-        size="medium"
+        size="large"
         logo="none"
         onClick={() => alert('Button with no logo clicked!')}
       >
