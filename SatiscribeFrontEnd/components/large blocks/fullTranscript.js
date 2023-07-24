@@ -25,9 +25,9 @@ function FullTranscriptBlock() {
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
 
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                         <h5>Full Transcript</h5>
-                        <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
+                        <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
                     </div>
 
                     <div>
@@ -50,11 +50,11 @@ function FullTranscriptBlock() {
 
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignSpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                         <h5>Full Transcript</h5>
                         <div className={`${flexi.flexRowSmolGap}`}>
-                            <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                            <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
                         </div>
                     </div>
 

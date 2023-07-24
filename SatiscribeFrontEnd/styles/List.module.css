@@ -2,18 +2,22 @@ ul.smolgap li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--smolGap);
+    margin-bottom: var(--smolGap);
 }
 
 ul.mediumgap li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--mediumGap);
+    margin-bottom: var(--mediumGap);
 }
 
 ul.biggap li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--bigGap);
+    margin-bottom: var(--bigGap);
+
 }
 
 ul.smolgapnobullet li{

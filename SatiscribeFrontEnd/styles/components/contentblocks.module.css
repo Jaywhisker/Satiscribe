@@ -36,6 +36,14 @@
     border-radius: 5px;
 }
 
+.largeBlockButton {
+    border-radius: 5px;
+    border: 3px solid var(--Final_Light_Purple);
+    padding: var(--smolGap);
+    margin-top: var(--bigGap);
+}
+
+
 /* .topContainer {
     margin: 0 50px;
 }
