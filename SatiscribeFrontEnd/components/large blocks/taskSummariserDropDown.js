@@ -31,7 +31,7 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
             console.log(effectRan)
         };
         fetchMemberList();
-      }, [dataset]);
+    }, [dataset]);
 
     useEffect(() => {
         const resetDropDown = () => {
@@ -42,58 +42,58 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
 
     return (
         <>
-        {effectRan &&
-            <div>
-                {clickable ?
-                    (<div onClick={toggleDropDown} >
-                        <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
-                            <div className={flexi.flexRowSmolGap}>
-                                <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
+            {effectRan &&
+                <div>
+                    {clickable ?
+                        (<div onClick={toggleDropDown} >
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                                <div className={flexi.flexRowSmolGap}>
+                                    <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
                                     {memberList.filter((member) => dataset[member]).map((selectedMember) => (
                                         <img
                                             key={selectedMember}
-                                            src="/icons/Profile Pict (Cream).png"
+                                            src="/profiles/Profile Pict (Cream).png"
                                             alt="Selected Member"
                                             className={logos.small}
                                             style={{ zIndex: 1 }}
                                         />))}
-                            </div>
-                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
-                        </div>
-                        <div className={contentblock.line}></div>
-                    </div>
-                    ) : (
-                        <div >
-                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
-                                <div className={flexi.flexRowSmolGap}>
-                                    <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
                                 </div>
                                 <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
                             </div>
                             <div className={contentblock.line}></div>
                         </div>
-                    )}
-
-
-                {dropDown && (<div style={{ border: '4px solid', borderColor: `var(--Final_Black)` }}>
-                    {memberList.map((member, index) => (
-                        <div 
-                            key={member} 
-                            className={`${flexi.spacing} ${dataset[member] ? 'flexi.inLine' : ''}`} 
-                            style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}
-                            onClick={() => onClick(member)}>
-                            
-                            <div className={flexi.flexRowSmolGap}>
-                                <div className={logos.small} style={{ backgroundImage: `url(${dataset[member] ? '/icons/Check.png' : '/icons/Cancellation.png'})`, zIndex: 1 }}></div>
-                                <div className={logos.small} style={{ backgroundImage: `url("/icons/Profile Pict (Cream).png")`, zIndex: 1 }}></div>
-                                <p style={{ color: `var(--Final_White)` }}>{member}</p>
+                        ) : (
+                            <div >
+                                <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                                    <div className={flexi.flexRowSmolGap}>
+                                        <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
+                                    </div>
+                                    <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
+                                </div>
+                                <div className={contentblock.line}></div>
                             </div>
-                        </div>
-                    ))}
+                        )}
+
+
+                    {dropDown && (<div style={{ border: '4px solid', borderColor: `var(--Final_Black)` }}>
+                        {memberList.map((member, index) => (
+                            <div
+                                key={member}
+                                className={`${flexi.spacing} ${dataset[member] ? 'flexi.inLine' : ''}`}
+                                style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}
+                                onClick={() => onClick(member)}>
+
+                                <div className={flexi.flexRowSmolGap}>
+                                    <div className={logos.small} style={{ backgroundImage: `url(${dataset[member] ? '/icons/CheckboxTicked.png' : '/icons/Checkbox.png'})`, zIndex: 1 }}></div>
+                                    <div className={logos.small} style={{ backgroundImage: `url("/profiles/Profile Pict (Cream).png")`, zIndex: 1 }}></div>
+                                    <p style={{ color: `var(--Final_White)` }}>{member}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    )}
                 </div>
-                )}
-            </div>
-        }
+            }
         </>
     )
 }
