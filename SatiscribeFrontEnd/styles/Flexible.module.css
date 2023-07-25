@@ -103,5 +103,5 @@
 }
 
 .spacing {
-    padding: var(--contentPaddingVert) 0px;
+    padding: var(--contentPaddingVert) var(--smolGap);
 }

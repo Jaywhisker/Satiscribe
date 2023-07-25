@@ -10,6 +10,7 @@
   --contentMarginHor: 4vw;
   --contentMarginVert: 6vh;
   --contentPaddingVert: 3vh;
+  --contentPaddingHor: 2vw
 
 }
 
@@ -101,7 +102,7 @@ p {
   line-height: 4.5vh;
   margin: 0;
   padding: 0;
-  color: var(--Final_Light_Purple)
+  color: var(--Final_Light_Purple);
 }
 
 input {

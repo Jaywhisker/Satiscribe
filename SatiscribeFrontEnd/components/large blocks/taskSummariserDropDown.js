@@ -75,7 +75,7 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
                     )}
 
 
-                {dropDown && (<div style={{ border: '5px solid', borderColor: `var(--Final_Black)` }}>
+                {dropDown && (<div style={{ border: '4px solid', borderColor: `var(--Final_Black)` }}>
                     {memberList.map((member, index) => (
                         <div 
                             key={member} 
