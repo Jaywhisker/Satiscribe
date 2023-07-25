@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 import style from '@/styles/Colourtest.module.css'
 import flexi from '@/styles/Flexible.module.css'
 import logos from '@/styles/Logos.module.css'
@@ -13,14 +13,12 @@ function InputFieldEditablePara({ Text, onChange, placeholder }) {
 
     useEffect(() => {
         adjustTextareaHeight(textareaRef.current);
-      }, []);
+    }, []);
 
       
     function adjustTextareaHeight(textarea) {
         textarea.style.height = '20px';
         textarea.style.height = `${textarea.scrollHeight}px`;
-        console.log(textarea.scrollHeight)
-        console.log('hi')
       };
 
 

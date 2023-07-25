@@ -69,6 +69,7 @@
     border: 0;
     resize: none;
     height:auto;
+    overflow-y: hidden;
 }
 
 .textarea:focus {

@@ -6,7 +6,7 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import TaskSummariserDropDown from './taskSummariserDropDown'
 import InputFieldEditableSentence from './inputFieldEditableSentence'
-import InputFieldEditablePara from './InputFieldEditablePara'
+import InputFieldEditablePara from './inputFieldEditablePara'
 import InputFieldEditable from './inputFieldEditable'
 
 
