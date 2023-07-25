@@ -131,7 +131,7 @@ function AgendaBlock() {
 
                         {warning && (
                             <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{ marginBottom: -30 }}>
-                                <div className={logos.medium} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
+                                <div className={logos.medium} style={{ backgroundImage: `url("/iconsRed/Caution.png")`, zIndex: 1 }}></div>
                                 <h6 style={{ color: `var(--Final_Red)` }}>{warningMessage}</h6>
                             </div>
                         )}
