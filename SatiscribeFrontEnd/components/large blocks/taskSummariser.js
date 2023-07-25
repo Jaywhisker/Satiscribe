@@ -11,9 +11,6 @@ import TaskSummariserDropDown from './taskSummariserDropDown'
 
 
 function TaskSummariserBlock({ editable }) {
-    const [editMode, setEditMode] = useState(false)
-    const [tasks, setTasks] = useState([{ id: 1, screaming: false }]);
-    const [resetDropDown, setResetDropDown] = useState(false)
 
     const initialtaskData = [
         {
@@ -48,17 +45,36 @@ function TaskSummariserBlock({ editable }) {
     const [editingData, setEditingData] = useState(initialtaskData)
     const [warning, setWarning] = useState(false)
     const [warningMessage, setWarningMessage] = useState('')
+    const [editMode, setEditMode] = useState(false)
+    const [resetDropDown, setResetDropDown] = useState(false)
+    
+    useEffect(() => {
+        setWarning(
+          editingData.some(taskdata => taskdata.task.taskname.length === 0) ||
+          editingData.some(taskdata => taskdata.task.details.length === 0)
+        );
+        if (
+          editingData.some(taskdata => taskdata.task.taskname.length === 0) ||
+          editingData.some(taskdata => taskdata.task.details.length === 0)
+        ) {
+          setWarningMessage("Input Fields Cannot Be Left Blank");
+        }
+      
+      }, [editingData]);
+      
 
+    
     const startEditing = () => {
         setEditMode(true);
         setResetDropDown(!resetDropDown);
     };
 
     const saveEditing = () => {
-        if (!warning) {
+        if (warningMessage != 'Input Fields Cannot Be Left Blank') {
             setEditMode(false);
             setTaskData(editingData);
             setResetDropDown(!resetDropDown);
+            setWarning(false)
         }
     }
 
@@ -122,17 +138,9 @@ function TaskSummariserBlock({ editable }) {
             setEditingData(prevEditedTasks =>prevEditedTasks.filter(taskData => taskData.id !== id));
         } else {
             setWarning(true)
-            setWarningMessage('So free?')
+            setWarningMessage('So free? Meeting for wat?')
         }
     }
-
-    const handleWarning = (Data) => {
-        setWarning(Data.some(taskdata => taskdata.task.taskname.length === 0) | Data.some(taskdata => taskdata.task.details.length === 0));
-        if (setWarning(Data.some(taskdata => taskdata.task.taskname.length === 0) | Data.some(taskdata => taskdata.task.details.length === 0))) {
-            setWarningMessage("Input Fields Cannot Be Left Blank")
-        };
-    }
-
 
     return (
         <>
@@ -152,7 +160,7 @@ function TaskSummariserBlock({ editable }) {
                         </div>
 
                         {warning && (
-                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{marginBottom: -30}}>
+                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{marginBottom: -15, marginTop:-15}}>
                                 <div className={logos.medium} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
                                 <h6 style={{color:`var(--Final_Red)`}}>{warningMessage}</h6>
                             </div>

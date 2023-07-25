@@ -85,3 +85,11 @@
 .bottomContainer {
     margin: 0 50px
 } */
+
+.clickable {
+    margin: 0;
+}
+
+.clickable:hover{
+    cursor: pointer;
+}

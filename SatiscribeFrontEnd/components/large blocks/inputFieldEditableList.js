@@ -7,7 +7,7 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function InputFieldEditable({Text, onChange, onDelete, placeholder}) {
+function InputFieldEditableList({Text, onChange, onDelete, placeholder}) {
 
     return (
         <>
@@ -28,4 +28,4 @@ function InputFieldEditable({Text, onChange, onDelete, placeholder}) {
     )
 }
 
-export default InputFieldEditable
+export default InputFieldEditableList
