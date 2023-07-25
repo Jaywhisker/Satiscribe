@@ -9,8 +9,8 @@ import TaskSummariserBlock from '../../components/large blocks/taskSummariser'
 function largetesting() {
     return (
         <div>
-            {/* <AgendaBlock />
-            <FullTranscriptBlock />
+            <AgendaBlock />
+            {/* <FullTranscriptBlock />
             <CreateNewBlock /> */}
             <TaskSummariserBlock editable={false} />
             <TaskSummariserBlock editable={true} />

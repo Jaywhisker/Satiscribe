@@ -7,25 +7,22 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function InputFieldEditablePara({ Text, onChange, onDelete }) {
+function InputFieldEditableSentence({ Text, onChange, onDelete }) {
 
     return (
         <>
             <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
                 <div className={`${flexi.flexColumnNoGap}`} style={{ width: '100%' }} >
-                    <textarea
-                        className={contentblock.textarea}
-                        placeholder='Meeting Details'
+                    <input type='text'
+                        placeholder='New Task'
                         value={Text}
                         onChange={onChange}
                     />
-                    <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}>
-
-                    </div>
+                    <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}></div>
                 </div>
             </div>
         </>
     )
 }
 
-export default InputFieldEditablePara
+export default InputFieldEditableSentence
