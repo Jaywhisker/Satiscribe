@@ -61,8 +61,6 @@ export default function index() {
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
                 <div className={logos.small} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1 }}></div>
             </div>
             <div className={flexi.flexRowSmolGap}>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
@@ -93,10 +91,6 @@ export default function index() {
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
                 <div className={logos.big} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
-            </div>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1 }}></div>
             </div>
         </div>
     )

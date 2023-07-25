@@ -93,11 +93,15 @@
     align-items: center;
 }
 
-.alignEnd{
+.alignEnd {
     align-items: end;
 }
 
 
 .innerMargin {
     margin: var(--contentMarginVert) var(--contentMarginHor);
+}
+
+.spacing {
+    padding: var(--contentPaddingVert) var(--smolGap);
 }

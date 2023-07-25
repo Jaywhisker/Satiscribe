@@ -9,6 +9,9 @@
   --smallWidth: 10vw;
   --contentMarginHor: 4vw;
   --contentMarginVert: 6vh;
+  --contentPaddingVert: 3vh;
+  --contentPaddingHor: 2vw
+
 }
 
 body {
@@ -86,6 +89,7 @@ h6 {
   font-weight: 400;
   line-height: 3.5vh;
   letter-spacing: -0.1vh;
+  word-spacing: 0.4vh;
   margin: 0;
   padding: 0;
   color: var(--Final_Light_Purple)
@@ -99,7 +103,7 @@ p {
   line-height: 4.5vh;
   margin: 0;
   padding: 0;
-  color: var(--Final_Light_Purple)
+  color: var(--Final_Light_Purple);
 }
 
 input {
