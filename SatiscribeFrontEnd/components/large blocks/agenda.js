@@ -5,7 +5,7 @@ import logos from '@/styles/Logos.module.css'
 import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
-import InputFieldEditable from './inputFieldEditable'
+import InputFieldEditableList from './inputFieldEditableList'
 
 function AgendaBlock() {
 
@@ -138,7 +138,7 @@ function AgendaBlock() {
 
                         <ul className={`${list.mediumGap}`}>
                             {editedAgendas.map(agenda => (
-                                <InputFieldEditable
+                                <InputFieldEditableList
                                     key={agenda.id}
                                     Text={agenda.text}
                                     onChange={event => handleInputChange(event, agenda.id)}

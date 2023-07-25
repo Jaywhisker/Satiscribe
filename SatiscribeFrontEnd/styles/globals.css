@@ -89,6 +89,7 @@ h6 {
   font-weight: 400;
   line-height: 3.5vh;
   letter-spacing: -0.1vh;
+  word-spacing: 0.4vh;
   margin: 0;
   padding: 0;
   color: var(--Final_Light_Purple)

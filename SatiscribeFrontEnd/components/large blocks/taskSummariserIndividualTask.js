@@ -7,7 +7,7 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 import TaskSummariserDropDown from './taskSummariserDropDown'
 import InputFieldEditableSentence from './inputFieldEditableSentence'
 import InputFieldEditablePara from './inputFieldEditablePara'
-import InputFieldEditable from './inputFieldEditable'
+import InputFieldEditable from './inputFieldEditableList'
 
 
 
@@ -21,11 +21,13 @@ function IndividualTask({data, editMode, onChange, onDelete, onClick, membername
             <div className={flexi.flexColumnSmolGap}>
                 {editMode ? (
                     <div className={`${flexi.flexColumnSmolGap}`}>
+                        
                         <InputFieldEditableSentence
                             Text={TaskData.taskname}
                             onChange={(event) => onChange(event, "taskname")}
                             onDelete={() => onDelete(data.id)}
                             placeholder="New Task Name"
+                            deletable={true}
                         />
                         <InputFieldEditablePara
                             Text={TaskData.details}
