@@ -7,7 +7,7 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function InputFieldEditable({Text, onChange, onDelete}) {
+function InputFieldEditable({Text, onChange, onDelete, placeholder}) {
 
     return (
         <>
@@ -15,7 +15,7 @@ function InputFieldEditable({Text, onChange, onDelete}) {
                 <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
                     <div className={`${flexi.flexColumnNoGap}`} style={{width:'100%'}} >
                         <input type='text' 
-                                placeholder='New Agenda' 
+                                placeholder={placeholder}
                                 value={Text}
                                 onChange={onChange}
                                 />

@@ -6,31 +6,15 @@ import logos from '@/styles/Logos.module.css'
 
 function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) {
 
-    // const members = [
-    //     { id: 1, name: 'Morgan', selected: false },
-    //     { id: 2, name: 'Derrick', selected: false },
-    //     { id: 3, name: 'Jefferson', selected: false },
-    // ];
-
     const backgroundColors = [`var(--Final_Component_Dark_Grey)`, `var(--Final_Component_Lighter_Grey)`]; // Define an array of background colors
     const [dropDown, setDropDown] = useState(false)
     const [memberList, setMemberList] = useState()
     const [effectRan, setEffectRan] = useState(false)
-    // const [membersStore, setMembers] = useState(members)
 
 
     const toggleDropDown = () => {
         setDropDown((prevDropDown) => !prevDropDown);
     };
-
-    // const toggleMemberSelection = (memberId) => {
-    //     // Update the selected state of the member with the given ID
-    //     setMembers((prevMembers) =>
-    //         prevMembers.map((member) =>
-    //             member.id === memberId ? { ...member, selected: !member.selected } : member
-    //         )
-    //     );
-    // };
 
 
     useEffect(() => {

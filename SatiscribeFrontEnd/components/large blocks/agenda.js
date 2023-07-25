@@ -143,6 +143,7 @@ function AgendaBlock() {
                                     Text={agenda.text}
                                     onChange={event => handleInputChange(event, agenda.id)}
                                     onDelete={() => deleteData(agenda.id)}
+                                    placeholder="New Agenda"
                                 />
                             ))}
                         </ul>
