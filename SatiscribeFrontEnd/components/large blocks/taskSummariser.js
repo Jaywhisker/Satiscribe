@@ -40,7 +40,7 @@ function TaskSummariserBlock({ editable }) {
             }
         }
     ]
-    
+
     const [taskData, setTaskData] = useState(initialtaskData)
     const [editingData, setEditingData] = useState(initialtaskData)
     const [warning, setWarning] = useState(false)
@@ -86,9 +86,9 @@ function TaskSummariserBlock({ editable }) {
     }
 
     const addTask = () => {
-        const newTask = {id: taskData.length + 1};
+        const newTask = { id: taskData.length + 1 };
         const membersList = initialtaskData[0]['task']['members']
-        const default_data = {'taskname': '', 'details':'', 'members':membersList}
+        const default_data = { 'taskname': '', 'details': '', 'members': membersList }
         newTask['task'] = default_data
         setEditingData((editingData) => [...editingData, newTask]);
     };
@@ -97,45 +97,45 @@ function TaskSummariserBlock({ editable }) {
         const newText = event.target.value;
         if (field === 'taskname') {
             setEditingData(prevTasks =>
-              prevTasks.map(taskData =>
-                taskData.id === id
-                  ? { ...taskData, task: { ...taskData.task, taskname: newText } }
-                  : taskData
-              )
+                prevTasks.map(taskData =>
+                    taskData.id === id
+                        ? { ...taskData, task: { ...taskData.task, taskname: newText } }
+                        : taskData
+                )
             );
-          } else if (field === 'details') {
+        } else if (field === 'details') {
             setEditingData(prevTasks =>
                 prevTasks.map(taskData =>
-                  taskData.id === id
-                    ? { ...taskData, task: { ...taskData.task, details: newText } }
-                    : taskData
+                    taskData.id === id
+                        ? { ...taskData, task: { ...taskData.task, details: newText } }
+                        : taskData
                 )
-            );         
+            );
         }
     }
     const handleMemberUpdate = (membername, id) => {
         setEditingData((prevTasks) =>
-          prevTasks.map((taskData) =>
-            taskData.id === id
-              ? {
-                  ...taskData,
-                  task: {
-                    ...taskData.task,
-                    members: {
-                      ...taskData.task.members,
-                      [membername]: !taskData.task.members[membername],
-                    },
-                  },
-                }
-              : taskData
-          )
+            prevTasks.map((taskData) =>
+                taskData.id === id
+                    ? {
+                        ...taskData,
+                        task: {
+                            ...taskData.task,
+                            members: {
+                                ...taskData.task.members,
+                                [membername]: !taskData.task.members[membername],
+                            },
+                        },
+                    }
+                    : taskData
+            )
         );
-      };
+    };
 
     const deleteData = (id) => {
         const nonEmptyInputFields = editingData.filter(taskData => taskData.task.taskname.trim() !== '' | taskData.task.details.trim() !== '')
         if (nonEmptyInputFields.length > 1) {
-            setEditingData(prevEditedTasks =>prevEditedTasks.filter(taskData => taskData.id !== id));
+            setEditingData(prevEditedTasks => prevEditedTasks.filter(taskData => taskData.id !== id));
         } else {
             setWarning(true)
             setWarningMessage('So free? Meeting for wat?')
@@ -152,7 +152,7 @@ function TaskSummariserBlock({ editable }) {
                             {editMode ? (
                                 <div className={flexi.flexRowSmolGap}>
                                     <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }} onClick={saveEditing}></div>
-                                    <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} onClick={discardEditing}></div>
+                                    <div className={logos.smallclickable} style={{ backgroundImage: `url("/iconsRed/Cancellation.png")`, zIndex: 1 }} onClick={discardEditing}></div>
                                 </div>
                             ) : (
                                 <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }} onClick={startEditing}></div>
@@ -161,25 +161,25 @@ function TaskSummariserBlock({ editable }) {
 
                         {warning && (
                             <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{marginBottom: -15, marginTop:-15}}>
-                                <div className={logos.medium} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
-                                <h6 style={{color:`var(--Final_Red)`}}>{warningMessage}</h6>
+                                <div className={logos.medium} style={{ backgroundImage: `url("/iconsRed/Caution.png")`, zIndex: 1 }}></div>
+                                <h6 style={{ color: `var(--Final_Red)` }}>{warningMessage}</h6>
                             </div>
                         )}
 
                         {editingData.map((task) => (
-                            <IndividualTask                                     
-                                    key={task.id}
-                                    data = {task}
-                                    editMode={editMode}
-                                    onChange={(event, field) => handleTextChange(event,field,task.id)}
-                                    onDelete={() => deleteData(task.id)}
-                                    onClick={(membername) => handleMemberUpdate(membername, task.id)} 
-                                    resetDropDown = {resetDropDown}
-                                    />
+                            <IndividualTask
+                                key={task.id}
+                                data={task}
+                                editMode={editMode}
+                                onChange={(event, field) => handleTextChange(event, field, task.id)}
+                                onDelete={() => deleteData(task.id)}
+                                onClick={(membername) => handleMemberUpdate(membername, task.id)}
+                                resetDropDown={resetDropDown}
+                            />
                         ))}
 
                         {editMode ? (
-                            <div className={`${contentblock.largeBlockButton} ${flexi.justifyCenter} ${flexi.flexRowSmolGap}`} style={{marginTop:0}} onClick={() => addTask()}>
+                            <div className={`${contentblock.largeBlockButton} ${flexi.justifyCenter} ${flexi.flexRowSmolGap}`} style={{ marginTop: 0 }} onClick={() => addTask()}>
                                 <div className={logos.small} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1, }}></div>
                                 <p>Add Task</p>
                             </div>
@@ -215,7 +215,7 @@ function TaskSummariserBlock({ editable }) {
                                     <div className={contentblock.line}></div>
                                 </li>
                             </ul>
-                            <TaskSummariserDropDown clickable={false} isdropdown= {resetDropDown} />
+                            <TaskSummariserDropDown clickable={false} isdropdown={resetDropDown} />
 
                         </div>
                     </div>

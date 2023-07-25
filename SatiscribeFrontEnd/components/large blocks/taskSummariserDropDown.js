@@ -31,7 +31,7 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
             console.log(effectRan)
         };
         fetchMemberList();
-      }, [dataset]);
+    }, [dataset]);
 
     useEffect(() => {
         const resetDropDown = () => {
@@ -42,17 +42,17 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
 
     return (
         <>
-        {effectRan &&
-            <div>
-                {clickable ?
-                    (<div onClick={toggleDropDown} >
-                        <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
-                            <div className={flexi.flexRowSmolGap}>
-                                <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
+            {effectRan &&
+                <div>
+                    {clickable ?
+                        (<div onClick={toggleDropDown} >
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                                <div className={flexi.flexRowSmolGap}>
+                                    <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
                                     {memberList.filter((member) => dataset[member]).map((selectedMember) => (
                                         <img
                                             key={selectedMember}
-                                            src="/icons/Profile Pict (Cream).png"
+                                            src="/profiles/Profile Pict (Cream).png"
                                             alt="Selected Member"
                                             className={logos.small}
                                             style={{ zIndex: 1 }}
