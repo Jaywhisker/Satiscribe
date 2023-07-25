@@ -12,103 +12,104 @@ import InputFieldEditable from './inputFieldEditable'
 
 
 
-function IndividualTask({ id, editMode, onScreamingChange }) {
+function IndividualTask({data, editMode, onChange, onDelete, onClick, membername, resetDropDown}) {
 
-    const initialSentences = [
-        { id: 1, text: 'Task' },
-        { id: 2, text: 'Details' },
-    ];
+    // const initialSentences = [
+    //     { id: 1, text: 'Task' },
+    //     { id: 2, text: 'Details' },
+    // ];
 
-    useEffect(() => {
-        // This function will be executed whenever editMode changes
-        if (editMode.save) {
-            // Perform action when editMode becomes true
-            setSentences(editedSentences)
-        } else {
-            // Perform action when editMode becomes false
-            setEditedSentences(sentences)
-        }
-    }, [editMode]);
+    // useEffect(() => {
+    //     // This function will be executed whenever editMode changes
+    //     if (editMode.save) {
+    //         // Perform action when editMode becomes true
+    //         setSentences(editedSentences)
+    //     } else {
+    //         // Perform action when editMode becomes false
+    //         setEditedSentences(sentences)
+    //     }
+    // }, [editMode]);
 
 
-    const [sentences, setSentences] = useState(initialSentences);
-    const [editedSentences, setEditedSentences] = useState(initialSentences);
-    const [warning, setWarning] = useState(false)
-    const [warningMessage, setWarningMessage] = useState('')
+    // const [sentences, setSentences] = useState(initialSentences);
+    // const [editedSentences, setEditedSentences] = useState(initialSentences);
+    // const [warning, setWarning] = useState(false)
+    // const [warningMessage, setWarningMessage] = useState('')
 
-    useEffect(() => {
-        setWarning(editedSentences.some(agenda => agenda.text.length === 0));
-        if (editedSentences.some(agenda => agenda.text.length === 0)) {
-            setWarningMessage("Input Fields Cannot Be Left Blank")
-            onScreamingChange(true)
-        } else {
-            onScreamingChange(false)
-        };
+    // useEffect(() => {
+    //     setWarning(editedSentences.some(agenda => agenda.text.length === 0));
+    //     if (editedSentences.some(agenda => agenda.text.length === 0)) {
+    //         setWarningMessage("Input Fields Cannot Be Left Blank")
+    //         onScreamingChange(true)
+    //     } else {
+    //         onScreamingChange(false)
+    //     };
 
-    }, [editedSentences])
+    // }, [editedSentences])
 
-    function handleInputChange(event, id) {
-        const newText = event.target.value;
-        setEditedSentences(prevAgendas => prevAgendas.map(agenda => agenda.id === id ? { ...agenda, text: newText } : agenda));
-    }
+    // function handleInputChange(event, id) {
+    //     const newText = event.target.value;
+    //     setEditedSentences(prevAgendas => prevAgendas.map(agenda => agenda.id === id ? { ...agenda, text: newText } : agenda));
+    // }
 
-    function deleteData(id) {
-        const nonEmptyyAgendas = editedSentences.filter(agenda => agenda.text.trim() !== '')
-        if (nonEmptyyAgendas.length > 2) {
-            setEditedSentences(prevEditedAgendas => prevEditedAgendas.filter(agenda => agenda.id !== id));
-            onScreamingChange(false)
-        } else {
-            setWarning(true)
-            setWarningMessage('You Can"t Have A Task with no details!')
-            onScreamingChange(true)
-        }
-    }
+    // function deleteData(id) {
+    //     const nonEmptyyAgendas = editedSentences.filter(agenda => agenda.text.trim() !== '')
+    //     if (nonEmptyyAgendas.length > 2) {
+    //         setEditedSentences(prevEditedAgendas => prevEditedAgendas.filter(agenda => agenda.id !== id));
+    //         onScreamingChange(false)
+    //     } else {
+    //         setWarning(true)
+    //         setWarningMessage('You Can"t Have A Task with no details!')
+    //         onScreamingChange(true)
+    //     }
+    // }
 
-    function addTask() {
-        const newId = editedSentences.length > 0 ? Math.max(...editedSentences.map(item => item.id)) + 1 : 1;
-        const newAgenda = { id: newId, text: '' };
-        setEditedSentences(prevEditedAgendas => [...prevEditedAgendas, newAgenda]);
-    }
+    // function addTask() {
+    //     const newId = editedSentences.length > 0 ? Math.max(...editedSentences.map(item => item.id)) + 1 : 1;
+    //     const newAgenda = { id: newId, text: '' };
+    //     setEditedSentences(prevEditedAgendas => [...prevEditedAgendas, newAgenda]);
+    // }
 
+    const TaskData = data.task
     return (
         <>
-            <p>#{id}</p>
             <div className={flexi.flexColumnSmolGap}>
-                {warning && (
-                    <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} >
-                        <div className={logos.medium} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
-                        <h6 style={{ color: `var(--Final_Red)` }}>{warningMessage}</h6>
-                    </div>
-                )}
-                {editMode.edit ? (
+                {editMode ? (
                     <div className={`${flexi.flexColumnSmolGap}`}>
                         <InputFieldEditableSentence
-                            key={editedSentences[0].id}
-                            Text={editedSentences[0].text}
-                            onChange={event => handleInputChange(event, editedSentences[0].id)}
-                            onDelete={() => deleteData(editedSentences[0].id)}
+                            //key={data.id}
+                            Text={TaskData.taskname}
+                            onChange={(event) => onChange(event, "taskname")}
+                            onDelete={() => onDelete(data.id)}
+                            placeholder="New Task Name"
                         />
                         <InputFieldEditablePara
-                            key={editedSentences[1].id}
-                            Text={editedSentences[1].text}
-                            onChange={event => handleInputChange(event, editedSentences[1].id)}
-                            onDelete={() => deleteData(editedSentences[1].id)}
+                            //key={data.id}
+                            Text={TaskData.details}
+                            onChange={(event) => onChange(event, "details")}
+                            placeholder="Task Details"
                         />
-                    </div>) : (
+                    </div>
+                ) : (
                     <div className={`${flexi.flexColumnSmolGap}`}>
                         <div>
-                            <p style={{ color: `var(--Final_White)` }}>{editedSentences[0].text}</p>
+                            <p style={{ color: `var(--Final_White)` }}>{TaskData.taskname}</p>
                             <div className={contentblock.line}></div>
                         </div>
                         <div style={{ width: `100%`, height: `fit-content` }}>
-                            <p style={{ color: `var(--Final_White)` }}>{editedSentences[1].text}</p>
+                            <p style={{ color: `var(--Final_White)` }}>{TaskData.details}</p>
                             <div className={contentblock.line}></div>
                         </div>
                     </div>
 
                 )}
-                <div style={{ marginTop: 30, marginBottom: 50 }}>
-                    <TaskSummariserDropDown clickable={true} />
+                <div style={{ marginTop: 15, marginBottom: 30 }}>
+                    <TaskSummariserDropDown 
+                        clickable={true} 
+                        onClick={(membername) => onClick(membername)} 
+                        dataset= {data.task.members}
+                        resetDropDown={resetDropDown}
+                        />
                 </div>
             </div>
         </>

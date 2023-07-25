@@ -12,7 +12,7 @@ function largetesting() {
             <AgendaBlock />
             {/* <FullTranscriptBlock />
             <CreateNewBlock /> */}
-            <TaskSummariserBlock editable={false} />
+            {/* <TaskSummariserBlock editable={false} /> */}
             <TaskSummariserBlock editable={true} />
 
         </div>

@@ -68,6 +68,7 @@
     color: var(--Final_White);
     border: 0;
     resize: none;
+    height:4.5vh
 }
 
 .textarea:focus {

@@ -7,7 +7,7 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function InputFieldEditablePara({ Text, onChange, onDelete }) {
+function InputFieldEditablePara({ Text, onChange, placeholder }) {
 
     return (
         <>
@@ -15,9 +15,9 @@ function InputFieldEditablePara({ Text, onChange, onDelete }) {
                 <div className={`${flexi.flexColumnNoGap}`} style={{ width: '100%' }} >
                     <textarea
                         className={contentblock.textarea}
-                        placeholder='Meeting Details'
+                        placeholder={placeholder}
                         value={Text}
-                        onChange={onChange}
+                        onChange={onChange} 
                     />
                     <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}>
 
