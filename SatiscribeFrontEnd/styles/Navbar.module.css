@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    border-bottom: 2px solid var(--Final_Light_Purple); /* Replace #000 with the desired color */
   }
   
   /* Style the links inside the navigation bar */
@@ -19,7 +20,7 @@
   }
   
   /* Change the color of links on hover */
-  .topnav p:hover {
+  .topnav h6:hover {
     background-color: var(--Final_Dark_Purple);
     color: var(--Final_Light_Purple);
     text-decoration: underline;
@@ -58,7 +59,7 @@
   
   .right_nav{
     display: flex;
-    width: 15%;
+    width: 20%;
     float: right;
     margin-right: 2%;
     justify-content: space-between;
@@ -67,10 +68,9 @@
 
   .left_nav{
     display: flex;
-    width: 15%;
-    float: left;
-    margin-left: 0%;
+    width: 20%;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
   }
 
