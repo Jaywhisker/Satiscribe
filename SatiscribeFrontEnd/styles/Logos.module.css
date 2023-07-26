@@ -4,8 +4,34 @@
     background-size: cover;
 }
 
+.medium {
+    width: 6vh;
+    height: 6vh;
+    background-size: cover;
+}
+
 .big {
     width: 8vh;
     height: 8vh;
     background-size: cover;
+}
+
+.smallclickable {
+    width: 4vh;
+    height: 4vh;
+    background-size: cover;
+}
+
+.smallclickable:hover{
+    cursor: pointer;
+}
+
+.bigclickable {
+    width: 8vh;
+    height: 8vh;
+    background-size: cover;
+}
+
+.bigclickable:hover{
+    cursor: pointer;
 }

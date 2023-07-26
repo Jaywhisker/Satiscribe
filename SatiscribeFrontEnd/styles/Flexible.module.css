@@ -1,41 +1,107 @@
-.inline {
+.inLine {
     display: inline-block;
 }
 
-.flexcolumn {
+
+.flexColumnNoGap {
     display: flex;
     flex-direction: column;
-    gap: var(--smolgap);
 }
 
-.flexrow {
+.flexRowNoGap {
     display: flex;
     flex-direction: row;
-    gap: var(--smolgap);
 }
 
-.aligncenter{
+.flexColumnSmolGap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smolGap);
+}
+
+.flexRowSmolGap {
+    display: flex;
+    flex-direction: row;
+    gap: var(--smolGap);
+}
+
+.flexColumnMediumGap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mediumGap);
+}
+
+.flexRowMediumGap {
+    display: flex;
+    flex-direction: row;
+    gap: var(--mediumGap);
+}
+
+.flexColumnBigGap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--bigGap);
+}
+
+.flexRowBigGap {
+    display: flex;
+    flex-direction: row;
+    gap: var(--bigGap);
+}
+
+.justifyCenter {
     justify-content: center;
     align-items: center;
 }
 
-.alignleft{
+.justifyLeft {
     justify-content: left;
-    align-items: left;
+    align-items: center;
 }
 
-.alignright{
+.justifyRight {
     justify-content: right;
-    align-items: right;
+    align-items: center;
 }
 
-.alignSpacebetween{
+.justifySpaceBetween {
     justify-content: space-between;
+    align-items: center;
 }
 
-.alignSpacearound{
+.justifySpaceAround {
     justify-content: space-around;
+    align-items: center;
+
 }
-.alignSpaceevenly{
+
+.justifySpaceEvenly {
     justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.justifyStart {
+    justify-content: start;
+}
+
+.alignStart {
+    align-items: start;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.alignEnd {
+    align-items: end;
+}
+
+
+.innerMargin {
+    margin: var(--contentMarginVert) var(--contentMarginHor);
+}
+
+.spacing {
+    padding: var(--contentPaddingVert) var(--smolGap);
 }

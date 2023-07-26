@@ -1,0 +1,45 @@
+ul.smolGap li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--smolGap);
+    margin-bottom: var(--smolGap);
+}
+
+ul.mediumGap li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--mediumGap);
+    margin-bottom: var(--mediumGap);
+}
+
+ul.bigGap li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--bigGap);
+    margin-bottom: var(--bigGap);
+
+}
+
+ul.smolGapnobullet li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--smolGap);
+    list-style:none;
+    margin-left: -2.8vw;
+}
+
+ul.mediumGapnobullet li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--mediumGap);
+    list-style:none;
+    margin-left: -2.8vw;
+}
+
+ul.bigGapnobullet li{
+    font-size: 4.5vh;
+    color: var(--Final_White);
+    margin-top: var(--bigGap);
+    list-style:none;
+    margin-left: -2.8vw;
+}
