@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonWithLogo } from '../components';
+  import { Button, ButtonWithLogo } from '../components';
 
 const ButtonPreview = () => {
   return (
