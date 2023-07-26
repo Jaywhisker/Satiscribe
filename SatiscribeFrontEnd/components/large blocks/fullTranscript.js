@@ -54,7 +54,7 @@ function FullTranscriptBlock() {
                         <h5>Full Transcript</h5>
                         <div className={`${flexi.flexRowSmolGap}`}>
                             <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/iconsRed/Cancellation.png")`, zIndex: 1 }}></div>
                         </div>
                     </div>
 

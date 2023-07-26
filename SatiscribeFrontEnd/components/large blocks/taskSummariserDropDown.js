@@ -75,25 +75,25 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
                     )}
 
 
-                {dropDown && (<div style={{ border: '4px solid', borderTop:'none', borderColor: `var(--Final_Black)` }}>
-                    {memberList.map((member, index) => (
-                        <div 
-                            key={member} 
-                            className={`${flexi.spacing} ${dataset[member] ? 'flexi.inLine' : ''}`} 
-                            style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}
-                            onClick={() => onClick(member)}>
-                            
-                            <div className={`${flexi.flexRowSmolGap} ${contentblock.clickable}`}>
-                                <div className={logos.small} style={{ backgroundImage: `url(${dataset[member] ? '/icons/Check.png' : '/icons/Cancellation.png'})`, zIndex: 1 }}></div>
-                                <div className={logos.small} style={{ backgroundImage: `url("/icons/Profile Pict (Cream).png")`, zIndex: 1 }}></div>
-                                <p style={{ color: `var(--Final_White)` }}>{member}</p>
+                    {dropDown && (<div style={{ border: '4px solid', borderTop: 'none', borderColor: `var(--Final_Black)` }}>
+                        {memberList.map((member, index) => (
+                            <div
+                                key={member}
+                                className={`${flexi.spacing} ${dataset[member] ? 'flexi.inLine' : ''}`}
+                                style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}
+                                onClick={() => onClick(member)}>
+
+                                <div className={`${flexi.flexRowSmolGap} ${contentblock.clickable}`}>
+                                    <div className={logos.small} style={{ backgroundImage: `url(${dataset[member] ? '/icons/CheckboxTicked.png' : '/icons/Checkbox.png'})`, zIndex: 1 }}></div>
+                                    <div className={logos.small} style={{ backgroundImage: `url("/profiles/Profile Pict (Cream).png")`, zIndex: 1 }}></div>
+                                    <p style={{ color: `var(--Final_White)` }}>{member}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                    )}
                 </div>
-                )}
-            </div>
-        }
+            }
         </>
     )
 }
