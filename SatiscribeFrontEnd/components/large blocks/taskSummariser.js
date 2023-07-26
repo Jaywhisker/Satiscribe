@@ -47,23 +47,23 @@ function TaskSummariserBlock({ editable }) {
     const [warningMessage, setWarningMessage] = useState('')
     const [editMode, setEditMode] = useState(false)
     const [resetDropDown, setResetDropDown] = useState(false)
-    
+
     useEffect(() => {
         setWarning(
-          editingData.some(taskdata => taskdata.task.taskname.length === 0) ||
-          editingData.some(taskdata => taskdata.task.details.length === 0)
+            editingData.some(taskdata => taskdata.task.taskname.length === 0) ||
+            editingData.some(taskdata => taskdata.task.details.length === 0)
         );
         if (
-          editingData.some(taskdata => taskdata.task.taskname.length === 0) ||
-          editingData.some(taskdata => taskdata.task.details.length === 0)
+            editingData.some(taskdata => taskdata.task.taskname.length === 0) ||
+            editingData.some(taskdata => taskdata.task.details.length === 0)
         ) {
-          setWarningMessage("Input Fields Cannot Be Left Blank");
+            setWarningMessage("Input Fields Cannot Be Left Blank");
         }
-      
-      }, [editingData]);
-      
 
-    
+    }, [editingData]);
+
+
+
     const startEditing = () => {
         setEditMode(true);
         setResetDropDown(!resetDropDown);

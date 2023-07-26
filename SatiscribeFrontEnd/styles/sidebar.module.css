@@ -1,0 +1,9 @@
+.projectcontainer {
+  display: flex;
+  width: 14.0625rem;
+  height: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-color: blueviolet;
+}
