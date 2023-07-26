@@ -10,9 +10,9 @@ function largetesting() {
     return (
         <div>
             <AgendaBlock />
-            {/* <FullTranscriptBlock />
-            <CreateNewBlock /> */}
-            {/* <TaskSummariserBlock editable={false} /> */}
+            <FullTranscriptBlock />
+            <CreateNewBlock />
+            <TaskSummariserBlock editable={false} />
             <TaskSummariserBlock editable={true} />
 
         </div>

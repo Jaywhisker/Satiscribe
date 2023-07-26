@@ -85,7 +85,7 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
 
                                 <div className={`${flexi.flexRowSmolGap} ${contentblock.clickable}`}>
                                     <div className={logos.small} style={{ backgroundImage: `url(${dataset[member] ? '/icons/Check.png' : '/icons/Cancellation.png'})`, zIndex: 1 }}></div>
-                                    <div className={logos.small} style={{ backgroundImage: `url("/icons/Profile Pict (Cream).png")`, zIndex: 1 }}></div>
+                                    <div className={logos.small} style={{ backgroundImage: `url("/profiles/Profile Pict (Cream).png")`, zIndex: 1 }}></div>
                                     <p style={{ color: `var(--Final_White)` }}>{member}</p>
                                 </div>
                             </div>
