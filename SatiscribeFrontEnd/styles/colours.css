@@ -1,5 +1,5 @@
 :root {
-    --Final_Light_Purple : rgb(187, 134, 252);
+    --Final_Light_Purple: rgb(187, 134, 252);
     --Final_Light_Purple_75: rgb(187, 134, 252, 0.75);
     --Final_Light_Purple_50: rgb(187, 134, 252, 0.5);
     --Final_Light_Purple_25: rgb(187, 134, 252, 0.25);
@@ -11,22 +11,23 @@
     --Final_Black: rgb(30, 30, 30);
     --Final_White: rgb(209, 209, 209);
     --Final_White_50: rgb(209, 209, 209, 0.5);
+    --Final_White_25: rgb(209, 209, 209, 0.25);
     --Final_White_5: rgb(209, 209, 209, 0.05);
     --Final_Component_Dark_Grey: rgb(41, 41, 41);
     --Final_Component_Lighter_Grey: rgb(50, 50, 51);
-    --Final_Red: rgb(215,82,79);
-    --Final_Yellow: rgb(255,205,41);
-    --Final_Profile_Purple: rgb(109,81,143, 0.5);
-    --Final_Profile_Red: rgb(255,130,122, 0.5);
-    --Final_Profile_Grey: rgb(120,120,120, 0.5);
-    --Final_Profile_LightGrey: rgb(223,223,223);
-    --Final_Profile_Blue: rgb(128,163,255, 0.5);
-    --Final_Profile_Orange: rgb(255,177,105, 0.5);
-    --Final_Profile_Green: rgb(163,226,157, 0.5);
-    --Final_Profile_Pink: rgb(251,179,253, 0.5);
-    --Final_Profile_White: rgb(217,217,217, 0.8);
-    --Final_Calendar_Green: rgb(122,146,124);
-    --Final_Calendar_Purple: rgb(121,97,111);
-    --Final_Calendar_Skin: rgb(234,181,149);
-    --Final_Calendar_Pink: rgb(174,99,120);
+    --Final_Red: rgb(215, 82, 79);
+    --Final_Yellow: rgb(255, 205, 41);
+    --Final_Profile_Purple: rgb(109, 81, 143, 0.5);
+    --Final_Profile_Red: rgb(255, 130, 122, 0.5);
+    --Final_Profile_Grey: rgb(120, 120, 120, 0.5);
+    --Final_Profile_LightGrey: rgb(223, 223, 223);
+    --Final_Profile_Blue: rgb(128, 163, 255, 0.5);
+    --Final_Profile_Orange: rgb(255, 177, 105, 0.5);
+    --Final_Profile_Green: rgb(163, 226, 157, 0.5);
+    --Final_Profile_Pink: rgb(251, 179, 253, 0.5);
+    --Final_Profile_White: rgb(217, 217, 217, 0.8);
+    --Final_Calendar_Green: rgb(122, 146, 124);
+    --Final_Calendar_Purple: rgb(121, 97, 111);
+    --Final_Calendar_Skin: rgb(234, 181, 149);
+    --Final_Calendar_Pink: rgb(174, 99, 120);
 }
