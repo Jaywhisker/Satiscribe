@@ -21,7 +21,6 @@ function VettingBlockB() {
 
     useEffect(() => {
         setCursorPosition(document.getElementById('paragraph'), cursorPointerLocation)
-        console.log(exampleData[cursorPointerLocation])
     }, [exampleData, cursorPointerLocation]);
     
 
@@ -30,60 +29,25 @@ function VettingBlockB() {
         let nodecursorPosition = cursorPosition;
         let currentLength = 0;
         let offset = 0;
-        let fulltagoffset = 0;
-
         for (let i = 0; i < childNodes.length; i++) {
             const childNode = childNodes[i];
             const nodeLength = childNode.textContent.length;
-
+            console.log(childNode)
             if (childNode.nodeType == Node.ELEMENT_NODE) {
-                if (childNode.tagName == 'STRONG') {
-                    offset = childNode.tagName.length +2 
-                    fulltagoffset = 2*offset + 1
-                    if (currentLength + nodeLength + 2*offset +1 >= cursorPosition) {
-                        // console.log(childNode, nodecursorPosition)
-                        return [childNode, nodecursorPosition-offset];
-                    }
+                offset = childNode.tagName.length +2 
+                if (currentLength + nodeLength + 2*offset +1 >= cursorPosition) {
+                    return [childNode, 1];
                 }
-                else if (childNode.childNodes.length > 0) {
-                    offset = childNode.tagName.length +2 
-                    fulltagoffset = 2*offset + 1
-                    // console.log(fulltagoffset)
-                    for (const innerChild of childNode.childNodes) {
-                        var childoffset = (innerChild.tagName && innerChild.tagName.length + 2) || 0;
-                        offset += childoffset
-                        if (childoffset === 0) {
-                            null
-                        } else {
-                            fulltagoffset += 2*childoffset + 1                      
-                        }
-
-                        if (currentLength + nodeLength + offset >= cursorPosition) {
-                            return [childNode, nodecursorPosition-offset];
-                        } else {
-                            offset += (childoffset !== 0) ? childoffset + 1 : 0;
-                        }
-                    }}
-                else {
-                    offset = childNode.tagName.length +2
-                    fulltagoffset = offset*2 + 1
-                    if (currentLength + nodeLength + fulltagoffset >= cursorPosition) {
-                        return [childNode, nodecursorPosition-offset];
-                    }
-                }
-                nodecursorPosition -= (nodeLength + fulltagoffset)
-                currentLength += nodeLength + fulltagoffset;
-                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
-                
+                nodecursorPosition -= nodeLength - (2*offset +1)
+                currentLength += nodeLength + 2*offset +1;
             } else {
-                
                 if (currentLength + nodeLength >= cursorPosition) {
                     return [childNode, nodecursorPosition];
                 }
                 currentLength += nodeLength;
                 nodecursorPosition -= nodeLength
-                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
             }}
+        
         return [childNodes[childNodes.length - 1], nodecursorPosition];
         };
     
@@ -91,89 +55,73 @@ function VettingBlockB() {
     const setCursorPosition = (paragraphElement, cursorPosition) => {
         const selection = window.getSelection();
         const [textNode, nodecursorPosition] = findChildNodeByCursorPosition(paragraphElement, cursorPosition);
-        console.log(textNode, nodecursorPosition)
-        if (textNode.childNodes.length > 0) {
-            let textlength = 0
-            let newcursorposition = nodecursorPosition
-            for (const innerChild of textNode.childNodes) {
-                // console.log(innerChild)
-                textlength = innerChild.textContent.length
-                // console.log(textlength, newcursorposition)
-                if (newcursorposition <= textlength) {
-                    try {
-                        selection.setBaseAndExtent(innerChild, newcursorposition, innerChild, newcursorposition)
-                    } catch{
-                        selection.setBaseAndExtent(innerChild.firstChild, newcursorposition, innerChild.firstChild, newcursorposition)
-                    }
-                    break
-                } else {
-                    newcursorposition -= textlength
-
-                }
+        console.log(textNode.tagName, nodecursorPosition)
+        if (textNode.tagName == "B" || textNode.tagName == "I" || textNode.tagName == "EM"){
+            console.log(textNode.childNodes)
+            var strongTagNode;
+            for (var i = 0; i < textNode.childNodes.length; i++) {
+              var childNode = textNode.childNodes[i];
+              if (childNode.nodeType === Node.ELEMENT_NODE && childNode.tagName === 'STRONG') {
+                strongTagNode = childNode;
+                break;
+              }
             }
-        } else {selection.setBaseAndExtent(textNode, nodecursorPosition, textNode, nodecursorPosition)}
+            selection.setBaseAndExtent(strongTagNode, 1, strongTagNode, 1);
+        } 
+        else {selection.setBaseAndExtent(textNode, nodecursorPosition, textNode, nodecursorPosition)};
       };
       
 
     const onInput = (event) => {
-        const newText = event.target.innerHTML.replace('&nbsp', ' ').replace(';', ''); //convert space bar code to js space
+        const newText = event.target.innerHTML.replace('&nbsp', ' '); //convert space bar code to js space
         let currentCursorPosition = findFirstDiffPos(newText,exampleData);
         const textbeforecursor = exampleData.slice(0,currentCursorPosition);
         let modifiedValue = '';
+        
         console.log(newText)
-        console.log(exampleData)
         if (newText.length > exampleData.length) { //addition input
             if ( (textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length) ) {
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + exampleData.slice(currentCursorPosition);
-                currentCursorPosition += 9
-                setCursorPositionLocation(currentCursorPosition)        
+                setCursorPositionLocation(currentCursorPosition+8)        
 
             } else {
-                if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>") ) {
-                    let newCursor = currentCursorPosition += 13
-                    console.log('hello',exampleData.slice(0, newCursor))
-                    console.log('hihi', newText[currentCursorPosition])
-                    modifiedValue = exampleData.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[newCursor]) + "</strong>";
-                    newCursor += 9
-                    setCursorPositionLocation(newCursor)
-                } else {
-                    modifiedValue = exampleData.slice(0, currentCursorPosition) + newText[currentCursorPosition] + exampleData.slice(currentCursorPosition);
-                    currentCursorPosition += 1
-                    setCursorPositionLocation(currentCursorPosition)        
-                }
+                modifiedValue = exampleData.slice(0, currentCursorPosition) + newText[currentCursorPosition] + exampleData.slice(currentCursorPosition);
+                setCursorPositionLocation(currentCursorPosition+1)        
             }
             console.log(modifiedValue)
             setExampleData(modifiedValue)
         } 
         
         else if (newText.length <= exampleData.length){
-            console.log(exampleData[currentCursorPosition])
-            if (exampleData[currentCursorPosition-1] === ">" ) {
-                var newCursorPosition = findCharacterPos(exampleData, currentCursorPosition, "<")
-                modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
-                setCursorPositionLocation(newCursorPosition)        
-                setExampleData(modifiedValue)
-
-            } else if (exampleData[currentCursorPosition] === "<" && exampleData[currentCursorPosition+7] === ">" ) {
-                currentCursorPosition += 8
-                modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
-                setCursorPositionLocation(newCursorPosition)        
-                setExampleData(modifiedValue)
-            } else {
+            if (exampleData[currentCursorPosition] === ">" ) {
+                currentCursorPosition = findCharacterPos(exampleData, currentCursorPosition, "<")
+                
+                if (exampleData[currentCursorPosition-1] === ">" ){
+                    var nextCursor = findCharacterPos(exampleData, currentCursorPosition, "<")
+                    if (exampleData.slice(nextCursor, currentCursorPosition).includes("/")) {
+                        null
+                    }
+                    else {
+                        currentCursorPosition = nextCursor
+                    }
+                }
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
                 console.log(modifiedValue)
-                console.log(currentCursorPosition)
                 setCursorPositionLocation(currentCursorPosition)        
                 setExampleData(modifiedValue)
-            }
+            } 
+            modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
+            console.log(modifiedValue)
+            console.log(currentCursorPosition)
+            setCursorPositionLocation(currentCursorPosition)        
+            setExampleData(modifiedValue)
         }
     }
 
 
     const findCharacterPos = (text, currentIndex, char) => {
         var index = currentIndex;
-        while (index >= 0 && text[index] !== char) {
-            console.log(text[index])
+        while (index >= 0 && text[index] !== charToFind) {
             index--;
           }
           return index;
