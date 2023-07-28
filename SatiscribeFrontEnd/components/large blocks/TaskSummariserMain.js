@@ -4,8 +4,8 @@ import list from '@/styles/List.module.css'
 import flexi from '@/styles/Flexible.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
-import IndividualTask from './taskSummariserIndividualTask'
-import TaskSummariserDropDown from './taskSummariserDropDown'
+import IndividualTask from './TaskSummariserBlock/taskSummariserIndividualTask'
+import TaskSummariserDropDown from './TaskSummariserBlock/taskSummariserDropDown'
 import TaskJson from '@/data/TaskSummariser.json'
 
 

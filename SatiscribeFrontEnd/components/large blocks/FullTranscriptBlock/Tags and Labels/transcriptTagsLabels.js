@@ -1,7 +1,6 @@
 import React from 'react'
 import style from '@/styles/Colourtest.module.css'
 import flexi from '@/styles/Flexible.module.css'
-import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import tags from '@/styles/components/large blocks/tags.module.css'
