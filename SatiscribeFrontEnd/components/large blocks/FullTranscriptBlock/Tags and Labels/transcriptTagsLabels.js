@@ -11,7 +11,7 @@ function TranscriptTags({type, name}) {
         { (type == 'tags' && name =='highlight') ? (
             <div className={`${tags.highlightTags} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
                 <h6 className={`${tags.transcribeLabelText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>highlight</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Cancellation.png")`, zIndex: 1}}></div>
+                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsFinalGray/Cancellation.png")`, zIndex: 1}}></div>
             </div>
         ) : (type =='tags' && name =='action items') ? (
             <div className={`${tags.actionTags} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
@@ -29,22 +29,11 @@ function TranscriptTags({type, name}) {
                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1}}></div>
             </div>
             
-        ) : (type =='labels' && name =='unrelated') ? (
+        ) : (type =='labels') ? (
             <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
-                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>Unrelated</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Trash.png")`, zIndex: 1}}></div>
-            </div>
-        ): (type =='labels' && name =='unsure') ? (
-            <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
-                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>Unsure</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Trash.png")`, zIndex: 1}}></div>
-            </div>
-        ):(type =='labels' && name =='filler words') ? (
-            <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
-                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>Filler Words</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Trash.png")`, zIndex: 1}}></div>
-            </div>
-        ):(null)
+                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>{name}</h6>
+                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsFinalGray/Trash.png")`, zIndex: 1}}></div>
+            </div>):(null)
         }
         </>                  
     )

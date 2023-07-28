@@ -12,7 +12,7 @@ function CreateNewBlock() {
             <div className={`${contentblock.largeBlockContainer} ${flexi.flexColumnSmolGap} ${flexi.justifyCenter}`}>
                 <div className={`${flexi.innerMargin}`}>
                     <div className={`${flexi.flexRowSmolGap} ${flexi.justifyCenter}`}>
-                        <div className={logos.big} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1, }}></div>
+                        <div className={logos.big} style={{ backgroundImage: `url("/iconsPurple/plus.png")`, zIndex: 1, }}></div>
                         <h2 style={{ color: `var(--Final_Light_Purple)` }}> New Component</h2>
                     </div>
                 </div>
