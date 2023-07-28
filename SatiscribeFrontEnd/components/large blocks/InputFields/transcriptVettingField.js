@@ -1,45 +1,41 @@
-import React, { useRef, useEffect } from 'react'
-import style from '@/styles/Colourtest.module.css'
-import flexi from '@/styles/Flexible.module.css'
-import contentblock from '@/styles/components/contentblocks.module.css'
-import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
+import React, { useRef } from 'react';
+import contentblock from '@/styles/components/contentblocks.module.css';
+
+function VettingSentence({ onChange, text, placeholder }) {
+    const divRef = useRef(null);
+
+    const handleKeyDown = (event) => {
+        if (event.keyCode == 8) {
+            event.preventDefault()
+            // Apply the desired style to the selected text or caret position
+            const selection = window.getSelection();
+            const character = (selection.anchorNode.textContent[selection.anchorOffset - 1])
 
 
-function VettingSentence({ Text, onChange, placeholder }) {
+            const delElement = document.createElement('strike');
+            delElement.textContent = character;
 
-    const textareaRef = useRef(null);
-
-    useEffect(() => {
-        adjustTextareaHeight(textareaRef.current);
-    }, []);
-
-
-    function adjustTextareaHeight(textarea) {
-        textarea.style.height = '20px';
-        textarea.style.height = `${textarea.scrollHeight}px`;
+            console.log(delElement)
+            const range = selection.getRangeAt(0);
+            console.log(range)
+            range.insertNode(delElement);
+        }
     };
-
 
     return (
         <>
-            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
-                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '100%' }} >
-                    <textarea
-                        ref={textareaRef}
-                        className={contentblock.textarea}
-                        placeholder={placeholder}
-                        value={Text}
-                        onChange={(event) => {
-                            onChange(event);
-                            adjustTextareaHeight(textareaRef.current)
-                        }} />
-                    <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}>
+            <div
+                ref={divRef}
+                className={contentblock.textarea}
+            >
+                <div contentEditable
+                    onKeyDown={handleKeyDown}>
+                    This is editable content. Press "Ctrl + B" to make selected text bold.
 
-                    </div>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
-export default VettingSentence
+export default VettingSentence;
