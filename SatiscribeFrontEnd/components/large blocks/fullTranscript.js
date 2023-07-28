@@ -4,10 +4,8 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
-{/* <label className={`${contentblock.switch}`}>
-<input type="checkbox" />
-<span className={`${contentblock.roundslider}`}></span>
-</label> */}
+import tags from '@/styles/components/large blocks/tags.module.css'
+import TranscriptTags from './Tags and Labels/transcriptTagsLabels'
 
 function FullTranscriptBlock() {
 
@@ -70,20 +68,40 @@ function FullTranscriptBlock() {
 
                     <ul className={`${list.smolGap}`}>
                         <li>
-                            <input type='text' placeholder='Sentence 1'></input>
-                            <div className={contentblock.line}></div>
+                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <TranscriptTags type='tags' name='highlight' />
+                            </div>
                         </li>
                         <li>
-                            <input type='text' placeholder='Sentence 2'></input>
-                            <div className={contentblock.line}></div>
+                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <TranscriptTags type='tags' name='action items' />
+                            </div>
                         </li>
                         <li>
-                            <input type='text' placeholder='Sentence 3'></input>
-                            <div className={contentblock.line}></div>
+                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <TranscriptTags type='tags' name='key dates' />
+                            </div>
                         </li>
                         <li>
-                            <input type='text' placeholder='Sentence 4'></input>
-                            <div className={contentblock.line}></div>
+                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
+                                    <div className={contentblock.line}></div>
+                                </div>
+                                <TranscriptTags type='tags' name='meeting details' />
+                            </div>
                         </li>
 
                     </ul>

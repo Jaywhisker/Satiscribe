@@ -6,40 +6,13 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import IndividualTask from './taskSummariserIndividualTask'
 import TaskSummariserDropDown from './taskSummariserDropDown'
-
+import TaskJson from '@/data/TaskSummariser.json'
 
 
 
 function TaskSummariserBlock({ editable }) {
 
-    const initialtaskData = [
-        {
-            "id": 1,
-            "task": {
-                "taskname": "task 1",
-                "details": "summary of task 1",
-                "members": {
-                    "derrick": false,
-                    "hubob": false,
-                    "jefferson": false,
-                    "morgan": false
-                }
-            }
-        },
-        {
-            "id": 2,
-            "task": {
-                "taskname": "task 2",
-                "details": "summary of task 2",
-                "members": {
-                    "derrick": false,
-                    "hubob": false,
-                    "jefferson": false,
-                    "morgan": false
-                }
-            }
-        }
-    ]
+    const initialtaskData = TaskJson
 
     const [taskData, setTaskData] = useState(initialtaskData)
     const [editingData, setEditingData] = useState(initialtaskData)
@@ -160,7 +133,7 @@ function TaskSummariserBlock({ editable }) {
                         </div>
 
                         {warning && (
-                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{ marginBottom: -15, marginTop: -15 }}>
+                            <div className={`${flexi.flexRowNoGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{marginBottom: -15, marginTop:-15}}>
                                 <div className={logos.medium} style={{ backgroundImage: `url("/iconsRed/Caution.png")`, zIndex: 1 }}></div>
                                 <h6 style={{ color: `var(--Final_Red)` }}>{warningMessage}</h6>
                             </div>

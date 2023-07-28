@@ -57,22 +57,22 @@ function TaskSummariserDropDown({ clickable, onClick, dataset, resetDropDown }) 
                                             className={logos.small}
                                             style={{ zIndex: 1 }}
                                         />))}
+                            </div>
+                            <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
+                        </div>
+                        <div className={contentblock.line}></div>
+                    </div>
+                    ) : (
+                        <div >
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                                <div className={flexi.flexRowSmolGap}>
+                                    <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
                                 </div>
                                 <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
                             </div>
                             <div className={contentblock.line}></div>
                         </div>
-                        ) : (
-                            <div >
-                                <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
-                                    <div className={flexi.flexRowSmolGap}>
-                                        <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
-                                    </div>
-                                    <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
-                                </div>
-                                <div className={contentblock.line}></div>
-                            </div>
-                        )}
+                    )}
 
 
                     {dropDown && (<div style={{ border: '4px solid', borderTop: 'none', borderColor: `var(--Final_Black)` }}>

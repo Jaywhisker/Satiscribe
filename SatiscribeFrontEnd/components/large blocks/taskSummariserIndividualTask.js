@@ -5,9 +5,9 @@ import flexi from '@/styles/Flexible.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import TaskSummariserDropDown from './taskSummariserDropDown'
-import InputFieldEditableSentence from './inputFieldEditableSentence'
-import InputFieldEditablePara from './inputFieldEditablePara'
-import InputFieldEditable from './inputFieldEditableList'
+import InputFieldEditableSentence from './InputFields/inputFieldEditableSentence'
+import InputFieldEditablePara from './InputFields/inputFieldEditablePara'
+import InputFieldEditable from './InputFields/inputFieldEditableList'
 
 
 
