@@ -37,18 +37,10 @@ function VettingBlockB() {
             const nodeLength = childNode.textContent.length;
 
             if (childNode.nodeType == Node.ELEMENT_NODE) {
-                if (childNode.tagName == 'STRONG') {
+                if (childNode.childNodes.length > 0) {
                     offset = childNode.tagName.length +2 
                     fulltagoffset = 2*offset + 1
-                    if (currentLength + nodeLength + 2*offset +1 >= cursorPosition) {
-                        // console.log(childNode, nodecursorPosition)
-                        return [childNode, nodecursorPosition-offset];
-                    }
-                }
-                else if (childNode.childNodes.length > 0) {
-                    offset = childNode.tagName.length +2 
-                    fulltagoffset = 2*offset + 1
-                    // console.log(fulltagoffset)
+                    console.log(fulltagoffset)
                     for (const innerChild of childNode.childNodes) {
                         var childoffset = (innerChild.tagName && innerChild.tagName.length + 2) || 0;
                         offset += childoffset
@@ -73,7 +65,7 @@ function VettingBlockB() {
                 }
                 nodecursorPosition -= (nodeLength + fulltagoffset)
                 currentLength += nodeLength + fulltagoffset;
-                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
+                console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
                 
             } else {
                 
@@ -82,7 +74,7 @@ function VettingBlockB() {
                 }
                 currentLength += nodeLength;
                 nodecursorPosition -= nodeLength
-                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
+                console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
             }}
         return [childNodes[childNodes.length - 1], nodecursorPosition];
         };
@@ -120,8 +112,7 @@ function VettingBlockB() {
         let currentCursorPosition = findFirstDiffPos(newText,exampleData);
         const textbeforecursor = exampleData.slice(0,currentCursorPosition);
         let modifiedValue = '';
-        console.log(newText)
-        console.log(exampleData)
+        
         if (newText.length > exampleData.length) { //addition input
             if ( (textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length) ) {
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + exampleData.slice(currentCursorPosition);
@@ -130,10 +121,8 @@ function VettingBlockB() {
 
             } else {
                 if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>") ) {
-                    let newCursor = currentCursorPosition += 13
-                    console.log('hello',exampleData.slice(0, newCursor))
-                    console.log('hihi', newText[currentCursorPosition])
-                    modifiedValue = exampleData.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[newCursor]) + "</strong>";
+                    let newCursor = currentCursorPosition + 13
+                    modifiedValue = exampleData.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>";
                     newCursor += 9
                     setCursorPositionLocation(newCursor)
                 } else {
@@ -147,17 +136,18 @@ function VettingBlockB() {
         } 
         
         else if (newText.length <= exampleData.length){
-            console.log(exampleData[currentCursorPosition])
+            // console.log(exampleData[currentCursorPosition])
+            // console.log(currentCursorPosition, newText.length, exampleData.length)
             if (exampleData[currentCursorPosition-1] === ">" ) {
                 var newCursorPosition = findCharacterPos(exampleData, currentCursorPosition, "<")
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
-                setCursorPositionLocation(newCursorPosition)        
+                setCursorPositionLocation(newCursorPosition)  
                 setExampleData(modifiedValue)
 
             } else if (exampleData[currentCursorPosition] === "<" && exampleData[currentCursorPosition+7] === ">" ) {
                 currentCursorPosition += 8
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
-                setCursorPositionLocation(newCursorPosition)        
+                setCursorPositionLocation(currentCursorPosition-8)        
                 setExampleData(modifiedValue)
             } else {
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition+1)
