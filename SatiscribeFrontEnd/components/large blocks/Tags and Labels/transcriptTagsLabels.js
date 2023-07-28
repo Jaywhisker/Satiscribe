@@ -31,11 +31,21 @@ function TranscriptTags({type, name}) {
             </div>
             
         ) : (type =='labels' && name =='unrelated') ? (
-            <div className={`${tags.meetingDetailsTags} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
-                <h6 className={`${tags.transcribeLabelText}`} style={{color:`var(--Final_White)`, width:'75%'}}>meeting details</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1}}></div>
+            <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
+                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>Unrelated</h6>
+                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Trash.png")`, zIndex: 1}}></div>
             </div>
-        ): (null)
+        ): (type =='labels' && name =='unsure') ? (
+            <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
+                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>Unsure</h6>
+                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Trash.png")`, zIndex: 1}}></div>
+            </div>
+        ):(type =='labels' && name =='filler words') ? (
+            <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
+                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>Filler Words</h6>
+                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsGrey/Trash.png")`, zIndex: 1}}></div>
+            </div>
+        ):(null)
         }
         </>                  
     )
