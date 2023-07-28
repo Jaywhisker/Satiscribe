@@ -8,13 +8,6 @@ import tags from '@/styles/components/large blocks/tags.module.css'
 import TranscriptTags from './Tags and Labels/transcriptTagsLabels'
 
 function FullTranscriptBlock() {
-
-    const sentences = [
-        { id: 1, text: 'Sentence 1' },
-        { id: 2, text: 'Sentence 2' },
-        { id: 3, text: 'Sentence 3' },
-    ];
-
     return (
         <>
 
@@ -110,5 +103,3 @@ function FullTranscriptBlock() {
         </>
     )
 }
-
-export default FullTranscriptBlock
