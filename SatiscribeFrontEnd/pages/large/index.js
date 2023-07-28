@@ -6,10 +6,13 @@ import FullTranscriptBlock from '@/components/large blocks/FullTranscriptBlock/f
 import AgendaBlock from '@/components/large blocks/AgendaMain'
 import TaskSummariserBlock from '/components/large blocks/TaskSummariserMain'
 import VettingBlock from '../../components/large blocks/vettingBlock'
+import VettingBlockB from '../../components/large blocks/FullTranscriptBlock/Design B/VettingBlockB'
+
 
 function Largetesting() {
     return (
         <div>
+            <VettingBlockB/>
             <VettingBlock />
             <AgendaBlock />
             <FullTranscriptBlock />
