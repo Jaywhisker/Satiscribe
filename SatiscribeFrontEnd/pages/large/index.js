@@ -5,13 +5,15 @@ import CreateNewBlock from '@/components/large blocks/createNewBlocks'
 import FullTranscriptBlock from '@/components/large blocks/fullTranscript'
 import AgendaBlock from '@/components/large blocks/agenda'
 import TaskSummariserBlock from '../../components/large blocks/taskSummariser'
+import VettingBlock from '../../components/large blocks/vettingBlock'
 
 function largetesting() {
     return (
         <div>
-            <AgendaBlock />
+            <VettingBlock></VettingBlock>
+            {/* <AgendaBlock />
             <FullTranscriptBlock />
-            <CreateNewBlock />
+            <CreateNewBlock /> */}
             <TaskSummariserBlock editable={false} />
             <TaskSummariserBlock editable={true} />
 

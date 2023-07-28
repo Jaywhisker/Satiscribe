@@ -4,9 +4,19 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
-
+{/* <label className={`${contentblock.switch}`}>
+<input type="checkbox" />
+<span className={`${contentblock.roundslider}`}></span>
+</label> */}
 
 function FullTranscriptBlock() {
+
+    const sentences = [
+        { id: 1, text: 'Sentence 1' },
+        { id: 2, text: 'Sentence 2' },
+        { id: 3, text: 'Sentence 3' },
+    ];
+
     return (
         <>
 
