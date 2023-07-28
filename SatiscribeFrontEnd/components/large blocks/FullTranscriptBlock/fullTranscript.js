@@ -103,3 +103,5 @@ function FullTranscriptBlock() {
         </>
     )
 }
+
+export default FullTranscriptBlock

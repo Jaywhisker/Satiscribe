@@ -1,13 +1,11 @@
 import React, { useRef, useEffect } from 'react'
 import style from '@/styles/Colourtest.module.css'
 import flexi from '@/styles/Flexible.module.css'
-import logos from '@/styles/Logos.module.css'
-import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
 
 
-function VettingSentence({ text, placeholder }) {
+function VettingSentence({ Text, onChange, placeholder }) {
 
     const textareaRef = useRef(null);
 
@@ -30,12 +28,12 @@ function VettingSentence({ text, placeholder }) {
                         ref={textareaRef}
                         className={contentblock.textarea}
                         placeholder={placeholder}
-                        value={text}
+                        value={Text}
                         onChange={(event) => {
                             onChange(event);
                             adjustTextareaHeight(textareaRef.current)
                         }} />
-                    <div className={contentblock.line} style={{ borderBottomColor: text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}>
+                    <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}>
 
                     </div>
                 </div>

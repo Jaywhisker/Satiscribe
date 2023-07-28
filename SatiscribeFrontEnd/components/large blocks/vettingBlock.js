@@ -19,7 +19,7 @@ function VettingBlock() {
                             <span className={`${contentblock.roundslider}`}></span>
                         </label>
                     </div>
-                    <VettingSentence text={'yesnt'} placeholder={'yes'}></VettingSentence>
+                    {/* <VettingSentence text={'yesnt'} placeholder={'yes'}></VettingSentence> */}
                 </div>
             </div>
         </>
