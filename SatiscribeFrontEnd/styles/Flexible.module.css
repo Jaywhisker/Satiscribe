@@ -12,11 +12,36 @@
     flex-direction: row;
 }
 
+.flexColumnSmollestGap{
+    display: flex;
+    flex-direction: column;
+    gap: var(--smollestGap);
+}
+
+.flexRowSmollestGap{
+    display: flex;
+    flex-direction: row;
+    gap: var(--smollestGap);
+}
+
+.flexColumnSmollerGap{
+    display: flex;
+    flex-direction: column;
+    gap: var(--smollerGap);
+}
+
+.flexRowSmollerGap{
+    display: flex;
+    flex-direction: row;
+    gap: var(--smollerGap);
+}
+
 .flexColumnSmolGap {
     display: flex;
     flex-direction: column;
     gap: var(--smolGap);
 }
+
 
 .flexRowSmolGap {
     display: flex;
@@ -84,6 +109,10 @@
     justify-content: start;
 }
 
+.justifyEnd{
+    justify-content: end;
+}
+
 .alignStart {
     align-items: start;
 }
@@ -103,12 +132,4 @@
 
 .spacing {
     padding: var(--contentPaddingVert) var(--smolGap);
-}
-
-.transcribeLabelText {
-    width: fit-content;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    line-height: 3.5vh;
-    text-transform: uppercase;
 }

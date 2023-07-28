@@ -30,4 +30,13 @@
     --Final_Calendar_Purple: rgb(121, 97, 111);
     --Final_Calendar_Skin: rgb(234, 181, 149);
     --Final_Calendar_Pink: rgb(174, 99, 120);
+    --Final_Red_75: rgb(215, 82, 79, 0.75);
+    --Final_Red_50: rgb(215, 82, 79, 0.50);
+    --Final_Red_25: rgb(215, 82, 79, 0.25);
+    --Final_Tag_Orange: rgb(255, 174, 83);
+    --Final_Tag_Orange_15: rgb(255, 174, 83, 0.15);
+    --Final_Tag_Yellow: rgb(255, 219, 99);
+    --Final_Tag_Yellow_15: rgb(255, 219, 99,0.15);
+    --Final_Tag_Green: rgb(42, 177, 55);
+    --Final_Tag_Green15: rgb(42, 177, 55, 0.15);
 }

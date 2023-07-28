@@ -5,7 +5,7 @@ import logos from '@/styles/Logos.module.css'
 import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
-import InputFieldEditableList from './inputFieldEditableList'
+import InputFieldEditableList from './InputFields/inputFieldEditableList'
 import AgendaJson from '@/data/Agenda.json'
 
 function AgendaBlock() {
