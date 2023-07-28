@@ -11,9 +11,9 @@ function largetesting() {
     return (
         <div>
             <VettingBlock></VettingBlock>
-            {/* <AgendaBlock />
+            <AgendaBlock />
             <FullTranscriptBlock />
-            <CreateNewBlock /> */}
+            <CreateNewBlock />
             <TaskSummariserBlock editable={false} />
             <TaskSummariserBlock editable={true} />
 
