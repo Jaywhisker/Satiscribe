@@ -12,6 +12,7 @@ function colourtest() {
             <h5>H5 Section Heading</h5>
             <h6>H6 Caption</h6>
             <p>p Normal Paragraph</p>
+            <p className={flexi.transcribeLabelText}>Meeting<br /> Details</p>
 
             <br></br>
             <p className={style.text1}>Final_Light_Purple</p>

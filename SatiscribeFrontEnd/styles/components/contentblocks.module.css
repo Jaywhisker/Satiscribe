@@ -39,7 +39,7 @@
 }
 
 .line {
-    border-bottom: 3px solid var(--Final_White);
+    border-bottom: 3px solid var(--Final_White_25);
     border-radius: 5px;
 }
 
@@ -68,7 +68,7 @@
     color: var(--Final_White);
     border: 0;
     resize: none;
-    height:auto;
+    height: auto;
     overflow-y: hidden;
 }
 
@@ -90,6 +90,6 @@
     margin: 0;
 }
 
-.clickable:hover{
+.clickable:hover {
     cursor: pointer;
 }
