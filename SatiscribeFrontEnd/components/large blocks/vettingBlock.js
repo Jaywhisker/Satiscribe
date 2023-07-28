@@ -4,6 +4,7 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
+import VettingSentence from './InputFields/transcriptVettingField'
 
 function VettingBlock() {
 
@@ -18,6 +19,7 @@ function VettingBlock() {
                             <span className={`${contentblock.roundslider}`}></span>
                         </label>
                     </div>
+                    <VettingSentence text={'yesnt'} placeholder={'yes'}></VettingSentence>
                 </div>
             </div>
         </>
