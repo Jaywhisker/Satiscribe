@@ -4,6 +4,7 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
+import tags from '@/styles/components/large blocks/tags.module.css'
 import TranscriptTags from './Tags and Labels/transcriptTagsLabels'
 
 function FullTranscriptBlock() {
@@ -61,67 +62,41 @@ function FullTranscriptBlock() {
                     <ul className={`${list.smolGap}`}>
                         <li>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
                                     <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='highlight'/>
+                                <TranscriptTags type='tags' name='highlight' />
                             </div>
                         </li>
                         <li>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
-                                    <input type='text' placeholder='Sentence 2'></input>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='action items'/>
+                                <TranscriptTags type='tags' name='action items' />
                             </div>
                         </li>
                         <li>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
-                                    <input type='text' placeholder='Sentence 3'></input>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='key dates'/>
+                                <TranscriptTags type='tags' name='key dates' />
                             </div>
                         </li>
                         <li>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
-                                    <input type='text' placeholder='Sentence 4'></input>
+                                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '90%' }}>
+                                    <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='meeting details'/>
+                                <TranscriptTags type='tags' name='meeting details' />
                             </div>
                         </li>
-                        <li>
-                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
-                                    <input type='text' placeholder='Sentence 5'></input>
-                                    <div className={contentblock.line}></div>
-                                </div>
-                                <TranscriptTags type='labels' name='unsure'/>
-                            </div>
-                        </li>
-                        <li>
-                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
-                                    <input type='text' placeholder='Sentence 6'></input>
-                                    <div className={contentblock.line}></div>
-                                </div>
-                                <TranscriptTags type='labels' name='unrelated'/>
-                            </div>
-                        </li>
-                        <li>
-                            <div className={`${flexi.flexRowMediumGap} ${flexi.alignCenter}`}>
-                                <div className={`${flexi.flexColumnNoGap}`} style={{width:'90%'}}>
-                                    <input type='text' placeholder='Sentence 7'></input>
-                                    <div className={contentblock.line}></div>
-                                </div>
-                                <TranscriptTags type='labels' name='filler words'/>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
             </div>
