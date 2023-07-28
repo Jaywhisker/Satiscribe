@@ -5,15 +5,12 @@ import logos from '@/styles/Logos.module.css'
 import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import largeblockStyles from '@/styles/components/large blocks/createNewBlockStyles.module.css'
-import InputFieldEditableList from './inputFieldEditableList'
+import InputFieldEditableList from './InputFields/inputFieldEditableList'
+import AgendaJson from '@/data/Agenda.json'
 
 function AgendaBlock() {
 
-    const initialAgendas = [
-        { id: 1, text: 'Agenda 1' },
-        { id: 2, text: 'Agenda 2' },
-        { id: 3, text: 'Agenda 3' },
-    ];
+    const initialAgendas = AgendaJson
 
     const [agendas, setAgendas] = useState(initialAgendas);
     const [editingState, setEditingState] = useState(false);
