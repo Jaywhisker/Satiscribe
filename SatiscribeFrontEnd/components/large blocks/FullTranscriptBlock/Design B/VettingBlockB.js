@@ -88,9 +88,7 @@ function VettingBlockB() {
             let textlength = 0
             let newcursorposition = nodecursorPosition
             for (const innerChild of textNode.childNodes) {
-                // console.log(innerChild)
                 textlength = innerChild.textContent.length
-                // console.log(textlength, newcursorposition)
                 if (newcursorposition <= textlength) {
                     try {
                         selection.setBaseAndExtent(innerChild, newcursorposition, innerChild, newcursorposition)
