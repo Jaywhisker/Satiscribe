@@ -115,7 +115,7 @@ p:focus{
 b,
 i,
 em,
-span {
+strong {
   font-weight: inherit;
   font-style: inherit;
   text-decoration: inherit;
@@ -165,4 +165,8 @@ input {
   color: var(--Final_White);
   border: none;
   outline: none;
+}
+
+s{
+  color: var(--Final_White_50);
 }
