@@ -1,14 +1,50 @@
 import React, { useRef, useState, useEffect } from 'react';
 import contentblock from '@/styles/components/contentblocks.module.css';
 import { random } from 'animejs';
+import flexi from '@/styles/Flexible.module.css'
+import TranscriptTagsYL from '../FullTranscriptBlock/Tags and Labels/transcriptTagsLabelsYL';
 
-function VettingSentence({ onChange, text, placeholder }) {
+function VettingSentence({ thisindex, text, tagName, sentenceStates, setSentenceStates }) {
     const [exampleData, setExampleData] = useState(text);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
     const [deletePressed, setDeletePressed] = useState(false)
 
+    const identifier = sentenceStates[thisindex].identifier;
+
 
     const divRef = useRef(null);
+
+    const runOnToggleFillerChange = () => {
+        // Replace this with the functionality you want to run
+        if (sentenceStates[thisindex].trashClicked == true) {
+            // Some function to detect all <b> and then apply <s> around them
+            const currentData = exampleData;
+            const regex = new RegExp(`<${identifier}>(.*?)<\/${identifier}>`, 'g');
+            const newData = currentData.replace(regex, (_, captureGroup) => {
+                return `<${identifier}>` + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + `</${identifier}>`;
+            });
+            setExampleData(newData)
+        } else {
+            // Some function to detect all <b> and then apply <s> around them
+            const currentData = exampleData;
+            const regex = new RegExp(`<${identifier}><s>(.*?)<\/s><\/${identifier}>`, 'g');
+            const newData = currentData.replace(regex, (_, captureGroup) => {
+                return `<${identifier}>` + captureGroup.split('<s>').join('').split('</s>').join('') + `</${identifier}>`;
+            });
+            setExampleData(newData)
+        }
+    };
+
+    const prevTrashClicked = useRef(sentenceStates[thisindex].trashClicked);
+
+    useEffect(() => {
+        const trashClicked = sentenceStates[thisindex].trashClicked;
+        if (prevTrashClicked.current !== trashClicked) {
+            // console.log(sentenceStates[thisindex]);
+            runOnToggleFillerChange(trashClicked);
+            prevTrashClicked.current = trashClicked;
+        }
+    }, [sentenceStates, thisindex]);
 
     useEffect(() => {
         setCursorPosition(document.getElementById('paragraph'), cursorPointerLocation)
@@ -76,20 +112,31 @@ function VettingSentence({ onChange, text, placeholder }) {
         return i;
     }
 
+    let thisType = tagName === '' ? 'tags' : 'labels';
+
 
 
     return (
         <>
             <li>
-                <p
-                    id="paragraph"
-                    ref={divRef}
-                    contentEditable="true"
-                    style={{ color: `var(--Final_White)`, width: '75%' }}
-                    dangerouslySetInnerHTML={{ __html: `${exampleData}` }}
-                    onInput={onInput}
-                />
+                <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
+
+                    <p
+                        id="paragraph"
+                        ref={divRef}
+                        contentEditable="true"
+                        style={{ color: `var(--Final_White)`, width: '75%' }}
+                        dangerouslySetInnerHTML={{ __html: `${exampleData}` }}
+                        onInput={onInput}
+                    />
+                    {/* Change labels to tags to get nothing */}
+                    <TranscriptTagsYL type={thisType} name={tagName} thisindex={thisindex} sentenceStates={sentenceStates} setSentenceStates={setSentenceStates} />
+
+                </div>
+
             </li>
+
+
         </>
     );
 }

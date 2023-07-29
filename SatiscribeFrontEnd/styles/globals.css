@@ -2,7 +2,7 @@
 
 :root {
   --smollestGap: 5px;
-  --smollerGap:10px;
+  --smollerGap: 10px;
   --smolGap: 15px;
   --mediumGap: 30px;
   --bigGap: 50px;
@@ -107,7 +107,7 @@ p {
   color: var(--Final_Light_Purple);
 }
 
-p:focus{
+p:focus {
   outline: none;
   border: none;
 }
@@ -167,6 +167,6 @@ input {
   outline: none;
 }
 
-s{
+s {
   color: var(--Final_White_50);
 }

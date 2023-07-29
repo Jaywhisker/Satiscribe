@@ -17,11 +17,28 @@ function VettingBlockB() {
 
     const handleToggleFiller = (event) => {
         setToggleFiller(event.target.checked);
+        if (toggleFiller == true) {
+            // Some function to detect all <b> and then apply <s> around them
+            const currentData = exampleData;
+            const regex = /<b>(.*?)<\/b>/g;
+            const newData = currentData.replace(regex, (_, captureGroup) => {
+                return '<b>' + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + '</b>';
+            });
+            setExampleData(newData)
+        } else {
+            // Some function to detect all <b> and then apply <s> around them
+            const currentData = exampleData;
+            const regex = /<b><s>(.*?)<\/s><\/b>/g;
+            const newData = currentData.replace(regex, (_, captureGroup) => {
+                return '<b>' + captureGroup.split('<s>').join('').split('</s>').join('') + '</b>';
+            });
+            setExampleData(newData)
+        }
     };
 
     useEffect(() => {
         setCursorPosition(document.getElementById('paragraph'), cursorPointerLocation)
-        console.log(exampleData[cursorPointerLocation])
+        // console.log(exampleData[cursorPointerLocation])
     }, [exampleData, cursorPointerLocation]);
 
 
@@ -40,7 +57,7 @@ function VettingBlockB() {
                 if (childNode.childNodes.length > 0) {
                     offset = childNode.tagName.length + 2
                     fulltagoffset = 2 * offset + 1
-                    console.log(fulltagoffset)
+                    // console.log(fulltagoffset)
                     for (const innerChild of childNode.childNodes) {
                         var childoffset = (innerChild.tagName && innerChild.tagName.length + 2) || 0;
                         offset += childoffset
@@ -66,7 +83,7 @@ function VettingBlockB() {
                 }
                 nodecursorPosition -= (nodeLength + fulltagoffset)
                 currentLength += nodeLength + fulltagoffset;
-                console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
+                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
 
             } else {
 
@@ -75,7 +92,7 @@ function VettingBlockB() {
                 }
                 currentLength += nodeLength;
                 nodecursorPosition -= nodeLength
-                console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
+                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
             }
         }
         return [childNodes[childNodes.length - 1], nodecursorPosition];
@@ -85,7 +102,7 @@ function VettingBlockB() {
     const setCursorPosition = (paragraphElement, cursorPosition) => {
         const selection = window.getSelection();
         const [textNode, nodecursorPosition] = findChildNodeByCursorPosition(paragraphElement, cursorPosition);
-        console.log(textNode, nodecursorPosition)
+        // console.log(textNode, nodecursorPosition)
         if (textNode.childNodes.length > 0) {
             let textlength = 0
             let newcursorposition = nodecursorPosition
@@ -131,28 +148,36 @@ function VettingBlockB() {
                     setCursorPositionLocation(currentCursorPosition)
                 }
             }
-            console.log(modifiedValue)
+            // console.log(modifiedValue)
             setExampleData(modifiedValue)
         }
 
         else if (newText.length <= exampleData.length) {
             // console.log(exampleData[currentCursorPosition])
             // console.log(currentCursorPosition, newText.length, exampleData.length)
+            // When Exiting a tag <b> tag (also activates when we come into contact with a </b> like deleting the previous character before a ummm </b> )
             if (exampleData[currentCursorPosition - 1] === ">") {
                 var newCursorPosition = findCharacterPos(exampleData, currentCursorPosition, "<")
+                console.log(exampleData.slice(newCursorPosition, currentCursorPosition))
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition + 1)
                 setCursorPositionLocation(newCursorPosition)
                 setExampleData(modifiedValue)
+                // Some way to check if I am in </b>
+            } else if (exampleData[current]) {
 
-            } else if (exampleData[currentCursorPosition] === "<" && exampleData[currentCursorPosition + 7] === ">") {
+            }
+            // Used to delete existing strong tags
+            else if (exampleData[currentCursorPosition] === "<" && exampleData[currentCursorPosition + 7] === ">") {
+                console.log(exampleData.slice(currentCursorPosition, currentCursorPosition + 7))
                 currentCursorPosition += 8
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition + 1)
                 setCursorPositionLocation(currentCursorPosition - 8)
                 setExampleData(modifiedValue)
             } else {
+                console.log('catcher')
                 modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition + 1)
-                console.log(modifiedValue)
-                console.log(currentCursorPosition)
+                // console.log(modifiedValue)
+                // console.log(currentCursorPosition)
                 setCursorPositionLocation(currentCursorPosition)
                 setExampleData(modifiedValue)
             }
