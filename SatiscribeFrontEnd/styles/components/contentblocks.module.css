@@ -135,11 +135,11 @@
 }
 
 .switch input[type="checkbox"]:checked+.roundslider {
-    background-color: var(--Final_White);
+    background-color: var(--Final_Red);
 }
 
 .switch input[type="checkbox"]+.roundslider {
-    background-color: var(--Final_Light_Purple);
+    background-color: var(--Final_Red_50);
 }
 
 input:checked+.roundslider:before {

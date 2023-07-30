@@ -11,31 +11,31 @@ function InputFieldEditableSentence({ Text, onChange, onDelete, placeholder, del
 
     return (
         <>
-        { !deletable ? (
-            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
-                <div className={`${flexi.flexColumnNoGap}`} style={{ width: '100%' }} >
-                    <input type='text'
-                        placeholder={placeholder}
-                        value={Text}
-                        onChange={onChange}
-                    />
-                    <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}></div>
-                </div>
-            </div>
-        ) : (
-            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
-                    <div className={`${flexi.flexColumnNoGap}`} style={{width:'100%'}} >
-                        <input type='text' 
-                                placeholder={placeholder}
-                                value={Text}
-                                onChange={onChange}
-                                />
-                        <div className={contentblock.line} style={{borderBottomColor: Text.length <=0 ? `var(--Final_White_50)` : `var(--Final_White)`}}></div>
+            {!deletable ? (
+                <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
+                    <div className={`${flexi.flexColumnNoGap}`} style={{ width: '100%' }} >
+                        <input type='text'
+                            placeholder={placeholder}
+                            value={Text}
+                            onChange={onChange}
+                        />
+                        <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}></div>
                     </div>
-                <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }} onClick={onDelete}></div>
-            </div>
-        )}
-            
+                </div>
+            ) : (
+                <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignEnd}`}>
+                    <div className={`${flexi.flexColumnNoGap}`} style={{ width: '100%' }} >
+                        <input type='text'
+                            placeholder={placeholder}
+                            value={Text}
+                            onChange={onChange}
+                        />
+                        <div className={contentblock.line} style={{ borderBottomColor: Text.length <= 0 ? `var(--Final_White_50)` : `var(--Final_White)` }}></div>
+                    </div>
+                    <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }} onClick={onDelete}></div>
+                </div>
+            )}
+
         </>
     )
 }
