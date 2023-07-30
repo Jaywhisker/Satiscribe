@@ -6,6 +6,8 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import ParagraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
+import { onInput, setCursorPosition, handleToggleFiller } from '../EditingTranscriptFunctions'
+
 
 function VettingBlockB() {
 
@@ -13,193 +15,15 @@ function VettingBlockB() {
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
     const initialData = ParagraphData.paragraph
     const [exampleData, setExampleData] = useState(initialData)
-
-    const handleToggleFiller = (event) => {
-        setToggleFiller(event.target.checked);
-        if (toggleFiller == true) {
-            // Some function to detect all <b> and then apply <s> around them
-            const currentData = exampleData;
-            const regex = /<b>(.*?)<\/b>/g;
-            const newData = currentData.replace(regex, (_, captureGroup) => {
-                return '<b>' + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + '</b>';
-            });
-            setExampleData(newData)
-        } else {
-            // Some function to detect all <b> and then apply <s> around them
-            const currentData = exampleData;
-            const regex = /<b><s>(.*?)<\/s><\/b>/g;
-            const newData = currentData.replace(regex, (_, captureGroup) => {
-                return '<b>' + captureGroup.split('<s>').join('').split('</s>').join('') + '</b>';
-            });
-            setExampleData(newData)
-        }
-    };
+    const [paragraphID, setParagraphID] = useState(0)
+    const [disabledContainer, setDisabledContainer] = useState(() =>Array.from({ length: exampleData.length }, () => false));
+  
 
     useEffect(() => {
-        setCursorPosition(document.getElementById('paragraph'), cursorPointerLocation)
+        const paragraphId = `paragraph_${paragraphID}`
+        setCursorPosition(document.getElementById(paragraphId), cursorPointerLocation)
         // console.log(exampleData[cursorPointerLocation])
     }, [exampleData, cursorPointerLocation]);
-
-
-    const findChildNodeByCursorPosition = (paragraphElement, cursorPosition) => {
-        const childNodes = paragraphElement.childNodes;
-        let nodecursorPosition = cursorPosition;
-        let currentLength = 0;
-        let offset = 0;
-        let fulltagoffset = 0;
-
-        for (let i = 0; i < childNodes.length; i++) {
-            const childNode = childNodes[i];
-            const nodeLength = childNode.textContent.length;
-
-            if (childNode.nodeType == Node.ELEMENT_NODE) {
-                if (childNode.childNodes.length > 0) {
-                    offset = childNode.tagName.length + 2
-                    fulltagoffset = 2 * offset + 1
-                    // console.log(fulltagoffset)
-                    for (const innerChild of childNode.childNodes) {
-                        var childoffset = (innerChild.tagName && innerChild.tagName.length + 2) || 0;
-                        offset += childoffset
-                        if (childoffset === 0) {
-                            null
-                        } else {
-                            fulltagoffset += 2 * childoffset + 1
-                        }
-
-                        if (currentLength + nodeLength + offset >= cursorPosition) {
-                            return [childNode, nodecursorPosition - offset];
-                        } else {
-                            offset += (childoffset !== 0) ? childoffset + 1 : 0;
-                        }
-                    }
-                }
-                else {
-                    offset = childNode.tagName.length + 2
-                    fulltagoffset = offset * 2 + 1
-                    if (currentLength + nodeLength + fulltagoffset >= cursorPosition) {
-                        return [childNode, nodecursorPosition - offset];
-                    }
-                }
-                nodecursorPosition -= (nodeLength + fulltagoffset)
-                currentLength += nodeLength + fulltagoffset;
-                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
-
-            } else {
-
-                if (currentLength + nodeLength >= cursorPosition) {
-                    return [childNode, nodecursorPosition];
-                }
-                currentLength += nodeLength;
-                nodecursorPosition -= nodeLength
-                // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
-            }
-        }
-        return [childNodes[childNodes.length - 1], nodecursorPosition];
-    };
-
-
-    const setCursorPosition = (paragraphElement, cursorPosition) => {
-        const selection = window.getSelection();
-        const [textNode, nodecursorPosition] = findChildNodeByCursorPosition(paragraphElement, cursorPosition);
-        // console.log(textNode, nodecursorPosition)
-        if (textNode.childNodes.length > 0) {
-            let textlength = 0
-            let newcursorposition = nodecursorPosition
-            for (const innerChild of textNode.childNodes) {
-                textlength = innerChild.textContent.length
-                if (newcursorposition <= textlength) {
-                    try {
-                        selection.setBaseAndExtent(innerChild, newcursorposition, innerChild, newcursorposition)
-                    } catch {
-                        selection.setBaseAndExtent(innerChild.firstChild, newcursorposition, innerChild.firstChild, newcursorposition)
-                    }
-                    break
-                } else {
-                    newcursorposition -= textlength
-
-                }
-            }
-        } else { selection.setBaseAndExtent(textNode, nodecursorPosition, textNode, nodecursorPosition) }
-    };
-
-
-    const onInput = (event, id) => {
-
-        
-        const newText = event.target.innerHTML.replace('&nbsp', ' ').replace(';', ''); //convert space bar code to js space
-        let currentCursorPosition = findFirstDiffPos(newText, exampleData);
-        const textbeforecursor = exampleData.slice(0, currentCursorPosition);
-        let modifiedValue = '';
-
-        if (newText.length > exampleData.length) { //addition input
-            if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
-                modifiedValue = exampleData.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + exampleData.slice(currentCursorPosition);
-                currentCursorPosition += 9
-                setCursorPositionLocation(currentCursorPosition)
-
-            } else {
-                if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>")) {
-                    let newCursor = currentCursorPosition + 13
-                    modifiedValue = exampleData.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>";
-                    newCursor += 9
-                    setCursorPositionLocation(newCursor)
-                } else {
-                    modifiedValue = exampleData.slice(0, currentCursorPosition) + newText[currentCursorPosition] + exampleData.slice(currentCursorPosition);
-                    currentCursorPosition += 1
-                    setCursorPositionLocation(currentCursorPosition)
-                }
-            }
-            // console.log(modifiedValue)
-            setExampleData(modifiedValue)
-        }
-
-        else if (newText.length <= exampleData.length) {
-            // console.log(exampleData[currentCursorPosition])
-            // console.log(currentCursorPosition, newText.length, exampleData.length)
-            // When Exiting a tag <b> tag (also activates when we come into contact with a </b> like deleting the previous character before a ummm </b> )
-            if (exampleData[currentCursorPosition - 1] === ">") {
-                var newCursorPosition = findCharacterPos(exampleData, currentCursorPosition, "<")
-                console.log(exampleData.slice(newCursorPosition, currentCursorPosition))
-                modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition + 1)
-                setCursorPositionLocation(newCursorPosition)
-                setExampleData(modifiedValue)
-                // Some way to check if I am in </b>
-            } 
-            // Used to delete existing strong tags
-            else if (exampleData[currentCursorPosition] === "<" && exampleData[currentCursorPosition + 7] === ">") {
-                console.log(exampleData.slice(currentCursorPosition, currentCursorPosition + 7))
-                currentCursorPosition += 8
-                modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition + 1)
-                setCursorPositionLocation(currentCursorPosition - 8)
-                setExampleData(modifiedValue)
-            } else {
-                console.log('catcher')
-                modifiedValue = exampleData.slice(0, currentCursorPosition) + "<s>" + exampleData[currentCursorPosition] + "</s>" + exampleData.slice(currentCursorPosition + 1)
-                // console.log(modifiedValue)
-                // console.log(currentCursorPosition)
-                setCursorPositionLocation(currentCursorPosition)
-                setExampleData(modifiedValue)
-            }
-        }
-    }
-
-
-    const findCharacterPos = (text, currentIndex, char) => {
-        var index = currentIndex;
-        while (index >= 0 && text[index] !== char) {
-            console.log(text[index])
-            index--;
-        }
-        return index;
-    }
-
-    const findFirstDiffPos = (a, b) => {
-        var i = 0;
-        if (a === b) return -1;
-        while (a[i] === b[i]) i++;
-        return i;
-    }
-
 
     return (
         <>
@@ -214,7 +38,7 @@ function VettingBlockB() {
                                 <input
                                     type="checkbox"
                                     checked={toggleFiller}
-                                    onChange={handleToggleFiller}
+                                    onChange={(event) => handleToggleFiller(event, exampleData, setExampleData, toggleFiller, setToggleFiller, setDisabledContainer)}
                                 />
                                 <span className={`${contentblock.roundslider}`}></span>
                             </label>
@@ -222,13 +46,12 @@ function VettingBlockB() {
                     </div>
 
                     {exampleData.map((data, index) => (
-                        <div className={`${flexi.flexColumnSmolGap}`}>
+                        <div className={`${flexi.flexColumnSmolGap}`} key={index}>
                             <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                             <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
-                                <p id="paragraph" contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={onInput(index)} />
-
+                                <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}   onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
                                 { data.tags.length > 0 ? (
-                                    <TranscriptTags type='labels' name={data.tags} />
+                                    <TranscriptTags type='labels' name={data.tags} disabled={disabledContainer[index]}/>
                                 ) : (null) }
 
                             </div>

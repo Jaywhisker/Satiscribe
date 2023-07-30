@@ -1,25 +1,21 @@
 {
     "paragraph": [
       {
-        "id": 0,
         "transcript": "We need to <b>ummm </b>ensure that our design principles are well-defined. Yeah, I was thinking about that too. So I was thinking that like we need to do this but <b>uhhhh</b> I'm not too sure though. Do you guys think it's correct?",
         "tags": "Filler Words",
         "audio": "Some link"
       },
       {
-        "id": 1,
         "transcript": "<i>We need to ensure that our design principles are well-defined. Yeah, I was thinking about that too. How about we start with the font? We need to ensure that our design principles are well-defined.</i>",
         "tags": "Uncertain",
         "audio": "Some link"
       },
       {
-        "id": 2,
-        "transcript": "We need to ensure that our design principles are well-defined. Yeah, I was thinking about that too.  We will need to do some testing but I think it should be okay to decide between the two.",
-        "tags": "",
+        "transcript": "We need to ensure that our design principles are well-defined. <b>Uhhhh</b> Yeah, I was thinking about that too.  We will need to do some testing but I think it should be okay to decide between the two.",
+        "tags": "Filler Words",
         "audio": "Some link"
       },
       {
-        "id": 3,
         "transcript": "<em>Why do you have a baby duck bookmark though? Have you heard of the great design company called Kurtz? This baby duck is part of the little family called the ducks. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</em>",
         "tags": "Unrelated",
         "audio": "Some link"
