@@ -1,0 +1,106 @@
+[
+    {
+      "project_id": 1,
+      "project_name": "hci/ai",
+      "project_details": {
+        "members": {
+          "0": "morgan",
+          "1": "hubob",
+          "2": "derrick",
+          "3" :"jefferson"
+        },
+        "task_list": [
+          {
+            "task_id": 0,
+            "task_details": {
+              "task_name": "yes",
+              "assigned_to": ["hubob", "derrick"],
+              "status": "not started",
+              "duedate": "16/07"
+            }
+          },
+          {
+            "task_id": 1,
+            "task_details": {
+              "task_name": "no",
+              "assigned_to": ["hubob", "derrick"],
+              "status": "not started",
+              "duedate": "16/07"
+            }
+          }
+        ],
+        "meeting_logs": [
+          {
+            "meeting_id": 0,
+            "meeting_details": {
+              "date": "27 Jul 2023",
+              "venue": "studio 7",
+              "attendance": ["hubob", "derrick", "jefferson"]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "project_id": 2,
+      "project_name": "sds",
+      "project_details": {
+        "members": {
+          "0": "morgan",
+          "1": "hubob",
+          "2": "derrick",
+          "3" :"jefferson"
+        },
+        "task_list": [
+          {
+            "task_id": 0,
+            "task_details": {
+              "task_name": "Task A",
+              "assigned_to": ["morgan", "hubob"],
+              "status": "Not Started",
+              "duedate": "2023-07-16"
+            }
+          },
+          {
+            "task_id": 1,
+            "task_details": {
+              "task_name": "Task B",
+              "assigned_to": ["morgan"],
+              "status": "In Progress",
+              "duedate": "2023-07-20"
+            }
+          },
+          {
+            "task_id": 2,
+            "task_details": {
+              "task_name": "Task C",
+              "assigned_to": ["derrick"],
+              "status": "Completed",
+              "duedate": "2023-07-25"
+            }
+          }
+        ],
+        "meeting_logs": [
+          {
+            "meeting_id": 0,
+            "meeting_details": {
+              "date": "2023-07-29",
+              "venue": "Conference Room 2",
+              "attendance": ["morgan", "hubob", "derrick"],
+              "notes": "Discussed Task A progress and assigned new subtasks."
+            }
+          },
+          {
+            "meeting_id": 1,
+            "meeting_details": {
+              "date": "2023-08-03",
+              "venue": "Meeting Room B",
+              "attendance": ["morgan", "derrick", "jefferson"],
+              "notes": "Reviewed Task C and prepared for the sprint presentation."
+            }
+          }
+        ]
+      }
+    }
+  ]
+  
