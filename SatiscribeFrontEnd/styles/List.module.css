@@ -1,22 +1,26 @@
-ul.smolgap li{
+ul.smolGap li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--smolGap);
+    margin-bottom: var(--smolGap);
 }
 
-ul.mediumgap li{
+ul.mediumGap li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--mediumGap);
+    margin-bottom: var(--mediumGap);
 }
 
-ul.biggap li{
+ul.bigGap li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--bigGap);
+    margin-bottom: var(--bigGap);
+
 }
 
-ul.smolgapnobullet li{
+ul.smolGapnobullet li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--smolGap);
@@ -24,7 +28,7 @@ ul.smolgapnobullet li{
     margin-left: -2.8vw;
 }
 
-ul.mediumgapnobullet li{
+ul.mediumGapnobullet li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--mediumGap);
@@ -32,7 +36,7 @@ ul.mediumgapnobullet li{
     margin-left: -2.8vw;
 }
 
-ul.biggapnobullet li{
+ul.bigGapnobullet li{
     font-size: 4.5vh;
     color: var(--Final_White);
     margin-top: var(--bigGap);

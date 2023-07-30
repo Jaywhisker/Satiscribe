@@ -1,11 +1,35 @@
-.small {
+.evensmaller,
+.evensmallerclickable{
+    width: 3vh;
+    height: 3vh;
+    background-size: cover;
+}
+
+
+.small,
+.smallclickable{
     width: 4vh;
     height: 4vh;
     background-size: cover;
 }
 
-.big {
+.medium, 
+.mediumclickable{
+    width: 6vh;
+    height: 6vh;
+    background-size: cover;
+}
+
+.big,
+.bigclickable {
     width: 8vh;
     height: 8vh;
     background-size: cover;
+}
+
+.evensmallerclickable,
+.smallclickable,
+.mediumclickable,
+.bigclickable{
+    cursor: pointer;
 }

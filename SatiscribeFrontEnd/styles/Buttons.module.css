@@ -1,0 +1,85 @@
+/* Shared Button Styles */
+.sharedButton {
+    cursor: pointer;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--Final_Light_Purple, #BB86FC);
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid var(--Final_Light_Purple, #bb86fc);
+}
+
+
+/* Size Variants */
+.smallButton {
+    width: 30vw;
+    height: 13vh;
+    padding: 2vw 2vh;
+}
+
+.mediumButton {
+    width: 40vw;
+    height: 13vh;
+    padding: 1vw 1vh;
+}
+
+.largeButton {
+    padding: 1vw 1vh;
+    width: 90vw;
+    height: 13vh;
+}
+
+/* Buttons with Logos */
+
+/* Logo Variants */
+.leftLogo {
+    display: flex;
+    align-items: center;
+}
+
+.rightLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    padding: 2vh 2vw;
+}
+
+
+/* Fill and Border Variants */
+.fillButton {
+    border: 1px solid var(--Final_Gray, #323135);
+    background: var(--Final_Light_Purple, #BB86FC);
+}
+
+.fillLogoText {
+    color: var(--Final_Gray, #323135);
+}
+
+/* Hover Effects */
+.sharedButton:not(.disabledButton):hover {
+    background: var(--Final_Light_Purple_25, rgba(187, 134, 252, 0.25));
+}
+
+.fillButton:not(.disabledButton):hover {
+    background: var(--Final_Light_Purple_75, rgba(187, 134, 252, 0.75));
+
+}
+
+/* Disable Effects */
+.disabledText {
+    color: var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50)); 
+}
+
+
+.sharedButton.disabledButton {
+    background: transparent;
+    border: 1px solid var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50));
+    cursor: not-allowed;
+}

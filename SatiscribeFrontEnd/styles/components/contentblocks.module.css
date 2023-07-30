@@ -31,9 +31,50 @@
     justify-content: flex-start;
 }
 
+.contentBlockAlignmentSpecial {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mediumGap);
+    justify-content: flex-start;
+}
+
 .line {
-    border-bottom: 3px solid var(--Final_White);
+    border-bottom: 3px solid var(--Final_White_25);
     border-radius: 5px;
+}
+
+.largeBlockButton {
+    border-radius: 5px;
+    border: 3px solid var(--Final_Light_Purple);
+    padding: var(--smolGap);
+    margin-top: var(--bigGap);
+    background-color: transparent;
+}
+
+.largeBlockButton:hover {
+    background-color: var(--Final_Light_Purple_10);
+    cursor: pointer;
+}
+
+.textarea {
+    background-color: transparent;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5vh;
+    font-weight: 400;
+    line-height: 4.5vh;
+    margin: 0;
+    padding: 0;
+    color: var(--Final_White);
+    border: 0;
+    resize: none;
+    height: auto;
+    overflow-y: hidden;
+}
+
+.textarea:focus {
+    border: 0;
+    outline: none;
 }
 
 /* .topContainer {
@@ -43,3 +84,66 @@
 .bottomContainer {
     margin: 0 50px
 } */
+
+.clickable {
+    margin: 0;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border-radius: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.roundslider {
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.roundslider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.switch input[type="checkbox"]:checked+.roundslider {
+    background-color: var(--Final_White);
+}
+
+.switch input[type="checkbox"]+.roundslider {
+    background-color: var(--Final_Light_Purple);
+}
+
+input:checked+.roundslider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
