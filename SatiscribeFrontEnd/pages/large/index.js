@@ -12,7 +12,7 @@ import VettingBlockB from '../../components/large blocks/FullTranscriptBlock/Des
 function Largetesting() {
     return (
         <div>
-            {/* <VettingBlockB /> */}
+            <VettingBlockB />
             <VettingBlock />
             <AgendaBlock />
             <FullTranscriptBlock />

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import contentblock from '@/styles/components/contentblocks.module.css';
-import { random } from 'animejs';
+// import { random } from 'animejs';
 import flexi from '@/styles/Flexible.module.css'
 import TranscriptTagsYL from '../FullTranscriptBlock/Tags and Labels/transcriptTagsLabelsYL';
 

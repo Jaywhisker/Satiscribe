@@ -4,16 +4,15 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
-import SentenceData from '@/data/Paragraph.json'
+import ParagraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 
 function VettingBlockB() {
 
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
-
-    const initialData = SentenceData
-    const [exampleData, setExampleData] = useState(initialData.paragraph[0].transcript)
+    const initialData = ParagraphData.paragraph
+    const [exampleData, setExampleData] = useState(initialData)
 
     const handleToggleFiller = (event) => {
         setToggleFiller(event.target.checked);
@@ -124,7 +123,9 @@ function VettingBlockB() {
     };
 
 
-    const onInput = (event) => {
+    const onInput = (event, id) => {
+
+        
         const newText = event.target.innerHTML.replace('&nbsp', ' ').replace(';', ''); //convert space bar code to js space
         let currentCursorPosition = findFirstDiffPos(newText, exampleData);
         const textbeforecursor = exampleData.slice(0, currentCursorPosition);
@@ -163,9 +164,7 @@ function VettingBlockB() {
                 setCursorPositionLocation(newCursorPosition)
                 setExampleData(modifiedValue)
                 // Some way to check if I am in </b>
-            } else if (exampleData[current]) {
-
-            }
+            } 
             // Used to delete existing strong tags
             else if (exampleData[currentCursorPosition] === "<" && exampleData[currentCursorPosition + 7] === ">") {
                 console.log(exampleData.slice(currentCursorPosition, currentCursorPosition + 7))
@@ -222,15 +221,21 @@ function VettingBlockB() {
                         </div>
                     </div>
 
-                    <div className={`${flexi.flexColumnSmolGap}`}>
-                        <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
-                        <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
-                            <p id="paragraph" contenteditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${exampleData}` }} onInput={onInput} />
+                    {exampleData.map((data, index) => (
+                        <div className={`${flexi.flexColumnSmolGap}`}>
+                            <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
+                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
+                                <p id="paragraph" contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={onInput(index)} />
 
-                            <TranscriptTags type='labels' name={initialData.paragraph[0].tags} />
+                                { data.tags.length > 0 ? (
+                                    <TranscriptTags type='labels' name={data.tags} />
+                                ) : (null) }
 
+                            </div>
                         </div>
-                    </div>
+                        )
+                    )}
+                
                 </div>
             </div>
         </>
