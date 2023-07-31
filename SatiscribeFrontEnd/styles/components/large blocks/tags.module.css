@@ -72,7 +72,7 @@ h6.transcribeCleaningTagText:hover {
 .labelsDropDown{
     background-color: var(--Final_White_80);
     width: 10vw;
-    padding: 3px 0;
+    height: 4vh;
     padding-left: var(--smollerGap) ;
     border-top: 1px solid var(--Final_Profile_Grey);
     position: absolute;

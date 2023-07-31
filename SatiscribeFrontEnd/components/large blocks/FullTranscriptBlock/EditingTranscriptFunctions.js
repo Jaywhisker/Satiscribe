@@ -209,3 +209,26 @@ export function handleToggleFiller(event, exampleData, setExampleData, toggleFil
     })
 }
 };
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//                                   CHANGE TAGS
+//
+//////////////////////////////////////////////////////////////////////////////////////
+
+export function clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer){
+    let partialdropDrown = Array.from({ length: exampleData.length }, () => false)
+    partialdropDrown[id] = !dropDowncontainer[id]
+    setDropDowncontainer(partialdropDrown)
+}
+
+export function handleDropDown(id, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer) {
+    const originalTag = exampleData[id]['tags']
+    const originalTranscript = exampleData[id]['transcript']
+    var modifiedTranscript = originalTranscript.replaceAll(tagDictionary[originalTag][0], tagDictionary[newTag][0])
+    modifiedTranscript = modifiedTranscript.replaceAll(tagDictionary[originalTag][1], tagDictionary[newTag][1])
+    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
+    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
+    clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer)
+}
