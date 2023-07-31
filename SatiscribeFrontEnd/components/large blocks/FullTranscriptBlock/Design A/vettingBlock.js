@@ -4,6 +4,7 @@ import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 // import VettingSentence from '../../InputFields/transcriptVettingField'
 import SentenceData from '@/data/Sentence.json'
+import PargraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import logos from '@/styles/Logos.module.css'
 import { onInput, setCursorPosition, handleToggleFiller } from '../EditingTranscriptFunctions'
@@ -11,14 +12,43 @@ import { onInput, setCursorPosition, handleToggleFiller } from '../EditingTransc
 
 
 function VettingBlock() {
-    const initialData = SentenceData.sentences
+    const initialData = SentenceData.paragraphs
+
+    const nameProfileContainer = {
+        "Hubob": "Profile Pict (Cream).png",
+        "Morgan": "Profile Pict (Yellow).png",
+        "Jefferson": "Profile Pict (Purple).png",
+        "Derrick": "Profile Pict (Pink).png",
+    }
+
+
 
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
-    const [deletePressed, setDeletePressed] = useState(false)
-    const [exampleData, setExampleData] = useState(initialData)
+    let sentenceCount = 0; // Initialize the running count of sentences outside the map function
+
+    const [exampleData, setExampleData] = useState(
+        initialData.map((paragraph, paragraphIndex) => {
+            const sentencesWithIds = paragraph.sentences.map((sentence) => {
+                sentenceCount++; // Increment the count for each sentence
+                return {
+                    transcript: sentence.transcript,
+                    tags: sentence.tags,
+                    audio: sentence.audio,
+                    id: sentenceCount.toString(), // Use the count as the id for each sentence
+                };
+            });
+
+            return {
+                sentences: sentencesWithIds,
+                speaker: paragraph.speaker,
+            };
+        })
+    );
+    console.log(exampleData)
+
     const [paragraphID, setParagraphID] = useState(0)
-    const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
+    const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.reduce((sum, arr) => sum + arr.sentences.length, 0) }, () => false));
 
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
@@ -26,14 +56,14 @@ function VettingBlock() {
         // console.log(exampleData[cursorPointerLocation])
     }, [exampleData, cursorPointerLocation]);
 
-    console.log(disabledContainer)
+    // console.log(disabledContainer)
 
     return (
         <>
             <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment}`}>
                 <div className={`${flexi.innerMargin}`}>
 
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`} style={{ marginBottom: 50 }}>
                         <h5>Full Transcript Editting</h5>
                         <div className={`${flexi.flexRowSmolGap} ${flexi.alignCenter}`}>
                             <h5 style={{ color: toggleFiller ? `var(--Final_Red)` : `var(--Final_Red_50)` }}>Filler Words</h5>
@@ -48,13 +78,43 @@ function VettingBlock() {
                         </div>
                     </div>
 
-                    <ul className={`${list.mediumGap}`} style={{ listStyle: 'none', paddingLeft: '0' }}>
+                    {exampleData.map((data, paragraphindex) => (
+                        <div>
+                            <div className={`${flexi.flexRowSmolGap}  ${flexi.justifyStart} ${flexi.alignCenter} `}>
+                                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
+                                <p> {data.speaker} </p>
+                            </div>
+                            <ul className={`${list.mediumGap}`} style={{ listStyle: 'none', paddingLeft: '0' }}>
+
+                                {data.sentences.map((subdata, sentenceindex) => (
+                                    <li>
+                                        <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
+                                            <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
+                                            <div className={`${flexi.flexRowSmolGap}`} key={subdata['id']} style={{ width: '100%' }}>
+                                                <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{ width: '100%' }}>
+                                                    <p id={`paragraph_${subdata['id']}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${subdata['transcript']}` }} onInput={(event) => onInput(event, subdata['id'], exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
+                                                    {subdata.tags.length > 0 ? (
+                                                        <TranscriptTags type='labels' name={subdata.tags} disabled={disabledContainer[subdata['id']]} />
+                                                    ) : (null)}
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                    )
+                    )}
+
+                    {/* <ul className={`${list.mediumGap}`} style={{ listStyle: 'none', paddingLeft: '0' }}>
 
                         {exampleData.map((data, index) => (
                             <li>
+                                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                                 <div className={`${flexi.flexRowSmolGap}`} key={index}>
-                                    <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
-
                                     <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{ width: '100%' }}>
                                         <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
                                         {data.tags.length > 0 ? (
@@ -68,9 +128,9 @@ function VettingBlock() {
                         )}
 
 
-                    </ul>
+                    </ul> */}
                 </div>
-            </div>
+            </div >
         </>
     )
 }
