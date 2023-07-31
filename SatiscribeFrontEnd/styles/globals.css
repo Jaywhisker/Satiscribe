@@ -107,10 +107,10 @@ p {
   color: var(--Final_Light_Purple);
 }
 
-p:focus {
+/* p:focus {
   outline: none;
   border: none;
-}
+} */
 
 b,
 i,
@@ -128,25 +128,37 @@ b {
   color: var(--Final_Red);
 }
 
+b:focus{
+  background-color: var(--Final_Red);
+}
+
 /* AI unsure */
 i {
   width: fit-content;
-  background-color: var(--Final_Tag_Orange_15);
+  background-color: var(--Final_Tag_Orange_10);
   color: var(--Final_Tag_Orange);
+}
+
+i:focus{
+  background-color: var(--Final_Tag_Orange_20);
 }
 
 /* Unrelated */
 em {
   width: fit-content;
-  background-color: var(--Final_Tag_Yellow_15);
+  background-color: var(--Final_Tag_Yellow_10);
   color: var(--Final_Tag_Yellow);
 
+}
+
+em:focus{
+  background-color: var(--Final_Tag_Yellow_20);
 }
 
 /* Filled in words  */
 strong {
   width: fit-content;
-  background-color: var(--Final_Tag_Green_15);
+  background-color: var(--Final_Tag_Green_10);
   color: var(--Final_Tag_Green);
   margin: 0;
   padding: 0;
