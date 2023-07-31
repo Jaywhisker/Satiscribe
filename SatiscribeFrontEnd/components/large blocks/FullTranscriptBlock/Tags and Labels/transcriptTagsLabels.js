@@ -38,7 +38,7 @@ function TranscriptTags({ type, name, disabled, allTags, handleDropDown, Dropdow
             ) : (type == 'tags' && disabled) ? (
                 <div className={`${tags.labelsTagDisabled} ${flexi.flexRowSmollestGap} ${flexi.alignCenter}  ${flexi.justifyStart}`}>
                     <h6 className={`${tags.transcribeCleaningTagText}`} style={{ color: `var(--Final_Gray)`, textDecoration: 'underline' }}>{name}</h6>
-                    <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsFinalGray/Dropdown.png")`, zIndex: 1 }}></div>
+                    <div className={logos.smallestclickable} style={{ backgroundImage: `url("/iconsFinalGray/Dropdown.png")`, zIndex: 1 }}></div>
                 </div>
             ) : (type == 'tags') ? (
                 <div className={`${flexi.flexColumnNoGap}`} style={{ position: 'relative' }} onClick={onPress}>
