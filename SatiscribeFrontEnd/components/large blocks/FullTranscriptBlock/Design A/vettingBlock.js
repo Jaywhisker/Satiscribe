@@ -17,27 +17,28 @@ function VettingBlock() {
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
     let sentenceCount = 0; // Initialize the running count of sentences outside the map function
-    const [exampleData, setExampleData] = useState(
-        initialData.map((paragraph, paragraphIndex) => {
-            const sentencesWithIds = paragraph.sentences.map((sentence) => {
-                sentenceCount++; // Increment the count for each sentence
-                return {
-                    transcript: sentence.transcript,
-                    tags: sentence.tags,
-                    audio: sentence.audio,
-                    id: sentenceCount.toString(), // Use the count as the id for each sentence
-                };
-            });
-
-            return {
-                sentences: sentencesWithIds,
-                speaker: paragraph.speaker,
-            };
-        })
-    );
+    const [exampleData, setExampleData] = useState(initialData)
     const [paragraphID, setParagraphID] = useState(0)
-    const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.reduce((sum, arr) => sum + arr.sentences.length, 0) }, () => false));
+    const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
     const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
+
+
+    // Initialize an array to store the indices where the speaker changes
+    const speakerChangeIndices = [];
+
+    for (let i = 0; i < initialData.length; i++) {
+        // If it's the first paragraph, always add the index to the array
+        if (i === 0) {
+            speakerChangeIndices.push(i);
+        } else {
+            // Check if the speaker has changed from the previous paragraph
+            if (initialData[i].speaker !== initialData[i - 1].speaker) {
+                speakerChangeIndices.push(i);
+            }
+        }
+    }
+
+    console.log(speakerChangeIndices)
 
 
     const nameProfileContainer = {
@@ -85,7 +86,47 @@ function VettingBlock() {
                         </div>
                     </div>
 
-                    {exampleData.map((data) => (
+                    <ul className={`${list.smolGap}`} style={{ listStyle: 'none', paddingLeft: '0' }}>
+                        {exampleData.map((data, index) => (
+                            <div>
+                                {speakerChangeIndices.includes(index) && (
+                                    // Conditional content when there is a speaker change
+                                    <li style={{ marginTop: 50 }}>
+                                        <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
+                                            <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
+                                            <p>{data.speaker}</p>
+
+                                        </div>
+                                    </li>
+                                )}
+                                <li>
+                                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
+
+                                        <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
+                                        <p id={`paragraph_${index}`}
+                                            contentEditable="true"
+                                            style={{ color: `var(--Final_White)`, width: '75%' }}
+                                            dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}
+                                            onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                            ref={paragraphRef}
+                                        />
+                                        {data.tags.length > 0 ? (
+                                            <TranscriptTags
+                                                type='tags'
+                                                name={data.tags}
+                                                disabled={disabledContainer[index]}
+                                                allTags={allTags}
+                                                handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)} Dropdown={dropDowncontainer[index]}
+                                                onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
+                                            />
+                                        ) : (null)}
+                                    </div>
+                                </li>
+                            </div>
+                        ))}
+                    </ul>
+
+                    {/* {exampleData.map((data) => (
                         <div>
                             <div className={`${flexi.flexRowSmolGap}  ${flexi.justifyStart} ${flexi.alignCenter} `}>
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
@@ -127,50 +168,12 @@ function VettingBlock() {
                         </div>
 
                     )
-                    )}
-
-                    {/* <ul className={`${list.mediumGap}`} style={{ listStyle: 'none', paddingLeft: '0' }}>
-
-                        {exampleData.map((data, index) => (
-                            <li>
-                                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
-                                <div className={`${flexi.flexRowSmolGap}`} key={index}>
-                                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{ width: '100%' }}>
-                                        <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
-                                        {data.tags.length > 0 ? (
-                                            <TranscriptTags type='labels' name={data.tags} disabled={disabledContainer[index]} />
-                                        ) : (null)}
-
-                                    </div>
-                                </div>
-                            </li>
-                        )
-                        )}
-
-
-                    </ul> */}
+                    )} */}
                 </div>
             </div >
         </>
     )
 }
 
-// {initialData.sentences.map((sentence, index) =>
-//     (
-//         <li>
-//             <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
-//                 <p
-//                     id="paragraph"
-//                     ref={divRef}
-//                     contentEditable="true"
-//                     style={{ color: `var(--Final_White)`, width: '75%' }}
-//                     dangerouslySetInnerHTML={{ __html: `${sentenceStates[index].transcript}` }}
-//                     onInput={onInput}
-//                 />
-//                 {/* Change labels to tags to get nothing */}
-//                 <TranscriptTagsYL type={sentence.tags === '' ? 'tags' : 'labels'} name={sentence.tags} thisindex={index} sentenceStates={sentenceStates} setSentenceStates={setSentenceStates} />
-//             </div>
-//         </li>
-//     ))}
 
 export default VettingBlock
