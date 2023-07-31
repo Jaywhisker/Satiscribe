@@ -6,7 +6,7 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import ParagraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
-import { onInput, setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown, settingFocus, loseFocus} from '../EditingTranscriptFunctions'
+import {setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown, settingFocus, loseFocus, onInputDelete} from '../EditingTranscriptFunctions'
 
 
 function VettingBlockB() {
@@ -19,6 +19,7 @@ function VettingBlockB() {
     const [disabledContainer, setDisabledContainer] = useState(() =>Array.from({ length: exampleData.length }, () => false));
     const [dropDowncontainer, setDropDowncontainer] = useState(() =>Array.from({ length: exampleData.length }, () => false));
     const [previousFocusData, setPreviousFocusData] = useState('');
+    const [keyCode, setkeyCode] = useState('')
 
     const nameProfileContainer = {
         "Hubob": "Profile Pict (Cream).png",
@@ -42,11 +43,21 @@ function VettingBlockB() {
 
     const allTags = [...new Set(initialData.map(data => data.tags))];
 
+    useEffect(()=> {
+        const startingPosition = exampleData[0].transcript.length
+        setCursorPosition(document.getElementById('paragraph_0'), startingPosition)
+        setCursorPositionLocation(startingPosition)
+    }, [])
+
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
         setCursorPosition(document.getElementById(paragraphId), cursorPointerLocation)
     }, [cursorPointerLocation]);
-
+    
+    const keydown =(event) => {
+        setkeyCode(event.key)
+    }
+      
     return (
         <>
             <div id='transcriptContainer' className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment} ${flexi.flexColumnSmolGap}`} onClick={(event) => loseFocus(event, focusedDictionary,previousFocusData, setPreviousFocusData, setDropDowncontainer, exampleData) }>
@@ -77,8 +88,9 @@ function VettingBlockB() {
                                 <p id={`paragraph_${index}`} 
                                     contentEditable="true" 
                                     style={{ color: `var(--Final_White)`, width: '80%' }} 
-                                    dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} 
-                                    onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                    dangerouslySetInnerHTML={{ __html: `${data['transcript']}`}}
+                                    onKeyDown={(event) => keydown(event)} 
+                                    onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode)}
                                     />
                                 { data.tags.length > 0 ? (
                                     <TranscriptTags 
