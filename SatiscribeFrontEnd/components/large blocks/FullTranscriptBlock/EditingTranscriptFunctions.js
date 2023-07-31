@@ -232,3 +232,49 @@ export function handleDropDown(id, newTag, tagDictionary, exampleData, setExampl
     setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
     clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer)
 }
+
+
+///////////////////////////////////////////////////////////////////
+//
+//                  SETTING FOCUS ON TAG PRESS
+//
+//////////////////////////////////////////////////////////////////
+
+export function settingFocus(id, focusedDictionary, setPreviousFocusData, previousFocusData) {
+    const paragraphID = `paragraph_${id}`
+    const paragraphElement = document.getElementById(paragraphID);
+    paragraphElement.focus();
+
+    if (previousFocusData !== paragraphID && previousFocusData !== '') {
+        console.log(previousFocusData, paragraphID)
+        const prevparagraphElement = document.getElementById(previousFocusData);
+        for (const element of prevparagraphElement.children) {
+            var tag_name = element.tagName;
+            const cssVariable = focusedDictionary[tag_name][0];
+            element.style.backgroundColor = `var(${cssVariable})`
+        }
+    }
+
+    for (const element of paragraphElement.children) {
+        var tag_name = element.tagName;
+        const cssVariable = focusedDictionary[tag_name][1];
+        element.style.backgroundColor = `var(${cssVariable})`
+    }
+    setPreviousFocusData(paragraphID)
+}
+
+export function loseFocus(event, focusedDictionary,previousFocusData, setPreviousFocusData, setDropDowncontainer, exampleData) {
+    const divElement = event.currentTarget;
+    const isClickInsideDiv = divElement === event.target
+
+    if (previousFocusData !== '' && isClickInsideDiv) {
+        const prevparagraphElement = document.getElementById(previousFocusData);
+        for (const element of prevparagraphElement.children) {
+            var tag_name = element.tagName;
+            const cssVariable = focusedDictionary[tag_name][0];
+            element.style.backgroundColor = `var(${cssVariable})`
+        }
+        setDropDowncontainer(Array.from({ length: exampleData.length }, () => false))            
+        setPreviousFocusData('')
+    } else {null}
+}

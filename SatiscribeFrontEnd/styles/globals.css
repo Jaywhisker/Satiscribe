@@ -107,10 +107,10 @@ p {
   color: var(--Final_Light_Purple);
 }
 
-/* p:focus {
+p:focus {
   outline: none;
   border: none;
-} */
+}
 
 b,
 i,
