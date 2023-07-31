@@ -52,10 +52,17 @@ function VettingBlockB() {
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
         setCursorPosition(document.getElementById(paragraphId), cursorPointerLocation)
-    }, [cursorPointerLocation]);
+    }, [cursorPointerLocation, exampleData]);
     
     const keydown =(event) => {
-        setkeyCode(event.key)
+        if (event.ctrlKey) {
+            setkeyCode([event.key, 'control'])
+        } else if (event.key === 'Enter') {
+            event.preventDefault();
+            setkeyCode(event.key)
+        } else {
+            setkeyCode(event.key)
+        }
     }
       
     return (
@@ -80,8 +87,9 @@ function VettingBlockB() {
 
                     {exampleData.map((data, index) => (
                         <div className={`${flexi.flexColumnSmolGap}`} key={index}>
-                            <div className={`${flexi.flexRowSmollerGap}`}>
+                            <div className={`${flexi.flexRowSmollerGap} ${flexi.alignCenter}`}>
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
+                                <h6>{data.speaker}</h6>
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                             </div>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>

@@ -43,7 +43,7 @@ function TranscriptTags({type, name, disabled, allTags, handleDropDown, Dropdown
         ):(type =='tags') ? (
             <div className={`${flexi.flexColumnNoGap}`} style={{position:'relative'}}  onClick={onPress}>
                 <div className={`${tags.labelsTag} ${flexi.flexRowSmollestGap} ${flexi.alignCenter}  ${flexi.justifyStart}`} style={{borderRadius: Dropdown ? '5px 5px 0px 0px' : 5}}>
-                    <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, textDecoration:'underline'}} onClick={onClick}>{name}</h6>
+                    <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, textDecoration:'underline', width:'67%'}} onClick={onClick}>{name}</h6>
                     <div className={logos.smallestclickable} style={{ backgroundImage: Dropdown ? `url("/iconsFinalGray/Dropup.png")` : `url("/iconsFinalGray/Dropdown.png")`, zIndex: 1}} onClick={onClick}></div>
                 </div>
                 
