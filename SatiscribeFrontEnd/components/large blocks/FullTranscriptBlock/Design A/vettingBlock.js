@@ -7,26 +7,16 @@ import SentenceData from '@/data/Sentence.json'
 import PargraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import logos from '@/styles/Logos.module.css'
-import { onInput, setCursorPosition, handleToggleFiller } from '../EditingTranscriptFunctions'
+import { onInput, setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown } from '../EditingTranscriptFunctions'
 
 
 
 function VettingBlock() {
     const initialData = SentenceData.paragraphs
 
-    const nameProfileContainer = {
-        "Hubob": "Profile Pict (Cream).png",
-        "Morgan": "Profile Pict (Yellow).png",
-        "Jefferson": "Profile Pict (Purple).png",
-        "Derrick": "Profile Pict (Pink).png",
-    }
-
-
-
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
     let sentenceCount = 0; // Initialize the running count of sentences outside the map function
-
     const [exampleData, setExampleData] = useState(
         initialData.map((paragraph, paragraphIndex) => {
             const sentencesWithIds = paragraph.sentences.map((sentence) => {
@@ -45,16 +35,33 @@ function VettingBlock() {
             };
         })
     );
-    console.log(exampleData)
-
     const [paragraphID, setParagraphID] = useState(0)
     const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.reduce((sum, arr) => sum + arr.sentences.length, 0) }, () => false));
+    const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
+
+
+    const nameProfileContainer = {
+        "Hubob": "Profile Pict (Cream).png",
+        "Morgan": "Profile Pict (Yellow).png",
+        "Jefferson": "Profile Pict (Purple).png",
+        "Derrick": "Profile Pict (Pink).png",
+    }
+
+    const tagDictionary = {
+        "Filler Words": ["<b>", "</b>"],
+        "Uncertain": ["<i>", "</i>"],
+        "Unrelated": ["<em>", "</em>"]
+    }
+
+    const allTags = [...new Set(["Filler Words", "Uncertain", "Unrelated"])];
+
+    const paragraphRef = useRef(null)
 
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
         setCursorPosition(document.getElementById(paragraphId), cursorPointerLocation)
         // console.log(exampleData[cursorPointerLocation])
-    }, [exampleData, cursorPointerLocation]);
+    }, [cursorPointerLocation]);
 
     // console.log(disabledContainer)
 
@@ -78,7 +85,7 @@ function VettingBlock() {
                         </div>
                     </div>
 
-                    {exampleData.map((data, paragraphindex) => (
+                    {exampleData.map((data) => (
                         <div>
                             <div className={`${flexi.flexRowSmolGap}  ${flexi.justifyStart} ${flexi.alignCenter} `}>
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
@@ -86,15 +93,28 @@ function VettingBlock() {
                             </div>
                             <ul className={`${list.mediumGap}`} style={{ listStyle: 'none', paddingLeft: '0' }}>
 
-                                {data.sentences.map((subdata, sentenceindex) => (
+                                {data.sentences.map((subdata) => (
                                     <li>
                                         <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
                                             <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                                             <div className={`${flexi.flexRowSmolGap}`} key={subdata['id']} style={{ width: '100%' }}>
                                                 <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`} style={{ width: '100%' }}>
-                                                    <p id={`paragraph_${subdata['id']}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${subdata['transcript']}` }} onInput={(event) => onInput(event, subdata['id'], exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
+                                                    <p id={`paragraph_${subdata['id']}`}
+                                                        contentEditable="true"
+                                                        style={{ color: `var(--Final_White)`, width: '75%' }}
+                                                        dangerouslySetInnerHTML={{ __html: `${subdata['transcript']}` }}
+                                                        onInput={(event) => onInput(event, subdata['id'], exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                                        ref={paragraphRef}
+                                                    />
                                                     {subdata.tags.length > 0 ? (
-                                                        <TranscriptTags type='labels' name={subdata.tags} disabled={disabledContainer[subdata['id']]} />
+                                                        <TranscriptTags
+                                                            type='tags'
+                                                            name={subdata.tags}
+                                                            disabled={disabledContainer[subdata['id']]}
+                                                            allTags={allTags}
+                                                            handleDropDown={(newTag) => handleDropDown(subdata['id'], newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)} Dropdown={dropDowncontainer[subdata['id']]}
+                                                            onClick={() => clickDropDown(subdata['id'], setDropDowncontainer, exampleData, dropDowncontainer)}
+                                                        />
                                                     ) : (null)}
 
                                                 </div>
