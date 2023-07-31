@@ -17,7 +17,39 @@ function VettingBlockB() {
     const [exampleData, setExampleData] = useState(initialData)
     const [paragraphID, setParagraphID] = useState(0)
     const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
+    const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
 
+    const nameProfileContainer = {
+        "Hubob": "Profile Pict (Cream).png",
+        "Morgan": "Profile Pict (Yellow).png",
+        "Jefferson": "Profile Pict (Purple).png",
+        "Derrick": "Profile Pict (Pink).png",
+    }
+
+    const tagDictionary = {
+        "Filler Words": ["<b>", "</b>"],
+        "Uncertain": ["<i>", "</i>"],
+        "Unrelated": ["<em>", "</em>"]
+    }
+
+    const allTags = [...new Set(initialData.map(data => data.tags))];
+    console.log(allTags)
+
+    function clickDropDown(id) {
+        let partialdropDrown = Array.from({ length: exampleData.length }, () => false)
+        partialdropDrown[id] = !dropDowncontainer[id]
+        setDropDowncontainer(partialdropDrown)
+    }
+
+    function handleDropDown(id, newTag, tagDictionary) {
+        const originalTag = exampleData[id]['tags']
+        const originalTranscript = exampleData[id]['transcript']
+        var modifiedTranscript = originalTranscript.replace(tagDictionary[originalTag][0], tagDictionary[newTag][0])
+        modifiedTranscript = originalTranscript.replace(tagDictionary[originalTag][1], tagDictionary[newTag][1])
+        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
+        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
+        clickDropDown(id)
+    }
 
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
@@ -49,11 +81,14 @@ function VettingBlockB() {
 
                     {exampleData.map((data, index) => (
                         <div className={`${flexi.flexColumnSmolGap}`} key={index}>
-                            <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
-                            <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
-                                <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
+                            <div className={`${flexi.flexRowSmollerGap}`}>
+                                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
+                                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
+                            </div>
+                            <div className={`${flexi.flexRowMediumGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
+                                <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '80%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
                                 {data.tags.length > 0 ? (
-                                    <TranscriptTags type='labels' name={data.tags} disabled={disabledContainer[index]} />
+                                    <TranscriptTags type='labels' name={data.tags} disabled={disabledContainer[index]} allTags={allTags} handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary)} Dropdown={dropDowncontainer[index]} onClick={() => clickDropDown(index)} />
                                 ) : (null)}
 
                             </div>

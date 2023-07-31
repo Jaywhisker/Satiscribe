@@ -5,7 +5,14 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import tags from '@/styles/components/large blocks/tags.module.css'
 
-function TranscriptTags({type, name, disabled}) {
+function TranscriptTags({type, name, disabled, allTags, handleDropDown, Dropdown, onClick}) {
+    console.log(allTags)
+
+    var filteredTags;
+    if ( allTags!== undefined) {
+        filteredTags = allTags.filter(tagName => tagName !== name);
+    }
+
     return (
         <>
         { (type == 'tags' && name =='highlight') ? (
@@ -30,15 +37,28 @@ function TranscriptTags({type, name, disabled}) {
             </div>
             
         ) : (type =='labels' && disabled) ? (
-            <div className={`${tags.labelsTagDisabled} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
-                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>{name}</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsFinalGray/Trash.png")`, zIndex: 1}}></div>
+            <div className={`${tags.labelsTagDisabled} ${flexi.flexRowSmollestGap} ${flexi.alignCenter}  ${flexi.justifyStart}`}>
+                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, textDecoration:'underline'}}>{name}</h6>
+                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsFinalGray/Dropdown.png")`, zIndex: 1}}></div>
             </div>
         ):(type =='labels') ? (
-            <div className={`${tags.labelsTag} ${flexi.flexRowNoGap} ${flexi.alignCenter}  ${flexi.justifyCenter}`}>
-                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, width:'75%'}}>{name}</h6>
-                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/iconsFinalGray/Trash.png")`, zIndex: 1}}></div>
-            </div>):(null)
+            <div className={`${flexi.flexColumnNoGap}`}>
+                <div className={`${tags.labelsTag} ${flexi.flexRowSmollestGap} ${flexi.alignCenter}  ${flexi.justifyStart}`} style={{borderRadius: Dropdown ? '5px 5px 0px 0px' : 5, position:'relative'}}>
+                    <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`, textDecoration:'underline'}} onClick={onClick}>{name}</h6>
+                    <div className={logos.smallestclickable} style={{ backgroundImage: Dropdown ? `url("/iconsFinalGray/Dropup.png")` : `url("/iconsFinalGray/Dropdown.png")`, zIndex: 1}} onClick={onClick}></div>
+                </div>
+                
+                {Dropdown && (
+                    <div className={`${flexi.flexColumnMediumGap}`}>
+                        {filteredTags.map((tagName) => (
+                            <div className={`${tags.labelsDropDown} ${flexi.flexRowSmollestGap} ${flexi.alignCenter}  ${flexi.justifyStart}`}>
+                                <h6 className={`${tags.transcribeCleaningTagText}`} style={{color:`var(--Final_Gray)`}}>{tagName}</h6>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        ):(null)
         }
         </>                  
     )
