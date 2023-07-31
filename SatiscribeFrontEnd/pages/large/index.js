@@ -13,7 +13,7 @@ function Largetesting() {
     return (
         <div>
             <VettingBlockB />
-            <VettingBlock />
+            {/* <VettingBlock /> */}
             <AgendaBlock />
             <FullTranscriptBlock />
             <CreateNewBlock />
