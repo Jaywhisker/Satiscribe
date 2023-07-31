@@ -21,8 +21,8 @@
             "audio": "Some link"
         },
         {
-            "transcript": "We will need to do some testing but I think it should be ok to decide between the two.",
-            "tags": "",
+            "transcript": "We will <b> need </b> to do some testing but I think it should be ok to decide between the two.",
+            "tags": "Filler Words",
             "audio": "Some link"
         },
         {

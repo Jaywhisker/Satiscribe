@@ -16,14 +16,16 @@ function VettingBlockB() {
     const initialData = ParagraphData.paragraph
     const [exampleData, setExampleData] = useState(initialData)
     const [paragraphID, setParagraphID] = useState(0)
-    const [disabledContainer, setDisabledContainer] = useState(() =>Array.from({ length: exampleData.length }, () => false));
-  
+    const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
+
 
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
         setCursorPosition(document.getElementById(paragraphId), cursorPointerLocation)
         // console.log(exampleData[cursorPointerLocation])
     }, [exampleData, cursorPointerLocation]);
+
+    console.log(exampleData)
 
     return (
         <>
@@ -49,16 +51,16 @@ function VettingBlockB() {
                         <div className={`${flexi.flexColumnSmolGap}`} key={index}>
                             <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                             <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
-                                <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}   onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
-                                { data.tags.length > 0 ? (
-                                    <TranscriptTags type='labels' name={data.tags} disabled={disabledContainer[index]}/>
-                                ) : (null) }
+                                <p id={`paragraph_${index}`} contentEditable="true" style={{ color: `var(--Final_White)`, width: '75%' }} dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }} onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)} />
+                                {data.tags.length > 0 ? (
+                                    <TranscriptTags type='labels' name={data.tags} disabled={disabledContainer[index]} />
+                                ) : (null)}
 
                             </div>
                         </div>
-                        )
+                    )
                     )}
-                
+
                 </div>
             </div>
         </>
