@@ -82,7 +82,8 @@ function VettingBlockB() {
                                         name={data.tags}
                                         disabled={disabledContainer[index]}
                                         allTags={allTags}
-                                        handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)} Dropdown={dropDowncontainer[index]}
+                                        handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)}
+                                        Dropdown={dropDowncontainer[index]}
                                         onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
                                         onPress={() => { paragraphRef.current.focus(); console.log(paragraphRef, "pressed") }}
                                     />

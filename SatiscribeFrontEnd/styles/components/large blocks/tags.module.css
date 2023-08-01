@@ -87,3 +87,20 @@ h6.transcribeCleaningTagText:hover {
 .labelsDropDown:hover {
     cursor: pointer;
 }
+
+.peopleLabel {
+    z-index: 2;
+    background-color: var(--Final_Component_Dark_Grey);
+    width: calc(10vw + var(--smollerGap));
+    height: 5vh;
+    border-top: 2px solid var(--Final_Light_Purple);
+    position: absolute;
+}
+
+.peopleLabelInnerStyling {
+    z-index: 2;
+    background-color: var(--Final_Component_Dark_Grey);
+    width: 100%;
+    height: 100%;
+    padding-left: var(--smollerGap);
+}

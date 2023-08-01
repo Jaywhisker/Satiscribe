@@ -7,6 +7,7 @@ import SentenceData from '@/data/Sentence.json'
 import PargraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import logos from '@/styles/Logos.module.css'
+import PersonTag from '../Tags and Labels/taggingPerson'
 import { onInput, setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown } from '../EditingTranscriptFunctions'
 
 
@@ -16,7 +17,6 @@ function VettingBlock() {
 
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
-    let sentenceCount = 0; // Initialize the running count of sentences outside the map function
     const [exampleData, setExampleData] = useState(initialData)
     const [paragraphID, setParagraphID] = useState(0)
     const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
@@ -38,8 +38,46 @@ function VettingBlock() {
         }
     }
 
-    console.log(speakerChangeIndices)
+    const arrayRange = (start, stop, step) =>
+        Array.from(
+            { length: (stop - start) / step + 1 },
+            (value, index) => start + index * step
+        );
 
+    const [dropDowncontainer2, setDropDowncontainer2] = useState(() => Array.from({ length: speakerChangeIndices.length }, () => false))
+
+
+    function handlePersonSelected(index, tagName, speakerChangeIndices, exampleData, setExampleData, setDropDowncontainer2, dropDowncontainer2) {
+        const specialIndex = speakerChangeIndices.findIndex((element) => element == index)
+        console.log(specialIndex)
+        if (specialIndex == speakerChangeIndices.length - 1) {
+            let range = arrayRange(index, exampleData.length - 1, 1)
+            console.log(range)
+            for (let i of range) {
+                exampleData[i].speaker = tagName;
+            }
+
+        } else {
+            const stopPoint = speakerChangeIndices[specialIndex + 1]
+            let range = arrayRange(index, stopPoint - 1, 1);
+            console.log(range)
+            for (let i of range) {
+                exampleData[i].speaker = tagName;
+            }
+        }
+        setExampleData([...exampleData]);
+        clickDropDown2(index, setDropDowncontainer2, speakerChangeIndices, dropDowncontainer2)
+
+
+        // Set the dropdowncontainerindex to the opposite of what it currently is
+    }
+
+    function clickDropDown2(id, setDropDowncontainer2, speakerData, dropDowncontainer2) {
+        let partialdropDrown2 = Array.from({ length: speakerData.length }, () => false)
+        const index = speakerData.findIndex((element) => element == id)
+        partialdropDrown2[index] = !dropDowncontainer2[index]
+        setDropDowncontainer2(partialdropDrown2)
+    }
 
     const nameProfileContainer = {
         "Hubob": "Profile Pict (Cream).png",
@@ -55,6 +93,7 @@ function VettingBlock() {
     }
 
     const allTags = [...new Set(["Filler Words", "Uncertain", "Unrelated"])];
+    const allPeople = [...new Set(["Hubob", "Morgan", "Jefferson", "Derrick"])];
 
     const paragraphRef = useRef(null)
 
@@ -91,13 +130,20 @@ function VettingBlock() {
                             <div>
                                 {speakerChangeIndices.includes(index) && (
                                     // Conditional content when there is a speaker change
-                                    <li style={{ marginTop: 50 }}>
-                                        <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
-                                            <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
-                                            <p>{data.speaker}</p>
-
-                                        </div>
-                                    </li>
+                                    <PersonTag
+                                        backgroundurl={`url("/profiles/${nameProfileContainer[data.speaker]}")`}
+                                        name={data.speaker}
+                                        handleDropDown={(tagName) => handlePersonSelected(index, tagName, speakerChangeIndices, exampleData, setExampleData, setDropDowncontainer2, dropDowncontainer2)}
+                                        Dropdown={dropDowncontainer2[speakerChangeIndices.findIndex((element) => element == index)]}
+                                        allPeople={allPeople}
+                                        onClick={() => clickDropDown2(index, setDropDowncontainer2, speakerChangeIndices, dropDowncontainer2)}
+                                    />
+                                    // <li style={{ marginTop: 50 }}>
+                                    //     <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
+                                    //         <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
+                                    //         <p>{data.speaker}</p>
+                                    //     </div>
+                                    // </li>
                                 )}
                                 <li>
                                     <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }}>
@@ -116,7 +162,8 @@ function VettingBlock() {
                                                 name={data.tags}
                                                 disabled={disabledContainer[index]}
                                                 allTags={allTags}
-                                                handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)} Dropdown={dropDowncontainer[index]}
+                                                handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)}
+                                                Dropdown={dropDowncontainer[index]}
                                                 onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
                                             />
                                         ) : (null)}

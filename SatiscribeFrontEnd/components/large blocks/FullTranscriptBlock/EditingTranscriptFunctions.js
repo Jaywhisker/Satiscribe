@@ -25,7 +25,7 @@ export function onInput(event, id, exampleData, setExampleData, setCursorPositio
             }
         }
         console.log(modifiedValue)
-        setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
     }
 
     else if (newText.length <= originalText.length) {
@@ -38,7 +38,7 @@ export function onInput(event, id, exampleData, setExampleData, setCursorPositio
             modifiedValue = originalText.slice(0, currentCursorPosition) + "<s>" + originalText[currentCursorPosition] + "</s>" + originalText.slice(currentCursorPosition + 1)
             setCursorPositionLocation(newCursorPosition)
             // Some way to check if I am in </b>
-        } 
+        }
         // Used to delete existing strong tags
         else if (originalText[currentCursorPosition] === "<" && originalText[currentCursorPosition + 7] === ">") {
             console.log(originalText.slice(currentCursorPosition, currentCursorPosition + 7))
@@ -52,8 +52,8 @@ export function onInput(event, id, exampleData, setExampleData, setCursorPositio
             setCursorPositionLocation(currentCursorPosition)
         }
 
-        setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
-        }
+        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+    }
 }
 
 export function setCursorPosition(paragraphElement, cursorPosition) {
@@ -107,7 +107,7 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
                     nodeLength = innerChild.textContent.length
                     var childoffset = (innerChild.tagName && innerChild.tagName.length + 2) || 0;
                     offset += childoffset
-                    fulltagoffset += (childoffset !== 0) ? (2*childoffset + 1) : 0;
+                    fulltagoffset += (childoffset !== 0) ? (2 * childoffset + 1) : 0;
                     console.log(nodeLength)
                     console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
                     if (currentLength + nodeLength + offset >= cursorPosition) {
@@ -122,7 +122,7 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
                 currentLength += fulltagoffset;
             }
             else {
-                nodeLength  = childNode.textContent.length
+                nodeLength = childNode.textContent.length
                 offset = childNode.tagName.length + 2
                 fulltagoffset = offset * 2 + 1
                 if (currentLength + nodeLength + fulltagoffset >= cursorPosition) {
@@ -182,32 +182,34 @@ export function handleToggleFiller(event, exampleData, setExampleData, toggleFil
             var transcriptData = data['transcript']
             if (transcriptData.includes("<b>")) {
                 const newData = transcriptData.replace(regex, (_, captureGroup) => {
-                    return '<b>' + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + '</b>';
+                    return '<s><b>' + captureGroup + '</b></s>';
+                    // return '<b>' + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + '</b>';
                 });
                 disabledArray[index] = true
-                setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
             } else {
                 null
             };
-            console.log(disabledArray)
+            // console.log(disabledArray)
             setDisabledContainer(disabledArray)
         })
     } else {
         // Some function to detect all <b> and then apply <s> around them
-        const regex = /<b><s>(.*?)<\/s><\/b>/g;
+        const regex = /<s><b>(.*?)<\/b><\/s>/g;
         currentData.map((data, index) => {
             var transcriptData = data['transcript']
-            if (transcriptData.includes("<b><s>")) {
+            if (transcriptData.includes("<s><b>")) {
                 const newData = transcriptData.replace(regex, (_, captureGroup) => {
-                    return '<b>' + captureGroup.split('<s>').join('').split('</s>').join('') + '</b>';
+                    return '<b>' + captureGroup + '</b>'
+                    // return '<b>' + captureGroup.split('<s>').join('').split('</s>').join('') + '</b>';
                 });
-                setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
             } else {
                 null
             };
             setDisabledContainer(disabledArray)
-    })
-}
+        })
+    }
 };
 
 
@@ -217,7 +219,7 @@ export function handleToggleFiller(event, exampleData, setExampleData, toggleFil
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-export function clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer){
+export function clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer) {
     let partialdropDrown = Array.from({ length: exampleData.length }, () => false)
     partialdropDrown[id] = !dropDowncontainer[id]
     setDropDowncontainer(partialdropDrown)
@@ -228,7 +230,7 @@ export function handleDropDown(id, newTag, tagDictionary, exampleData, setExampl
     const originalTranscript = exampleData[id]['transcript']
     var modifiedTranscript = originalTranscript.replaceAll(tagDictionary[originalTag][0], tagDictionary[newTag][0])
     modifiedTranscript = modifiedTranscript.replaceAll(tagDictionary[originalTag][1], tagDictionary[newTag][1])
-    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
-    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
     clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer)
 }
