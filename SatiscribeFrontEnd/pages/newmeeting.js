@@ -50,7 +50,7 @@ function newmeeting() {
                     <Button
                         size="small"
                         logo="left"
-                        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}
+                        logoStyle={{ backgroundImage: `url("/iconsPurple/Edit.png")`, zIndex: 1 }}
                         onClick={() => alert('Border Button (Smol) with left logo clicked!')}
                     >
                         Edit Template
@@ -59,10 +59,10 @@ function newmeeting() {
                         size="small"
                         logo="left"
                         fill={true}
-                        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+                        logoStyle={{ backgroundImage: `url("/iconsFinalGray/Start.png")`, zIndex: 1 }} // Change this to the URL of your right logo
                         onClick={() => alert('Filled Button (small) with Right logo clicked!')}
                     >
-                        Small Fill Left
+                        Start Meeting
                     </Button>
 
                 </div>
