@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import navstyle from '/styles/Navbar.module.css'
 import pagestyle from '/styles/newmeeting.module.css'
@@ -5,6 +7,7 @@ import { Button } from '../components';
 import colourstyle from '/styles/Colourtest.module.css'
 import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
+import StyledComponentsRegistry from '../components/registery.tsx'
 
 function newmeeting() {
 
@@ -16,6 +19,7 @@ function newmeeting() {
     }
 
     return (
+        <StyledComponentsRegistry>
         <div >
             <div className={navstyle.topnav}>
                 <div className={navstyle.left_nav}>
@@ -46,7 +50,7 @@ function newmeeting() {
                     <Button
                         size="small"
                         logo="left"
-                        logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}
+                        logoStyle={{ backgroundImage: `url("/iconsPurple/Edit.png")`, zIndex: 1 }}
                         onClick={() => alert('Border Button (Smol) with left logo clicked!')}
                     >
                         Edit Template
@@ -55,10 +59,10 @@ function newmeeting() {
                         size="small"
                         logo="left"
                         fill={true}
-                        logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+                        logoStyle={{ backgroundImage: `url("/iconsFinalGray/Start.png")`, zIndex: 1 }} // Change this to the URL of your right logo
                         onClick={() => alert('Filled Button (small) with Right logo clicked!')}
                     >
-                        Small Fill Left
+                        Start Meeting
                     </Button>
 
                 </div>
@@ -89,6 +93,7 @@ function newmeeting() {
             </div>
         
         </div>
+        </StyledComponentsRegistry>
 
 
     )

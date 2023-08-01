@@ -4,12 +4,13 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
-import ParagraphData from '@/data/Paragraph.json'
+// import ParagraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
-import { setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown, settingFocus, loseFocus, onInputDelete } from '../EditingTranscriptFunctions'
+import SpeakerTag from '../Tags and Labels/transcriptSpeaker'
+import { setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown, settingFocus, loseFocus, onInputDelete, handleChangeSpeaker } from '../EditingTranscriptFunctions'
 
 
-function VettingBlockB() {
+function VettingBlockB({ParagraphData}) {
 
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0);
@@ -20,6 +21,7 @@ function VettingBlockB() {
     const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
     const [previousFocusData, setPreviousFocusData] = useState('');
     const [keyCode, setkeyCode] = useState('')
+    const [speakerdropDowncontainer, setSpeakerDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false))
 
     const nameProfileContainer = {
         "Hubob": "Profile Pict (Cream).png",
@@ -41,7 +43,8 @@ function VettingBlockB() {
         'STRONG': ['--Final_Tag_Green_10', '--Final_Tag_Green_25']
     }
 
-    const allTags = [...new Set(initialData.map(data => data.tags))];
+    const allTags = [...new Set(["Filler Words", "Uncertain", "Unrelated"])];
+    const allPeople = [...new Set(["Hubob", "Morgan", "Jefferson", "Derrick"])];
 
     useEffect(() => {
         const startingPosition = exampleData[0].transcript.length
@@ -88,8 +91,14 @@ function VettingBlockB() {
                     {exampleData.map((data, index) => (
                         <div className={`${flexi.flexColumnSmolGap}`} key={index}>
                             <div className={`${flexi.flexRowSmollerGap} ${flexi.alignCenter}`}>
-                                <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
-                                <h6>{data.speaker}</h6>
+                                <SpeakerTag
+                                        backgroundurl={`url("/profiles/${nameProfileContainer[data.speaker]}")`}
+                                        name={data.speaker}
+                                        handleDropDown={(tagName) => handleChangeSpeaker(index, tagName, exampleData, setExampleData, setSpeakerDropDowncontainer, speakerdropDowncontainer)}
+                                        Dropdown={speakerdropDowncontainer[index]}
+                                        allPeople={allPeople}
+                                        onClick={() => clickDropDown(index, setSpeakerDropDowncontainer, exampleData, speakerdropDowncontainer)}
+                                    />
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                             </div>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>

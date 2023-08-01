@@ -10,27 +10,27 @@
     color: var(--Final_Light_Purple, #BB86FC);
     text-align: center;
     background-color: transparent;
-    border: 2px solid var(--Final_Light_Purple, #bb86fc);
+    border: 3px solid var(--Final_Light_Purple, #bb86fc);
 }
 
 
 /* Size Variants */
 .smallButton {
-    width: 30vw;
-    height: 13vh;
-    padding: 2vw 2vh;
+    width: 21.5vw;
+    height: 10.5vh;
+    padding: var(--smolGap)
 }
 
 .mediumButton {
-    width: 40vw;
-    height: 13vh;
-    padding: 1vw 1vh;
+    width: 39vw;
+    height: 10.5vh;
+    padding: var(--smolGap)
 }
 
 .largeButton {
-    padding: 1vw 1vh;
-    width: 90vw;
-    height: 13vh;
+    width: 80vw;
+    height: 10.5vh;
+    padding: var(--smolGap)
 }
 
 /* Buttons with Logos */
@@ -48,13 +48,13 @@
 
 .logoContainer {
     display: flex;
-    padding: 2vh 2vw;
+    justify-content: center;
+    align-self: center;
 }
 
 
 /* Fill and Border Variants */
 .fillButton {
-    border: 1px solid var(--Final_Gray, #323135);
     background: var(--Final_Light_Purple, #BB86FC);
 }
 
@@ -80,6 +80,6 @@
 
 .sharedButton.disabledButton {
     background: transparent;
-    border: 1px solid var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50));
+    border: 3px solid var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50));
     cursor: not-allowed;
 }

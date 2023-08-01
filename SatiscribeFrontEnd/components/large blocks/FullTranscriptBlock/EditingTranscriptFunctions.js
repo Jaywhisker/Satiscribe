@@ -340,11 +340,11 @@ export function handleDropDown(id, newTag, tagDictionary, exampleData, setExampl
 }
 
 
-///////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //                  SETTING FOCUS ON TAG PRESS
 //
-//////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export function settingFocus(id, focusedDictionary, setPreviousFocusData, previousFocusData) {
     const paragraphID = `paragraph_${id}`
@@ -383,4 +383,17 @@ export function loseFocus(event, focusedDictionary, previousFocusData, setPrevio
         setDropDowncontainer(Array.from({ length: exampleData.length }, () => false))
         setPreviousFocusData('')
     } else { null }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//                                     CHANGE SPEAKER TAG
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+export function handleChangeSpeaker(index, tagName, exampleData, setExampleData, setSpeakerDropDown, SpeakerDropDown) {
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === index ? { ...data, speaker: tagName } : data)))
+    clickDropDown(index, setSpeakerDropDown, exampleData, SpeakerDropDown)
 }

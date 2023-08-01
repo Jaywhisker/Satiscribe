@@ -39,7 +39,7 @@ const Sidebar = () => {
 
     return (
         <div>
-            <button className={logos.big} style={{ backgroundImage: `url("/icons/PurpleHamburger.png")`, backgroundColor: 'transparent', zIndex: 1 }} onClick={() => setIsOpen(!isOpen)} />
+            <button className={logos.small} style={{ backgroundImage: `url("/icons/PurpleHamburger.png")`, backgroundColor: 'transparent', zIndex: 1, border: 'none',   marginLeft: '20px'}} onClick={() => setIsOpen(!isOpen)} />
             <SidebarStyled isOpen={isOpen}>
                 {/* <Button size="small" onClick={() => alert('Small button clicked!')}>
                     Small Button

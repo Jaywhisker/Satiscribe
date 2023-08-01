@@ -20,15 +20,6 @@
     font-size: 17px;
   }
   
-  /* Change the color of links on hover */
-  .topnav h6:hover {
-    background-color: var(--Final_Dark_Purple);
-    color: var(--Final_Light_Purple);
-    text-decoration: underline;
-    font-weight: 700;
-    /*  padding: 8px 12px; Adjust the padding as needed for the desired size */
-     /* border-radius: 8px; Adjust the border-radius for rounded corners */
-  }
   
   /* Add a color to the active/current link */
   .topnav p.active {

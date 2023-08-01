@@ -4,7 +4,7 @@ import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 // import VettingSentence from '../../InputFields/transcriptVettingField'
 import SentenceData from '@/data/Sentence.json'
-import PargraphData from '@/data/Paragraph.json'
+// import PargraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import logos from '@/styles/Logos.module.css'
 import PersonTag from '../Tags and Labels/taggingPerson'
@@ -12,7 +12,8 @@ import { onInputDelete, setCursorPosition, handleToggleFiller, handleDropDown, c
 
 
 
-function VettingBlock() {
+function VettingBlock({SentenceData}) {
+    console.log(SentenceData)
     const initialData = SentenceData.paragraphs
 
     const [toggleFiller, setToggleFiller] = useState(true);
