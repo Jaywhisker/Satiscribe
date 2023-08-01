@@ -6,18 +6,20 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import ParagraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
-import { onInput, setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown } from '../EditingTranscriptFunctions'
+import { setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown, settingFocus, loseFocus, onInputDelete } from '../EditingTranscriptFunctions'
 
 
 function VettingBlockB() {
 
     const [toggleFiller, setToggleFiller] = useState(true);
-    const [cursorPointerLocation, setCursorPositionLocation] = useState(0)
-    const initialData = ParagraphData.paragraph
-    const [exampleData, setExampleData] = useState(initialData)
-    const [paragraphID, setParagraphID] = useState(0)
+    const [cursorPointerLocation, setCursorPositionLocation] = useState(0);
+    const initialData = ParagraphData.paragraph;
+    const [exampleData, setExampleData] = useState(initialData);
+    const [paragraphID, setParagraphID] = useState(0);
     const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
     const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
+    const [previousFocusData, setPreviousFocusData] = useState('');
+    const [keyCode, setkeyCode] = useState('')
 
     const nameProfileContainer = {
         "Hubob": "Profile Pict (Cream).png",
@@ -32,19 +34,40 @@ function VettingBlockB() {
         "Unrelated": ["<em>", "</em>"]
     }
 
+    const focusedDictionary = {
+        'B': ['--Final_Red_15', '--Final_Red_35'],
+        'I': ['--Final_Tag_Orange_10', '--Final_Tag_Orange_25'],
+        'EM': ['--Final_Tag_Yellow_10', '--Final_Tag_Yellow_25'],
+        'STRONG': ['--Final_Tag_Green_10', '--Final_Tag_Green_25']
+    }
+
     const allTags = [...new Set(initialData.map(data => data.tags))];
 
-    const paragraphRef = useRef(null)
+    useEffect(() => {
+        const startingPosition = exampleData[0].transcript.length
+        setCursorPosition(document.getElementById('paragraph_0'), startingPosition)
+        setCursorPositionLocation(startingPosition)
+    }, [])
 
     useEffect(() => {
         const paragraphId = `paragraph_${paragraphID}`
         setCursorPosition(document.getElementById(paragraphId), cursorPointerLocation)
-        // console.log(exampleData[cursorPointerLocation])
-    }, [cursorPointerLocation]);
+    }, [cursorPointerLocation, exampleData]);
+
+    const keydown = (event) => {
+        if (event.ctrlKey) {
+            setkeyCode([event.key, 'control'])
+        } else if (event.key === 'Enter') {
+            event.preventDefault();
+            setkeyCode(event.key)
+        } else {
+            setkeyCode(event.key)
+        }
+    }
 
     return (
         <>
-            <div className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment} ${flexi.flexColumnSmolGap}`}>
+            <div id='transcriptContainer' className={`${contentblock.largeBlockContainerNoHover} ${contentblock.contentBlockAlignment} ${flexi.flexColumnSmolGap}`} onClick={(event) => loseFocus(event, focusedDictionary, previousFocusData, setPreviousFocusData, setDropDowncontainer, exampleData)}>
                 <div className={`${flexi.innerMargin} ${flexi.flexColumnSmolGap}`}>
 
                     <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
@@ -64,8 +87,9 @@ function VettingBlockB() {
 
                     {exampleData.map((data, index) => (
                         <div className={`${flexi.flexColumnSmolGap}`} key={index}>
-                            <div className={`${flexi.flexRowSmollerGap}`}>
+                            <div className={`${flexi.flexRowSmollerGap} ${flexi.alignCenter}`}>
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/profiles/${nameProfileContainer[data.speaker]}")`, zIndex: 1 }}></div>
+                                <h6>{data.speaker}</h6>
                                 <div className={logos.evensmallerclickable} style={{ backgroundImage: `url("/icons/Sound on.png")`, zIndex: 1 }}></div>
                             </div>
                             <div className={`${flexi.flexRowMediumGap} ${flexi.justifyStart} ${flexi.alignCenter}`}>
@@ -73,8 +97,8 @@ function VettingBlockB() {
                                     contentEditable="true"
                                     style={{ color: `var(--Final_White)`, width: '80%' }}
                                     dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}
-                                    onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
-                                    ref={paragraphRef}
+                                    onKeyDown={(event) => keydown(event)}
+                                    onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode)}
                                 />
                                 {data.tags.length > 0 ? (
                                     <TranscriptTags
@@ -82,10 +106,9 @@ function VettingBlockB() {
                                         name={data.tags}
                                         disabled={disabledContainer[index]}
                                         allTags={allTags}
-                                        handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)}
-                                        Dropdown={dropDowncontainer[index]}
+                                        handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)} Dropdown={dropDowncontainer[index]}
                                         onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
-                                        onPress={() => { paragraphRef.current.focus(); console.log(paragraphRef, "pressed") }}
+                                        onPress={() => settingFocus(index, focusedDictionary, setPreviousFocusData, previousFocusData)}
                                     />
                                 ) : (null)}
 

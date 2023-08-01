@@ -1,4 +1,4 @@
-export function onInput(event, id, exampleData, setExampleData, setCursorPositionLocation, setParagraphID) {
+export function onInputStrikethrough(event, id, exampleData, setExampleData, setCursorPositionLocation, setParagraphID) {
     setParagraphID(id)
     const originalText = exampleData[id]['transcript']
     const newText = event.target.innerHTML.replace('&nbsp', ' ').replace(';', ''); //convert space bar code to js space
@@ -54,6 +54,8 @@ export function onInput(event, id, exampleData, setExampleData, setCursorPositio
 
         setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
     }
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+}
 }
 
 export function setCursorPosition(paragraphElement, cursorPosition) {
@@ -99,7 +101,6 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
         const childNode = childNodes[i];
         var nodeLength;
         if (childNode.nodeType == Node.ELEMENT_NODE) {
-            console.log(childNode.childNodes.length)
             if (childNode.childNodes.length > 0) {
                 offset = childNode.tagName.length + 2
                 fulltagoffset = 2 * offset + 1
@@ -145,7 +146,7 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
             // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
         }
     }
-    return [childNodes[childNodes.length - 1], nodecursorPosition];
+    return [childNodes[childNodes.length - 1], childNodes.length - 1];
 };
 
 export function findCharacterPos(text, currentIndex, char) {
@@ -233,4 +234,50 @@ export function handleDropDown(id, newTag, tagDictionary, exampleData, setExampl
     setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
     setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
     clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer)
+}
+
+
+///////////////////////////////////////////////////////////////////
+//
+//                  SETTING FOCUS ON TAG PRESS
+//
+//////////////////////////////////////////////////////////////////
+
+export function settingFocus(id, focusedDictionary, setPreviousFocusData, previousFocusData) {
+    const paragraphID = `paragraph_${id}`
+    const paragraphElement = document.getElementById(paragraphID);
+    paragraphElement.focus();
+
+    if (previousFocusData !== paragraphID && previousFocusData !== '') {
+        console.log(previousFocusData, paragraphID)
+        const prevparagraphElement = document.getElementById(previousFocusData);
+        for (const element of prevparagraphElement.children) {
+            var tag_name = element.tagName;
+            const cssVariable = focusedDictionary[tag_name][0];
+            element.style.backgroundColor = `var(${cssVariable})`
+        }
+    }
+
+    for (const element of paragraphElement.children) {
+        var tag_name = element.tagName;
+        const cssVariable = focusedDictionary[tag_name][1];
+        element.style.backgroundColor = `var(${cssVariable})`
+    }
+    setPreviousFocusData(paragraphID)
+}
+
+export function loseFocus(event, focusedDictionary, previousFocusData, setPreviousFocusData, setDropDowncontainer, exampleData) {
+    const divElement = event.currentTarget;
+    const isClickInsideDiv = divElement === event.target
+
+    if (previousFocusData !== '' && isClickInsideDiv) {
+        const prevparagraphElement = document.getElementById(previousFocusData);
+        for (const element of prevparagraphElement.children) {
+            var tag_name = element.tagName;
+            const cssVariable = focusedDictionary[tag_name][0];
+            element.style.backgroundColor = `var(${cssVariable})`
+        }
+        setDropDowncontainer(Array.from({ length: exampleData.length }, () => false))
+        setPreviousFocusData('')
+    } else { null }
 }
