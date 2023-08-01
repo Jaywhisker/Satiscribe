@@ -57,13 +57,16 @@ export function onInputStrikethrough(event, id, exampleData, setExampleData, set
     setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
 }
 
+//
+// ==================================================================================================================================================================================================================
+//
+
 
 export function onInputDelete(event, id, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode) {
-    console.log(typeof keyCode, typeof keyCode === 'object')
-    console.log(keyCode, keyCode === 'Enter')
-    if (keyCode === 'Enter' || typeof keyCode === 'object') {
+    if (keyCode === 'Enter' || typeof keyCode === 'object' || keyCode === ';') {
         setExampleData(exampleData)
-    } else {
+    } 
+    else {
         setParagraphID(id)
         const originalText = exampleData[id]['transcript']
         const newText = event.target.innerHTML.replace('&nbsp', ' ').replace(';', ''); //convert space bar code to js space
@@ -137,7 +140,11 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
                     modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + (originalText.slice(deletedcontent))
                     if (originalText.length - newText.length === 18) { // for cases where a empty <strong></strong>
                         const lastIndex = newText.lastIndexOf("<");
-                        setCursorPositionLocation(lastIndex)
+                        if (lastIndex === -1) {
+                            setCursorPositionLocation(currentCursorPosition)
+                        } else {
+                            setCursorPositionLocation(lastIndex)
+                        }
                         setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
                     } else {
                         setCursorPositionLocation(currentCursorPosition)
