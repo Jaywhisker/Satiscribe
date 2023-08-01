@@ -1,8 +1,8 @@
 {
     "sentences": [
         {
-            "transcript": "We need to ensure that our design <b> ummm <b> principles are well-defined.",
-            "tags": "",
+            "transcript": "We need to<b> ummm</b>  ensure that our design <b> ummm </b> principles are well-defined.",
+            "tags": "Filler Words",
             "audio": "Some link"
         },
         {
@@ -36,8 +36,8 @@
             "audio": "Some link"
         },
         {
-            "transcript": " <b>Uhm<b> I not too sure sia?",
-            "tags": "",
+            "transcript": " <b>Uhm</b> I not too sure sia?",
+            "tags": "Filler Words",
             "audio": "Some link"
         },
         {
