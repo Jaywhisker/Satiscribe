@@ -9,7 +9,7 @@ const SidebarStyled = styled.div`
 display: ${props => props.isOpen ? 'block' : 'none'};
 width: ${props => props.isOpen ? '15vw' : '0'};
 position: fixed;
-top: 70px;  // Adjust this value to shift the sidebar down
+top: 65px;  // Adjust this value to shift the sidebar down
 height: calc(99% - 10px);  // Adjust the height to keep the sidebar within the viewport
 background-color: #333;
 color: #fff;
@@ -39,7 +39,7 @@ const Sidebar = () => {
 
     return (
         <div>
-            <button className={logos.big} style={{ backgroundImage: `url("/icons/PurpleHamburger.png")`, backgroundColor: 'transparent', zIndex: 1 }} onClick={() => setIsOpen(!isOpen)} />
+            <button className={logos.small} style={{ backgroundImage: `url("/icons/PurpleHamburger.png")`, backgroundColor: 'transparent', zIndex: 1, border: 'none',   marginLeft: '20px'}} onClick={() => setIsOpen(!isOpen)} />
             <SidebarStyled isOpen={isOpen}>
                 {/* <Button size="small" onClick={() => alert('Small button clicked!')}>
                     Small Button
