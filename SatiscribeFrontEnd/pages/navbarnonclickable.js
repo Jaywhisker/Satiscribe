@@ -7,7 +7,7 @@ import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 import StyledComponentsRegistry from '../components/registery'
 
-function nonclicknavbar() {
+function Nonclicknavbar() {
     return (
         <StyledComponentsRegistry>
             <div className={style.topnav}>
@@ -29,4 +29,4 @@ function nonclicknavbar() {
     )
 }
 
-export default nonclicknavbar
+export default Nonclicknavbar

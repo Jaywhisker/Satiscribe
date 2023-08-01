@@ -4,13 +4,13 @@ import flexi from '@/styles/Flexible.module.css'
 import list from '@/styles/List.module.css'
 import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
-import ParagraphData from '@/data/Paragraph.json'
+// import ParagraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import SpeakerTag from '../Tags and Labels/transcriptSpeaker'
 import { setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown, settingFocus, loseFocus, onInputDelete, handleChangeSpeaker } from '../EditingTranscriptFunctions'
 
 
-function VettingBlockB() {
+function VettingBlockB({ParagraphData}) {
 
     const [toggleFiller, setToggleFiller] = useState(true);
     const [cursorPointerLocation, setCursorPositionLocation] = useState(0);
