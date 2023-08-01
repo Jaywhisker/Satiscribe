@@ -1,14 +1,14 @@
 {
   "paragraph": [
     {
-      "transcript": "Ok anyways, yes, we will try to finish the web experiment planning and coding by Wednesday, that means we will write out iteration 3.04.",
+      "transcript": " Ok anyways, yes, we will try to finish the web experiment planning and coding by Wednesday, that means we will write out iteration 3.04. ",
       "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "Shi de.",
-      "tags": "",
+      "transcript": " <i>Shi de. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -25,8 +25,8 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "I am not linked to the monitor, she is the one with the laptop, so she can do it yeah. Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
-      "tags": "",
+      "transcript": " <i>I am not linked to the monitor</i>, she is the one with the laptop, so she can do it yeah. Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -43,14 +43,14 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "Uhhhh, for me, I have to do up the user dashboard but I also need that table so I kinda can't do anything now.",
-      "tags": "",
+      "transcript": " <b>Uhhhh</b>, for me, I have to do up the user dashboard but I also need that table so I kinda can't do anything now.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Ok back to the side bar. As you can see, the side bar will always be shown whenever I load the page. But if I were to press the hamburger everything will be fine afterwards. I will fix that. As in I have been fixing that for the last three day. It's so annoying. I tried GPT plus but nothing is working. Ahhhh well whatever I will try too fix it again. This is also the new meeting page, I add the small and medium content blocks already but uhhh.",
-      "tags": "",
+      "transcript": "Ok back to the side bar. As you can see, the side bar will always be shown whenever I load the page. But if I were to press the hamburger everything will be fine afterwards. I will fix that. As in I have been fixing that for the last three day. It's so annoying. I tried GPT plus but nothing is working. Ahhhh well whatever I will try too fix it again. This is also the new meeting page, I add the small and medium content blocks already but <b>uhhh.</b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
@@ -61,7 +61,7 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Ummm, hang on, yes. Ummm. It wasn't like that. Ok I will try to fix it. This I already fix the width to Morgan one.",
+      "transcript": " <b>Ummm, hang on, yes. Ummm</b>. It wasn't like that. Ok I will try to fix it. This I already fix the width to Morgan one.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -85,20 +85,20 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "I think we should all download the extension where it automatically saves when you minimize the window.",
-      "tags": "",
+      "transcript": " <em>I think we should all download the extension where it automatically saves when you minimize the window. </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "Is there an extension for that?",
-      "tags": "",
+      "transcript": " <em>Is there an extension for that? </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "It's an extension that I have been using. Whenever you change the window in general, it just saves.",
-      "tags": "",
+      "transcript": " <em>It's an extension that I have been using. Whenever you change the window in general, it just saves. </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -635,7 +635,8 @@
       "tags": "",
       "audio": "Some link",
       "speaker": "Morgan"
-    }, {
+    },
+    {
       "transcript": "Ok ok. Uhhh, so everyone can finish their screens by tomorrow right? Then, Jefferson will do the edit templates page while Hubob will do the project settings page. Me and Morgan will clean up the web experiments and write out the instructions. Hopefully we can finish by.",
       "tags": "",
       "audio": "Some link",
