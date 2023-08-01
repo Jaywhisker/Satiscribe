@@ -9,19 +9,12 @@ import VettingBlock from '../../components/large blocks/FullTranscriptBlock/Desi
 import VettingBlockB from '../../components/large blocks/FullTranscriptBlock/Design B/VettingBlockB'
 
 
-function Largetesting() {
+function LandingPage() {
     return (
         <div>
-            {/* <VettingBlock /> */}
-            <VettingBlockB />
-            {/* <VettingBlock /> */}
-            <AgendaBlock />
-            <FullTranscriptBlock />
-            <CreateNewBlock />
-            <TaskSummariserBlock editable={false} />
-            <TaskSummariserBlock editable={true} />
+            <img src="/Logo.png"></img>
         </div>
     )
 }
 
-export default Largetesting
+export default LandingPage

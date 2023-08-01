@@ -4,7 +4,7 @@ import colourstyle from '/styles/Colourtest.module.css'
 import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 
-function navbar() {
+function navbar({text}) {
     return (
         <div className={style.topnav}>
             <div className={style.left_nav}>
@@ -12,7 +12,7 @@ function navbar() {
                 <h3>Satiscribe</h3>
             </div>
             <div className={style.centralize}>
-                <h3>Project Name</h3>
+                <h3>{text}</h3>
             </div>
             <div className={style.right_nav}>
                 <h6>Home</h6>
@@ -20,7 +20,6 @@ function navbar() {
                 <h6>Logout</h6>
             </div>
         </div>
-
     )
 }
 
