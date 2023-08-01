@@ -16,21 +16,21 @@
 
 /* Size Variants */
 .smallButton {
-    width: 21vw;
-    height: 10.5vh;
-    padding: var(--smolGap);
+    width: 30vw;
+    height: 13vh;
+    padding: 2vw 2vh;
 }
 
 .mediumButton {
-    width: 39vw;
-    height: 10.5vh;
-    padding: var(--smolGap);
+    width: 40vw;
+    height: 13vh;
+    padding: 1vw 1vh;
 }
 
 .largeButton {
-    width: 80vw;
-    height: 10.5vh;
-    padding: var(--smolGap);
+    padding: 1vw 1vh;
+    width: 90vw;
+    height: 13vh;
 }
 
 /* Buttons with Logos */

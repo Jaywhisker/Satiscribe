@@ -25,7 +25,7 @@ export function onInputStrikethrough(event, id, exampleData, setExampleData, set
             }
         }
         console.log(modifiedValue)
-        setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
     }
 
     else if (newText.length <= originalText.length) {
@@ -38,7 +38,7 @@ export function onInputStrikethrough(event, id, exampleData, setExampleData, set
             modifiedValue = originalText.slice(0, currentCursorPosition) + "<s>" + originalText[currentCursorPosition] + "</s>" + originalText.slice(currentCursorPosition + 1)
             setCursorPositionLocation(newCursorPosition)
             // Some way to check if I am in </b>
-        } 
+        }
         // Used to delete existing strong tags
         else if (originalText[currentCursorPosition] === "<" && originalText[currentCursorPosition + 7] === ">") {
             console.log(originalText.slice(currentCursorPosition, currentCursorPosition + 7))
@@ -52,19 +52,16 @@ export function onInputStrikethrough(event, id, exampleData, setExampleData, set
             setCursorPositionLocation(currentCursorPosition)
         }
 
-        setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
     }
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
 }
-
-
-
-
 
 
 export function onInputDelete(event, id, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode) {
     console.log(typeof keyCode, typeof keyCode === 'object')
-    console.log(keyCode, keyCode==='Enter' )
-    if (keyCode==='Enter' || typeof keyCode === 'object' ) {
+    console.log(keyCode, keyCode === 'Enter')
+    if (keyCode === 'Enter' || typeof keyCode === 'object') {
         setExampleData(exampleData)
     } else {
         setParagraphID(id)
@@ -95,12 +92,12 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
                 }
             }
             console.log(modifiedValue)
-            setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
-        } 
-    
+            setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+        }
+
         else if (newText.length === originalText.length) { //addition input
             if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
-                modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition+1);
+                modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition + 1);
                 currentCursorPosition += 9
                 setCursorPositionLocation(currentCursorPosition)
 
@@ -111,17 +108,17 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
                     newCursor += 9
                     setCursorPositionLocation(newCursor)
                 } else {
-                    modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(currentCursorPosition+1);
+                    modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(currentCursorPosition + 1);
                     currentCursorPosition += 1
                     setCursorPositionLocation(currentCursorPosition)
                 }
             }
             console.log(modifiedValue)
-            setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+            setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
         }
 
         else if (newText.length + 1 === originalText.length) {
-            setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
+            setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
             setCursorPositionLocation(currentCursorPosition)
         }
 
@@ -129,35 +126,35 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
             const deletedcontent = originalText.length - newText.length + currentCursorPosition + 1
 
             if (deletedcontent > originalText.length) {
-                setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
                 setCursorPositionLocation(newText.length)
-                
+
             }
             else {
                 console.log('hi')
                 if (keyCode === 'Backspace' || keyCode === 'Delete') {
                     console.log(originalText, newText)
-                    modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] +  (originalText.slice(deletedcontent))
+                    modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + (originalText.slice(deletedcontent))
                     if (originalText.length - newText.length === 18) { // for cases where a empty <strong></strong>
                         const lastIndex = newText.lastIndexOf("<");
                         setCursorPositionLocation(lastIndex)
-                        setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
+                        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
                     } else {
                         setCursorPositionLocation(currentCursorPosition)
-                        setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+                        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
                     }
                 } else {
                     if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
                         modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(deletedcontent);
                         currentCursorPosition += 9
                         setCursorPositionLocation(currentCursorPosition)
-            
+
                     } else {
-                        modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition]  + originalText.slice(deletedcontent);
+                        modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(deletedcontent);
                         currentCursorPosition += 1
                         setCursorPositionLocation(currentCursorPosition)
                     }
-                    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+                    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
                 }
             }
         }
@@ -214,7 +211,8 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
                     nodeLength = innerChild.textContent.length
                     var childoffset = (innerChild.tagName && innerChild.tagName.length + 2) || 0;
                     offset += childoffset
-                    fulltagoffset += (childoffset !== 0) ? (2*childoffset + 1) : 0;
+                    fulltagoffset += (childoffset !== 0) ? (2 * childoffset + 1) : 0;
+                    console.log(nodeLength)
                     console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset, offset)
                     if (currentLength + nodeLength + offset >= cursorPosition) {
                         return [innerChild, nodecursorPosition - offset];
@@ -228,7 +226,7 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
                 currentLength += fulltagoffset;
             }
             else {
-                nodeLength  = childNode.textContent.length
+                nodeLength = childNode.textContent.length
                 offset = childNode.tagName.length + 2
                 fulltagoffset = offset * 2 + 1
                 if (currentLength + nodeLength + fulltagoffset >= cursorPosition) {
@@ -288,32 +286,34 @@ export function handleToggleFiller(event, exampleData, setExampleData, toggleFil
             var transcriptData = data['transcript']
             if (transcriptData.includes("<b>")) {
                 const newData = transcriptData.replace(regex, (_, captureGroup) => {
-                    return '<b>' + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + '</b>';
+                    return '<s><b>' + captureGroup + '</b></s>';
+                    // return '<b>' + captureGroup.split('').map(char => `<s>${char}</s>`).join('') + '</b>';
                 });
                 disabledArray[index] = true
-                setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
             } else {
                 null
             };
-            console.log(disabledArray)
+            // console.log(disabledArray)
             setDisabledContainer(disabledArray)
         })
     } else {
         // Some function to detect all <b> and then apply <s> around them
-        const regex = /<b><s>(.*?)<\/s><\/b>/g;
+        const regex = /<s><b>(.*?)<\/b><\/s>/g;
         currentData.map((data, index) => {
             var transcriptData = data['transcript']
-            if (transcriptData.includes("<b><s>")) {
+            if (transcriptData.includes("<s><b>")) {
                 const newData = transcriptData.replace(regex, (_, captureGroup) => {
-                    return '<b>' + captureGroup.split('<s>').join('').split('</s>').join('') + '</b>';
+                    return '<b>' + captureGroup + '</b>'
+                    // return '<b>' + captureGroup.split('<s>').join('').split('</s>').join('') + '</b>';
                 });
-                setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === index ? { ...data, transcript: newData } : data)))
             } else {
                 null
             };
             setDisabledContainer(disabledArray)
-    })
-}
+        })
+    }
 };
 
 
@@ -323,7 +323,7 @@ export function handleToggleFiller(event, exampleData, setExampleData, toggleFil
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-export function clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer){
+export function clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer) {
     let partialdropDrown = Array.from({ length: exampleData.length }, () => false)
     partialdropDrown[id] = !dropDowncontainer[id]
     setDropDowncontainer(partialdropDrown)
@@ -334,8 +334,8 @@ export function handleDropDown(id, newTag, tagDictionary, exampleData, setExampl
     const originalTranscript = exampleData[id]['transcript']
     var modifiedTranscript = originalTranscript.replaceAll(tagDictionary[originalTag][0], tagDictionary[newTag][0])
     modifiedTranscript = modifiedTranscript.replaceAll(tagDictionary[originalTag][1], tagDictionary[newTag][1])
-    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
-    setExampleData((ExampleData) =>ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedTranscript } : data)))
+    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, tags: newTag } : data)))
     clickDropDown(id, setDropDowncontainer, exampleData, dropDowncontainer)
 }
 
@@ -369,7 +369,7 @@ export function settingFocus(id, focusedDictionary, setPreviousFocusData, previo
     setPreviousFocusData(paragraphID)
 }
 
-export function loseFocus(event, focusedDictionary,previousFocusData, setPreviousFocusData, setDropDowncontainer, exampleData) {
+export function loseFocus(event, focusedDictionary, previousFocusData, setPreviousFocusData, setDropDowncontainer, exampleData) {
     const divElement = event.currentTarget;
     const isClickInsideDiv = divElement === event.target
 
@@ -380,7 +380,7 @@ export function loseFocus(event, focusedDictionary,previousFocusData, setPreviou
             const cssVariable = focusedDictionary[tag_name][0];
             element.style.backgroundColor = `var(${cssVariable})`
         }
-        setDropDowncontainer(Array.from({ length: exampleData.length }, () => false))            
+        setDropDowncontainer(Array.from({ length: exampleData.length }, () => false))
         setPreviousFocusData('')
-    } else {null}
+    } else { null }
 }
