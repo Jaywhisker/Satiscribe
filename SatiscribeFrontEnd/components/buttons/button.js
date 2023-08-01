@@ -37,14 +37,14 @@ const Button = ({ size, logo, fill, logoStyle, disabledLogoStyle, onClick, child
         <span className={logoClasses}>
           {logo === 'left' && (
             <>
-              <img src={logoSrc} alt="Left Logo" className={`${styles.leftLogo} ${logos.small}`}/>
+              <img src={logoSrc} alt="Left Logo" className={`${styles.leftLogo} ${logos.medium}`}/>
               <h5 className={textClasses}>{children}</h5>
             </>
           )}
           {logo === 'right' && (
             <>
               <h5 className={textClasses}>{children}</h5>
-              <img src={logoSrc} alt="Right Logo" className={`${styles.rightLogo} ${logos.small}`} />
+              <img src={logoSrc} alt="Right Logo" className={`${styles.rightLogo} ${logos.medium}`} />
             </>
           )}
         </span>
