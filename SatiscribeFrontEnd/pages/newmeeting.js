@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import navstyle from '/styles/Navbar.module.css'
 import pagestyle from '/styles/newmeeting.module.css'
 import { Button } from '../components';
@@ -7,12 +7,23 @@ import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 
 function newmeeting() {
+
+    const [sidebarShown, setSideBarShown] = useState(false)
+    console.log(sidebarShown)
+    const handleClick = () => {
+        setSideBarShown(!sidebarShown)
+        console.log('yes')
+    }
+
     return (
         <div >
             <div className={navstyle.topnav}>
                 <div className={navstyle.left_nav}>
-                    <div style={{ width: '200px' }}> 
-                        <Sidebar />
+                    <div style={{ width: '200px' }}>
+                        <Sidebar
+                            sidebarShown={sidebarShown}
+                            onClick={handleClick}
+                        />
                     </div>
                     <h3>Satiscribe</h3>
                 </div>
@@ -52,31 +63,31 @@ function newmeeting() {
 
                 </div>
             </div>
-
-            <div className={pagestyle.centerContainer} style={{ marginBottom: '5vh' }}>
-                <div className={pagestyle.alignBlock}>
-                    <img className={pagestyle.blockMargin} src="/Blocks/Attendance Block.png" />
-                    <img src="/Blocks/Keydates Block.png" />
+            <div className={pagestyle.bigContainer}>
+                <div className={pagestyle.centerContainer}>
+                    <img className={pagestyle.smallBlock} src="/Blocks/Attendance Block.png" />
+                    <img className={pagestyle.mediumBlock} src="/Blocks/Keydates Block.png" />
                 </div>
             </div>
-            <div className={pagestyle.centerContainer} style={{ marginBottom: '5vh' }}>
-                <div className={pagestyle.alignBlock}>
-                    <img className={pagestyle.blockMargin} src="/Blocks/Meeting Details Block.png" />
-                    <img src="/Blocks/Link Block.png" />
+            <div className={pagestyle.bigContainer}>
+                <div className={pagestyle.nextContainer}>
+                    <img className={pagestyle.mediumBlock} src="/Blocks/Meeting Details Block.png" />
+                    <img className={pagestyle.smallBlock} src="/Blocks/Link Block.png" />
                 </div>
             </div>
-            <div className={pagestyle.centerContainer} style={{ marginBottom: '5vh' }}>
-                <div className={pagestyle.alignBlock}>
-                    <img className={pagestyle.blockMargin} src="/Blocks/Question Block.png" />
-                    <img src="/Blocks/Feedback Blocks.png" />
+            <div className={pagestyle.bigContainer}>
+                <div className={pagestyle.nextContainer}>
+                    <img className={pagestyle.smallBlock} src="/Blocks/Question Block.png" />
+                    <img className={pagestyle.mediumBlock} src="/Blocks/Feedback Blocks.png" />
                 </div>
             </div>
-            <div className={pagestyle.centerContainer} style={{ marginBottom: '5vh' }}>
-                <div className={pagestyle.alignBlock}>
-                    <img className={pagestyle.blockMargin} src="/Blocks/Poll Block.png" />
-                    <img src="/Blocks/Budgeting Block.png" />
+            <div className={pagestyle.bigContainer}>
+                <div className={pagestyle.nextContainer}>
+                <img className={pagestyle.mediumBlock} src="/Blocks/Poll Block.png" />
+                    <img className={pagestyle.smallBlock} src="/Blocks/Budgeting Block.png" />
                 </div>
             </div>
+        
         </div>
 
 
