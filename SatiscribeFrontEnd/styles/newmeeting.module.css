@@ -73,3 +73,40 @@
     align-items: center;
 }
 
+.bigContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh; /* Adjust as needed */
+}
+
+.nextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  gap: 5vw;
+  margin: 0 auto;
+}
+
+.centerContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  gap: 5vw;
+  margin-bottom: 30px; /* Adjust as needed */
+}
+
+.smallBlock{
+  width: 20vw;
+  height: 20vw;
+}
+
+.mediumBlock{
+  width: 45vw;
+  height: 20vw;
+}
+

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import navstyle from '/styles/Navbar.module.css'
 import pagestyle from '/styles/newmeeting.module.css'
@@ -5,6 +7,7 @@ import { Button } from '../components';
 import colourstyle from '/styles/Colourtest.module.css'
 import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
+import StyledComponentsRegistry from '../components/registery.tsx'
 
 function newmeeting() {
 
@@ -16,6 +19,7 @@ function newmeeting() {
     }
 
     return (
+        <StyledComponentsRegistry>
         <div >
             <div className={navstyle.topnav}>
                 <div className={navstyle.left_nav}>
@@ -89,6 +93,7 @@ function newmeeting() {
             </div>
         
         </div>
+        </StyledComponentsRegistry>
 
 
     )
