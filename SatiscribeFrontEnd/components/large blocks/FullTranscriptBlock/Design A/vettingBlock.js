@@ -8,7 +8,7 @@ import PargraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import logos from '@/styles/Logos.module.css'
 import PersonTag from '../Tags and Labels/taggingPerson'
-import { onInput, setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown } from '../EditingTranscriptFunctions'
+import { onInputDelete, setCursorPosition, handleToggleFiller, handleDropDown, clickDropDown } from '../EditingTranscriptFunctions'
 
 
 
@@ -153,7 +153,7 @@ function VettingBlock() {
                                             contentEditable="true"
                                             style={{ color: `var(--Final_White)`, width: '75%' }}
                                             dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}
-                                            onInput={(event) => onInput(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                            onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
                                             ref={paragraphRef}
                                         />
                                         {data.tags.length > 0 ? (
