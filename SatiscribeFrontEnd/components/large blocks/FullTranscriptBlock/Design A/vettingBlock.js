@@ -12,8 +12,8 @@ import { onInputDelete, setCursorPosition, handleToggleFiller, handleDropDown, c
 
 
 
-function VettingBlock({SentenceData}) {
-    console.log(SentenceData)
+function VettingBlock({ SentenceData }) {
+    // console.log(SentenceData)
     const initialData = SentenceData.paragraphs
 
     const [toggleFiller, setToggleFiller] = useState(true);
@@ -50,10 +50,10 @@ function VettingBlock({SentenceData}) {
 
     function handlePersonSelected(index, tagName, speakerChangeIndices, exampleData, setExampleData, setDropDowncontainer2, dropDowncontainer2) {
         const specialIndex = speakerChangeIndices.findIndex((element) => element == index)
-        console.log(specialIndex)
+        // console.log(specialIndex)
         if (specialIndex == speakerChangeIndices.length - 1) {
             let range = arrayRange(index, exampleData.length - 1, 1)
-            console.log(range)
+            // console.log(range)
             for (let i of range) {
                 exampleData[i].speaker = tagName;
             }
@@ -61,7 +61,7 @@ function VettingBlock({SentenceData}) {
         } else {
             const stopPoint = speakerChangeIndices[specialIndex + 1]
             let range = arrayRange(index, stopPoint - 1, 1);
-            console.log(range)
+            // console.log(range)
             for (let i of range) {
                 exampleData[i].speaker = tagName;
             }
@@ -105,7 +105,7 @@ function VettingBlock({SentenceData}) {
     }, [cursorPointerLocation]);
 
     // console.log(disabledContainer)
-    
+
     const keydown = (event) => {
         if (event.ctrlKey) {
             setkeyCode([event.key, 'control'])
@@ -165,7 +165,7 @@ function VettingBlock({SentenceData}) {
                                             contentEditable="true"
                                             style={{ color: `var(--Final_White)`, width: '75%' }}
                                             dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}
-                                            onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                            onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode)}
                                             onKeyDown={(event) => keydown(event)}
                                             ref={paragraphRef}
                                         />
@@ -178,7 +178,7 @@ function VettingBlock({SentenceData}) {
                                                 handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)}
                                                 Dropdown={dropDowncontainer[index]}
                                                 onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
-                                                
+
                                             />
                                         ) : (null)}
                                     </div>
