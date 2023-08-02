@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,10 +11,17 @@
     height: 25vh;
 }
 
-.headers{
+.headers {
     display: flex;
     flex-direction: row;
     margin: 10vh 0;
     justify-content: space-around;
     align-items: center;
+}
+
+.fixme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10vh;
 }
