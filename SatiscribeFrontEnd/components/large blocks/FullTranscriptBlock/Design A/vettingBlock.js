@@ -22,7 +22,7 @@ function VettingBlock({SentenceData}) {
     const [paragraphID, setParagraphID] = useState(0)
     const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
     const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
-
+    const [keyCode, setkeyCode] = useState('')
 
     // Initialize an array to store the indices where the speaker changes
     const speakerChangeIndices = [];
@@ -105,6 +105,17 @@ function VettingBlock({SentenceData}) {
     }, [cursorPointerLocation]);
 
     // console.log(disabledContainer)
+    
+    const keydown = (event) => {
+        if (event.ctrlKey) {
+            setkeyCode([event.key, 'control'])
+        } else if (event.key === 'Enter' || event.key === ';') {
+            event.preventDefault();
+            setkeyCode(event.key)
+        } else {
+            setkeyCode(event.key)
+        }
+    }
 
     return (
         <>
@@ -155,6 +166,7 @@ function VettingBlock({SentenceData}) {
                                             style={{ color: `var(--Final_White)`, width: '75%' }}
                                             dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}
                                             onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                            onKeyDown={(event) => keydown(event)}
                                             ref={paragraphRef}
                                         />
                                         {data.tags.length > 0 ? (
@@ -166,6 +178,7 @@ function VettingBlock({SentenceData}) {
                                                 handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)}
                                                 Dropdown={dropDowncontainer[index]}
                                                 onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
+                                                
                                             />
                                         ) : (null)}
                                     </div>
