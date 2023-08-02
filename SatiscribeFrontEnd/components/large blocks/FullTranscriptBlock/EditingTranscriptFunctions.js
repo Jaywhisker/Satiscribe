@@ -57,42 +57,59 @@ export function onInputStrikethrough(event, id, exampleData, setExampleData, set
     setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
 }
 
+//
+// ==================================================================================================================================================================================================================
+//
+
 
 export function onInputDelete(event, id, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode) {
-    console.log(typeof keyCode, typeof keyCode === 'object')
-    console.log(keyCode, keyCode === 'Enter')
-    if (keyCode === 'Enter' || typeof keyCode === 'object') {
+    if (keyCode === 'Enter' || typeof keyCode === 'object' || keyCode === ';') {
         setExampleData(exampleData)
-    } else {
+    } 
+    else {
         setParagraphID(id)
         const originalText = exampleData[id]['transcript']
-        const newText = event.target.innerHTML.replace('&nbsp', ' ').replace(';', ''); //convert space bar code to js space
+        var newText;
+        newText = event.target.innerHTML.replaceAll('&nbsp;' , ' ').replaceAll(';', ''); //convert space bar code to js space
         let currentCursorPosition = findFirstDiffPos(newText, originalText);
         const textbeforecursor = originalText.slice(0, currentCursorPosition);
         let modifiedValue = '';
 
-        console.log(originalText.length, newText.length)
+        console.log(newText.length, originalText.length)
+        console.log(newText[currentCursorPosition], originalText[currentCursorPosition])
 
         if (newText.length > originalText.length) { //addition input
-            if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
-                modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition);
-                currentCursorPosition += 9
-                setCursorPositionLocation(currentCursorPosition)
-
-            } else {
-                if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>")) {
-                    let newCursor = currentCursorPosition + 13
-                    modifiedValue = originalText.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>";
-                    newCursor += 9
-                    setCursorPositionLocation(newCursor)
+                if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
+                    if (keyCode === ' ') {
+                        modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>_</strong>" + originalText.slice(currentCursorPosition);  
+                    } else {
+                        modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition);   
+                    }
+                    currentCursorPosition += 9
+                    setCursorPositionLocation(currentCursorPosition) 
                 } else {
-                    modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(currentCursorPosition);
-                    currentCursorPosition += 1
-                    setCursorPositionLocation(currentCursorPosition)
+                    if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>")) {
+                        if (keyCode === ' ') {
+                            modifiedValue = originalText.slice(0, newCursor) + "<strong>_</strong>";
+                        } else {
+                            modifiedValue = originalText.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition]) + "</strong>";
+                        }
+                        let newCursor = currentCursorPosition + 13
+                        newCursor += 9
+                        setCursorPositionLocation(newCursor)
+                    } else {
+                        if (keyCode === ' '){
+                            modifiedValue = originalText.slice(0, currentCursorPosition) + "_" + originalText.slice(currentCursorPosition);
+                        } else {
+                            modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(currentCursorPosition);
+                        }
+                        currentCursorPosition += 1
+                        setCursorPositionLocation(currentCursorPosition)
+                    }
                 }
-            }
-            console.log(modifiedValue)
-            setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+                console.log(modifiedValue)
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
+            
         }
 
         else if (newText.length === originalText.length) { //addition input
@@ -100,6 +117,7 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
                 modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition + 1);
                 currentCursorPosition += 9
                 setCursorPositionLocation(currentCursorPosition)
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
 
             } else {
                 if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>")) {
@@ -112,9 +130,8 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
                     currentCursorPosition += 1
                     setCursorPositionLocation(currentCursorPosition)
                 }
+                setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
             }
-            console.log(modifiedValue)
-            setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
         }
 
         else if (newText.length + 1 === originalText.length) {
@@ -131,18 +148,15 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
 
             }
             else {
-                console.log('hi')
                 if (keyCode === 'Backspace' || keyCode === 'Delete') {
                     console.log(originalText, newText)
                     modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + (originalText.slice(deletedcontent))
-                    if (originalText.length - newText.length === 18) { // for cases where a empty <strong></strong>
-                        const lastIndex = newText.lastIndexOf("<");
-                        setCursorPositionLocation(lastIndex)
-                        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
+                    if (originalText[currentCursorPosition-1] === "<") {
+                        setCursorPositionLocation(currentCursorPosition-1)
                     } else {
                         setCursorPositionLocation(currentCursorPosition)
-                        setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
                     }
+                    setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
                 } else {
                     if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
                         modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(deletedcontent);
@@ -184,7 +198,10 @@ export function setCursorPosition(paragraphElement, cursorPosition) {
 
             }
         }
-    } else { selection.setBaseAndExtent(textNode, nodecursorPosition, textNode, nodecursorPosition) }
+    } 
+    else { 
+        selection.setBaseAndExtent(textNode, nodecursorPosition, textNode, nodecursorPosition) 
+    }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////

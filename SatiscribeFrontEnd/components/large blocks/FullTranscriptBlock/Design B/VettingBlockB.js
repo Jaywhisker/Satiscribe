@@ -60,7 +60,7 @@ function VettingBlockB({ParagraphData}) {
     const keydown = (event) => {
         if (event.ctrlKey) {
             setkeyCode([event.key, 'control'])
-        } else if (event.key === 'Enter') {
+        } else if (event.key === 'Enter' || event.key === ';') {
             event.preventDefault();
             setkeyCode(event.key)
         } else {

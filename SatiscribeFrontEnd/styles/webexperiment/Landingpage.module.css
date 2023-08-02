@@ -10,3 +10,11 @@
     object-fit: contain;
     height: 25vh;
 }
+
+.headers{
+    display: flex;
+    flex-direction: row;
+    margin: 10vh 0;
+    justify-content: space-around;
+    align-items: center;
+}

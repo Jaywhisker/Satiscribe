@@ -2,24 +2,32 @@
 
 import React, { useState } from 'react'
 import Button  from '@/components/buttons/button.js';
-import colourstyle from '/styles/Colourtest.module.css'
-import logos from '/styles/Logos.module.css'
-import StyledComponentsRegistry from '@/components/registery.tsx'
+import colourstyle from '/styles/Colourtest.module.css';
+import logos from '/styles/Logos.module.css';
+import landing from '@/styles/webexperiment/Landingpage.module.css';
+import StyledComponentsRegistry from '@/components/registery.tsx';
 import Nonclicknavbar from '../navbarnonclickable';
 import VettingBlockB from '../../components/large blocks/FullTranscriptBlock/Design B/VettingBlockB';
 import ParagraphData from '@/data/Paragraph.json'
+import { useRouter } from 'next/router';
 
 function DesignB() {
+
+    const router = useRouter();
+
+    const handleNavigate = () => {
+        router.push('/webexperiment/thankyou');
+    };
 
     return (
         <StyledComponentsRegistry>
         <Nonclicknavbar/>
-        <div>
+        <div className={landing.headers}>
             <Button
                 size="small"
                 logo="left"
-                logoStyle={{ backgroundImage: `url("/iconsPurple/Replace.png")`, zIndex: 1 }}
-                onClick={() => alert('Border Button (Smol) with left logo clicked!')}
+                logoStyle={{ backgroundImage: `url("/iconsGrey/Replace.png")`, zIndex: 1 }}
+                disabled= {true}
             >
                 Reset All Changes
             </Button>
@@ -29,7 +37,7 @@ function DesignB() {
                 logo="left"
                 fill={true}
                 logoStyle={{ backgroundImage: `url("/iconsFinalGray/Check.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                onClick={() => alert('Filled Button (small) with Right logo clicked!')}
+                onClick={handleNavigate}
             >
                 Finalise All Changes
             </Button>
