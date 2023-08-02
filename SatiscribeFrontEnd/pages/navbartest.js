@@ -28,4 +28,4 @@ function navbar({text}) {
     )
 }
 
-export default navbar
+export default navbar;

@@ -1,98 +1,86 @@
-import React from 'react'
-import logos from '../styles/Logos.module.css'
-import flexi from '../styles/Flexible.module.css'
+import React, { useEffect, useState } from 'react'
+import contentblock from '@/styles/components/contentblocks.module.css'
+import flexi from '@/styles/Flexible.module.css'
+import logos from '@/styles/Logos.module.css'
 
+function EmailDropdown({ clickable, onClick, dataset, resetDropDown }) {
 
-export default function index() {
+    const backgroundColors = [`var(--Final_Component_Dark_Grey)`, `var(--Final_Component_Lighter_Grey)`];
+    const [dropDown, setDropDown] = useState(false)
+    const [emailList, setEmailList] = useState([])
+    const [effectRan, setEffectRan] = useState(false)
+
+    useEffect(() => {
+        if (clickable && dataset) {
+            setEmailList(Object.keys(dataset))
+            setEffectRan(true)
+        }
+    }, [clickable, dataset]);
+
+    useEffect(() => {
+        if (resetDropDown) {
+            setDropDown(false)
+        }
+    }, [resetDropDown, dropDown]); // include dropDown in the dependencies array
+
     return (
-        <div>
-            <div>
-                <h1>Haro this is the display of the logosheet</h1>
-            </div>
+        <>
+            {effectRan &&
+                <div>
+                    {clickable ?
+                        (<div>
+                            <div onClick={() => setDropDown(!dropDown)} className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                                <div className={flexi.flexRowSmolGap}>
+                                    <p style={{ color: `var(--Final_White)` }}></p>
+                                    {emailList.filter((email) => dataset[email]).map((selectedEmail) => (
+                                        <img
+                                            key={selectedEmail}
+                                            src="/profiles/Profile Pict (Cream).png"
+                                            alt={selectedEmail}
+                                            className={logos.small}
+                                            style={{ zIndex: 1 }}
+                                        />))}
+                                </div>
+                                <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
+                            </div>
+                            <div className={contentblock.line}></div>
+                        </div>
+                        ) : (
+                            <div>
+                                <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
+                                    <p style={{ color: `var(--Final_White)` }}> Assign Task To</p>
+                                    <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
+                                </div>
+                                <div className={contentblock.line}></div>
+                            </div>
+                        )}
+                    {dropDown &&
+                        <div style={{ border: '4px solid', borderTop: 'none', borderColor: `var(--Final_Black)` }}>
+                            {emailList.map((email, index) => (
+                                <div
+                                    key={email}
+                                    className={`${flexi.spacing} ${dataset[email] ? 'flexi.inLine' : ''}`}
+                                    style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}
+                                    onClick={() => onClick(email)}>
 
-            <h2>Flexible module css: display layouts</h2>
-
-            <p>This uses the flexrow found in Flexible.module.css, the gap can be controlled from global.css</p>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-            </div>
-
-            <p>This uses the flexcolumn found in Flexible.module.css, the gap can be controlled from global.css</p>
-            <div className={flexi.flexColumnSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-            </div>
-
-            <h2>Icons</h2>
-            <p>Lmao they are so pixalated</p>
-
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Filter.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Hamburger.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
-
-            </div>
-
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Profile.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Search.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Sort.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Start.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Stop.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
-            </div>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Filter.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Hamburger.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
-            </div>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Profile.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Search.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Sort.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Start.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Stop.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
-            </div>
-        </div>
+                                    <div className={`${flexi.flexRowSmolGap} ${contentblock.clickable}`}>
+                                        <div className={logos.small} style={{ backgroundImage: `url(${dataset[email] ? '/icons/CheckboxTicked.png' : '/icons/Checkbox.png'})`, zIndex: 1 }}></div>
+                                        <img
+                                            src="/profiles/Profile Pict (Cream).png"
+                                            alt={email}
+                                            className={logos.small}
+                                            style={{ zIndex: 1 }}
+                                        />
+                                        <p style={{ color: `var(--Final_White)` }}>{email}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    }
+                </div>
+            }
+        </>
     )
 }
 
+export default EmailDropdown

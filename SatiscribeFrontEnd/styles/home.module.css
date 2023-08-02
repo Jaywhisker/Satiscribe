@@ -1,0 +1,87 @@
+.centeredContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.125rem 0rem;
+  }  
+  
+  .largeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .parentContainer,
+  .parentContainer2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh; 
+  }
+  
+  .centerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Viewport height */
+  }
+  
+  .alignButton {
+    width: 100%;  
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%; 
+  }
+  
+  .alignButton2 {
+    width: 100%; /* Adjust the width as needed */
+    display: flex;
+    justify-content: right; /* Align button to the right */
+    padding-right: 10%; /* Adjust the right padding as needed */
+  }
+  
+  .aligntext {
+    width: 100%; /* Adjust the width as needed */
+    display: flex;
+    justify-content: left; /* Align text to the left */
+    padding-left: 10%; /* Adjust the left padding as needed */
+  }
+  
+  .alignBlock {
+    width: 100%;  
+    display: contents;
+    justify-content: space-between;
+    padding: 0 10%; 
+  }
+  
+  /* .parentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5vh;
+  } */
+    
+  /* .alignButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+    
+  .alignBlock {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  } */
+    
+  .blockMargin {
+    margin-right: 5vh;
+  }
+    
+  .buttonMargin {
+    margin-right: 5vh;
+  }
+    
+  .centeredText {
+    align-items: center;
+  }

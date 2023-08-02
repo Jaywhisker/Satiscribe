@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { AiOutlineMenu } from 'react-icons/ai';
 import logos from '/styles/Logos.module.css'
 // import { Button, ButtonWithLogo } from '../components';
-import styles from '/styles/sidebar.module.css'
+import styles from '/styles/sidebar.module.css';
+import projectData from '../json/project_test';
 
 const SidebarStyled = styled.div`
 display: ${props => props.isOpen ? 'block' : 'none'};
@@ -36,7 +37,7 @@ const HamburgerButton = styled(AiOutlineMenu)`
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+  
     return (
         <div>
             <button className={logos.small} style={{ backgroundImage: `url("/icons/PurpleHamburger.png")`, backgroundColor: 'transparent', zIndex: 1, border: 'none',   marginLeft: '20px'}} onClick={() => setIsOpen(!isOpen)} />
@@ -58,6 +59,6 @@ const Sidebar = () => {
             </SidebarStyled>
         </div>
     );
-}
-
-export default Sidebar;
+  };
+  
+  export default Sidebar;

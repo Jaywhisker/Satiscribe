@@ -1,0 +1,78 @@
+[
+  {
+    "project_id": 1,
+    "project_name": "hci/ai",
+    "project_details": {
+      "members": {
+        "0": "derrick",
+        "1": "hubob"
+      },
+      "task_list": [
+        {
+          "task_id": 0,
+          "task_details": {
+            "task_name": "yes",
+            "assigned_to": ["hubob", "derrick"],
+            "status": "not started",
+            "duedate": "16/07"
+          }
+        },
+        {
+          "task_id": 1,
+          "task_details": {
+            "task_name": "no",
+            "assigned_to": ["hubob", "derrick"],
+            "status": "not started",
+            "duedate": "16/07"
+          }
+        }
+      ],
+      "meeting_logs": {
+        "meeting_id": 0,
+        "meeting_details": {
+          "date": "27 Jul 2023",
+          "venue": "studio 7",
+          "attendance": ["hubob", "derrick", "jefferson"]
+        }
+      }
+    }
+  },
+  {
+    "project_id": 2,
+    "project_name": "sds",
+    "project_details": {
+      "members": {
+        "0": "derrick",
+        "1": "hubob"
+      },
+      "task_list": [
+        {
+          "task_id": 0,
+          "task_details": {
+            "task_name": "up",
+            "assigned_to": ["hubob", "derrick"],
+            "status": "not started",
+            "duedate": "16/07"
+          }
+        },
+        {
+          "task_id": 1,
+          "task_details": {
+            "task_name": "down",
+            "assigned_to": ["hubob", "derrick"],
+            "status": "not started",
+            "duedate": "16/07"
+          }
+        }
+      ],
+      "meeting_logs": {
+        "meeting_id": 0,
+        "meeting_details": {
+          "date": "27 Jul 2023",
+          "venue": "studio 7",
+          "attendance": ["hubob", "derrick", "jefferson"]
+        }
+      }
+    }
+  }
+]
