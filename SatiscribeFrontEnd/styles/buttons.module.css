@@ -48,7 +48,7 @@
 
 .logoContainer {
     display: flex;
-    padding: 2vh 2vw;
+    align-items: center;
 }
 
 
