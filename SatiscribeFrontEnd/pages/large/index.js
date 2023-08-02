@@ -15,7 +15,7 @@ function Largetesting() {
     return (
         <div>
             {/* <VettingBlock /> */}
-            <VettingBlockB ParagraphData={ParagraphData}/>
+            <VettingBlockB ParagraphData={ParagraphData} />
             {/* <VettingBlock /> */}
             <AgendaBlock />
             <FullTranscriptBlock />
