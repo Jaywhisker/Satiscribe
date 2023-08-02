@@ -18,6 +18,7 @@ function PersonTag({ backgroundurl, name, handleDropDown, Dropdown, allPeople, o
     if (allPeople !== undefined) {
         filteredPeople = allPeople.filter(Name => Name !== name);
     }
+    
     return (
         <>
             <li style={{ marginTop: 50 }}>

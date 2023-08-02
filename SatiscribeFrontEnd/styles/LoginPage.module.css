@@ -1,0 +1,71 @@
+.bigdiv {
+    min-height: 7.28125rem;
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    padding-top: 50px;
+}
+
+.logindiv {
+    min-height: 7.28125rem;
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    padding-top: 30px;
+}
+
+
+.smallerdiv {
+    /* min-height: 7.28125rem; */
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    padding-top: 1vh;
+}
+
+.smalldiv {
+    /* min-height: 7.28125rem; */
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    padding-top: 5vh;
+}
+
+
+
+.mediumBlock {
+    /* width: 45vw; */
+    height: 25vh;
+}
+
+.inputWithBorder {
+    border-bottom: 3px solid var(--Final_White_25);
+    /* border-radius: 5px; */
+    /* 1px wide, solid, black border */
+    width: 39vw;
+}
+
+.inputWithBorder::placeholder {
+  color: rgba(187, 134, 252,0.5);
+  font-family: 'Lato', sans-serif;
+  padding-left: 5px;
+}
+
+.errorMessage {
+    color: var(--Final_Red);
+    font-family: 'Lato', sans-serif;
+    /* padding-left: 5px; */
+  }
+  
