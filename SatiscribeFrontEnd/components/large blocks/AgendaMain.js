@@ -21,7 +21,7 @@ function AgendaBlock() {
 
     useEffect(() => {
         setWarning(editedAgendas.some(agenda => agenda.text.length === 0));
-        console.log(editedAgendas)
+        // console.log(editedAgendas)
         if (editedAgendas.some(agenda => agenda.text.length === 0)) {
             setWarningMessage("Input Fields Cannot Be Left Blank")
         };

@@ -66,7 +66,7 @@ function FullTranscriptBlock() {
                                     <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='highlight' />
+                                <TranscriptTags type='labels' name='highlight' />
                             </div>
                         </li>
                         <li>
@@ -75,7 +75,7 @@ function FullTranscriptBlock() {
                                     <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='action items' />
+                                <TranscriptTags type='labels' name='action items' />
                             </div>
                         </li>
                         <li>
@@ -84,7 +84,7 @@ function FullTranscriptBlock() {
                                     <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='key dates' />
+                                <TranscriptTags type='labels' name='key dates' />
                             </div>
                         </li>
                         <li>
@@ -93,7 +93,7 @@ function FullTranscriptBlock() {
                                     <input type='text' placeholder='Sentence 1'></input>
                                     <div className={contentblock.line}></div>
                                 </div>
-                                <TranscriptTags type='tags' name='meeting details' />
+                                <TranscriptTags type='labels' name='meeting details' />
                             </div>
                         </li>
 

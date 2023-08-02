@@ -7,6 +7,7 @@
     align-items: center;
     position: relative;
     border-bottom: 2px solid var(--Final_Light_Purple); /* Replace #000 with the desired color */
+    height: 70px; /* Adjust this value to your preferred height */
   }
   
   /* Style the links inside the navigation bar */

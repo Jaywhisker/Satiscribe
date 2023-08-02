@@ -1,24 +1,670 @@
 {
-    "paragraph": [
-        {
-            "transcript": "<b>We need to ensure that our design principles are well-defined. Yeah I was thinking about that too. So I was thinking that like we need to do this but uhhhh im not too sure though. Do you guys think its correct? </b>",
-            "tags": "Filler Words",
-            "audio": "Some link"
-        },
-        {
-            "transcript": "<i>We need to ensure that our design principles are well-defined. Yeah I was thinking about that too. How about we start with the font? We need to ensure that our design principles are well-defined. </i>",
-            "tags": "Uncertain",
-            "audio": "Some link"
-        },
-        {
-            "transcript": "We need to ensure that our design principles are well-defined. Yeah I was thinking about that too.  We will need to do some testing but I think it should be ok to decide between the two. ",
-            "tags": "",
-            "audio": "Some link"
-        },
-        {
-            "transcript": "<em>Why do you have a baby duck bookmark though? Have you heard of th great design company called Kurtz? This baby duck is part of the little family called the ducks. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</em>",
-            "tags": "Unrelated",
-            "audio": "Some link"
-        }
-    ]
+  "paragraph": [
+    {
+      "transcript": "Ok anyways, yes, we will try to finish the web experiment planning and coding by Wednesday, that means we will write out iteration 3.04.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": " <i>Shi de. </i>",
+      "tags": "Uncertain",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "We will probably consult Kenny on Wednesday. Then if he is ok with it, we will continue the web experiment. Actually, can I get an update on what your progress are?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I think I am done with my part already. But you cannot refresh because it will lead to the side bar popping up instead. Actually, can you try and pull mine. Then you go and test now if it works and show it on the monitor?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": " <i>I am not linked to the monitor</i>, she is the one with the laptop, so she can do it yeah. Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
+      "tags": "Uncertain",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I am literally doing that table. The table is almost done, the table is literally almost everything. The table is the hardest part but I am facing all these errors.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Yeah, I agree that the table is the hardest part.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": " <b>Uhhhh</b>, for me, I have to do up the user dashboard but I also need that table so I kinda can't do anything now.",
+      "tags": "Filler Words",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Ok back to the side bar. As you can see, the side bar will always be shown whenever I load the page. But if I were to press the hamburger everything will be fine afterwards. I will fix that. As in I have been fixing that for the last three day. It's so annoying. I tried GPT plus but nothing is working. Ahhhh well whatever I will try too fix it again. This is also the new meeting page, I add the small and medium content blocks already but <b>uhhh.</b>",
+      "tags": "Filler Words",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Is the side of that supposed to look like that? The two things. Uhhh small and medium blocks yes. That is very small btw.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": " <b>Ummm, hang on, yes. Ummm</b>. It wasn't like that. Ok I will try to fix it. This I already fix the width to Morgan one.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Hang on ah, can you go slash large. Yeah, they are not the same ah. You want measuring tape or not?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "I just change only to match large though.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Did you press control save?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": " <em>I think we should all download the extension where it automatically saves when you minimize the window. </em>",
+      "tags": "Unrelated",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": " <em>Is there an extension for that? </em>",
+      "tags": "Unrelated",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": " <em>It's an extension that I have been using. Whenever you change the window in general, it just saves. </em>",
+      "tags": "Unrelated",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I need that. Also why does the button look that jank. I thought we already change the buttons last week. These look like the old files?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "No eh it wasn't like that just now. I think it's the. I fixed it already though.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Is it just the screen? What if you bring it back to your screen? Maybe the scaling of the monitor is messing up the situation.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Looks the same eh.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "I don't think the aspect ratios of these 2 screens are the same. Is it?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Is it supposed to be?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "The aspect ratio is definitely not the same",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "How about you plug out first then you see. I think he is using view heights for his block.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Yeah, it looks ok now.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "You are using view height or view width?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "I am using pixels because I cannot use view width on figma.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Wait wait wait. I am so confused. You are using pixels.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "I am using an image. So I cannot export a view width",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Oh so you been scaling up the image. Why didn't you use background like what me and Derrick did? You can use a background image then you change the size of the container.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "No but I don't know your size. I can only gauge from the size in figma.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "You can export right, your image as like one thousand four hundred forty thousand pixels and then you scale that container. Then you do background cover or contain and then that image will be scaled down to fit that container.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Oh.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Yeah yeah yeah.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Rather than you fix with pixels because it is not dynamic and that's why it broke on the monitor.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Chatgpt didn't tell me.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "We did that for SDS.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Oh really?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Wait wait. So your workflow, is you import that one image. You try and deploy then you see how it looks. If it is too big you will just scale down and redownload the image?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do whatever container shit. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel. So that when it Fullscreen",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "So you coded it in pixel.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Ya but the pixel part is the width of these 2 blocks together so that it is the same as his view width and his view screen.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "On just your MacBook no?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I think so. Hahah.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Hahahah.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "But it should be work right? It is not even accurate leh. Cause it is 70 view width then my MacBook is 1440 pixels but it is not correct.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Uh huh.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Do you have time to change everything to the container version. Because, it doesn’t scale, so that was the accurate description of the Pixel thing. Yes, That means if you plug in now right.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I don't get how I should do it thought. So, I should look at his pixel, at his view width.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Go to the file exactly under large block create new blocks main. Okay? Go to that file and then find. Look at the last big div container. Yeah, Large block, create new block main. Then you look at the last div with the style background image. File, background image. Yes. You scroll up. Large blocks. Create main. OK you scroll down. You see that last container.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "So what we did was.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "The true option.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "This is in view width, , 80 view width. So, I just set.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "You are supposed to create a medium block container which is I don't know how many view width. And then you put the background image. Cover will essentially expand it until it fits that container and then you make sure it is centralized. And then that is it.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "But for the medium it should be side by side. Right?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "So, you put them in a flex row. Then you can cap the flex row max width to be 80. And then spacing, whatever spacing you want. And then the medium and the small.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Ok I will try to do that.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "And then it will be dynamic. Which is the key.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Large medium. But how do I calculate the width? The flex width.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Oh, that’s the part you got to try ah. If the large block is 80 view width. Is this 60 20 or what number. I think he is talking about that. Play lor.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Ok. Uhhh. Planning. 80 view width ummm. It is 70 view width not 80.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Umm if large block is 70. Then your small block is x and medium block is y. X + y + z is the padding so x+ y +z is 70. X + x + x + 2z is 70 oso. So go solve that.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Yes. Hahahahahaha. Ok. 70. Medium and ummm.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Just do 25 45 lah. 25 45. Eh sorry not 25 45.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "25 45.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Should it be in view width?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "25 40 lor",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "25 25 25.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "It should be fixed position right?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "25 25 25.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "It should be a fix thing right?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "20 20 20 5 5.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Ahh yeah then 20 5 45. There you go. There's your number.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Why are you walking like a crab yao hin. Bye bye. Enjoy your dinner.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Dinner? You haven't eaten?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Yeah, I ate at 4 just now. Is that considered dinner? ",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Yeah, you are just having supper now. Bye bye.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "20 45 5. You write there. Then what if someone rate their team member 20 and 45.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "As much as I like the enjoy of spreading chaos. This is...I am not willing to torpedo someone's grades ah.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Actually, if Qiao Dan gives me 180, ok I will take it.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Yes. So, back to time period. I don’t know. What do you guys propose, when can you finish this.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I am planning to finish tomorrow. If not no time already.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "I like that idea. The two of you?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Mine is an error right now. They basically said that the UI library is not compatible and Chatgpt keeps asking me to wait for the next version.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "I think right, you should just build it by yourself.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I am going to do bootstrap. Where is my... Eh? There is the sample just now where is it? Yeah. I don't know.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Upz. Wooooow",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "I was going to find a better one. There are a lot of examples.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Sure.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "what other parts do we need for front end also ah. Like after we finish.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Realistically we need to stich everything together. Eh the web experiment we need to make the.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Yeah, the landing page, should be very fast.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "You want ah, what you need for front end ah, you have your login page, your create new project page, you have your edit template page. ",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Wait one by one.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Create new project, can do you project settings page, it technically exists. New meeting page.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Oh, new meetings page is mine.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Sorry not new meeting page",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I fang shou ml ah.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "I still need to do ML tmr. This one my lao ban.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "The lao ban also need to do ml tomorrow. I haven't do my SDS leh. I also have to do my ml. Today I see Homework 4 was sent out, just as I was talking about it yesterday. I need to do my SDS website by tomorrow. Have I started? Nothing. Google site I need to design by tomorrow meeting. I was supposed to do it this afternoon but hci.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "I made one feature. Urghhhhh.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Wah these 2 weeks I think I don't need to sleep.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Of course. Welcome to week 20.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Week 12 and 13 was the weeks I just disappear. Oh my god. This time, I will show up one time and be at home the other time. It is a prophecy. I should just never show up on week 13.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Ok what else is there. Let's end this meeting so that we can all go home. 11.15 already need to catch last train.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    },
+    {
+      "transcript": "Ok ok. Uhhh, so everyone can finish their screens by tomorrow right? Then, Jefferson will do the edit templates page while Hubob will do the project settings page. Me and Morgan will clean up the web experiments and write out the instructions. Hopefully we can finish by.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Wednesday. We will do testing on Thursday and Friday. The rest of you finish your new screens by Friday so that we can do the routing and integration on Friday itself. Everyone okay with that?",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Derrick"
+    },
+    {
+      "transcript": "Okay, I will go and debug the side bar. I think it has to do with Next.js and Styled Components. Will update tomorrow when we meeting.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Hubob"
+    },
+    {
+      "transcript": "Yea same for my end ah. I should be able to finish the task table by tomorrow.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Jefferson"
+    },
+    {
+      "transcript": "Can can. I will end the meeting now then I want to go home already.",
+      "tags": "",
+      "audio": "Some link",
+      "speaker": "Morgan"
+    }
+  ]
 }
