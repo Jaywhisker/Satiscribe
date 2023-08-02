@@ -4,7 +4,7 @@ import list from '@/styles/List.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 // import VettingSentence from '../../InputFields/transcriptVettingField'
 import SentenceData from '@/data/Sentence.json'
-import PargraphData from '@/data/Paragraph.json'
+// import PargraphData from '@/data/Paragraph.json'
 import TranscriptTags from '../Tags and Labels/transcriptTagsLabels'
 import logos from '@/styles/Logos.module.css'
 import PersonTag from '../Tags and Labels/taggingPerson'
@@ -12,7 +12,8 @@ import { onInputDelete, setCursorPosition, handleToggleFiller, handleDropDown, c
 
 
 
-function VettingBlock() {
+function VettingBlock({ SentenceData }) {
+    // console.log(SentenceData)
     const initialData = SentenceData.paragraphs
 
     const [toggleFiller, setToggleFiller] = useState(true);
@@ -21,7 +22,7 @@ function VettingBlock() {
     const [paragraphID, setParagraphID] = useState(0)
     const [disabledContainer, setDisabledContainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
     const [dropDowncontainer, setDropDowncontainer] = useState(() => Array.from({ length: exampleData.length }, () => false));
-
+    const [keyCode, setkeyCode] = useState('')
 
     // Initialize an array to store the indices where the speaker changes
     const speakerChangeIndices = [];
@@ -49,10 +50,10 @@ function VettingBlock() {
 
     function handlePersonSelected(index, tagName, speakerChangeIndices, exampleData, setExampleData, setDropDowncontainer2, dropDowncontainer2) {
         const specialIndex = speakerChangeIndices.findIndex((element) => element == index)
-        console.log(specialIndex)
+        // console.log(specialIndex)
         if (specialIndex == speakerChangeIndices.length - 1) {
             let range = arrayRange(index, exampleData.length - 1, 1)
-            console.log(range)
+            // console.log(range)
             for (let i of range) {
                 exampleData[i].speaker = tagName;
             }
@@ -60,7 +61,7 @@ function VettingBlock() {
         } else {
             const stopPoint = speakerChangeIndices[specialIndex + 1]
             let range = arrayRange(index, stopPoint - 1, 1);
-            console.log(range)
+            // console.log(range)
             for (let i of range) {
                 exampleData[i].speaker = tagName;
             }
@@ -104,6 +105,17 @@ function VettingBlock() {
     }, [cursorPointerLocation]);
 
     // console.log(disabledContainer)
+
+    const keydown = (event) => {
+        if (event.ctrlKey) {
+            setkeyCode([event.key, 'control'])
+        } else if (event.key === 'Enter' || event.key === ';') {
+            event.preventDefault();
+            setkeyCode(event.key)
+        } else {
+            setkeyCode(event.key)
+        }
+    }
 
     return (
         <>
@@ -153,7 +165,8 @@ function VettingBlock() {
                                             contentEditable="true"
                                             style={{ color: `var(--Final_White)`, width: '75%' }}
                                             dangerouslySetInnerHTML={{ __html: `${data['transcript']}` }}
-                                            onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID)}
+                                            onInput={(event) => onInputDelete(event, index, exampleData, setExampleData, setCursorPositionLocation, setParagraphID, keyCode)}
+                                            onKeyDown={(event) => keydown(event)}
                                             ref={paragraphRef}
                                         />
                                         {data.tags.length > 0 ? (
@@ -165,6 +178,7 @@ function VettingBlock() {
                                                 handleDropDown={(newTag) => handleDropDown(index, newTag, tagDictionary, exampleData, setExampleData, setDropDowncontainer, dropDowncontainer)}
                                                 Dropdown={dropDowncontainer[index]}
                                                 onClick={() => clickDropDown(index, setDropDowncontainer, exampleData, dropDowncontainer)}
+
                                             />
                                         ) : (null)}
                                     </div>

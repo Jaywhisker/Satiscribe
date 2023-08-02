@@ -3,9 +3,17 @@ import style from '@/styles/Colourtest.module.css'
 import flexi from '@/styles/Flexible.module.css'
 import landing from '@/styles/webexperiment/Landingpage.module.css'
 import Button  from '@/components/buttons/button.js';
+import { useRouter } from 'next/router';
 
 
-function LandingPage() {
+function LandingPageB() {
+
+    const router = useRouter();
+
+    const handleNavigate = () => {
+        router.push('/webexperiment/designB');
+    };
+
     return (
         <div className={landing.container}>
                 <img src="/Logo.png" className={landing.logo}></img>
@@ -21,9 +29,9 @@ function LandingPage() {
                 <br></br>
                 <br></br>
                 <br></br>
-                <Button size="medium" fill>START WEB EXPERIMENT</Button>
+                <Button size="medium" fill onClick={handleNavigate}>START WEB EXPERIMENT</Button>
         </div>
     )
 }
 
-export default LandingPage
+export default LandingPageB
