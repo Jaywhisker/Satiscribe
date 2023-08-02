@@ -7,7 +7,7 @@ import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 import StyledComponentsRegistry from '../components/registery.tsx'
 
-function navbar() {
+function navbar({text}) {
     return (
         <StyledComponentsRegistry>
             <div className={style.topnav}>
@@ -16,7 +16,7 @@ function navbar() {
                     <h3>Satiscribe</h3>
                 </div>
                 <div className={style.centralize}>
-                    <h3>Project Name</h3>
+                    <h3>{text}</h3>
                 </div>
                 <div className={style.right_nav}>
                     <h6>Home</h6>
@@ -25,7 +25,6 @@ function navbar() {
                 </div>
             </div>
         </StyledComponentsRegistry>
-
     )
 }
 

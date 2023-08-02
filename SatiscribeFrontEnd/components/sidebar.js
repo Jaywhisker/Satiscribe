@@ -9,7 +9,7 @@ const SidebarStyled = styled.div`
 display: ${props => props.isOpen ? 'block' : 'none'};
 width: ${props => props.isOpen ? '15vw' : '0'};
 position: fixed;
-top: 70px;  // Adjust this value to shift the sidebar down
+top: 80px;  // Adjust this value to shift the sidebar down
 height: calc(99% - 10px);  // Adjust the height to keep the sidebar within the viewport
 background-color: #333;
 color: #fff;

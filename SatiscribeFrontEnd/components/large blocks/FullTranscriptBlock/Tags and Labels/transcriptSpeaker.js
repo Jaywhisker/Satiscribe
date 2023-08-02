@@ -5,7 +5,7 @@ import logos from '@/styles/Logos.module.css'
 import contentblock from '@/styles/components/contentblocks.module.css'
 import tags from '@/styles/components/large blocks/tags.module.css'
 
-function PersonTag({ backgroundurl, name, handleDropDown, Dropdown, allPeople, onClick }) {
+function SpeakerTag({ backgroundurl, name, handleDropDown, Dropdown, allPeople, onClick }) {
 
     const nameProfileContainer = {
         "Hubob": "Profile Pict (Cream).png",
@@ -20,15 +20,15 @@ function PersonTag({ backgroundurl, name, handleDropDown, Dropdown, allPeople, o
     }
     
     return (
-        <>
-            <li style={{ marginTop: 50 }}>
-                <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} style={{ width: '100%' }} >
+        <>  
+            <div className={`${flexi.flexColumnNoGap}`} style={{ position: 'relative' }} onClick={onClick} >
+                <div className={`${flexi.flexRowSmolGap} ${flexi.justifyStart} ${flexi.alignCenter} `} >
                     <div className={logos.evensmallerclickable} style={{ backgroundImage: backgroundurl, zIndex: 1 }} onClick={onClick}></div>
                     <p onClick={onClick}>{name}</p>
                 </div>
 
                 {Dropdown && (
-                    <div style={{ position: 'relative', top: -33 }}>
+                    <div >
                         <div className={`${flexi.flexColumnMediumGap}`} style={{ zIndex: 0 }}>
                             {filteredPeople.map((tagName, index) => (
                                 <div key={index} className={`${tags.peopleLabel} ${flexi.flexRowSmollestGap} ${flexi.alignCenter} ${flexi.justifyStart}`} style={{ top: `calc(${index} * 5.2vh + 4.5vh)` }} onClick={() => handleDropDown(tagName)}>
@@ -45,11 +45,9 @@ function PersonTag({ backgroundurl, name, handleDropDown, Dropdown, allPeople, o
                         </div>
                     </div>
                 )}
-
-            </li>
-
+            </div>
         </>
     )
 }
 
-export default PersonTag
+export default SpeakerTag
