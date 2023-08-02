@@ -19,20 +19,20 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "I think I am done with my part already. But you cannot refresh because it will lead to the side bar popping up instead. Actually, can you try and pull mine. Then you go and test now if it works and show it on the monitor?",
-      "tags": "",
+      "transcript": "I think I am done with my part already. But you cannot refresh because it will lead to the side bar popping up instead. <em>Actually, can you try and pull mine. Then you go and test now if it works and show it on the monitor?</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": " <i>I am not linked to the monitor, she is the one with the laptop, so she can do it yeah. </i>Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
+      "transcript": " <i>I am not linked to the monitor, she is the one with the laptop, so she can do it yeah.</i> Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I am literally doing that table. The table is almost done, the table is literally almost everything. The table is the hardest part but I am facing all these errors.",
-      "tags": "",
+      "transcript": "I am literally doing that table. <i>The table is almost done, the table is literally almost everything. </i>The table is the hardest part but I am facing all these errors.",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -55,7 +55,7 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Is the side of that supposed to look like that? The two things. <b> Uhhh </b>small and medium blocks yes. That is very small btw.",
+      "transcript": "Is the side of that supposed to look like that? The two things. <b> Uhhh </b>small and medium blocks yes. That is very small by the way.",
       "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Jefferson"
@@ -139,7 +139,7 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "The aspect ratio is definitely not the same",
+      "transcript": "The aspect ratio is definitely not the same.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
@@ -235,13 +235,13 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Wait wait. So your workflow, is you import that one image. You try and deploy then you see how it looks. If it is too big you will just scale down and redownload the image?",
-      "tags": "",
+      "transcript": " <b>Wait wait.</b> So your workflow, is you import that one image. You try and deploy then you see how it looks. If it is too big you will just scale down and redownload the image?",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do whatever container shit. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel. So that when it Fullscreen",
+      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do whatever container fuck shit. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel. So that when it Fullscreen.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -289,13 +289,13 @@
       "speaker": "Morgan"
     },
     {
-      "transcript": "Do you have time to change everything to the container version. <i> Because, it doesn’t scale, so that was the accurate description of the Pixel thing. </i> Yes, That means if you plug in now right.",
+      "transcript": "Do you have time to change everything to the container version. Because, it doesn’t scale, so that was the accurate description of the Pixel thing. <i>Yes, That means if you plug in now right.</i>",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I don't get how I should do it thought. So, I should look at his pixel, at his view width.",
+      "transcript": "I don't get how I should do it thought. So, I should look at his pixel, at his view width?",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -319,7 +319,7 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": " <i>This is in view width, , 80 view width. So, I just set. </i>",
+      "transcript": " <i>This is in view width, 80 view width. So, I just set. </i>",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -367,19 +367,19 @@
       "speaker": "Morgan"
     },
     {
-      "transcript": "Ok. Uhhh. Planning. 80 view width ummm. It is 70 view width not 80.",
-      "tags": "",
+      "transcript": " <b>Ok. Uhhh.</b> Planning. 80 view width <b> ummm </b>. It is 70 view width not 80.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Umm if large block is 70. <i> Then your small block is x and medium block is y. X + y + z is the padding so x+ y +z is 70. X + x + x + 2z is 70 also. </i> So, go solve that.",
+      "transcript": "If large block is 70. <i> Then your small block is x and medium block is y. X + y + z is the padding so x + y +z is 70. X + x + x + 2z is 70 also. </i> So, go solve that.",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Yes. Hahahahahaha. Ok. 70. <b> Medium and ummm. </b>",
+      "transcript": "Yes. <b> Hahahahahaha. Ok.</b> 70. <b> Medium and ummm. </b>",
       "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -517,8 +517,8 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "I am going to do bootstrap. Where is my... Eh? There is the sample just now where is it? Yeah. I don't know.",
-      "tags": "",
+      "transcript": "I am going to do bootstrap. Where is my... <b>Eh</b>? There is the sample just now where is it? Yeah. I don't know.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -601,14 +601,14 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": " <em>The lao ban also need to do ml tomorrow. I haven't do my SDS leh. I also have to do my ml. Today I see Homework 4 was sent out, just as I was talking about it yesterday. I need to do my SDS website by tomorrow. Have I started? Nothing. Google site I need to design by tomorrow meeting. I was supposed to do it this afternoon but hci. </em>",
-      "tags": "Unrelated",
+      "transcript": " <i>The lao ban also need to do ml tomorrow. I haven't do my SDS leh. I also have to do my ml. Today I see Homework 4 was sent out, just as I was talking about it yesterday. I need to do my SDS website by tomorrow. Have I started? Nothing. Google site I need to design by tomorrow meeting. I was supposed to do it this afternoon but hci. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I made one feature. Urghhhhh.",
-      "tags": "",
+      "transcript": "I made one feature. <b>Urghhhhh. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -631,7 +631,7 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "Ok what else is there. <i> Let's end this meeting so that we can all go home. 11.15 already need to catch last train. </i>",
+      "transcript": "Ok what else is there. Let's end this meeting so that we can all go home. <i> 11.15 already need to catch last train. </i>",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
@@ -661,8 +661,8 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Can can. I will end the meeting now then I want to go home already.",
-      "tags": "",
+      "transcript": " <b>Can can.</b> I will end the meeting now then I want to go home already.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     }
