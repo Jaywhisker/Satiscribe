@@ -49,8 +49,8 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "<i>Then you go and test now if it works and show it on the monitor?</i>",
-            "tags": "Uncertain",
+            "transcript": "<em>Then you go and test now if it works and show it on the monitor?</em>",
+            "tags": "Unrelated",
             "audio": "Some link",
             "speaker": "Hubob"
         },
@@ -151,7 +151,7 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "This is also the new meeting page, I add the small and medium content blocks already but<b>uhhh.</b>",
+            "transcript": "This is also the new meeting page, I add the small and medium content blocks already but <b>uhhh.</b>",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Hubob"
@@ -271,8 +271,8 @@
             "speaker": "Jefferson"
         },
         {
-            "transcript": "<i>I thought we already change the buttons last week.</i>",
-            "tags": "Uncertain",
+            "transcript": "I thought we already change the buttons last week.",
+            "tags": "",
             "audio": "Some link",
             "speaker": "Jefferson"
         },
@@ -285,12 +285,6 @@
         {
             "transcript": "No eh it wasn't like that just now.",
             "tags": "",
-            "audio": "Some link",
-            "speaker": "Hubob"
-        },
-        {
-            "transcript": "<i>I think it's the.</i>",
-            "tags": "Uncertain",
             "audio": "Some link",
             "speaker": "Hubob"
         },
@@ -536,12 +530,6 @@
         },
         {
             "transcript": "Afterwards I times my MacBook view width size to calculate the pixel.",
-            "tags": "",
-            "audio": "Some link",
-            "speaker": "Hubob"
-        },
-        {
-            "transcript": "So that when it Fullscreen.",
             "tags": "",
             "audio": "Some link",
             "speaker": "Hubob"
