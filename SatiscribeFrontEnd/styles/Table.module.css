@@ -1,0 +1,231 @@
+.addNewTaskRow {
+    background-color: var(--Final_Component_Lighter_Grey);
+    color: var(--Final_Light_Purple);
+    font-size: 3vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 0;
+    cursor: pointer;
+}
+
+.paginationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--Final_Component_Dark_Grey);
+    color: var(--Final_White);
+    height: auto;
+    padding: 2vh 0;
+}
+
+.currentPageInput {
+    background-color: var(--Final_Light_Purple);
+    color: var(--Final_White);
+    font-size: 3vh;
+    height: 7vh;
+    width: fit-content;
+    max-width: 3vw;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin: 0 1vw;
+    padding-left: 1vw;
+}
+
+.entriesDropdown {
+    background-color: var(--Final_Light_Purple);
+    color: var(--Final_White);
+    font-size: 3vh;
+    height: 7vh;
+    width: fit-content;
+    max-width: 5vw;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin: 0 1vw;
+}
+
+.showEntries {
+    display: flex;
+    align-items: center;
+}
+
+.paginationButtons {
+    /* Add your styles for the pagination buttons here */
+    /* For example: */
+    display: flex;
+    align-items: center;
+}
+
+.searchBar {
+    background-color: var(--Final_Dark_Purple_80);
+    border-color: var(--Final_Light_Purple);
+    font-size: 3vh;
+    padding: 2vh 1vw;
+    border-radius: 5px;
+    width: 30vw;
+    border: 1px solid var(--Final_Light_Purple);
+    color: var(--Final_White);
+
+}
+
+.searchBar::placeholder {
+    color: var(--Final_Light_Purple);
+}
+
+
+.searchPlace {
+    display: flex;
+    flex-direction: row;
+    gap: 60vw;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2vh 1vw;
+    max-width: 100vw;
+}
+
+.inputrow {
+    display: flex;
+    flex-direction: row;
+    /* gap: 7.5vw; */
+    align-items: center;
+    vertical-align: center;
+    width: 100vw;
+    /* margin: 2vh 2vw; */
+    height: 5vh;
+    overflow: hidden;
+}
+
+.eachCol {
+    width: 20vw;
+    margin: 0 1.15vw;
+}
+
+/* customTheme.css */
+
+/* Add these styles for the Select Status dropdown */
+.statusSelect {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    font-family: Lato, sans-serif;
+    font-size: 3vh;
+    border: 2px solid var(--Final_Component_Dark_Grey);
+    color: var(--Final_White);
+    background-color: transparent; /* Set the background to transparent by default */
+  }
+  
+  /* Apply different background colors based on the selected status */
+  .statusCompleted {
+    background-color: green;
+    color: darkgreen;
+  }
+  
+  .statusInProgress {
+    background-color: yellow;
+    color: darkyellow;
+  }
+  
+  .statusNotStarted {
+    background-color: red;
+    color: darkred;
+  }
+  
+  /* Add styles for the status dropdown options */
+  .optionPH,
+  .optionSelect {
+    font-size: 3vh;
+    padding: 0.5rem;
+    background-color: var(--Final_Component_Dark_Grey);
+    color: var(--Final_White);
+  }
+  
+
+.selectWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.assignedToSelect {
+    border: 0px solid #ccc;
+    color: var(--Final_White);
+    background-color: transparent;
+}
+
+.assignedToSelect::placeholder {
+    border: 0px solid #ccc;
+    color: var(--Final_Light_Purple_50);
+    background-color: transparent;
+}
+
+.selectedMembers {
+    color: var(--Final_White);
+}
+
+.taskInput {
+    color: var(--Final_White);
+}
+
+.taskInput::placeholder {
+    color: var(--Final_Light_Purple_50);
+    background-color: transparent;
+}
+
+.statusSelect {
+    border: none;
+    color: var(--Final_White);
+    background-color: transparent;
+}
+
+.optionSelect {
+    background-color: var(--Final_Gray);
+    color: var(--Final_Light_Purple);
+}
+
+.optionPH {
+    color: var(--Final_Light_Purple_50);
+    background-color: var(--Final_Gray);
+}
+
+.customdropdown {
+    position: relative;
+    font-family: "Lato", sans-serif;
+    /* Set the font family to Lato */
+}
+
+.dropdownHeader {
+    cursor: pointer;
+}
+
+.dropdownArrow {
+    margin-left: 5px;
+}
+
+.dropdownOptions {
+    position: absolute;
+    /* top: calc(100% + 5px); */
+    /* Place the dropdown below the header */
+    left: 0;
+    z-index: 5;
+    /* Set a higher z-index to ensure it appears above other rows */
+    background-color: #fff;
+
+    /* border-top: none; */
+    /* Set a maximum height to limit the dropdown height */
+    overflow-y: auto;
+}
+
+/* Style the options within the dropdown */
+.dropdownOptions label {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Add hover effect for options */
+.dropdownOptions label:hover {
+    background-color: #f2f2f2;
+}

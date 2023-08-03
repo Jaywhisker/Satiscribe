@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../components';
+import { Button, LogoButton} from '../components';
 
 const ButtonPreview = () => {
   return (
@@ -174,7 +174,7 @@ const ButtonPreview = () => {
         logo="left"
         disabled={true}
         logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        disabledLogoStyle={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
         onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
       >
         Disabled Border Left
@@ -183,10 +183,10 @@ const ButtonPreview = () => {
       <Button
         size="large"
         logo="left"
-        fill = {true}
+        fill={true}
         disabled={true}
         logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        disabledLogoStyle={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
         onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
       >
         Disabled Filled Left
@@ -195,10 +195,10 @@ const ButtonPreview = () => {
       <Button
         size="large"
         logo="right"
-        fill = {true}
+        fill={true}
         disabled={true}
         logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        disabledLogoStyle={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
         onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
       >
         Disabled Filled Right
@@ -207,16 +207,38 @@ const ButtonPreview = () => {
       <Button
         size="large"
         logo="none"
-        fill = {true}
+        fill={true}
         disabled={true}
         logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-        disabledLogoStyle = {{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
+        disabledLogoStyle={{ backgroundImage: `url("/icons/LinkPurple.png")`, zIndex: 1 }}
         onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
       >
         Disabled Filled No Logo
       </Button>
+
+      <h2>Icon Buttons:</h2>
+      <LogoButton
+        logoSize="small" // Specify the size of the logo: 'small', 'medium', or 'large'
+        logoStyle={{ backgroundImage: `url("/icons/Edit.png")` }} // Replace with the actual file path of the icon
+        onClick={() => alert('Icon Button (Medium) clicked!')}
+      />
+
+      <LogoButton
+        logoSize="medium" // Specify the size of the logo: 'small', 'medium', or 'large'
+        logoStyle={{ backgroundImage: `url("/icons/Edit.png")` }} // Replace with the actual file path of the icon
+        onClick={() => alert('Icon Button (Small) clicked!')}
+      />
+
+      <LogoButton
+        logoSize="large" // Specify the size of the logo: 'small', 'medium', or 'large'
+        logoStyle={{ backgroundImage: `url("/icons/Edit.png")` }} // Replace with the actual file path of the icon
+        disabledLogoStyle={{ backgroundImage: `url("/iconsGrey/Edit.png")` }}
+        disabled={true}
+        onClick={() => alert('Disabled Icon Button (Large) clicked!')}
+      />
+
     </div>
-    
+
   );
 };
 

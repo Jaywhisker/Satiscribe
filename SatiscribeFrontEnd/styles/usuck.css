@@ -28,9 +28,9 @@
 }
 
 .largeButton {
-    width: 80vw;
-    height: 10.5vh;
     padding: var(--smolGap);
+    width: 90vw;
+    height: 10.5vh;
 }
 
 /* Buttons with Logos */
@@ -76,7 +76,6 @@
 .disabledText {
     color: var(--Final_Profile_Grey, rgba(120, 120, 120, 0.50)); 
 }
-
 
 .sharedButton.disabledButton {
     background: transparent;
