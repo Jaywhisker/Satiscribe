@@ -104,7 +104,7 @@ const TaskDataTable = ({
     rows: {
       style: {
         backgroundColor: 'var(--Final_Component_Dark_Grey)',
-        '&:nth-of-type(even)': {
+        '&:nth-of-type(odd)': {
           backgroundColor: 'var(--Final_Component_Lighter_Grey)',
         },
         fontFamily: 'Lato, sans-serif', // Set the font family for the DataTable content

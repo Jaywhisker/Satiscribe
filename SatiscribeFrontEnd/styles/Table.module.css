@@ -1,5 +1,5 @@
 .addNewTaskRow {
-    background-color: var(--Final_Component_Lighter_Grey);
+    background-color: var(--Final_Component_Dark_Grey);
     color: var(--Final_Light_Purple);
     font-size: 3vh;
     height: auto;
