@@ -193,8 +193,12 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
 
 export function setCursorPosition(paragraphElement, cursorPosition) {
     const selection = window.getSelection();
-    const [textNode, nodecursorPosition] = findChildNodeByCursorPosition(paragraphElement, cursorPosition);
+    var [textNode, nodecursorPosition] = findChildNodeByCursorPosition(paragraphElement, cursorPosition);
+    if (nodecursorPosition < 0) {
+        nodecursorPosition = 0
+    }
     console.log(textNode, nodecursorPosition)
+
     if (textNode.childNodes.length > 0) {
         let textlength = 0
         let newcursorposition = nodecursorPosition
