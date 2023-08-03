@@ -23,7 +23,7 @@ const EmailDropdownWrapper = styled.div`
 const TextInputWrapper = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 8vw;
+  margin-top: 5vw;
 `;
 
 const TextInput = styled.input`
