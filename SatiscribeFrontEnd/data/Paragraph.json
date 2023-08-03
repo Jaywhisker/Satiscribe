@@ -25,14 +25,14 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": " <i>I am not linked to the monitor, she is the one with the laptop, so she can do it yeah.</i> Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
-      "tags": "Uncertain",
+      "transcript": " <em>I am not linked to the monitor, she is the one with the laptop, so she can do it yeah.</em> Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I am literally doing that table. <i>The table is almost done, the table is literally almost everything. </i>The table is the hardest part but I am facing all these errors.",
-      "tags": "Uncertain",
+      "transcript": "I am currently working on the project dashboard page. The table is the main component for that page and it is almost done. But it is the  hardest part as I am facing all these errors.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -109,8 +109,8 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "No eh it wasn't like that just now.<i> I think it's the.</i> I fixed it already though.",
-      "tags": "Uncertain",
+      "transcript": "No eh it wasn't like that just now.I fixed it already though.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
     },
@@ -217,8 +217,8 @@
       "speaker": "Morgan"
     },
     {
-      "transcript": " <i>Chatgpt didn't tell me.</i>",
-      "tags": "Uncertain",
+      "transcript": " <em>Chatgpt didn't tell me.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Hubob"
     },
@@ -241,7 +241,7 @@
       "speaker": "Morgan"
     },
     {
-      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do whatever container fuck shit. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel. So that when it Fullscreen.",
+      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do a container. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -289,20 +289,20 @@
       "speaker": "Morgan"
     },
     {
-      "transcript": "Do you have time to change everything to the container version. Because, it doesn’t scale, so that was the accurate description of the Pixel thing. <i>Yes, That means if you plug in now right.</i>",
+      "transcript": "Do you have time to change everything to the container version. Because, it doesn’t scale, so that was the accurate description of the Pixel thing. <i>Yes, that means if you plug in now right.</i>",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I don't get how I should do it thought. So, I should look at his pixel, at his view width?",
+      "transcript": "I don't get how I should do it though. So, I should look at his pixel, at his view width?",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Go to the file exactly under large block create new blocks main. <i>Okay? Go to that file and then find. Look at the last big div container. Yeah, Large block, create new block main. Then you look at the last div with the style background image. File, background image. Yes. You scroll up. Large blocks. Create main. OK you scroll down. You see that last container.</i>",
-      "tags": "Uncertain",
+      "transcript": "Go to the file exactly under large block create new blocks main. <em>Okay? Go to that file and then find. Look at the last big div container. Yeah, Large block, create new block main. Then you look at the last div with the style background image. File, background image. Yes. You scroll up. Large blocks. Create main. OK you scroll down. You see that last container.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -319,14 +319,14 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": " <i>This is in view width, 80 view width. So, I just set.</i>",
-      "tags": "Uncertain",
+      "transcript": "This is in view width, 80 view width. So, I just set.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": " <i>You are supposed to create a medium block container which is I don't know how many view width. </i> And then you put the background image. Cover will essentially expand it until it fits that container and then you make sure it is centralized. And then that is it.",
-      "tags": "Uncertain",
+      "transcript": "You are supposed to create a medium block container which is I don't know how many view width. And then you put the background image. Cover will essentially expand it until it fits that container and then you make sure it is centralized. And then that is it.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -361,8 +361,8 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "<i>Oh, that’s the part you got to try ah. If the large block is 80 view width. Is this 60 20 or what number. I think he is talking about that. Play lor.</i> ",
-      "tags": "Uncertain",
+      "transcript": "Oh, that’s the part you got to try. If the large block is 80 view width, what should my medium and small block be such that they would add up to 80?",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -373,7 +373,7 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "If large block is 70. <i> Then your small block is x and medium block is y. X + y + z is the padding so x + y +z is 70. X + x + x + 2z is 70 also.</i> So, go solve that.",
+      "transcript": "If large block is 70. Then your small block is x and medium block is y. <i> X + y + z is the padding so x + y +z is 70. </i> X + x + x + 2z is 70 also. So, go solve that.",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
@@ -385,62 +385,26 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": " <i>Just do 25 45 lah. 25 45. Eh sorry not 25 45.</i>",
-      "tags": "Uncertain",
+      "transcript": "Just do 25 45 for small and medium block.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": " <i>25 45.</i>",
-      "tags": "Uncertain",
-      "audio": "Some link",
-      "speaker": "Derrick"
-    },
-    {
-      "transcript": " <i>Should it be in view width?</i>",
-      "tags": "Uncertain",
-      "audio": "Some link",
-      "speaker": "Hubob"
-    },
-    {
-      "transcript": " <i>25 40 lor.</i>",
-      "tags": "Uncertain",
-      "audio": "Some link",
-      "speaker": "Derrick"
-    },
-    {
-      "transcript": " <i>25 25 25.</i>",
-      "tags": "Uncertain",
-      "audio": "Some link",
-      "speaker": "Morgan"
-    },
-    {
-      "transcript": "It should be fixed position right?",
+      "transcript": "Should it be in view width?",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": " <i>25 25 25.</i>",
-      "tags": "Uncertain",
-      "audio": "Some link",
-      "speaker": "Derrick"
-    },
-    {
-      "transcript": "It should be a fix thing right?",
+      "transcript": "Yes it should be in view width. So 20 20 20 for 3 small blocks in a row with 5 5 padding each.",
       "tags": "",
-      "audio": "Some link",
-      "speaker": "Hubob"
-    },
-    {
-      "transcript": " <i>20 20 20 5 5.</i>",
-      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": " <i>Ahh yeah then 20 5 45. There you go. There's your number.</i>",
-      "tags": "Uncertain",
+      "transcript": "Then 20 for small, 5 for padding and 45 for medium.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -469,8 +433,8 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": " <i>20 45 5. You write there. Then what if someone rate their team member 20 and 45.</i>",
-      "tags": "Uncertain",
+      "transcript": " <em>20 45 5. You write there. Then what if someone rate their team member 20 and 45.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -511,14 +475,14 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": " <i>I think right, you should just build it by yourself.</i>",
-      "tags": "Uncertain",
+      "transcript": "I think right, you should just build it by yourself.",
+      "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I am going to do bootstrap. Where is my... <b>Eh</b>? There is the sample just now where is it? Yeah. I don't know.",
-      "tags": "Filler Words",
+      "transcript": "I am going to do bootstrap. <i> Where is my... Eh? There is the sample just now where is it? Yeah. I don't know.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -631,8 +595,8 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "Ok what else is there. Let's end this meeting so that we can all go home. <i> 11.15 already need to catch last train.</i>",
-      "tags": "Uncertain",
+      "transcript": "Ok what else is there. Let's end this meeting so that we can all go home. <em> 11.15 already need to catch last train.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -646,7 +610,7 @@
       "transcript": "Wednesday. We will do testing on Thursday and Friday. The rest of you finish your new screens by Friday so that we can do the routing and integration on Friday itself. Everyone okay with that?",
       "tags": "",
       "audio": "Some link",
-      "speaker": "Derrick"
+      "speaker": "Morgan"
     },
     {
       "transcript": "Okay, I will go and debug the side bar. I think it has to do with Next.js and Styled Components. Will update tomorrow when we meeting.",
