@@ -13,19 +13,64 @@
           {
             "task_id": 0,
             "task_details": {
-              "task_name": "yes",
+              "task_name": "Hi-Fi Screens",
               "assigned_to": ["hubob", "derrick"],
-              "status": "not started",
-              "duedate": "16/07"
+              "status": "Completed",
+              "duedate": "16/07/2023"
             }
           },
           {
             "task_id": 1,
             "task_details": {
-              "task_name": "no",
+              "task_name": "More Components",
               "assigned_to": ["hubob", "derrick"],
-              "status": "not started",
-              "duedate": "16/07"
+              "status": "In Progress",
+              "duedate": "15/07/2023"
+            }
+          },
+          {
+            "task_id": 2,
+            "task_details": {
+              "task_name": "Components",
+              "assigned_to": ["derrick", "jefferson"],
+              "status": "In Progress",
+              "duedate": "13/07/2023"
+            }
+          },
+          {
+            "task_id": 3,
+            "task_details": {
+              "task_name": "Competitor Research",
+              "assigned_to": ["hubob", "derrick"],
+              "status": "Not Started",
+              "duedate": "12/07/2023"
+            }
+          },
+          {
+            "task_id": 4,
+            "task_details": {
+              "task_name": "AI Research",
+              "assigned_to": ["jefferson", "derrick"],
+              "status": "Not Started",
+              "duedate": "12/07/2023"
+            }
+          },
+          {
+            "task_id": 5,
+            "task_details": {
+              "task_name": "Clean Up Design System",
+              "assigned_to": ["hubob"],
+              "status": "Not Started",
+              "duedate": "19/07/2023"
+            }
+          },
+          {
+            "task_id": 6,
+            "task_details": {
+              "task_name": "Front-End Screen 1",
+              "assigned_to": ["hubob", "derrick"],
+              "status": "Not Started",
+              "duedate": "20/07/2023"
             }
           }
         ],
@@ -33,7 +78,7 @@
           {
             "meeting_id": 0,
             "meeting_details": {
-              "date": "27 Jul 2023",
+              "date": "27/07/2023",
               "venue": "studio 7",
               "attendance": ["hubob", "derrick", "jefferson"]
             }
@@ -55,28 +100,28 @@
           {
             "task_id": 0,
             "task_details": {
-              "task_name": "Task A",
+              "task_name": "Design System",
               "assigned_to": ["morgan", "hubob"],
               "status": "Not Started",
-              "duedate": "2023-07-16"
+              "duedate": "16/07/2023"
             }
           },
           {
             "task_id": 1,
             "task_details": {
-              "task_name": "Task B",
+              "task_name": "Hi-Fi Prototype",
               "assigned_to": ["morgan"],
               "status": "In Progress",
-              "duedate": "2023-07-20"
+              "duedate": "20/07/2023"
             }
           },
           {
             "task_id": 2,
             "task_details": {
-              "task_name": "Task C",
+              "task_name": "Sprint 1",
               "assigned_to": ["derrick"],
               "status": "Completed",
-              "duedate": "2023-07-25"
+              "duedate": "25/07/2023"
             }
           }
         ],
@@ -84,7 +129,7 @@
           {
             "meeting_id": 0,
             "meeting_details": {
-              "date": "2023-07-29",
+              "date": "29/07/2023",
               "venue": "Conference Room 2",
               "attendance": ["morgan", "hubob", "derrick"],
               "notes": "Discussed Task A progress and assigned new subtasks."
@@ -93,7 +138,7 @@
           {
             "meeting_id": 1,
             "meeting_details": {
-              "date": "2023-08-03",
+              "date": "03/08/2023",
               "venue": "Meeting Room B",
               "attendance": ["morgan", "derrick", "jefferson"],
               "notes": "Reviewed Task C and prepared for the sprint presentation."
@@ -102,5 +147,4 @@
         ]
       }
     }
-  ]
-  
+]
