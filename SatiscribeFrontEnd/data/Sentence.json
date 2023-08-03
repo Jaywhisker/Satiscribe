@@ -49,8 +49,8 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "<i>Then you go and test now if it works and show it on the monitor?</i>",
-            "tags": "Uncertain",
+            "transcript": "<em>Then you go and test now if it works and show it on the monitor?</em>",
+            "tags": "Unrelated",
             "audio": "Some link",
             "speaker": "Hubob"
         },
@@ -151,7 +151,7 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "This is also the new meeting page, I add the small and medium content blocks already but<b>uhhh.</b>",
+            "transcript": "This is also the new meeting page, I add the small and medium content blocks already but <b>uhhh.</b>",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Hubob"
@@ -169,7 +169,7 @@
             "speaker": "Jefferson"
         },
         {
-            "transcript": "<b> Uhhh </b>small and medium blocks yes.",
+            "transcript": "<b>Uhhh</b> small and medium blocks yes.",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Jefferson"
@@ -271,8 +271,8 @@
             "speaker": "Jefferson"
         },
         {
-            "transcript": "<i>I thought we already change the buttons last week.</i>",
-            "tags": "Uncertain",
+            "transcript": "I thought we already change the buttons last week.",
+            "tags": "",
             "audio": "Some link",
             "speaker": "Jefferson"
         },
@@ -285,12 +285,6 @@
         {
             "transcript": "No eh it wasn't like that just now.",
             "tags": "",
-            "audio": "Some link",
-            "speaker": "Hubob"
-        },
-        {
-            "transcript": "<i> I think it's the.</i>",
-            "tags": "Uncertain",
             "audio": "Some link",
             "speaker": "Hubob"
         },
@@ -536,12 +530,6 @@
         },
         {
             "transcript": "Afterwards I times my MacBook view width size to calculate the pixel.",
-            "tags": "",
-            "audio": "Some link",
-            "speaker": "Hubob"
-        },
-        {
-            "transcript": "So that when it Fullscreen.",
             "tags": "",
             "audio": "Some link",
             "speaker": "Hubob"
@@ -859,7 +847,7 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "80 view width<b>ummm.</b>",
+            "transcript": "80 view width <b>ummm.</b>",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Hubob"
@@ -883,7 +871,7 @@
             "speaker": "Morgan"
         },
         {
-            "transcript": "<i> X + y + z is the padding so x + y +z is 70.</i>",
+            "transcript": "<i>X + y + z is the padding so x + y +z is 70.</i>",
             "tags": "Uncertain",
             "audio": "Some link",
             "speaker": "Morgan"
@@ -925,7 +913,7 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "<b> Medium and ummm.</b>",
+            "transcript": "<b>Medium and ummm.</b>",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Hubob"
@@ -952,7 +940,7 @@
             "transcript": "Then 20 for small, 5 for padding and 45 for medium.",
             "tags": "",
             "audio": "Some link",
-            "speaker": "Derrick"
+            "speaker": "Hubob"
         },
         {
             "transcript": "<em>Why are you walking like a crab yao hin.</em>",
@@ -1039,7 +1027,7 @@
             "speaker": "Morgan"
         },
         {
-            "transcript": "<em> Actually, if Qiao Dan gives me 180, ok I will take it.</em>",
+            "transcript": "<em>Actually, if Qiao Dan gives me 180, ok I will take it.</em>",
             "tags": "Unrelated",
             "audio": "Some link",
             "speaker": "Jefferson"
@@ -1135,7 +1123,7 @@
             "speaker": "Morgan"
         },
         {
-            "transcript": "<b> Wooooow.</b>",
+            "transcript": "<b>Wooooow.</b>",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Morgan"
@@ -1171,7 +1159,7 @@
             "speaker": "Hubob"
         },
         {
-            "transcript": "Realistically we need to stich everything together.",
+            "transcript": "Realistically we need to stitch everything together.",
             "tags": "",
             "audio": "Some link",
             "speaker": "Morgan"
@@ -1381,7 +1369,7 @@
             "speaker": "Derrick"
         },
         {
-            "transcript": "<b> Uhhh </b>, so everyone can finish their screens by tomorrow right?",
+            "transcript": "<b>Uhhh</b>, so everyone can finish their screens by tomorrow right?",
             "tags": "Filler Words",
             "audio": "Some link",
             "speaker": "Derrick"
