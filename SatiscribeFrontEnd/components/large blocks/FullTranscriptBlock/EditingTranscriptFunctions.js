@@ -76,7 +76,6 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
         let modifiedValue = '';
 
         console.log(newText.length, originalText.length)
-        console.log(newText[currentCursorPosition], originalText[currentCursorPosition])
 
         if (newText.length > originalText.length) { //addition input
                 if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
@@ -110,11 +109,20 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
                 console.log(modifiedValue)
                 setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
             
+        } else if ( newText.includes("<br>") || newText.length ===0 ) {
+            console.log('helloooo')
+            setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: ' ' } : data)))
+            setCursorPositionLocation(1)
         }
-
         else if (newText.length === originalText.length) { //addition input
             if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
-                modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition + 1);
+                if (keyCode === ' ') {
+                    console.log('hello')
+                    modifiedValue = originalText.slice(0, originalText.length-1) + "<strong>_</strong>";
+                    console.log(modifiedValue)
+                } else {
+                    modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition + 1);
+                }
                 currentCursorPosition += 9
                 setCursorPositionLocation(currentCursorPosition)
                 setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
@@ -122,11 +130,19 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
             } else {
                 if (textbeforecursor.lastIndexOf("<s>") > textbeforecursor.lastIndexOf("<strong>")) {
                     let newCursor = currentCursorPosition + 13
-                    modifiedValue = originalText.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition] == ' ' ? ' ' : newText[currentCursorPosition]) + "</strong>";
+                    if (keyCode === ' ') {
+                        modifiedValue = originalText.slice(0, newCursor) + "<strong>_</strong>";
+                    } else {
+                        modifiedValue = originalText.slice(0, newCursor) + "<strong>" + (newText[currentCursorPosition]) + "</strong>";
+                    }
                     newCursor += 9
                     setCursorPositionLocation(newCursor)
                 } else {
-                    modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(currentCursorPosition + 1);
+                    if (keyCode === ' ') {
+                        modifiedValue = originalText.slice(0, currentCursorPosition) + "_" + originalText.slice(currentCursorPosition);
+                    } else {
+                        modifiedValue = originalText.slice(0, currentCursorPosition) + newText[currentCursorPosition] + originalText.slice(currentCursorPosition);
+                    }
                     currentCursorPosition += 1
                     setCursorPositionLocation(currentCursorPosition)
                 }
@@ -141,7 +157,7 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
 
         else if (newText.length < originalText.length) {
             const deletedcontent = originalText.length - newText.length + currentCursorPosition + 1
-
+            console.log(currentCursorPosition)
             if (deletedcontent > originalText.length) {
                 setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
                 setCursorPositionLocation(newText.length)
@@ -179,7 +195,6 @@ export function setCursorPosition(paragraphElement, cursorPosition) {
     const selection = window.getSelection();
     const [textNode, nodecursorPosition] = findChildNodeByCursorPosition(paragraphElement, cursorPosition);
     console.log(textNode, nodecursorPosition)
-
     if (textNode.childNodes.length > 0) {
         let textlength = 0
         let newcursorposition = nodecursorPosition
@@ -216,6 +231,11 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
     let currentLength = 0;
     let offset = 0;
     let fulltagoffset = 0;
+
+    if (childNodes.length === 0 ) {
+        const textNode = document.createTextNode(" ");
+        return [textNode, 1]
+    }
 
     for (let i = 0; i < childNodes.length; i++) {
         const childNode = childNodes[i];
@@ -266,7 +286,7 @@ export function findChildNodeByCursorPosition(paragraphElement, cursorPosition) 
             // console.log(cursorPosition, nodecursorPosition, nodeLength, fulltagoffset)
         }
     }
-    return [childNodes[childNodes.length - 1], childNodes.length - 1];
+    return [childNodes[childNodes.length - 1], 1];
 };
 
 export function findCharacterPos(text, currentIndex, char) {
