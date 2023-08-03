@@ -1,3 +1,10 @@
+.smallest,
+.smallestclickable{
+    width: 2vh;
+    height: 2vh;
+    background-size: cover;
+}
+
 .evensmaller,
 .evensmallerclickable{
     width: 3vh;
@@ -27,6 +34,7 @@
     background-size: cover;
 }
 
+.smallestclickable,
 .evensmallerclickable,
 .smallclickable,
 .mediumclickable,
