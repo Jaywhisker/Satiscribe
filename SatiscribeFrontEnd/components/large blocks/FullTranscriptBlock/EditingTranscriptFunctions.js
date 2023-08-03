@@ -157,7 +157,7 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
 
         else if (newText.length < originalText.length) {
             const deletedcontent = originalText.length - newText.length + currentCursorPosition + 1
-
+            console.log(currentCursorPosition)
             if (deletedcontent > originalText.length) {
                 setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: newText } : data)))
                 setCursorPositionLocation(newText.length)
