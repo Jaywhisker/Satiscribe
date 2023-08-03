@@ -117,13 +117,15 @@ export function onInputDelete(event, id, exampleData, setExampleData, setCursorP
         else if (newText.length === originalText.length) { //addition input
             if ((textbeforecursor.match(/<strong>/g) ?? []).length == ((textbeforecursor.match(/<\/strong>/g) ?? []).length)) {
                 if (keyCode === ' ') {
-                    console.log('hello')
                     modifiedValue = originalText.slice(0, originalText.length-1) + "<strong>_</strong>";
-                    console.log(modifiedValue)
                 } else {
                     modifiedValue = originalText.slice(0, currentCursorPosition) + "<strong>" + (newText[currentCursorPosition]) + "</strong>" + originalText.slice(currentCursorPosition + 1);
                 }
-                currentCursorPosition += 9
+                if (currentCursorPosition < 0) {
+                    currentCursorPosition = modifiedValue.length
+                } else {
+                    currentCursorPosition += 9
+                }
                 setCursorPositionLocation(currentCursorPosition)
                 setExampleData((ExampleData) => ExampleData.map((data, i) => (i === id ? { ...data, transcript: modifiedValue } : data)))
 
