@@ -19,20 +19,20 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "I think I am done with my part already. But you cannot refresh because it will lead to the side bar popping up instead. Actually, can you try and pull mine. Then you go and test now if it works and show it on the monitor?",
-      "tags": "",
+      "transcript": "I think I am done with my part already. But you cannot refresh because it will lead to the side bar popping up instead. <em>Actually, can you try and pull mine. Then you go and test now if it works and show it on the monitor?</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": " <i>I am not linked to the monitor</i>, she is the one with the laptop, so she can do it yeah. Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
+      "transcript": " <i>I am not linked to the monitor, she is the one with the laptop, so she can do it yeah.</i> Ok but can we get more updates on what is happening for the rest? With your progress, yes with what you are doing so what has been done.",
       "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I am literally doing that table. The table is almost done, the table is literally almost everything. The table is the hardest part but I am facing all these errors.",
-      "tags": "",
+      "transcript": "I am literally doing that table. <i>The table is almost done, the table is literally almost everything. </i>The table is the hardest part but I am facing all these errors.",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -49,26 +49,26 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Ok back to the side bar. As you can see, the side bar will always be shown whenever I load the page. But if I were to press the hamburger everything will be fine afterwards. I will fix that. As in I have been fixing that for the last three day. It's so annoying. I tried GPT plus but nothing is working. Ahhhh well whatever I will try too fix it again. This is also the new meeting page, I add the small and medium content blocks already but <b>uhhh.</b>",
+      "transcript": "Ok back to the side bar. As you can see, the side bar will always be shown whenever I load the page. But if I were to press the hamburger everything will be fine afterwards. I will fix that. As in I have been fixing that for the last three day. It's so annoying. I tried GPT plus but nothing is working. <b>Ahhhh</b> well whatever I will try too fix it again. This is also the new meeting page, I add the small and medium content blocks already but <b>uhhh.</b>",
       "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Is the side of that supposed to look like that? The two things. Uhhh small and medium blocks yes. That is very small btw.",
-      "tags": "",
+      "transcript": "Is the side of that supposed to look like that? The two things. <b> Uhhh </b>small and medium blocks yes. That is very small by the way.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": " <b>Ummm, hang on, yes. Ummm</b>. It wasn't like that. Ok I will try to fix it. This I already fix the width to Morgan one.",
-      "tags": "",
+      "transcript": " <b>Ummm, hang on, yes. Ummm. </b>It wasn't like that. Ok I will try to fix it. This I already fix the width to Morgan one.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Hang on ah, can you go slash large. Yeah, they are not the same ah. You want measuring tape or not?",
-      "tags": "",
+      "transcript": "Hang on ah, can you go slash large. Yeah, they are not the same ah. <i>You want measuring tape or not?</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -103,14 +103,14 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "I need that. Also why does the button look that jank. I thought we already change the buttons last week. These look like the old files?",
-      "tags": "",
+      "transcript": "I need that. Also why does the button look that jank. <i>I thought we already change the buttons last week.</i> These look like the old files?",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "No eh it wasn't like that just now. I think it's the. I fixed it already though.",
-      "tags": "",
+      "transcript": "No eh it wasn't like that just now.<i> I think it's the.</i> I fixed it already though.",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Hubob"
     },
@@ -139,7 +139,7 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "The aspect ratio is definitely not the same",
+      "transcript": "The aspect ratio is definitely not the same.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
@@ -169,8 +169,8 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Wait wait wait. I am so confused. You are using pixels.",
-      "tags": "",
+      "transcript": " <b>Wait wait wait. </b> I am so confused. You are using pixels.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -205,8 +205,8 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Yeah yeah yeah.",
-      "tags": "",
+      "transcript": " <b>Yeah yeah yeah. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -217,31 +217,31 @@
       "speaker": "Morgan"
     },
     {
-      "transcript": "Chatgpt didn't tell me.",
-      "tags": "",
+      "transcript": " <i>Chatgpt didn't tell me.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "We did that for SDS.",
-      "tags": "",
+      "transcript": " <em>We did that for SDS.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Oh really?",
-      "tags": "",
+      "transcript": " <i>Oh really? </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Wait wait. So your workflow, is you import that one image. You try and deploy then you see how it looks. If it is too big you will just scale down and redownload the image?",
-      "tags": "",
+      "transcript": " <b>Wait wait.</b> So your workflow, is you import that one image. You try and deploy then you see how it looks. If it is too big you will just scale down and redownload the image?",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do whatever container shit. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel. So that when it Fullscreen",
+      "transcript": "No no no. I already fix the width then I realize it doesn't match. So I was deciding should I scale the image up or do whatever container fuck shit. But I was too lazy so I went to large content from the figma and I try to look at your view width. Afterwards I times my MacBook view width size to calculate the pixel. So that when it Fullscreen.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
@@ -265,14 +265,14 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "I think so. Hahah.",
-      "tags": "",
+      "transcript": " <b>I think so. Hahah. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Hahahah.",
-      "tags": "",
+      "transcript": " <b>Hahahah. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
@@ -283,50 +283,50 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Uh huh.",
-      "tags": "",
+      "transcript": " <b>Uh huh. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Do you have time to change everything to the container version. Because, it doesn’t scale, so that was the accurate description of the Pixel thing. Yes, That means if you plug in now right.",
-      "tags": "",
+      "transcript": "Do you have time to change everything to the container version. Because, it doesn’t scale, so that was the accurate description of the Pixel thing. <i>Yes, That means if you plug in now right.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I don't get how I should do it thought. So, I should look at his pixel, at his view width.",
+      "transcript": "I don't get how I should do it thought. So, I should look at his pixel, at his view width?",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Go to the file exactly under large block create new blocks main. Okay? Go to that file and then find. Look at the last big div container. Yeah, Large block, create new block main. Then you look at the last div with the style background image. File, background image. Yes. You scroll up. Large blocks. Create main. OK you scroll down. You see that last container.",
-      "tags": "",
+      "transcript": "Go to the file exactly under large block create new blocks main. <i>Okay? Go to that file and then find. Look at the last big div container. Yeah, Large block, create new block main. Then you look at the last div with the style background image. File, background image. Yes. You scroll up. Large blocks. Create main. OK you scroll down. You see that last container. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "So what we did was.",
-      "tags": "",
+      "transcript": " <em>So what we did was. </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "The true option.",
-      "tags": "",
+      "transcript": " <em>The true option.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "This is in view width, , 80 view width. So, I just set.",
-      "tags": "",
+      "transcript": " <i>This is in view width, 80 view width. So, I just set. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "You are supposed to create a medium block container which is I don't know how many view width. And then you put the background image. Cover will essentially expand it until it fits that container and then you make sure it is centralized. And then that is it.",
-      "tags": "",
+      "transcript": " <i>You are supposed to create a medium block container which is I don't know how many view width. </i> And then you put the background image. Cover will essentially expand it until it fits that container and then you make sure it is centralized. And then that is it.",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -361,56 +361,56 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "Oh, that’s the part you got to try ah. If the large block is 80 view width. Is this 60 20 or what number. I think he is talking about that. Play lor.",
-      "tags": "",
+      "transcript": "<i>Oh, that’s the part you got to try ah. If the large block is 80 view width. Is this 60 20 or what number. I think he is talking about that. Play lor. </i> ",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Ok. Uhhh. Planning. 80 view width ummm. It is 70 view width not 80.",
-      "tags": "",
+      "transcript": " <b>Ok. Uhhh.</b> Planning. 80 view width <b> ummm </b>. It is 70 view width not 80.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Umm if large block is 70. Then your small block is x and medium block is y. X + y + z is the padding so x+ y +z is 70. X + x + x + 2z is 70 oso. So go solve that.",
-      "tags": "",
+      "transcript": "If large block is 70. <i> Then your small block is x and medium block is y. X + y + z is the padding so x + y +z is 70. X + x + x + 2z is 70 also. </i> So, go solve that.",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Yes. Hahahahahaha. Ok. 70. Medium and ummm.",
-      "tags": "",
+      "transcript": "Yes. <b> Hahahahahaha. Ok.</b> 70. <b> Medium and ummm. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Just do 25 45 lah. 25 45. Eh sorry not 25 45.",
-      "tags": "",
+      "transcript": " <i>Just do 25 45 lah. 25 45. Eh sorry not 25 45. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "25 45.",
-      "tags": "",
+      "transcript": " <i>25 45. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "Should it be in view width?",
-      "tags": "",
+      "transcript": " <i>Should it be in view width?</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "25 40 lor",
-      "tags": "",
+      "transcript": " <i>25 40 lor </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "25 25 25.",
-      "tags": "",
+      "transcript": " <i>25 25 25.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -421,8 +421,8 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "25 25 25.",
-      "tags": "",
+      "transcript": " <i>25 25 25. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -433,61 +433,61 @@
       "speaker": "Hubob"
     },
     {
-      "transcript": "20 20 20 5 5.",
-      "tags": "",
+      "transcript": " <i>20 20 20 5 5. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Ahh yeah then 20 5 45. There you go. There's your number.",
-      "tags": "",
+      "transcript": " <i>Ahh yeah then 20 5 45. There you go. There's your number.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "Why are you walking like a crab yao hin. Bye bye. Enjoy your dinner.",
-      "tags": "",
+      "transcript": " <em>Why are you walking like a crab yao hin. Bye bye. Enjoy your dinner. </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Dinner? You haven't eaten?",
-      "tags": "",
+      "transcript": " <em>Dinner? You haven't eaten? </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "Yeah, I ate at 4 just now. Is that considered dinner? ",
-      "tags": "",
+      "transcript": " <em>Yeah, I ate at 4 just now. Is that considered dinner? </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Yeah, you are just having supper now. Bye bye.",
-      "tags": "",
+      "transcript": " <em>Yeah, you are just having supper now. Bye bye.  </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "20 45 5. You write there. Then what if someone rate their team member 20 and 45.",
-      "tags": "",
+      "transcript": " <i>20 45 5. You write there. Then what if someone rate their team member 20 and 45.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "As much as I like the enjoy of spreading chaos. This is...I am not willing to torpedo someone's grades ah.",
-      "tags": "",
+      "transcript": " <em>As much as I like the enjoy of spreading chaos. This is...I am not willing to torpedo someone's grades ah. </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Actually, if Qiao Dan gives me 180, ok I will take it.",
-      "tags": "",
+      "transcript": " <em> Actually, if Qiao Dan gives me 180, ok I will take it.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Yes. So, back to time period. I don’t know. What do you guys propose, when can you finish this.",
+      "transcript": " Yes. So, back to time period. I don’t know. What do you guys propose, when can you finish this.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Derrick"
@@ -511,20 +511,20 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "I think right, you should just build it by yourself.",
-      "tags": "",
+      "transcript": " <i>I think right, you should just build it by yourself. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I am going to do bootstrap. Where is my... Eh? There is the sample just now where is it? Yeah. I don't know.",
-      "tags": "",
+      "transcript": "I am going to do bootstrap. Where is my... <b>Eh</b>? There is the sample just now where is it? Yeah. I don't know.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Upz. Wooooow",
-      "tags": "",
+      "transcript": " <b>Ups. Wooooow. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -541,14 +541,14 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "what other parts do we need for front end also ah. Like after we finish.",
+      "transcript": "What other parts do we need for front end also ah. Like after we finish.",
       "tags": "",
       "audio": "Some link",
       "speaker": "Hubob"
     },
     {
-      "transcript": "Realistically we need to stich everything together. Eh the web experiment we need to make the.",
-      "tags": "",
+      "transcript": "Realistically we need to stich everything together. <i>Eh the web experiment we need to make the.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
@@ -559,8 +559,8 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "You want ah, what you need for front end ah, you have your login page, your create new project page, you have your edit template page. ",
-      "tags": "",
+      "transcript": " <i>You want ah, what you need for front end ah, you have your login page, your create new project page, you have your edit template page. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -589,56 +589,56 @@
       "speaker": "Derrick"
     },
     {
-      "transcript": "I fang shou ml ah.",
-      "tags": "",
+      "transcript": " <i> I fang shou ml ah. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "I still need to do ML tmr. This one my lao ban.",
-      "tags": "",
+      "transcript": " <i>I still need to do ML tmr. This one my lao ban.</i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "The lao ban also need to do ml tomorrow. I haven't do my SDS leh. I also have to do my ml. Today I see Homework 4 was sent out, just as I was talking about it yesterday. I need to do my SDS website by tomorrow. Have I started? Nothing. Google site I need to design by tomorrow meeting. I was supposed to do it this afternoon but hci.",
-      "tags": "",
+      "transcript": " <i>The lao ban also need to do ml tomorrow. I haven't do my SDS leh. I also have to do my ml. Today I see Homework 4 was sent out, just as I was talking about it yesterday. I need to do my SDS website by tomorrow. Have I started? Nothing. Google site I need to design by tomorrow meeting. I was supposed to do it this afternoon but hci. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "I made one feature. Urghhhhh.",
-      "tags": "",
+      "transcript": "I made one feature. <b>Urghhhhh. </b>",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Wah these 2 weeks I think I don't need to sleep.",
-      "tags": "",
+      "transcript": " <em>Wah these 2 weeks I think I don't need to sleep.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Of course. Welcome to week 20.",
-      "tags": "",
+      "transcript": " <em>Of course. Welcome to week 20.</em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Week 12 and 13 was the weeks I just disappear. Oh my god. This time, I will show up one time and be at home the other time. It is a prophecy. I should just never show up on week 13.",
-      "tags": "",
+      "transcript": " <em>Week 12 and 13 was the weeks I just disappear. Oh my god. This time, I will show up one time and be at home the other time. It is a prophecy. I should just never show up on week 13. </em>",
+      "tags": "Unrelated",
       "audio": "Some link",
       "speaker": "Derrick"
     },
     {
-      "transcript": "Ok what else is there. Let's end this meeting so that we can all go home. 11.15 already need to catch last train.",
-      "tags": "",
+      "transcript": "Ok what else is there. Let's end this meeting so that we can all go home. <i> 11.15 already need to catch last train. </i>",
+      "tags": "Uncertain",
       "audio": "Some link",
       "speaker": "Morgan"
     },
     {
-      "transcript": "Ok ok. Uhhh, so everyone can finish their screens by tomorrow right? Then, Jefferson will do the edit templates page while Hubob will do the project settings page. Me and Morgan will clean up the web experiments and write out the instructions. Hopefully we can finish by.",
-      "tags": "",
+      "transcript": "Ok ok. <b> Uhhh </b>, so everyone can finish their screens by tomorrow right? Then, Jefferson will do the edit templates page while Hubob will do the project settings page. Me and Morgan will clean up the web experiments and write out the instructions. Hopefully we can finish by.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Derrick"
     },
@@ -661,8 +661,8 @@
       "speaker": "Jefferson"
     },
     {
-      "transcript": "Can can. I will end the meeting now then I want to go home already.",
-      "tags": "",
+      "transcript": " <b>Can can.</b> I will end the meeting now then I want to go home already.",
+      "tags": "Filler Words",
       "audio": "Some link",
       "speaker": "Morgan"
     }
