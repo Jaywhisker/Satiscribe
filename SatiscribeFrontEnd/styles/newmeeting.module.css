@@ -79,6 +79,7 @@
   align-items: center;
   justify-content: center;
   height: 40vh; /* Adjust as needed */
+  margin-bottom: 10vh;
 }
 
 .nextContainer {
