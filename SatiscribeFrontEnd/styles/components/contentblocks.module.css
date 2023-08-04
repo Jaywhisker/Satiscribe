@@ -18,6 +18,7 @@
     border-radius: 15px;
     width: var(--largeWidth);
     min-height: 45vh;
+    /* height: auto; */
     margin: 8vh auto;
     position: relative;
 }

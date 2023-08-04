@@ -76,15 +76,17 @@
     color: var(--Final_Light_Purple);
 }
 
+.searchBar:hover {
+    background-color: var(--Final_Dark_Purple);
+}
+
 
 .searchPlace {
     display: flex;
-    flex-direction: row;
-    gap: 60vw;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    margin: 2vh 1vw;
-    max-width: 100vw;
+    background-color: var(--Final_Component_Dark_Grey);
+    padding: 2vh 2vw;
 }
 
 .inputrow {
@@ -115,34 +117,35 @@
     font-size: 3vh;
     border: 2px solid var(--Final_Component_Dark_Grey);
     color: var(--Final_White);
-    background-color: transparent; /* Set the background to transparent by default */
-  }
-  
-  /* Apply different background colors based on the selected status */
-  .statusCompleted {
+    background-color: transparent;
+    /* Set the background to transparent by default */
+}
+
+/* Apply different background colors based on the selected status */
+.statusCompleted {
     background-color: green;
     color: darkgreen;
-  }
-  
-  .statusInProgress {
+}
+
+.statusInProgress {
     background-color: yellow;
     color: darkyellow;
-  }
-  
-  .statusNotStarted {
+}
+
+.statusNotStarted {
     background-color: red;
     color: darkred;
-  }
-  
-  /* Add styles for the status dropdown options */
-  .optionPH,
-  .optionSelect {
+}
+
+/* Add styles for the status dropdown options */
+.optionPH,
+.optionSelect {
     font-size: 3vh;
     padding: 0.5rem;
     background-color: var(--Final_Component_Dark_Grey);
     color: var(--Final_White);
-  }
-  
+}
+
 
 .selectWrapper {
     display: flex;
