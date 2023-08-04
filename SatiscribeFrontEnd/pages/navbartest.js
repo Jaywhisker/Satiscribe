@@ -7,7 +7,7 @@ import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 import StyledComponentsRegistry from '../components/registery.tsx'
 
-function navbar({text}) {
+function navbar({ text }) {
     return (
         <StyledComponentsRegistry>
             <div className={style.topnav}>

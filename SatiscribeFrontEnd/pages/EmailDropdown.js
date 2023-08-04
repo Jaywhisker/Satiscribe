@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import contentblock from '@/styles/components/contentblocks.module.css'
 import flexi from '@/styles/Flexible.module.css'
 import logos from '@/styles/Logos.module.css'
 
-function EmailDropdown({ clickable, onClick, dataset, resetDropDown }) {
-
+function EmailDropdown({ clickable, onClick, dataset, resetDropDown, emailIconMap }) {
   const backgroundColors = [`var(--Final_Component_Dark_Grey)`, `var(--Final_Component_Lighter_Grey)`];
   const [dropDown, setDropDown] = useState(false)
   const [emailList, setEmailList] = useState()
@@ -16,14 +14,11 @@ function EmailDropdown({ clickable, onClick, dataset, resetDropDown }) {
   };
 
   useEffect(() => {
-    console.log(clickable, dataset)
     const fetchEmailList = async () => {
       if (clickable) {
         setEmailList(Object.keys(dataset))
-        console.log(emailList)
       }
       setEffectRan(true)
-      console.log(effectRan)
     };
     fetchEmailList();
   }, [dataset]);
@@ -35,6 +30,11 @@ function EmailDropdown({ clickable, onClick, dataset, resetDropDown }) {
     resetDropDown();
   }, [resetDropDown]);
 
+  const handleOptionClick = (email) => {
+    onClick(email);
+    setDropDown(false); // Close the dropdown after selecting an option
+  };
+
   return (
     <>
       {effectRan &&
@@ -43,15 +43,18 @@ function EmailDropdown({ clickable, onClick, dataset, resetDropDown }) {
             (<div onClick={toggleDropDown} >
               <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                 <div className={flexi.flexRowSmolGap}>
-                  <p style={{ color: `var(--Final_White)` }}></p>
-                  {emailList.filter((email) => dataset[email]).map((selectedEmail) => (
-                    <img
-                      key={selectedEmail}
-                      src="/profiles/Profile Pict (Cream).png"
-                      alt={selectedEmail}
-                      className={logos.small}
-                      style={{ zIndex: 1 }}
-                    />))}
+                  <p style={{ color: `var(--Final_White)` }}>{Object.keys(dataset).filter(email => dataset[email]).length ? "" : "Add members"}</p>
+                  {Object.keys(dataset)
+                    .filter(email => dataset[email])
+                    .map(email => (
+                      <img
+                        key={email}
+                        src={emailIconMap[email] || "/profiles/Profile Pict (Cream).png"} // use the mapped icon if available, otherwise fall back to a default
+                        alt={email}
+                        className={logos.small}
+                        style={{ zIndex: 1 }}
+                      />
+                    ))}
                 </div>
                 <div className={logos.smallclickable} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
               </div>
@@ -69,19 +72,18 @@ function EmailDropdown({ clickable, onClick, dataset, resetDropDown }) {
               </div>
             )}
 
-
           {dropDown && (<div style={{ border: '4px solid', borderTop: 'none', borderColor: `var(--Final_Black)` }}>
             {emailList.map((email, index) => (
               <div
                 key={email}
                 className={`${flexi.spacing} ${dataset[email] ? 'flexi.inLine' : ''}`}
                 style={{ backgroundColor: backgroundColors[index % backgroundColors.length] }}
-                onClick={() => onClick(email)}>
+                onClick={() => handleOptionClick(email)}>
 
                 <div className={`${flexi.flexRowSmolGap} ${contentblock.clickable}`}>
                   <div className={logos.small} style={{ backgroundImage: `url(${dataset[email] ? '/icons/CheckboxTicked.png' : '/icons/Checkbox.png'})`, zIndex: 1 }}></div>
                   <img
-                    src="/profiles/Profile Pict (Cream).png"
+                    src={emailIconMap[email] || "/profiles/Profile Pict (Cream).png"} // use the mapped icon if available, otherwise fall back to a default
                     alt={email}
                     className={logos.small}
                     style={{ zIndex: 1 }}

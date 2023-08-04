@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './navbartest';
 import Tasklist from '../components/tasklist';
-import styled from 'styled-components'; // You don't need this import
+import styled from 'styled-components';
 import { Button } from '../components';
 import pagestyle from '../styles/projsettings.module.css';
 import ProjSettingsDropdown from './projsettingsDropdown';
@@ -14,10 +14,18 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+const emailIconMap = {
+  'hubob@gmail.com': '/profiles/Profile Pict (Cream).png',
+  'morgan@gmail.com': '/profiles/Profile Pict (Pink).png',
+  'derrick@gmail.com': '/profiles/Profile Pict (Purple).png',
+  'jefferson@gmail.com': '/profiles/Profile Pict (Yellow).png',
+  // add more mappings as needed
+};
+
 const EmailDropdownWrapper = styled.div`
-  width: 30vw; // Set the width you want
-  position: absolute; // Position it absolutely within its container
-  top: 100px; // Push it down from the top of the container
+  width: 30vw;
+  position: absolute;
+  top: 100px;
 `;
 
 const TextInputWrapper = styled.div`
@@ -39,8 +47,8 @@ const Line = styled.div`
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: var(--Final_White); /* Replace --Final_White with your desired line color variable */
-  border-radius: 10px; /* Adjust the value to control the roundness */
+  background-color: var(--Final_White);
+  border-radius: 10px;
 `;
 
 const VisibilityContainer = styled.div`
@@ -52,12 +60,12 @@ const VisibilityContainer = styled.div`
 
 const VisibilityHeading = styled.h4`
   margin: 0;
-  margin-top: 60px
-  color: var(--Final_White); /* Replace --Final_White with your desired text color variable */
+  margin-top: 60px;
+  color: var(--Final_Light_Purple);
 `;
 
 function ProjSettingsPage() {
-  const [selectedOption, setSelectedOption] = useState('Private');
+  const [selectedOption, setSelectedOption] = useState(null);
   const [linkCopied, setLinkCopied] = useState(false);
   const initialEmails = ['hubob@gmail.com', 'morgan@gmail.com', 'derrick@gmail.com', 'jefferson@gmail.com'];
   const [dataset, setDataset] = useState(
@@ -66,12 +74,22 @@ function ProjSettingsPage() {
       return acc;
     }, {})
   );
+  const [isDropdownSelected, setIsDropdownSelected] = useState(false);
+  const [isPublic, setIsPublic] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdownSelect = (option) => {
     setSelectedOption(option);
+    if (option === 'Private' || option === 'Public') {
+      setIsDropdownSelected(true);
+    }
+    if (option === 'Public') {
+      setIsPublic(true);
+    } else {
+      setIsPublic(false);
+      setLinkCopied(false);
+    }
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleEmailSelect = (email) => {
     setDataset((prevDataset) => ({
@@ -84,40 +102,41 @@ function ProjSettingsPage() {
   const handleCopyLink = () => {
     setLinkCopied(true);
   };
+
   return (
     <Container>
-      <Navbar text="HCI" />
-      <div className={pagestyle.parentContainer}>
-        <div className={pagestyle.centeredContainer}>
+      <Navbar text="New Project" />
+      <div className={pagestyle.ParentContainer}>
+        <div className={pagestyle.CenteredContainer}>
           <TextInputWrapper>
             <TextInput type="text" placeholder="Project Name" />
             <Line />
           </TextInputWrapper>
         </div>
       </div>
-      <div className={pagestyle.mainbodyContainerNoHover}>
-        <div className={pagestyle.centeredContainer}>
+      <div className={pagestyle.MainbodyContainerNoHover}>
+        <div className={pagestyle.CenteredContainer}>
           <EmailDropdownWrapper>
             <EmailDropdown
-              
               clickable={true}
               dataset={dataset}
               onClick={handleEmailSelect}
               isOpen={isOpen}
+              emailIconMap={emailIconMap}
               setIsOpen={setIsOpen} />
           </EmailDropdownWrapper>
         </div>
       </div>
-      <div className={pagestyle.parentContainer}>
-        <div className={pagestyle.centeredContainer}>
+      <div className={pagestyle.ParentContainer}>
+        <div className={pagestyle.CenteredContainer}>
           <VisibilityContainer>
             <VisibilityHeading>Visibility</VisibilityHeading>
             <ProjSettingsDropdown clickable={["Private", "Public"]} onClick={handleDropdownSelect} />
           </VisibilityContainer>
         </div>
       </div>
-      <div className={pagestyle.parentContainer}>
-        <div className={pagestyle.centeredContainer}>
+      <div className={pagestyle.ParentContainer}>
+        <div className={pagestyle.CenteredContainer}>
           {linkCopied ? (
             <Button
               size="small"
@@ -128,7 +147,7 @@ function ProjSettingsPage() {
             >
               Link Copied
             </Button>
-          ) : (
+          ) : isPublic ? (
             <Button
               size="medium"
               logo="left"
@@ -137,11 +156,23 @@ function ProjSettingsPage() {
             >
               Copy Link
             </Button>
+          ) : (
+            <Button
+              size="medium"
+              logo="left"
+              fill={true}
+              disabled={true}
+              logoStyle={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}
+              disabledLogoStyle={{ backgroundImage: `url("/iconsGrey/Link.png")`, zIndex: 1 }}
+              onClick={() => alert('Filled Button (Large) with Right logo clicked!')}
+            >
+              Copy Link
+            </Button>
           )}
         </div>
       </div>
-      <div className={pagestyle.parentContainer}>
-        <div className={pagestyle.aligntext}>
+      <div className={pagestyle.ParentContainer}>
+        <div className={pagestyle.Aligncenter}>
           <Button
             size="small"
             logo="left"
@@ -152,18 +183,18 @@ function ProjSettingsPage() {
             Save
           </Button>
         </div>
-        <div className={pagestyle.alignButton2}>
+        <div className={pagestyle.AlignButton2}>
           <Button
             size="small"
             logo="left"
-            logoStyle={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}
+            logoStyle={{ backgroundImage: `url("/iconsPurple/file folder approved-2.png")`, zIndex: 1 }}
             onClick={() => alert('Border Button (Smol) with left logo clicked!')}
           >
             Archive Projects
           </Button>
         </div>
       </div>
-    </Container >
+    </Container>
   );
 }
 

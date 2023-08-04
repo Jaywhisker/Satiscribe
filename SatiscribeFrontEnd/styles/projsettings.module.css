@@ -1,46 +1,46 @@
-.centeredContainer {
+.CenteredContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0rem 0rem;
   }  
   
-  .largeContainer {
+  .LargeContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
-  .parentContainer,
-  .parentContainer2 {
+  .ParentContainer,
+  .ParentContainer2 {
     display: flex;
     justify-content: center;
     margin-bottom: 5vh; 
   }
   
-  .centerContainer {
+  .CenterContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50vh; /* Viewport height */
   }
   
-  .alignButton {
+  .AlignButton {
     width: 100%;  
     display: flex;
     justify-content: space-between;
     padding: 0 10%; 
   }
   
-  .alignButton2 {
+  .AlignButton2 {
     width: 100%; /* Adjust the width as needed */
     display: flex;
     justify-content: center; /* Align button to the right */
     padding-right: 25%; /* Adjust the right padding as needed */
   }
   
-  .aligntext {
+  .Aligncenter {
     width: 100%; /* Adjust the width as needed */
     display: flex;
     justify-content: center; /* Align text to the left */
@@ -54,7 +54,7 @@
     padding: 0 10%; 
   }
 
-  .mainbodyContainerNoHover {
+  .MainbodyContainerNoHover {
     background-color: var(--Final_Component_Lighter_Grey);
     border: 1px solid var(--Final_Light_Purple);
     border-radius: 15px;
@@ -64,14 +64,14 @@
     position: relative;
 }
 
-.flexRowSmallGap {
+.FlexRowSmallGap {
   display: flex;
   flex-direction: row;
   gap: var(--smolGap);
 }
 
 
-.justifySpaceinBetween {
+.JustifySpaceinBetween {
   justify-content: space-between;
   align-items: center;
 }
