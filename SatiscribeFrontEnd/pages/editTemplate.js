@@ -70,7 +70,7 @@ function editTemplate() {
 
                     </div>
                 </div>
-                <div className={pagestyle.bigContainer2}>
+                <div className={pagestyle.bigContainer3}>
                     <div className={pagestyle.centerContainer}>
                         <AgendaBlock/>
                     </div>
