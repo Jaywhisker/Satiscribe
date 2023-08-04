@@ -9,7 +9,7 @@ import EmailDropdown from './EmailDropdown';
 
 const Container = styled.div`
   position: relative;
-  padding: 10px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
 `;
@@ -25,7 +25,7 @@ const emailIconMap = {
 const EmailDropdownWrapper = styled.div`
   width: 30vw;
   position: absolute;
-  top: 100px;
+  top: 5vw;
 `;
 
 const TextInputWrapper = styled.div`

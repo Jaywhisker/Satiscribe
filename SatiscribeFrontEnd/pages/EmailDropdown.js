@@ -43,7 +43,7 @@ function EmailDropdown({ clickable, onClick, dataset, resetDropDown, emailIconMa
             (<div onClick={toggleDropDown} >
               <div className={`${flexi.flexRowSmolGap} ${flexi.justifySpaceBetween}`}>
                 <div className={flexi.flexRowSmolGap}>
-                  <p style={{ color: `var(--Final_White)` }}>{Object.keys(dataset).filter(email => dataset[email]).length ? "" : "Add members"}</p>
+                  <p style={{ color: `rgba(255, 255, 255, 0.4)` }}>{Object.keys(dataset).filter(email => dataset[email]).length ? "" : "Add members"}</p>
                   {Object.keys(dataset)
                     .filter(email => dataset[email])
                     .map(email => (

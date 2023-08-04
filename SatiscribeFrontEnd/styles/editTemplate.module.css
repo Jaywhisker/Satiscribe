@@ -16,7 +16,7 @@
 .parentContainer2 {
   display: flex;
   justify-content: center;
-  margin-bottom: 10vh; 
+  margin-bottom: 10vh;
 }
 
 .centerContainer {
@@ -26,39 +26,19 @@
   height: 50vh; /* Viewport height */
 }
 
-.alignButton{
-      width: 100%;  
-      display: flex;
-      justify-content: space-between;
-      padding: 0 10%; 
+.alignButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
 }
 
 .alignBlock {
-  width: 100%;  
+  width: 100%;
   display: contents;
   justify-content: space-between;
-  padding: 0 10%; 
+  padding: 0 10%;
 }
-
-/* .parentContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 5vh;
-} */
-
-/* .alignButton {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.alignBlock {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-} */
 
 .blockMargin {
   margin-right: 5vh;
@@ -68,45 +48,53 @@
   margin-right: 5vh;
 }
 
-
 .centeredText {
-  align-items: center;
+  /* No changes provided for centeredText styles */
 }
 
 .bigContainer {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 40vh; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh; /* Adjust as needed */
+  margin-bottom: 10vh;
+}
+
+.bigContainer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh; /* Adjust as needed */
+  margin-bottom: 15vh;
 }
 
 .nextContainer {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 70vw;
-gap: 5vw;
-margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  gap: 5vw;
+  margin: 0 auto;
 }
 
 .centerContainer {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 70vw;
-gap: 5vw;
-margin-bottom: 5px; /* Adjust as needed */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  gap: 5vw;
+  margin-bottom: 5px; /* Adjust as needed */
 }
 
-.smallBlock{
-width: 20vw;
-height: 20vw;
+.smallBlock {
+  width: 20vw;
+  height: 20vw;
 }
 
-.mediumBlock{
-width: 45vw;
-height: 20vw;
+.mediumBlock {
+  width: 45vw;
+  height: 20vw;
 }
-

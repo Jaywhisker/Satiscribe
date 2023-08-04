@@ -8,6 +8,9 @@ import colourstyle from '/styles/Colourtest.module.css'
 import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 import StyledComponentsRegistry from '../components/registery.tsx'
+import AgendaBlock from '@/components/large blocks/AgendaBlockEditTemp'
+import TaskSummariserBlock from '/components/large blocks/TaskSummariserMain';
+import CreateNewBlockEditTemp from '@/components/large blocks/CreateNewBlockEditTemp'
 
 function editTemplate() {
 
@@ -20,79 +23,82 @@ function editTemplate() {
 
     return (
         <StyledComponentsRegistry>
-        <div >
-            <div className={navstyle.topnav}>
-                <div className={navstyle.left_nav}>
-                    <div style={{ width: '200px' }}>
-                        <Sidebar
-                            sidebarShown={sidebarShown}
-                            onClick={handleClick}
-                        />
+            <div >
+                <div className={navstyle.topnav}>
+                    <div className={navstyle.left_nav}>
+                        <div style={{ width: '200px' }}>
+                            <Sidebar
+                                sidebarShown={sidebarShown}
+                                onClick={handleClick}
+                            />
+                        </div>
+                        <h3>Satiscribe</h3>
                     </div>
-                    <h3>Satiscribe</h3>
+                    <div className={navstyle.centralize}>
+                        <h3>Project Name</h3>
+                    </div>
+                    <div className={navstyle.right_nav}>
+                        <h6>Home</h6>
+                        <h6>Profile</h6>
+                        <h6>Logout</h6>
+                    </div>
                 </div>
-                <div className={navstyle.centralize}>
-                    <h3>Project Name</h3>
+                <div className={pagestyle.centeredContainer}>
+                    <h4 className={pagestyle.centeredText}>
+                        Client Template
+                    </h4>
                 </div>
-                <div className={navstyle.right_nav}>
-                    <h6>Home</h6>
-                    <h6>Profile</h6>
-                    <h6>Logout</h6>
-                </div>
-            </div>
-            <div className={pagestyle.centeredContainer}>
-                <h4 className={pagestyle.centeredText}>
-                    Template
-                </h4>
-            </div>
-            <div className={pagestyle.parentContainer}>
-                <div className={pagestyle.alignButton}>
-                    <Button
-                        size="small"
-                        logo="left"
-                        logoStyle={{ backgroundImage: `url("/iconsPurple/file folder approved-2.png")`, zIndex: 1 }}
-                        onClick={() => alert('Border Button (Smol) with left logo clicked!')}
-                    >
-                        Use Existing
-                    </Button>
-                    <Button
-                        size="small"
-                        logo="left"
-                        fill={true}
-                        logoStyle={{ backgroundImage: `url("/iconsFinalGray/Plus.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                        onClick={() => alert('Filled Button (small) with Right logo clicked!')}
-                    >
-                        Create New
-                    </Button>
+                <div className={pagestyle.parentContainer}>
+                    <div className={pagestyle.alignButton}>
+                        <Button
+                            size="small"
+                            logo="left"
+                            logoStyle={{ backgroundImage: `url("/iconsPurple/file folder approved-2.png")`, zIndex: 1 }}
+                            onClick={() => alert('Border Button (Smol) with left logo clicked!')}
+                        >
+                            Use Existing
+                        </Button>
+                        <Button
+                            size="small"
+                            logo="left"
+                            fill={true}
+                            logoStyle={{ backgroundImage: `url("/iconsFinalGray/Plus.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+                            onClick={() => alert('Filled Button (small) with Right logo clicked!')}
+                        >
+                            Create New
+                        </Button>
 
+                    </div>
                 </div>
-            </div>
-            <div className={pagestyle.bigContainer}>
-                <div className={pagestyle.centerContainer}>
-                    <img className={pagestyle.smallBlock} src="/Blocks/Attendance Block.png" />
-                    <img className={pagestyle.mediumBlock} src="/Blocks/Keydates Block.png" />
+                <div className={pagestyle.bigContainer2}>
+                    <div className={pagestyle.centerContainer}>
+                        <AgendaBlock/>
+                    </div>
                 </div>
-            </div>
-            <div className={pagestyle.bigContainer}>
-                <div className={pagestyle.nextContainer}>
-                    <img className={pagestyle.mediumBlock} src="/Blocks/Meeting Details Block.png" />
-                    <img className={pagestyle.smallBlock} src="/Blocks/Link Block.png" />
+                <div className={pagestyle.bigContainer2}>
+                    <div className={pagestyle.centerContainer}>
+                        <TaskSummariserBlock editable={false} />
+                    </div>
                 </div>
-            </div>
-            <div className={pagestyle.bigContainer}>
-                <div className={pagestyle.nextContainer}>
-                    <img className={pagestyle.smallBlock} src="/Blocks/Question Block.png" />
-                    <img className={pagestyle.mediumBlock} src="/Blocks/Feedback Blocks.png" />
+                <div className={pagestyle.bigContainer}>
+                    <div className={pagestyle.nextContainer}>
+                        <img className={pagestyle.mediumBlock} src="/Blocks/Keydates Block.png" />
+                        <img className={pagestyle.smallBlock} src="/Blocks/Attendance Block.png" />
+                    </div>
                 </div>
-            </div>
-            <div className={pagestyle.bigContainer}>
-                <div className={pagestyle.nextContainer}>
-                <img className={pagestyle.mediumBlock} src="/Blocks/Poll Block.png" />
-                    <img className={pagestyle.smallBlock} src="/Blocks/Budgeting Block.png" />
+                <div className={pagestyle.bigContainer}>
+                    <div className={pagestyle.nextContainer}>
+                        <img className={pagestyle.smallBlock} src="/Blocks/Link Block.png" />
+                        <img className={pagestyle.mediumBlock} src="/Blocks/Meeting Details Block.png" />
+                    </div>
                 </div>
+                <div className={pagestyle.bigContainer2}>
+                    <div className={pagestyle.nextContainer}>
+                        <CreateNewBlockEditTemp/>
+                    </div>
+                </div>
+
             </div>
-        
-        </div>
         </StyledComponentsRegistry>
 
 

@@ -15,7 +15,7 @@ const DropdownButton = styled.div`
   justify-content: space-between;
   padding: 12px; /* Adjust the padding to control the height of the button */
   background-color: var(--Final_Component_Dark_Grey);
-  color: ${({ active }) => (active ? 'var(--Final_White)' : 'rgba(255, 255, 255, 0.5)')};
+  color: ${({ $active }) => ($active ? 'var(--Final_White)' : 'rgba(255, 255, 255, 0.5)')};
   cursor: pointer;
   width: 100%; /* Make the button take the full width of the container */
   height: 100%; /* Make the button take the full height of the container */
@@ -32,8 +32,8 @@ const DropdownOption = styled.div`
   display: flex;
   align-items: center;
   padding: 8px;
-  background-color: ${({ active }) => (active ? 'var(--Final_Light_Purple_25)' : 'var(--Final_Light_Purple_25)')};
-  color: ${({ active, open }) => (active && !open ? 'rgba(255, 255, 255, 0.5)' : 'var(--Final_White)')};
+  background-color: ${({ $active }) => ($active ? 'var(--Final_Light_Purple_25)' : 'var(--Final_Light_Purple_25)')};
+  color: ${({ $active, open }) => ($active && !open ? 'rgba(255, 255, 255, 0.5)' : 'var(--Final_White)')};
   cursor: pointer;
 `;
 
@@ -54,7 +54,7 @@ function ProjSettingsDropdown({ clickable, onClick }) {
 
   return (
     <DropdownContainer>
-      <DropdownButton active={selectedOption} onClick={toggleDropDown}>
+      <DropdownButton $active={selectedOption ? true : false} onClick={toggleDropDown}>
         <div className={`${pagestyle.flexRowSmolGap}`}>
           <p style={{ color: 'inherit' }}>{selectedOption || defaultOption}</p>
         </div>
@@ -63,7 +63,7 @@ function ProjSettingsDropdown({ clickable, onClick }) {
       <DropdownContent open={dropDown}>
         {clickable &&
           clickable.map((option) => (
-            <DropdownOption key={option} onClick={() => handleOptionClick(option)} active={selectedOption === option} open={dropDown}>
+            <DropdownOption key={option} onClick={() => handleOptionClick(option)} $active={selectedOption === option ? true : false} open={dropDown}>
               <div className={`${pagestyle.flexRowSmolGap} ${pagestyle.contentblockClickable}`}>
                 <p style={{ color: 'inherit' }}>{option}</p>
               </div>
