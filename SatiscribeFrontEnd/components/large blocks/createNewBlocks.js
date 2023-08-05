@@ -9,9 +9,9 @@ import contentblock from '@/styles/components/contentblocks.module.css'
 function CreateNewBlock() {
     return (
         <>
-            <div className={`${contentblock.largeBlockContainer} ${flexi.flexColumnSmolGap} ${flexi.justifyCenter}`}>
+            <div className={`${contentblock.largeBlockContainer} ${flexi.flexColumnSmolGap} ${flexi.alignCenter}`}>
                 <div className={`${flexi.innerMargin}`}>
-                    <div className={`${flexi.flexRowSmolGap} ${flexi.justifyCenter}`}>
+                    <div className={`${flexi.flexRowSmolGap} ${flexi.alignCenter}`}>
                         <div className={logos.big} style={{ backgroundImage: `url("/icons/plusPurple.png")`, zIndex: 1, }}></div>
                         <h2 style={{ color: `var(--Final_Light_Purple)` }}> New Component</h2>
                     </div>
@@ -24,7 +24,7 @@ function CreateNewBlock() {
                         <h5>Please Choose A Content Block</h5>
 
                         <div>
-                            <ul className={`${list.mediumGapnobullet}`}>
+                            <ul className={`${list.mediumgapnobullet}`}>
                                 <li>
                                     <p style={{ color: `var(--Final_White)` }}>Task Summariser and Assigner Block</p>
                                     <div className={contentblock.line}></div>

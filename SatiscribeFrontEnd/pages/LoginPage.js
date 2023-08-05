@@ -34,7 +34,7 @@ function LoginPage() {
 
     const handleLoginClick = () => {
         // Navigate to the login page (or any other route you want)
-        router.push('/newmeeting');
+        router.push('/Home');
       };
     
 

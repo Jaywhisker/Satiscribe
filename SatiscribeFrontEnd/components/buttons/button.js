@@ -8,6 +8,8 @@ const Button = ({ size, logo, fill, logoStyle, disabledLogoStyle, onClick, child
     switch (size) {
       case 'small':
         return styles.smallButton;
+      case 'smallmedium':
+        return styles.smallmediumButton;
       case 'medium':
         return styles.mediumButton;
       case 'large':
