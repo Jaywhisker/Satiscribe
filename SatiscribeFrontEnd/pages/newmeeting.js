@@ -52,7 +52,7 @@ function newmeeting() {
                             size="small"
                             logo="left"
                             fill={true}
-                            logoStyle={{ backgroundImage: `url("/iconsFinalGray/Start.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+                            logoStyle={{ backgroundImage: `url("/iconsFinalGray/Start.png")`, zIndex: 1 }}
                             onClick={handleSelectStartMeeting}
                         >
                             Start Meeting

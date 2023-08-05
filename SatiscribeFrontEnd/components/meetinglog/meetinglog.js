@@ -53,6 +53,7 @@ const Meeting = ({ project, columns, homepage, projectTask }) => {
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                     className={styles.searchBar}
+                    placeholder={homepage ? "Search for Projects" : "Search for Meetings"}
                 />
                 <LogoButton
                     onClick={clearSearch}

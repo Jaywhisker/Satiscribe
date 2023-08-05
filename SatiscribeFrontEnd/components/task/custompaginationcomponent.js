@@ -2,6 +2,7 @@ import React from 'react';
 import TaskDataTable from './tasktable';
 import AddNewTaskInput from './addnewtaskinput';
 import styles from '../../styles/Table.module.css';
+import Button from '../buttons/button';
 
 
 const CustomMaterialPagination = ({
@@ -66,7 +67,10 @@ const CustomMaterialPagination = ({
         </div>
       ) : (
         <div className={styles.addNewTaskRow} onClick={handleAddNewTask}>
-          <p>+ Add New Task</p>
+          <p>
+            + Add New Task
+          </p>
+
         </div>
       )}
 

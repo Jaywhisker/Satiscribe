@@ -101,7 +101,8 @@ function Home() {
                 className={`${dash.largeBlockContainer}`}
                 style={{
                     backgroundImage: `url("/Blocks/Calendar.svg")`,
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                 }}>
             </div>
