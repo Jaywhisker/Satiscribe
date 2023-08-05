@@ -120,14 +120,16 @@ const TaskDataTable = ({
         backgroundColor: 'var(--Final_Component_Dark_Grey)',
         color: 'var(--Final_Light_Purple)',
         fontFamily: 'Lato, sans-serif',
-        borderBottom: 'none',
         fontSize: '3vh',
         height: '10vh',
+        width: '100%',
+        border: 'none',
       },
     },
     cells: {
       style: {
         color: 'var(--Final_White)',
+        width: '100%',
       },
     },
     pagination: {

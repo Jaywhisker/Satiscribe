@@ -21,6 +21,14 @@
     padding: var(--smolGap);
 }
 
+/* Size Variants */
+.smallmediumButton {
+    width: 30vw;
+    height: 15vh;
+    padding: var(--smolGap);
+}
+
+
 .mediumButton {
     width: 39vw;
     height: 10.5vh;

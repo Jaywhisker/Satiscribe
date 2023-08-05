@@ -77,6 +77,7 @@
         "meeting_logs": [
           {
             "meeting_id": 0,
+            "meeting_name": "Meeting 1",
             "meeting_details": {
               "date": "27/07/2023",
               "venue": "studio 7",
@@ -128,6 +129,7 @@
         "meeting_logs": [
           {
             "meeting_id": 0,
+            "meeting_name": "Meeting 1",
             "meeting_details": {
               "date": "29/07/2023",
               "venue": "Conference Room 2",
@@ -137,6 +139,7 @@
           },
           {
             "meeting_id": 1,
+            "meeting_name": "Meeting 2",
             "meeting_details": {
               "date": "03/08/2023",
               "venue": "Meeting Room B",

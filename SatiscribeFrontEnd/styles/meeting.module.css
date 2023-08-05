@@ -1,0 +1,80 @@
+.tablecontainer {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableheader {
+    background-color: var(--Final_Component_Dark_Grey);
+    font-family: Lato;
+    color: var(--Final_Light_Purple);
+    font-size: 3vh;
+    align-self: flex-start;
+}
+
+
+.tableheadercell {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 2vw;
+    font-size: 3vh;
+    font-family: Lato; 
+    color: var(--Final_Light_Purple);
+    text-align:justify;
+}
+
+.tablecell {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 2vw;
+    font-size: 3vh;
+    font-family: Lato; 
+    color: var(--Final_White);
+    align-self: flex-start;
+    max-height: 15vh;
+    height:fit-content;
+    width: 100vw;
+}
+
+.tablerow:nth-child(odd) {
+    background-color: var(--Final_Component_Lighter_Grey);
+}
+
+.tablerow:nth-child(even) {
+    background-color: var(--Final_Component_Dark_Grey);
+}
+
+.searchBar {
+    background-color: var(--Final_Dark_Purple_80);
+    border-color: var(--Final_Light_Purple);
+    font-size: 3vh;
+    padding: 2vh 1vw;
+    border-radius: 5px;
+    width: 30vw;
+    border: 1px solid var(--Final_Light_Purple);
+    color: var(--Final_White);
+
+}
+
+.searchBar::placeholder {
+    color: var(--Final_Light_Purple);
+}
+
+.searchBar:hover {
+    background-color: var(--Final_Dark_Purple);
+}
+
+
+
+.searchPlace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Final_Component_Dark_Grey);
+    padding: 2vh 2vw;
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px; /* Adjust the gap between details as needed */
+}
