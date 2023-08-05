@@ -13,7 +13,7 @@ function FullTranscriptBlockEditTemp() {
         <div className={`${flexi.innerMargin}`}>
           <h5>Full Transcript</h5>
 
-          <ul className={`${list.smolgap}`}>
+          <ul className={`${list.smolGap}`}>
             <li> <p style={{ color: `var(--Final_White)` }}>Sentence 1</p></li>
             <li> <p style={{ color: `var(--Final_White)` }}>Sentence 2</p></li>
 

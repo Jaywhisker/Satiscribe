@@ -26,17 +26,30 @@ const Meeting = ({ project, columns, homepage, projectTask }) => {
         }, project.project_details.meeting_logs[0])
         : null;
 
+    const noDataComponent = (
+        <div className={`${styles.tablerow} ${styles.row}`}> {/* Apply the same row styles */}
+            <td className={styles.norow} colSpan={2}>
+                {homepage ? (
+                    <div>No relevant projects found.</div>
+                ) : (
+                    <div>No relevant meetings found.</div>
+                )}
+            </td>
+        </div>
+    );
+
+
 
     const clearSearch = () => {
         setSearchTerm('');
     };
+
 
     return (
         <div>
             <div className={styles.searchPlace}>
                 <input
                     type="text"
-                    placeholder={homepage ? "Search for Projects" : "Search for Meeting"}
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                     className={styles.searchBar}
@@ -51,15 +64,17 @@ const Meeting = ({ project, columns, homepage, projectTask }) => {
             </div>
 
             <table className={styles.tablecontainer}>
-                <thead className={styles.tableheader}>
-                    <tr>
-                        {columns.map((col, index) => (
-                            <th key={index} className={styles.tableheadercell}>
-                                {col.header}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
+                {((filteredData.length > 0 || (filteredProjects && filteredProjects.length > 0))) && (
+                    <thead className={styles.tableheader}>
+                        <tr>
+                            {columns.map((col, index) => (
+                                <th key={index} className={styles.tableheadercell}>
+                                    {col.header}
+                                </th>
+                            ))}
+                        </tr>
+                    </thead>
+                )}
                 <tbody>
                     {homepage ? (
                         projectTask
@@ -113,10 +128,14 @@ const Meeting = ({ project, columns, homepage, projectTask }) => {
                                     </tr>
                                 );
                             }))
-
-                        }</tbody>
-
+                    }
+                </tbody>
             </table>
+            {filteredData.length === 0 && (!filteredProjects || filteredProjects.length === 0) &&
+                searchTerm.trim().length > 0 && (
+                    <div>{noDataComponent}</div>
+                )}
+
         </div>
     );
 };

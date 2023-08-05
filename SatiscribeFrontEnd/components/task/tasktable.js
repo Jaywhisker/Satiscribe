@@ -213,7 +213,7 @@ const TaskDataTable = ({
 
 
   const noDataComponent = (
-    <div>
+    <div className={styles.rows}>
       {filteredTasks.length === 0 ? (
         <div>No relevant results found.</div>
       ) : (
