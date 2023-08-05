@@ -72,32 +72,62 @@ function editTemplate() {
                 </div>
                 <div className={pagestyle.bigContainer3}>
                     <div className={pagestyle.centerContainer}>
-                        <AgendaBlock/>
+                        <AgendaBlock />
                     </div>
                 </div>
-                <div className={pagestyle.bigContainer2}>
+                <div className={pagestyle.dashedLine} />
+                <div className={pagestyle.bigContainer2} >
                     <div className={pagestyle.centerContainer}>
                         <TaskSummariserBlock editable={false} />
+                        <img className={pagestyle.trashicon} src="/icons/Trash.png" />
                     </div>
                 </div>
+                <div className={pagestyle.dashedLine} />
                 <div className={pagestyle.bigContainer}>
                     <div className={pagestyle.nextContainer}>
                         <img className={pagestyle.mediumBlock} src="/Blocks/Keydates Block.png" />
                         <img className={pagestyle.smallBlock} src="/Blocks/Attendance Block.png" />
+                        <img className={pagestyle.trashicon} src="/icons/Trash.png" />
                     </div>
                 </div>
+                <div className={pagestyle.dashedLine} />
                 <div className={pagestyle.bigContainer}>
                     <div className={pagestyle.nextContainer}>
                         <img className={pagestyle.smallBlock} src="/Blocks/Link Block.png" />
                         <img className={pagestyle.mediumBlock} src="/Blocks/Meeting Details Block.png" />
+                        <img className={pagestyle.trashicon} src="/icons/Trash.png" />
                     </div>
                 </div>
-                <div className={pagestyle.bigContainer2}>
+                <div className={pagestyle.dashedLine} />
+                <div className={pagestyle.bigContainer4}>
                     <div className={pagestyle.nextContainer}>
-                        <CreateNewBlockEditTemp/>
+                        <CreateNewBlockEditTemp />
                     </div>
                 </div>
+                <div className={pagestyle.parentContainer}>
+                    <div className={pagestyle.Aligncenter}>
+                        <Button
+                            size="small"
+                            logo="left"
+                            fill={true}
+                            logoStyle={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}
+                            onClick={() => alert('Border Button (Smol) with left logo clicked!')}
+                        >
+                            Save
+                        </Button>
+                    </div>
+                    <div className={pagestyle.AlignButton2}>
+                        <Button
+                            size="small"
+                            logo="left"
+                            logoStyle={{ backgroundImage: `url("/iconsPurple/Trash.png")`, zIndex: 1 }}
+                            onClick={() => alert('Border Button (Smol) with left logo clicked!')}
+                        >
+                            Discard Template
+                        </Button>
+                    </div>
 
+                </div>
             </div>
         </StyledComponentsRegistry>
 

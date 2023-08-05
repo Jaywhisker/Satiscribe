@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Navbar from './navbartest';
+import navstyle from '/styles/Navbar.module.css'
 import Tasklist from '../components/tasklist';
+import Sidebar from '../components/Sidebar';
 import styled from 'styled-components';
 import { Button } from '../components';
 import pagestyle from '../styles/projsettings.module.css';
-import ProjSettingsDropdown from './projsettingsDropdown';
-import EmailDropdown from './EmailDropdown';
+import ProjSettingsDropdown from '@/components/projsettingsDropdown';
+import EmailDropdown from '@/components/EmailDropdown';
 
 const Container = styled.div`
   position: relative;
@@ -64,7 +65,7 @@ const VisibilityHeading = styled.h4`
   color: var(--Final_Light_Purple);
 `;
 
-function ProjSettingsPage() {
+function ProjSettingsPageNew() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [linkCopied, setLinkCopied] = useState(false);
   const initialEmails = ['hubob@gmail.com', 'morgan@gmail.com', 'derrick@gmail.com', 'jefferson@gmail.com'];
@@ -103,13 +104,43 @@ function ProjSettingsPage() {
     setLinkCopied(true);
   };
 
+  const [sidebarShown, setSideBarShown] = useState(false)
+    console.log(sidebarShown)
+    const handleClick = () => {
+        setSideBarShown(!sidebarShown)
+        console.log('yes')
+    }
+
   return (
     <Container>
-      <Navbar text="New Project" />
+      <div className={navstyle.topnav}>
+        <div className={navstyle.left_nav}>
+          <div style={{ width: '200px' }}>
+            <Sidebar
+              sidebarShown={sidebarShown}
+              onClick={handleClick}
+            />
+          </div>
+          <h3>Satiscribe</h3>
+        </div>
+        <div className={navstyle.centralize}>
+          <h3>HCI</h3>
+        </div>
+        <div className={navstyle.right_nav}>
+          <h6>Home</h6>
+          <h6>Profile</h6>
+          <h6>Logout</h6>
+        </div>
+      </div>
+      <div className={pagestyle.centeredContainer}>
+        <h4 className={pagestyle.centeredText}>
+          Client Template
+        </h4>
+      </div>
       <div className={pagestyle.ParentContainer}>
         <div className={pagestyle.CenteredContainer}>
           <TextInputWrapper>
-            <TextInput type="text" placeholder="Project Name" />
+            <TextInput type="text" placeholder="HCI" />
             <Line />
           </TextInputWrapper>
         </div>
@@ -198,4 +229,4 @@ function ProjSettingsPage() {
   );
 }
 
-export default ProjSettingsPage;
+export default ProjSettingsPageNew;

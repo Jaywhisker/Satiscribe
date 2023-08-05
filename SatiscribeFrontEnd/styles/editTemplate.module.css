@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
   height: 50vh; /* Viewport height */
+  position: relative;
 }
 
 .alignButton {
@@ -31,6 +32,20 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10%;
+}
+
+.AlignButton2 {
+  width: 100%; /* Adjust the width as needed */
+  display: flex;
+  justify-content: center; /* Align button to the right */
+  padding-right: 1%; /* Adjust the right padding as needed */
+}
+
+.Aligncenter {
+  width: 100%; /* Adjust the width as needed */
+  display: flex;
+  justify-content: center; /* Align text to the left */
+  padding-left: 1%; /* Adjust the left padding as needed */
 }
 
 .alignBlock {
@@ -58,7 +73,8 @@
   align-items: center;
   justify-content: center;
   height: 40vh; /* Adjust as needed */
-  margin-bottom: 10vh;
+  margin-bottom: 10.5vh;
+  margin-top: 10.5vh;
 }
 
 .bigContainer2 {
@@ -67,8 +83,8 @@
   align-items: center;
   justify-content: center;
   height: 40vh; /* Adjust as needed */
-  margin-bottom: 20vh;
-  margin-top: 14vh;
+  margin-bottom: 21vh;
+  margin-top: 21vh;
 }
 
 .bigContainer3 {
@@ -77,8 +93,18 @@
   align-items: center;
   justify-content: center;
   height: 40vh; /* Adjust as needed */
-  margin-bottom: 26vh;
-  margin-top: 16.5vh;
+  margin-bottom: 16vh;
+  margin-top: 13.5vh;
+}
+
+.bigContainer4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh; /* Adjust as needed */
+  margin-bottom: 13.5vh;
+  margin-top: 13.5vh;
 }
 
 
@@ -90,6 +116,7 @@
   width: 70vw;
   gap: 5vw;
   margin: 0 auto;
+  position: relative;
 }
 
 .centerContainer {
@@ -110,4 +137,22 @@
 .mediumBlock {
   width: 45vw;
   height: 20vw;
+}
+
+
+.dashedLine {
+  border-bottom: 2px dashed var(--Final_White);
+  width: 70.5%;
+  position: center;
+  height: 0;
+  margin: 20px auto; 
+}
+
+.trashicon {
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  right:-5vw; /* Adjust as needed */
+  top: 50%;  /* Adjust as needed */
+  transform: translateY(-50%);
 }
