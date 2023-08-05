@@ -6,21 +6,23 @@ import colourstyle from '/styles/Colourtest.module.css';
 import logos from '/styles/Logos.module.css';
 import landing from '@/styles/webexperiment/Landingpage.module.css';
 import StyledComponentsRegistry from '@/components/registery.tsx';
-import Navbar from '../pages/navbartest';
 import StyledBox from '@/components/meetinglabel/meetinglabel';
 import styles from '@/styles/meetinginprogress.module.css';
 import contentblock from '@/styles/components/contentblocks.module.css'
 import flex from '/styles/Flexible.module.css';
 import { useRouter } from 'next/router';
+import Navbar from '@/components/navbar';
 
 
 function MeetingInProgress() {
 
-    // const router = useRouter();
 
-    // const handleNavigate = () => {
-    //     router.push('/webexperiment/thankyou');
-    // };
+    const router = useRouter();
+
+    const handleSelectStopMeeting = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/webexperiment/designB');
+      };
 
     return (
         <StyledComponentsRegistry>
@@ -38,7 +40,7 @@ function MeetingInProgress() {
                     // logo="left"
                     fill={true}
                     logoStyle={{ backgroundImage: `url("/iconsFinalGray/Check.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                // onClick={handleNavigate}
+                onClick={handleSelectStopMeeting}
                 >
                     Stop Meeting
                 </Button>

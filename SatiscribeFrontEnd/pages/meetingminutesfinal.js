@@ -8,6 +8,8 @@ import colourstyle from '/styles/Colourtest.module.css'
 import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 import StyledComponentsRegistry from '../components/registery'
+import { useRouter } from 'next/router';
+import Navbar from '@/components/navbar';
 
 function newmeeting() {
 
@@ -18,28 +20,17 @@ function newmeeting() {
         console.log('yes')
     }
 
+    const router = useRouter();
+
+    const handleBack = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/projectDashboard');
+    };
+
     return (
         <StyledComponentsRegistry>
             <div >
-                <div className={navstyle.topnav}>
-                    <div className={navstyle.left_nav}>
-                        <div style={{ width: '200px' }}>
-                            <Sidebar
-                                sidebarShown={sidebarShown}
-                                onClick={handleClick}
-                            />
-                        </div>
-                        <h3>Satiscribe</h3>
-                    </div>
-                    <div className={navstyle.centralize}>
-                        <h3>Project Name</h3>
-                    </div>
-                    <div className={navstyle.right_nav}>
-                        <h6>Home</h6>
-                        <h6>Profile</h6>
-                        <h6>Logout</h6>
-                    </div>
-                </div>
+                <Navbar />
                 {/* <div className={pagestyle.centeredContainer}>
                     <h4 className={pagestyle.centeredText}>
                         Template
@@ -51,19 +42,19 @@ function newmeeting() {
                             size="small"
                             logo="left"
                             logoStyle={{ backgroundImage: `url("/iconsPurple/Back.png")`, zIndex: 1 }}
-                            onClick={() => alert('Border Button (Smol) with left logo clicked!')}
+                            onClick={handleBack}
                         >
                             Back
                         </Button>
                     </div>
                     <div className={pagestyle.centeredContainer}>
                         <div className={pagestyle.textencapsulate}>
-                        <h4 className={pagestyle.centeredText} style={{inlineSize: '23vw', textAlign: "center"}}>
-                            Meeting Minutes
-                        </h4>
-                        <h4 className={pagestyle.centeredText} style={{inlineSize: '23vw', textAlign: "center" }}>
-                            10 July 2023
-                        </h4>
+                            <h4 className={pagestyle.centeredText} style={{ inlineSize: '23vw', textAlign: "center" }}>
+                                Meeting Minutes
+                            </h4>
+                            <h4 className={pagestyle.centeredText} style={{ inlineSize: '23vw', textAlign: "center" }}>
+                                10 July 2023
+                            </h4>
                         </div>
                     </div>
                 </div>

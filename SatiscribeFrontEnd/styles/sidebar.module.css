@@ -1,10 +1,9 @@
 .projectcontainer {
   display: flex;
-  width: 14.0625rem;
-  height: 3rem;
+  width: 13vw;
+  height: 6%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-color: blueviolet;
-  z-index:100;
 }

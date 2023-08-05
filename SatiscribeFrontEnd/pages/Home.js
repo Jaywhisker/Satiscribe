@@ -14,6 +14,7 @@ import projectTask from '../data/tasks.json';
 import Meeting from '@/components/meetinglog/meetinglog';
 import { useRouter } from 'next/router';
 import navstyle from '/styles/Navbar.module.css'
+import Navbar from '@/components/navbar2';
 
 
 function Home() {
@@ -43,27 +44,17 @@ function Home() {
     }
 
 
+    const router = useRouter();
+
+    const handleSelectProject = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/projectDashboard');
+      };
+
+
     return (
         <StyledComponentsRegistry>
-            <div className={navstyle.topnav}>
-                <div className={navstyle.left_nav}>
-                    <div style={{ width: '200px' }}>
-                        <Sidebar
-                            sidebarShown={sidebarShown}
-                            onClick={handleClick}
-                        />
-                    </div>
-                    <h3>Satiscribe</h3>
-                </div>
-                <div className={navstyle.centralize}>
-                    <h3>Project Name</h3>
-                </div>
-                <div className={navstyle.right_nav}>
-                    <h6>Home</h6>
-                    <h6>Profile</h6>
-                    <h6>Logout</h6>
-                </div>
-            </div>
+            <Navbar />
             <div className={home.headers} style={{ width: `var(--largeWidth)` }}>
                 <div className={flex.flexColumnNoGap} >
                     <h3>Hi Hubob:</h3>
@@ -75,7 +66,7 @@ function Home() {
                     logo="left"
                     fill={false}
                     logoStyle={{ backgroundImage: `url("/iconsPurple/plus.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                // onClick={handleNavigate}
+                onClick={handleSelectProject}
                 >
                     Create New Project
                 </Button>

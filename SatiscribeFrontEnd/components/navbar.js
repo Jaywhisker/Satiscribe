@@ -5,8 +5,9 @@ import colourstyle from '/styles/Colourtest.module.css'
 import logos from '/styles/Logos.module.css'
 import Sidebar from '../components/Sidebar';
 import StyledComponentsRegistry from '../components/registery.tsx'
+import { useRouter } from 'next/router';
 
-function navbar({ text }) {
+function navbar() {
 
     const [sidebarShown, setSideBarShown] = useState(false)
     console.log(sidebarShown)
@@ -15,6 +16,12 @@ function navbar({ text }) {
         console.log('yes')
     }
 
+    const router = useRouter();
+
+    const handleLogout = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/LoginPage');
+      };
 
     return (
         <StyledComponentsRegistry>
@@ -34,7 +41,7 @@ function navbar({ text }) {
                 <div className={style.right_nav}>
                     <h6>Home</h6>
                     <h6>Profile</h6>
-                    <h6>Logout</h6>
+                    <h6 onClick={handleLogout} >Logout</h6>
                 </div>
             </div>   
         </StyledComponentsRegistry >
