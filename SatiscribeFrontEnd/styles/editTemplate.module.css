@@ -64,7 +64,18 @@
 }
 
 .centeredText {
-  /* No changes provided for centeredText styles */
+  position: relative;
+  display: inline-block;
+}
+
+.centeredText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: currentColor;
 }
 
 .bigContainer {
@@ -94,7 +105,7 @@
   justify-content: center;
   height: 40vh; /* Adjust as needed */
   margin-bottom: 16vh;
-  margin-top: 13.5vh;
+  margin-top: 16vh;
 }
 
 .bigContainer4 {
@@ -156,3 +167,5 @@
   top: 50%;  /* Adjust as needed */
   transform: translateY(-50%);
 }
+
+
