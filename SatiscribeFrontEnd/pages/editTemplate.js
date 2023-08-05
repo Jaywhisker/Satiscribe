@@ -11,6 +11,7 @@ import StyledComponentsRegistry from '../components/registery.tsx'
 import AgendaBlock from '@/components/large blocks/AgendaBlockEditTemp'
 import TaskSummariserBlock from '/components/large blocks/TaskSummariserMain';
 import CreateNewBlockEditTemp from '@/components/large blocks/CreateNewBlockEditTemp'
+import FullTranscriptBlockEditTemp from '../components/large blocks/fullTranscriptEditTemp';
 
 function editTemplate() {
 
@@ -95,6 +96,13 @@ function editTemplate() {
                     <div className={pagestyle.nextContainer}>
                         <img className={pagestyle.smallBlock} src="/Blocks/Link Block.png" />
                         <img className={pagestyle.mediumBlock} src="/Blocks/Meeting Details Block.png" />
+                        <img className={pagestyle.trashicon} src="/icons/Trash.png" />
+                    </div>
+                </div>
+                <div className={pagestyle.dashedLine} />
+                <div className={pagestyle.bigContainer4}>
+                    <div className={pagestyle.nextContainer}>
+                        <FullTranscriptBlockEditTemp />
                         <img className={pagestyle.trashicon} src="/icons/Trash.png" />
                     </div>
                 </div>
