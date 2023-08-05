@@ -15,6 +15,18 @@
 
 
 /* Size Variants */
+/* 
+.smallestButton {
+    width: fit-content;
+    height: 5vh; /* Adjust the height as needed */
+    /* padding: var(--smolGap); */
+/* } */
+
+/* Hover Effects */
+/* .smallestButton:not(.disabledButton):hover {
+    background: var(--Final_Light_Purple_25, rgba(187, 134, 252, 0.25));
+} */ 
+
 .smallButton {
     width: 21.5vw;
     height: 10.5vh;

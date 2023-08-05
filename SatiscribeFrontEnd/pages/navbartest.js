@@ -30,6 +30,7 @@ function navbar({ text }) {
                 </div>
                 <div className={style.centralize}>
                     <h3>HCI</h3>
+                    
                 </div>
                 <div className={style.right_nav}>
                     <h6>Home</h6>
