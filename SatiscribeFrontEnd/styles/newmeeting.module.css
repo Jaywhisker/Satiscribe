@@ -34,6 +34,13 @@
   padding: 0 10%;
 }
 
+.alignButtonnew{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 15vw;
+}
+
 .alignBlock {
   width: 100%;
   display: contents;
@@ -84,12 +91,21 @@
   margin-bottom: 10vh;
 }
 
+.bigContainer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vh;
+  min-height: 20vh
+}
+
 .nextContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70vw;
-  gap: 5vw;
+  gap: 7vw;
   margin: 0 auto;
 }
 
@@ -99,9 +115,22 @@
   justify-content: center;
   align-items: center;
   width: 70vw;
-  gap: 5vw;
+  gap: 7vw;
   margin-bottom: 5px;
   /* Adjust as needed */
+}
+
+.centerContainer2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  gap: 7vw;
+  margin-bottom: 5px;
+  /* Adjust as needed */
+  margin-top: 10vh;
+  /* Add space above the container */
 }
 
 .smallBlock {
@@ -112,4 +141,55 @@
 .mediumBlock {
   width: 45vw;
   height: 20vw;
+}
+
+.largeBlock {
+  width: 70vw;
+  /* Fixed width */
+  max-height: 100%;
+  /* Ensure it does not exceed the container's height */
+  object-fit: contain;
+  /* Maintain aspect ratio */
+}
+
+.largeBlock2 {
+  width: 70vw;
+  min-height: 20vh;
+}
+
+.topcontainer {
+  justify-content: center;
+  display: flex;
+  width: fit-content;
+  padding: 0.625rem 1.5625rem 0.625rem 0rem;
+  align-items: center;
+  gap: 6.25rem;
+  flex-shrink: 0;
+  height: 30vh
+}
+
+.topline{
+  color: var(--final-light-purple, #BB86FC);
+/* Heading */
+font-family: Lato;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 900;
+line-height: 2rem; /* 160% */
+}
+
+.bottomline{
+  /* Subheading */
+font-family: Lato;
+font-size: 1rem;
+font-style: normal;
+font-weight: 900;
+line-height: 1.5rem; /* 150% */
+letter-spacing: -0.0125rem;
+}
+
+.textencapsulate{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

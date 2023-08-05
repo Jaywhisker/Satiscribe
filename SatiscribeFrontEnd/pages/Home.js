@@ -13,6 +13,8 @@ import TaskTable from '@/components/task/projecttask';
 import projectTask from '../data/tasks.json';
 import Meeting from '@/components/meetinglog/meetinglog';
 import { useRouter } from 'next/router';
+import navstyle from '/styles/Navbar.module.css'
+import Navbar from '@/components/navbar2';
 
 
 function Home() {
@@ -34,21 +36,37 @@ function Home() {
     // Find the project based on the ID
     const project = projects.find(p => p.project_id === id);
 
+    const [sidebarShown, setSideBarShown] = useState(false)
+    console.log(sidebarShown)
+    const handleClick = () => {
+        setSideBarShown(!sidebarShown)
+        console.log('yes')
+    }
+
+
+    const router = useRouter();
+
+    const handleSelectProject = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/projectDashboard');
+      };
+
+
     return (
         <StyledComponentsRegistry>
-            <Sidebar />
-            <div className={home.headers} style={{width:`var(--largeWidth)`}}>
+            <Navbar />
+            <div className={home.headers} style={{ width: `var(--largeWidth)` }}>
                 <div className={flex.flexColumnNoGap} >
                     <h3>Hi Hubob:</h3>
                     <h3>Your Task List</h3>
                 </div>
-                
+
                 <Button
                     size="smallmedium"
                     logo="left"
                     fill={false}
                     logoStyle={{ backgroundImage: `url("/iconsPurple/plus.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                    // onClick={handleNavigate}
+                onClick={handleSelectProject}
                 >
                     Create New Project
                 </Button>
@@ -63,7 +81,7 @@ function Home() {
             </div>
             <div className={home.container}>
                 <div className={home.table}>
-                    <Meeting project={project} columns={homecolumns} homepage={true} projectTask={projectTask}/>
+                    <Meeting project={project} columns={homecolumns} homepage={true} projectTask={projectTask} />
                 </div>
             </div>
 

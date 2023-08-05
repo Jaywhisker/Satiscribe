@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
 import pagestyle from '/styles/LoginPage.module.css'
 import { Button } from '../components';
+import { useRouter } from 'next/router';
 
 function LoginPage() {
     // Create refs for the username and password inputs
     const usernameRef = useRef();
     const passwordRef = useRef();
+    
 
     // Create a state variable for the error message
     const [error, setError] = useState(null);
@@ -28,6 +30,14 @@ function LoginPage() {
         }
     };
 
+    const router = useRouter();
+
+    const handleLoginClick = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/Home');
+      };
+    
+
     return (
         <form onSubmit={handleSubmit}>
             <div className={pagestyle.bigdiv}>
@@ -45,7 +55,7 @@ function LoginPage() {
                 {error && <div className={pagestyle.errorMessage}>{error}</div>}
             </div>
             <div className={pagestyle.logindiv}>
-                <Button size="medium" fill type="submit" >
+                <Button size="medium" fill type="submit" onClick={handleLoginClick}>
                     Login
                 </Button>
             </div>

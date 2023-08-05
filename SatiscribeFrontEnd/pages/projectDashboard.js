@@ -14,6 +14,9 @@ import Meeting from '@/components/meetinglog/meetinglog';
 import Chips from '@/components/chips/chips';
 import contentblock from '@/styles/components/contentblocks.module.css'
 import { useRouter } from 'next/router';
+import navstyle from '/styles/Navbar.module.css'
+import Navbar from '@/components/navbar';
+
 
 
 function Home() {
@@ -36,10 +39,25 @@ function Home() {
     // Find the project based on the ID
     const project = projects.find(p => p.project_id === id);
 
+    const [sidebarShown, setSideBarShown] = useState(false)
+    console.log(sidebarShown)
+    const handleClick = () => {
+        setSideBarShown(!sidebarShown)
+        console.log('yes')
+    }
+
+    const router = useRouter();
+
+    const handleSelectNewMeeting = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/newmeeting');
+    };
+
+
 
     return (
         <StyledComponentsRegistry>
-            <Sidebar />
+            <Navbar />
 
             <div className={dash.headers} style={{ width: `var(--largeWidth)` }}>
                 <Button
@@ -47,7 +65,7 @@ function Home() {
                     logo="left"
                     fill={false}
                     logoStyle={{ backgroundImage: `url("/iconsPurple/plus.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                // onClick={handleNavigate}
+                    onClick={handleSelectNewMeeting}
                 >
                     New Meeting
                 </Button>
