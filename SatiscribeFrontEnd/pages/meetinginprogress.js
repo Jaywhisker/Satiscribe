@@ -6,7 +6,7 @@ import colourstyle from '/styles/Colourtest.module.css';
 import logos from '/styles/Logos.module.css';
 import landing from '@/styles/webexperiment/Landingpage.module.css';
 import StyledComponentsRegistry from '@/components/registery.tsx';
-import Sidebar from '../components/Sidebar';
+import Navbar from '../pages/navbartest';
 import StyledBox from '@/components/meetinglabel/meetinglabel';
 import styles from '@/styles/meetinginprogress.module.css';
 import contentblock from '@/styles/components/contentblocks.module.css'
@@ -24,8 +24,8 @@ function MeetingInProgress() {
 
     return (
         <StyledComponentsRegistry>
-            <Sidebar />
-            <div className={styles.headers} style={{ width: `var(--largeWidth)` }}>
+            <Navbar />
+            <div className={`${styles.headers} ${flex.flexRowSmollerGap}`} style={{ width: `var(--largeWidth)` }}>
                 <div className={styles.record}>
                     <div className={styles.ImageContainer}>
                         <img src="/iconsRed/Dot.png" alt="Profile" className={styles.Image} />
