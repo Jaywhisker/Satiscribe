@@ -1,11 +1,11 @@
-.largeBlockContainer {
-    background-color: var(--Final_Component_Lighter_Grey);
-    border: 5px solid var(--Final_Component_Dark_Grey);
-    border-radius: 15px;
-    width: var(--largeWidth);
-    min-height: 45vh;
-    margin: 8vh auto;
-}
+    .largeBlockContainer {
+        background-color: var(--Final_Component_Lighter_Grey);
+        border: 5px solid var(--Final_Component_Dark_Grey);
+        border-radius: 15px;
+        width: var(--largeWidth);
+        min-height: 45vh;
+        margin: 8vh auto;
+    }
 
 .largeBlockContainer:hover {
     background-color: var(--Final_Component_Dark_Grey);
