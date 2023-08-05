@@ -10,6 +10,16 @@
     cursor: pointer;
 }
 
+.rows{
+    /* color: var(--Final_Light_Purple); */
+    font-size: 3vh;
+    font-family: Lato;
+    height: auto;
+    display: flex;
+    text-align: center;
+    padding: 2vh 0vw;
+}
+
 .paginationContainer {
     display: flex;
     align-items: center;
