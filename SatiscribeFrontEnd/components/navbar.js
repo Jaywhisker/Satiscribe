@@ -20,7 +20,7 @@ function navbar() {
 
     const handleLogout = () => {
         // Navigate to the login page (or any other route you want)
-        router.push('/LoginPage');
+        router.push('/');
       };
 
     return (
