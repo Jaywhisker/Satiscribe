@@ -14,15 +14,56 @@ import { useRouter } from 'next/router';
 import Navbar from '@/components/navbar';
 
 
+// function MeetingInProgress() {
+
+
+//     const router = useRouter();
+
+// const handleSelectStopMeeting = () => {
+//     // Navigate to the login page (or any other route you want)
+//     router.push('/webexperiment/designB');
+// };
+
+const StyledBox1 = ({ version, text }) => {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleBoxClick = () => {
+        setIsActive(!isActive);
+    };
+
+    return (
+        <div
+            className={`styledBox ${isActive ? 'activeBox' : 'inactiveBox'}`}
+            onClick={handleBoxClick}
+        >
+            {isActive ? 'ACTIVE TEXT' : text}
+        </div>
+    );
+};
+
+
 function MeetingInProgress() {
-
-
     const router = useRouter();
+
+    const [text1, settext1] = useState('Oka')
+
+    const handleonClick = (text) => {
+        // if (text == 'Oka'){
+        //     settext1('Recording')
+        // }
+        // else{
+        //     settext1('Oka')
+        // }
+        settext1('Recording')
+        console.log(text)
+    }
 
     const handleSelectStopMeeting = () => {
         // Navigate to the login page (or any other route you want)
         router.push('/webexperiment/designB');
-      };
+
+    };
+
 
     return (
         <StyledComponentsRegistry>
@@ -39,8 +80,8 @@ function MeetingInProgress() {
                     size="small"
                     logo="left"
                     fill={true}
-                    logoStyle={{ backgroundImage: `url("/iconsFinalGray/Stop.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                onClick={handleSelectStopMeeting}
+                    logoStyle={{ backgroundImage: `url("/iconsFinalGray/Check.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+                    onClick={handleSelectStopMeeting}
                 >
                     Stop Meeting
                 </Button>
@@ -52,11 +93,11 @@ function MeetingInProgress() {
                         <div className={logos.small} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
                         <p className={styles.caution}>Please select a label after the topic of interest has been mentioned</p>
                     </div>
-                    <div className={`${flex.flexColumnSmollerGap}`} style={{ marginTop: '5vh', fontFamily: 'Lato', fontSize: '3vh'}}>
-                        <StyledBox version={1} text="ACTION ITEMS" />
-                        <StyledBox version={2} text="HIGHLIGHTS" />
-                        <StyledBox version={3} text="KEY DATES" />
-                        <StyledBox version={4} text="MEETING DETAILS" />
+                    <div className={`${flex.flexColumnSmollerGap}`} style={{ marginTop: '5vh', fontFamily: 'Lato', fontSize: '3vh' }}>
+                        <StyledBox className={StyledBox1} version={1} text={text1} onClick={(text1) => handleonClick} />
+                        <StyledBox1 version={2} text="HIGHLIGHTS" />
+                        <StyledBox1 version={3} text="KEY DATES" />
+                        <StyledBox1 version={4} text="MEETING DETAILS" />
                     </div>
                 </div>
             </div>
