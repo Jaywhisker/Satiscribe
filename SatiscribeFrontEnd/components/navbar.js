@@ -27,7 +27,7 @@ function navbar() {
 
     return (
         <StyledComponentsRegistry>
-            <div className={style.topnav}>
+            <div className={`${style.topnav} ${style.fixedNavbar}`}>
                 <div className={style.left_nav}>
                     <div style={{ width: '200px' }}>
                         <Sidebar

@@ -90,7 +90,7 @@ function MeetingInProgress() {
 
     const handleSelectStopMeeting = () => {
         // Navigate to the login page (or any other route you want)
-        router.push('/webexperiment/designB');
+        router.push('/webexperiment/designA');
 
     };
 
@@ -110,7 +110,7 @@ function MeetingInProgress() {
                     size="small"
                     logo="left"
                     fill={true}
-                    logoStyle={{ backgroundImage: `url("/iconsFinalGray/Check.png")`, zIndex: 1 }} // Change this to the URL of your right logo
+                    logoStyle={{ backgroundImage: `url("/iconsFinalGray/Stop.png")`, zIndex: 1 }} // Change this to the URL of your right logo
                     onClick={handleSelectStopMeeting}
                 >
                     Stop Meeting

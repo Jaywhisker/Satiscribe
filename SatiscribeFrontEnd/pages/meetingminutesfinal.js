@@ -47,7 +47,7 @@ function newmeeting() {
                             Back
                         </Button>
                     </div>
-                    <div className={pagestyle.centeredContainer}>
+                    <div className={pagestyle.centeredContainer2}>
                         <div className={pagestyle.textencapsulate}>
                             <h4 className={pagestyle.centeredText} style={{ inlineSize: '23vw', textAlign: "center" }}>
                                 Meeting Minutes
@@ -74,16 +74,21 @@ function newmeeting() {
                         <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Attendance Block.svg" />
                     </div>
                 </div>
-                <div className={pagestyle.bigContainer} style={{ marginBottom: '0vh' }}>
+                <div className={pagestyle.bigContainer} style={{ marginBottom: '10vh' }}>
                     <div className={pagestyle.nextContainer}>
                         <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Link Block.svg" />
                         <img className={pagestyle.mediumBlock} src="/Final Meeting Minutes Blocks/Meeting Details Block.svg" />
                     </div>
                 </div>
+                <div className={pagestyle.bigContainer} style={{ marginBottom: '0vh' }}>
+                    <div className={pagestyle.nextContainer}>
+                        <img className={pagestyle.mediumBlock} src="/Final Meeting Minutes Blocks/Feedback Blocks.svg" />
+                        <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Budgeting Block.svg" />
+                    </div>
+                </div>
                 <div className={pagestyle.bigContainer2}>
                     <div className={pagestyle.centerContainer2}>
                         <img className={pagestyle.largeBlock2} src="/Final Meeting Minutes Blocks/Full Transcript Block.svg" />
-                        {/* <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Link Block.svg" /> */}
                     </div>
                 </div>
 

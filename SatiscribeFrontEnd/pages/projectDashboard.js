@@ -63,7 +63,7 @@ function Home() {
                 <Button
                     size="large"
                     logo="left"
-                    fill={false}
+                    fill={false}    
                     logoStyle={{ backgroundImage: `url("/iconsPurple/plus.png")`, zIndex: 1 }} // Change this to the URL of your right logo
                     onClick={handleSelectNewMeeting}
                 >
