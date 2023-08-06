@@ -24,38 +24,68 @@ import Navbar from '@/components/navbar';
 //     router.push('/webexperiment/designB');
 // };
 
-const StyledBox1 = ({ version, text }) => {
-    const [isActive, setIsActive] = useState(false);
-
-    const handleBoxClick = () => {
-        setIsActive(!isActive);
-    };
-
-    return (
-        <div
-            className={`styledBox ${isActive ? 'activeBox' : 'inactiveBox'}`}
-            onClick={handleBoxClick}
-        >
-            {isActive ? 'ACTIVE TEXT' : text}
-        </div>
-    );
-};
-
 
 function MeetingInProgress() {
+
+    const versionStyles = {
+        1: {
+            display: 'flex',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+            borderRadius: '0.1875rem',
+            background: 'var(--Final_Calendar_Pink, #AE6378)',
+            color: 'var(--Final_White)',
+            padding: '1vh 2vw',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+        },
+        2: {
+            display: 'flex',
+            color: 'var(--Final_Dark_Purple)',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+            borderRadius: '0.1875rem',
+            background: 'var(--Final_Calendar_Skin)',
+            padding: '1vh 2vw',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+        },
+        3: {
+            display: 'flex',
+            color: 'var(--Final_White)',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+            borderRadius: '0.1875rem',
+            background: 'var(--Final_Calendar_Green, #7A927C)',
+            padding: '1vh 2vw',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+        },
+        4: {
+            display: 'flex',
+            height: '1.5rem',
+            color: 'var(--Final_White)',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+            borderRadius: '0.1875rem',
+            background: 'var(--Final_Calendar_Purple, #79616F)',
+            padding: '1vh 2vw',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+        },
+    };
+
+    const buttons = ["ACTION ITEMS", "HIGHLIGHTS", "KEY DATES", "MEETING DETAILS"]
     const router = useRouter();
+    const [activeBox, setActiveBox] = useState(0)
 
-    const [text1, settext1] = useState('Oka')
-
-    const handleonClick = (text) => {
-        // if (text == 'Oka'){
-        //     settext1('Recording')
-        // }
-        // else{
-        //     settext1('Oka')
-        // }
-        settext1('Recording')
-        console.log(text)
+    const handleOnClick = (index) => {
+        setActiveBox(index)
+        if (activeBox == index) {
+            setActiveBox(0)
+        } else {
+            setActiveBox(index)
+        }
     }
 
     const handleSelectStopMeeting = () => {
@@ -94,10 +124,16 @@ function MeetingInProgress() {
                         <p className={styles.caution}>Please select a label after the topic of interest has been mentioned</p>
                     </div>
                     <div className={`${flex.flexColumnSmollerGap}`} style={{ marginTop: '5vh', fontFamily: 'Lato', fontSize: '3vh' }}>
-                        <StyledBox className={StyledBox1} version={1} text={text1} onClick={(text1) => handleonClick} />
-                        <StyledBox1 version={2} text="HIGHLIGHTS" />
-                        <StyledBox1 version={3} text="KEY DATES" />
-                        <StyledBox1 version={4} text="MEETING DETAILS" />
+                        {buttons.map((data, index) => (
+                            <div
+                                key={index}
+                                tag={index + 1}
+                                onClick={() => handleOnClick(index + 1)}
+                                style={...versionStyles[index + 1]}
+                            >
+                                {activeBox == index + 1 ? 'RECORDING' : data}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
