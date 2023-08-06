@@ -26,16 +26,19 @@ padding: 10px 0;
 cursor: pointer;
 opacity: ${props => props.$isOpen ? '1' : '0'};
 transition: opacity 0.3s;
-
+height: calc(100% - 87px); /* Adjust the height to leave space for the top bar (87px in this example) */
+overflow-y: auto; /* Enable vertical scrolling when content overflows */
 &:hover {
     background-color: #555;
 }
 `;
 
-const HamburgerButton = styled(AiOutlineMenu)`
-    font-size: 2em;
-    cursor: pointer;
-`;
+// const HamburgerButton = styled(AiOutlineMenu)`
+//     font-size: 2em;
+//     cursor: pointer;
+// `;
+
+
 
 
   

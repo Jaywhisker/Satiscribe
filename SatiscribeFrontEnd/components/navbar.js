@@ -22,12 +22,12 @@ function navbar() {
 
     const handleLogout = () => {
         // Navigate to the login page (or any other route you want)
-        router.push('/LoginPage');
+        router.push('/');
     };
 
     return (
         <StyledComponentsRegistry>
-            <div className={style.topnav}>
+            <div className={`${style.topnav} ${style.fixedNavbar}`}>
                 <div className={style.left_nav}>
                     <div style={{ width: '200px' }}>
                         <Sidebar
@@ -40,7 +40,7 @@ function navbar() {
                 <div className={`${style.centralize} ${flex.flexRowSmollerGap}`}>
                     <h3>HCI</h3>
                     <LogoButton
-                        logoSize="small" 
+                        logoSize="small"
                         logoStyle={{ backgroundImage: `url("/iconsPurple/Edit Page.png")` }}
                         onClick={() => alert('Icon Button (Small) clicked!')}
                     />

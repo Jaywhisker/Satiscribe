@@ -62,26 +62,35 @@ function newmeeting() {
                 </div>
                 <div className={pagestyle.bigContainer}>
                     <div className={pagestyle.centerContainer}>
-                        <img className={pagestyle.smallBlock} src="/Blocks/Attendance Block.svg" />
-                        <img className={pagestyle.mediumBlock} src="/Blocks/Keydates Block.svg" />
+                        <img className={pagestyle.largeBlock} src="/Final Meeting Minutes Blocks/Agenda Block.svg" />
                     </div>
                 </div>
                 <div className={pagestyle.bigContainer}>
                     <div className={pagestyle.nextContainer}>
-                        <img className={pagestyle.mediumBlock} src="/Blocks/Meeting Details Block.svg" />
-                        <img className={pagestyle.smallBlock} src="/Blocks/Link Block.svg" />
+                        <img className={pagestyle.largeBlock} src="/Final Meeting Minutes Blocks/Task Summariser and Assign Block.svg" />
                     </div>
                 </div>
                 <div className={pagestyle.bigContainer}>
                     <div className={pagestyle.nextContainer}>
-                        <img className={pagestyle.smallBlock} src="/Blocks/Question Block.svg" />
-                        <img className={pagestyle.mediumBlock} src="/Blocks/Feedback Blocks.svg" />
+                        <img className={pagestyle.mediumBlock} src="/Final Meeting Minutes Blocks/Keydates Block.svg" />
+                        <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Attendance Block.svg" />
                     </div>
                 </div>
-                <div className={pagestyle.bigContainer}>
+                <div className={pagestyle.bigContainer} style={{ marginBottom: '10vh' }}>
                     <div className={pagestyle.nextContainer}>
-                        <img className={pagestyle.mediumBlock} src="/Blocks/Poll Block.svg" />
-                        <img className={pagestyle.smallBlock} src="/Blocks/Budgeting Block.svg" />
+                        <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Link Block.svg" />
+                        <img className={pagestyle.mediumBlock} src="/Final Meeting Minutes Blocks/Meeting Details Block.svg" />
+                    </div>
+                </div>
+                <div className={pagestyle.bigContainer} style={{ marginBottom: '0vh' }}>
+                    <div className={pagestyle.nextContainer}>
+                        <img className={pagestyle.mediumBlock} src="/Final Meeting Minutes Blocks/Feedback Blocks.svg" />
+                        <img className={pagestyle.smallBlock} src="/Final Meeting Minutes Blocks/Budgeting Block.svg" />
+                    </div>
+                </div>
+                <div className={pagestyle.bigContainer2}>
+                    <div className={pagestyle.centerContainer2}>
+                        <img className={pagestyle.largeBlock2} src="/Final Meeting Minutes Blocks/Full Transcript Block.svg" />
                     </div>
                 </div>
 

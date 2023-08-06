@@ -21,12 +21,12 @@ function navbar() {
 
     const handleLogout = () => {
         // Navigate to the login page (or any other route you want)
-        router.push('/Login');
+        router.push('/');
       };
 
     return (
         <StyledComponentsRegistry>
-            <div className={style.topnav}>
+            <div className={`${style.topnav} ${style.fixedNavbar}`}>
                 <div className={style.left_nav}>
                     <div style={{ width: '200px' }}>
                         <Sidebar
@@ -37,7 +37,7 @@ function navbar() {
                     <h3>Satiscribe</h3>
                 </div>
                 <div className={style.centralize}>
-                    <h3>Project Dashboard</h3>
+                    <h3>Personal Dashboard</h3>
                 </div>
                 <div className={style.right_nav}>
                     <h6>Home</h6>

@@ -6,4 +6,18 @@
   justify-content: center;
   align-items: center;
   border-color: blueviolet;
+  border-bottom: 1px solid var(--Final_Light_Purple); /* Add a 1px solid border at the bottom */
+  /* margin-top: 87px; */
+}
+
+.projectcontainer2{
+  display: flex;
+  width: 13vw;
+  height: 6%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-color: blueviolet;
+  border-bottom: 1px solid var(--Final_Light_Purple); /* Add a 1px solid border at the bottom */
+  /* margin-top: 87px; */
 }
