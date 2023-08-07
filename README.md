@@ -18,8 +18,8 @@ Current routing (http://localhost:3000):
 /meetinginprogress - Start Meeting\
 /meetingminutesfinal - Final Meeting Minutes\
 
-
+<br></br>
 The webexperiment is also embedded inside this app, you may access it with:
 
 /webexperiment/landingA - Design A\
-/webexperiment/landingB - Design B\
+/webexperiment/landingB - Design B
