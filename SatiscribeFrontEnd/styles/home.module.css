@@ -1,0 +1,40 @@
+.headers {
+    display: flex;
+    flex-direction: row;
+    margin: 10vh auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.taskcontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 18vh;
+    margin-bottom: 10vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+}
+
+.table {
+    background-color: var(--Final_Component_Lighter_Grey);
+    border: 5px solid var(--Final_Component_Dark_Grey);
+    border-radius: 15px;
+    width: var(--largeWidth);
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionhead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+

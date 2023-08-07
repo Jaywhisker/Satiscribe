@@ -1,98 +1,72 @@
-import React from 'react'
-import logos from '../styles/Logos.module.css'
-import flexi from '../styles/Flexible.module.css'
+import React, { useRef, useState } from 'react';
+import pagestyle from '/styles/LoginPage.module.css'
+import { Button } from '../components';
+import { useRouter } from 'next/router';
 
+function LoginPage() {
+    // Create refs for the username and password inputs
+    const usernameRef = useRef();
+    const passwordRef = useRef();
+    
 
-export default function index() {
+    // Create a state variable for the error message
+    const [error, setError] = useState(null);
+
+    // Function to handle form submission
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Retrieve the values from the input fields
+        const username = usernameRef.current.value;
+        const password = passwordRef.current.value;
+
+        // Check against hardcoded values or call your authentication service
+        if (username === 'username' && password === 'password') {
+            alert('Login successful');
+            setError(null); // Clear the error
+            // Redirect or perform some other action on successful login
+        } else {
+            setError('Invalid username or password');
+        }
+    };
+
+    const router = useRouter();
+
+    const handleLoginClick = () => {
+        // Navigate to the login page (or any other route you want)
+        router.push('/Home');
+      };
+    
+
     return (
-        <div>
-            <div>
-                <h1>Haro this is the display of the logosheet</h1>
+        <form onSubmit={handleSubmit}>
+            <div className={pagestyle.bigdiv}>
+                <img className={pagestyle.mediumBlock} src="/Logo.png" alt="Description of icon" />
+            </div>
+            <div className={pagestyle.bigdiv}>
+                {/* <label htmlFor="username">Username:</label> */}
+                <input type="text" id="username" ref={usernameRef} className={pagestyle.inputWithBorder} placeholder="Username" required />
+            </div>
+            <div className={pagestyle.smallerdiv}>
+                {/* <label htmlFor="password">Password:</label> */}
+                <input type="password" id="password" ref={passwordRef} className={pagestyle.inputWithBorder} placeholder="Password" required />
+            </div>
+            <div className={pagestyle.smalldiv}>
+                {error && <div className={pagestyle.errorMessage}>{error}</div>}
+            </div>
+            <div className={pagestyle.logindiv}>
+                <Button size="medium" fill type="submit" onClick={handleLoginClick}>
+                    Login
+                </Button>
             </div>
 
-            <h2>Flexible module css: display layouts</h2>
 
-            <p>This uses the flexrow found in Flexible.module.css, the gap can be controlled from global.css</p>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-            </div>
 
-            <p>This uses the flexcolumn found in Flexible.module.css, the gap can be controlled from global.css</p>
-            <div className={flexi.flexColumnSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-            </div>
+        </form>
 
-            <h2>Icons</h2>
-            <p>Lmao they are so pixalated</p>
 
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Filter.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Hamburger.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
 
-            </div>
-
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Profile.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Search.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Sort.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Start.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Stop.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
-                <div className={logos.small} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
-            </div>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Cancellation.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Back.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Alignment-left.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Caution.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Check.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Dropdown.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/file folder approved-2.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Filter.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Hamburger.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Home.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/information chat right.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Link.png")`, zIndex: 1 }}></div>
-            </div>
-            <div className={flexi.flexRowSmolGap}>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Logout.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/maps-location.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/plus.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Profile.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Save.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Search.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Sort.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Start.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Stop.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Trash.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/comment.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Edit Page.png")`, zIndex: 1 }}></div>
-                <div className={logos.big} style={{ backgroundImage: `url("/icons/Replace.png")`, zIndex: 1 }}></div>
-            </div>
-        </div>
-    )
+    );
 }
 
+export default LoginPage;

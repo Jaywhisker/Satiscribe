@@ -20,6 +20,10 @@ function DesignA() {
         router.push('/webexperiment/thankyou');
     };
 
+    const handleFinalisechanges = () => {
+        router.push('/meetingminutesfinal');
+    };
+
     return (
         <StyledComponentsRegistry>
             <Nonclicknavbar />
@@ -38,7 +42,7 @@ function DesignA() {
                     logo="left"
                     fill={true}
                     logoStyle={{ backgroundImage: `url("/iconsFinalGray/Check.png")`, zIndex: 1 }} // Change this to the URL of your right logo
-                    onClick={handleNavigate}
+                    onClick={handleFinalisechanges}
                 >
                     Finalise All Changes
                 </Button>

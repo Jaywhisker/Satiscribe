@@ -97,14 +97,14 @@ const AddNewTaskInput = ({ newTaskData, setNewTaskData, handleAddTask, setShowAd
           <LogoButton
             onClick={handleSaveTask}
             logoSize="small"
-            logoStyle={{ backgroundImage: `url("/icons/Check.png")` }}
+            logoStyle={{ backgroundImage: `url("/iconsPurple/Check.png")` }}
             disabledLogoStyle={{ backgroundImage: `url("/iconsGrey/Check.png")` }}
             disabled={false}
           />
           <LogoButton
             onClick={handleCancelTask}
             logoSize="small"
-            logoStyle={{ backgroundImage: `url("/icons/Cancellation.png")` }}
+            logoStyle={{ backgroundImage: `url("/iconsPurple/Cancellation.png")` }}
             disabledLogoStyle={{ backgroundImage: `url("/iconsGrey/Cancellation.png")` }}
             disabled={false}
           />

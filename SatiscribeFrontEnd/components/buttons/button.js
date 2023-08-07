@@ -6,8 +6,12 @@ import flex from '../../styles/Flexible.module.css'
 const Button = ({ size, logo, fill, logoStyle, disabledLogoStyle, onClick, children, disabled}) => {
   const getButtonSizeClass = () => {
     switch (size) {
+      // case 'smallest':
+      //   return styles.smallestButton;
       case 'small':
         return styles.smallButton;
+      case 'smallmedium':
+        return styles.smallmediumButton;
       case 'medium':
         return styles.mediumButton;
       case 'large':

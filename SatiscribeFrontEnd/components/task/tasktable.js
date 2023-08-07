@@ -104,7 +104,7 @@ const TaskDataTable = ({
     rows: {
       style: {
         backgroundColor: 'var(--Final_Component_Dark_Grey)',
-        '&:nth-of-type(even)': {
+        '&:nth-of-type(odd)': {
           backgroundColor: 'var(--Final_Component_Lighter_Grey)',
         },
         fontFamily: 'Lato, sans-serif', // Set the font family for the DataTable content
@@ -120,14 +120,16 @@ const TaskDataTable = ({
         backgroundColor: 'var(--Final_Component_Dark_Grey)',
         color: 'var(--Final_Light_Purple)',
         fontFamily: 'Lato, sans-serif',
-        borderBottom: 'none',
         fontSize: '3vh',
         height: '10vh',
+        width: '100%',
+        border: 'none',
       },
     },
     cells: {
       style: {
         color: 'var(--Final_White)',
+        width: '100%',
       },
     },
     pagination: {
@@ -211,7 +213,7 @@ const TaskDataTable = ({
 
 
   const noDataComponent = (
-    <div>
+    <div className={styles.rows}>
       {filteredTasks.length === 0 ? (
         <div>No relevant results found.</div>
       ) : (

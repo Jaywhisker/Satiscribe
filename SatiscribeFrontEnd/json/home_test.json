@@ -1,0 +1,49 @@
+{
+    "task_list": [
+      {
+        "task_id": 0,
+        "task_details": {
+          "task_name": "Design wireframes",
+          "project": "hci/ai",
+          "status": "not started",
+          "duedate": "08/08"
+        }
+      },
+      {
+        "task_id": 1,
+        "task_details": {
+          "task_name": "Content creation",
+          "project": "hci/ai",
+          "status": "in progress",
+          "duedate": "15/08"
+        }
+      },
+      {
+        "task_id": 2,
+        "task_details": {
+          "task_name": "Test new feature",
+          "project": "sds",
+          "status": "pending",
+          "duedate": "25/08"
+        }
+      },
+      {
+        "task_id": 3,
+        "task_details": {
+          "task_name": "Data analysis",
+          "project": "hci/ai",
+          "status": "not started",
+          "duedate": "10/08"
+        }
+      },
+      {
+        "task_id": 4,
+        "task_details": {
+          "task_name": "Bug fixing",
+          "project": "sds",
+          "status": "in progress",
+          "duedate": "05/08"
+        }
+      }
+    ]
+  }
