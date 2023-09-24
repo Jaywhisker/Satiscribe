@@ -27,5 +27,5 @@ The webexperiment is also embedded inside this app, you may access it with:
 /webexperiment/landingB - Design B
 
 <br></br>
-Important Links:
+Important Links: <br>
 figma - https://www.figma.com/file/EHa8vnTTiT1UwpNv9oYzTP/HCI%2FAI?type=design&node-id=181%3A3&mode=design&t=JrgL4GCkif7f9ROJ-1
