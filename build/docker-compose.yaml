@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  web-next-ui:
+    stdin_open: true
+    tty: true
+    image: web-next-ui
+    volumes:
+      - ../SatiscribeFrontEnd:/satiscribe
+      - /satiscribe/node_modules
+    ports:
+      - ${UI_HOST_PORT}:${UI_SERVICE_PORT}
+    build:
+      context: ../
+      dockerfile: build/Dockerfile
